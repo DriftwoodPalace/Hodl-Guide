@@ -31,5 +31,8 @@ https://github.com/rustyrussell/bitcoin-storage-guide
 or for even more depth, take a look at
 https://glacierprotocol.org/
 
+## Contributions
+The protocol should be constant changing with the best tools and methods out there. Any contributions, pull requests, issues or general critique is appreciated!
+
 ---
 Get started: [Preparations >>](hodl-guide_10_preparations.md)
