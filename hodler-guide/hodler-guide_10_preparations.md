@@ -52,7 +52,9 @@ To start, we need to change the active directory with `$ cd`.
 *Linux:* Varies, on Ubuntu, press Ctrl+Alt+T 
 
 Change the current directory to the one where the 3 downloaded files are located, for example: 
+
 *Windows* `> cd C:\Users\Downloads` 
+
 *macOS and Linux* `$ cd $HOME/Downloads` 
 
 To be able to verify the signature, import hundingsbane.asc into your local GPG installation: 
