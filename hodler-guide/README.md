@@ -1,7 +1,7 @@
 [ **Intro** ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [Raspberry Pi](raspibolt_20_pi.md) ] -- [ [Bitcoin](raspibolt_30_bitcoin.md) ] -- [ [Lightning](raspibolt_40_lnd.md) ] -- [ [Mainnet](raspibolt_50_mainnet.md) ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
 
 ---
-### The Hodler’s Guide to Cold Storage
+# The Hodler’s Guide to Cold Storage
 ---
 
 Bitcoin gives you the possibility to store value in ways earlier generations only could dream about. A common man can have a more secure storage then any king throughout history. If done right, no one even needs to know what you own.
