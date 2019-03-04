@@ -54,6 +54,6 @@ You should now have:
 Store all information in a secure way during the rest of the process (don't leave your notes lying around visibly).
 
 ---
-Next up: [Last key >>](hodl-guide_30_last-key.md) generated with Tails.
+Next up: [Generate the last key with Tails >>](hodl-guide_30_last-key.md)
 
 
