@@ -37,7 +37,7 @@ To do this, we need GnuPG (https://gnupg.org/), the implementation of it varies 
 *Linux:* GnuPG comes pre-installed with Linux distributions.
 
 An easy way to verify a digital signature is to use the command line (terminal). 
-In all examples, what´s written to the command line is everything after the `$` sign (examples on Windows usually use the symbol `>`). 
+In all examples, what´s written to the command line is everything after the `$` sign (and examples that's specific for on Windows use the symbol `>`). 
 
 For example: `$ cd` 
 Means that you´d write `cd` to the command line (cd is a command that changes the active directory). 
