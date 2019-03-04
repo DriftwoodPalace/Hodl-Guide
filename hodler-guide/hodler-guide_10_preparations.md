@@ -28,13 +28,13 @@ An important part of the guide (and a great skill to have) is to know how to val
 
 To start, download my signature `hundingsbane.asc`, `hodl-guide.pdf` and `hodl-guide.pdf.sig` HERE. It’s simply my digital fingerprint a .pdf file with this guide and a detached signature corresponding to the .pdf file. This ensures that the one controlling the public key hundingsbane.asc (me) signed the document.   
 
-To do this, we need GnuPG (https://gnupg.org/), the implementation of it varies for different OS.
+To do this, we need GnuPG (https://gnupg.org/), the implementation of it varies for different OS:
 
-Windows: Download and install the latest version of Gpg4win https://www.gpg4win.org. If you don’t want to donate, click bank transfer on the download page to acces the download without donating. You only need to install GnuPG and Kleopatra. Start Kleopatra once finished. 
+*Windows:* Download and install the latest version of Gpg4win https://www.gpg4win.org. If you don’t want to donate, click bank transfer on the download page to acces the download without donating. You only need to install GnuPG and Kleopatra. Start Kleopatra once finished. 
 
-macOS: Download and install the latest version of GPG Suite https://gpgtools.org/ 
+*macOS:* Download and install the latest version of GPG Suite https://gpgtools.org/ 
 
-Linux: GnuPG comes pre-installed with Linux distributions.
+*Linux:* GnuPG comes pre-installed with Linux distributions.
 
 An easy way to verify a digital signature is with the command line. 
 In all examples, what´s written to the command line is everything after the `$` sign (examples on Windows usually use the symbol `>`). 
@@ -45,15 +45,15 @@ Usually you can paste text to a terminal with ctrl+v or with a right click on th
 
 To start, we need to change the active directory. This is done with the command `cd`. 
 
-Windows: Open `Powershell` (search for it or use Win+R, type powershell and hit enter) 
+*Windows:* Open `Powershell` (search for it or use Win+R, type powershell and hit enter) 
 
-macOs: Click the Searchlight (magnifying glass) icon in the menu bar and type `terminal`. Select the Terminal application from the search results. 
+*macOs:* Click the Searchlight (magnifying glass) icon in the menu bar and type `terminal`. Select the Terminal application from the search results. 
 
-Linux: Varies, on Ubuntu, press Ctrl+Alt+T 
+*Linux:* Varies, on Ubuntu, press Ctrl+Alt+T 
 
 Change the current directory to the one where the 3 downloaded files are located, for example: 
-Windows `> cd C:\Users\Downloads` 
-macOS and Linux `$ cd $HOME/Downloads` 
+*Windows* `> cd C:\Users\Downloads` 
+*macOS and Linux* `$ cd $HOME/Downloads` 
 
 To be able to verify the signature, import hundingsbane.asc into your local GPG installation: 
 `$ gpg --import hundingsbane.asc` 
