@@ -2,7 +2,7 @@
 
 ---
 
-# Create the multi-sig wallet with Electrum
+# Create multi-sig wallet with Electrum
 
 We are using Electrum on our main computer to construct the multi-signature wallet.
 
