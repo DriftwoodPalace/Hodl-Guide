@@ -43,7 +43,7 @@ For example: `$ cd`
 Means that you´d write `cd` to the command line (cd is a command that changes the active directory). 
 Usually you can paste text to a terminal with ctrl+v or with a right click on the mouse. Another useful shortcut is to use the arrows up and down to toggle between previously executed commands. If you´re stuck, you could kill a process with Ctrl+C or Ctrl+Z. 
 
-To start, we need to change the active directory. This is done with the command `cd`. 
+To start, we need to change the active directory with `$ cd`. 
 
 *Windows:* Open `Powershell` (search for it or use Win+R, type powershell and hit enter) 
 
