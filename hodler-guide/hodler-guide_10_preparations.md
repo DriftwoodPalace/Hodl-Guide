@@ -36,11 +36,11 @@ To do this, we need GnuPG (https://gnupg.org/), the implementation of it varies 
 
 *Linux:* GnuPG comes pre-installed with Linux distributions.
 
-An easy way to verify a digital signature is with the command line. 
+An easy way to verify a digital signature is to use the command line (terminal). 
 In all examples, what´s written to the command line is everything after the `$` sign (examples on Windows usually use the symbol `>`). 
 
-For example: `$ ls` 
-Means that you´d write `ls` to the command line (a command that lists all files and folders in the active directory). 
+For example: `$ cd` 
+Means that you´d write `cd` to the command line (cd is a command that changes the active directory). 
 Usually you can paste text to a terminal with ctrl+v or with a right click on the mouse. Another useful shortcut is to use the arrows up and down to toggle between previously executed commands. If you´re stuck, you could kill a process with Ctrl+C or Ctrl+Z. 
 
 To start, we need to change the active directory. This is done with the command `cd`. 
