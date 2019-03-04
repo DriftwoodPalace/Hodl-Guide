@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys](raspibolt_20_pi.md) ] -- [ **Bitcoin** ] -- [ [Lightning](raspibolt_40_lnd.md) ] -- [ [Mainnet](raspibolt_50_mainnet.md) ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
+[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ **The First Keys** ] -- [ [Lightning](raspibolt_40_lnd.md) ] -- [ [Mainnet](raspibolt_50_mainnet.md) ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
 
 ---
 
@@ -51,6 +51,9 @@ You should now have:
 * Info package “B”, “D” and “E”
 * A secure note,or similar in a password manager, containing your_password_A and your_password_B (never put anything else from your seed on a computer connected to internet). Or Info package "A"
 
-This is now valuable notes, stor in a safe way during the rest of the process. 
+Store all information in a secure way during the rest of the process (don't leave your notes lying around visibly).
+
+---
+Next up: [Last key >>](hodl-guide_40_last-key.md)
 
 
