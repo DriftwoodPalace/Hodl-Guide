@@ -58,10 +58,15 @@ Change the current directory to the one where the 3 downloaded files are located
 *macOS and Linux* `$ cd $HOME/Downloads` 
 
 To be able to verify the signature, import hundingsbane.asc into your local GPG installation: 
+
 `$ gpg --import hundingsbane.asc` 
+
 Now use the “detached signature” to check that the .pdf file was signed with the signing key we imported: 
+
 `$ gpg --verify valaskjalf.txt.sig valaskjalf.txt` 
+
 The expected output should be something like:
+
 ```
 gpg: Signature made 03/01/19 16:32:53 W. Europe Standard Time
 gpg:                using RSA key FF541B4EE4E6D84593011D403D27D7D359A0E4A9
@@ -73,7 +78,9 @@ Primary key fingerprint: FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9
 
 There's three key points to look at when verifying a signature. When the signature was made (`03/01/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`. 
 To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc, that’s hard to fake. 
+
 [Twitter](https://twitter.com/HelgeHunding)
+
 [Keybase](https://keybase.io/helgehunding)
 
 Now we know that this was a good signature made from me. If someone was to change one character in hodl-guide.pdf, it would result in a bad signature. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. You could open hodl-guide.pdf and select a few parts of the text and compare it to what’s written here on Github. If it’s not the same, you should stop and investigate further. The layout is better on Github, so I would recommend that you follow along here.
