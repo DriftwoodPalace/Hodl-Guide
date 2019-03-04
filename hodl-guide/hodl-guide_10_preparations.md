@@ -92,4 +92,4 @@ We don´t want to go through all this trouble to secure our keys and then rely o
 *Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store as little as 15 GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step. If you don´t have a full node up and running, see the bonus section for how to setup and validate the installation of one. When installed, your node could be running in the background. You won´t notice it on most modern computers and you don´t have to be online all the time. LINK
 
 ---
-Move on to: [The first keys >>](hodl-guide_20.md)
+Move on to: [The first keys >>](hodl-guide_20_first-key.md)
