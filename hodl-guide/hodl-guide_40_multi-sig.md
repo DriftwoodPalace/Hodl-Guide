@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ [**Multi-Sig Wallet**] ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
+[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ **Multi-Sig Wallet** ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
 
@@ -81,50 +81,8 @@ Click the QR-code in the bottom right corner:
 
 ![Electrum 17](images/40_electrum_17.png)
 
-### Troubleshooting 
+If you have an error with scanning the QR-code, check the Trobleshooting guide [Scan QR-code with Electrum](hodl-guide_71_troubleshooting.md)
 
-If you get the following error:
-
-![Error 1](images/40_error_1.png)
-
-You’ll probably need to install “Zbar” (or launch it if it’s installed). It’s available at http://zbar.sourceforge.net/ and you can view the source code at https://github.com/ZBar/ZBar. (Only Windows and Linux). It’s generally a good idea to not download random programs from file hosting sites. But Zbar has been around a long time and we can try to ensure it’s a legit copy. If you still don’t want to use Zbar, scroll down to “other solutions”- Otherwise go to https://sourceforge.net/projects/zbar/files/zbar/0.10/. Make sure that “Modified” is 2009-10-XX:
-
-![Zbar](images/40_zbar.png)
-
-Download the file for your operating system (.exe for Windows and tar.gz or tar.bz2 for Linux). No digital signatures are provided, so we are going to generate the SHA256-checksum of the file. Open a new terminal and change the directory to where the file is located:
-
-`$ cd $HOME/Downloads` 
-Generate the checksum:
-*on Windows* `> Get-FileHash -a sha256 zbar-0.10-setup.exe`
-You should get the following output: 
-![Zbar hash](images/40_zbar_hash.png)
-*on Linux*: 
-`$ sha256sum zbar-0.10.tar.gz`
-Should produce the output:
-`575fa82de699faa7bda2d2ebbe3e1af0a4152ec4d3ad72c0ab6712d7cc9b5dd2  zbar-0.10.tar.gz`
-And:
-`$ sha256sum zbar-0.10.tar.bz2`
-Should produce the output:
-`234efb39dbbe5cef4189cc76f37afbe3cfcfb45ae52493bfe8e191318bdbadc6  zbar-0.10.tar.bz2`
-
-It’s the best we can do here and Zbar won’t be handling any critical information. If the hashes match, you know that you’ve got the same file that was used in this guide. If you are okey with that, go ahead and install Zbar and follow the instructions on the screen. Go back to Electrum and click the QR-code, you might have to try 2-3 times before it starts. 
-
-If it still doesn’t start, start the program “zbarcam”, pick a video source, click apply and try in Electrum again:
-
-![Zbarcam](images/40_zbarcam.png)
-
-Scan the QR-code in Electrum. It should read your xpub key and Electrum should automatically show it. 
-
-Other solutions:
-If you can’t launch or don’t want to use Zbar, you could use a workaround. 
-
-Option 1 is to simply download another QR-reader on your computer (or check if you have one installed) and scan the QR-code. Copy the scanned result to Electrum. 
-
-Option 2, use a QR-code reader on your smart-phone. Load the photo to the QR-code reader, connect to internet and send the text to your computer with a secure messaging app. 
-
-Option 3, use an online-service like https://webqr.com/index.html. Know that you risk to leak your public key to a third party (which reduces your privacy but isn’t terrible in this case since it’s only 1 of 3 needed keys). Copy the result to Electrum. 
-
-Continuing
 We no longer need internet. To reduce the attack vector, put your computer in flight mode.
 You should now have a master public key as Cosigner 1, before clicking next take note of a few characters in the beginning, the middle and the end. Click Next:
 
@@ -182,7 +140,109 @@ With this in mind, we are now going to deposit a small amount of funds to our ad
 Take a look at the guide in the bonus section for how to mix your coins with Wasabi Wallet.
 
 
+## Deposit Program
+
+This can be used every time you want to deposit funds to your cold storage.
+
+Open your multi-sig wallet in Electrum and enter the password that unlocks the wallet. Go to Receive and copy the “Receiving address”. 
+
+*Note*, if you used Zbar to setup the wallet, there might be a problem with copy and paste. A restart of Electrum should fix that.
+
+Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send your bitcoin to the receiving address. You should see the unconfirmed balance almost immediately. 
+
+*Optional*: If this is the first time accessing the wallet, you might want to go through the trouble of doing a full restore of your wallet. Do this by disconnecting from the internet, open a wallet in Electrum, go to File>Open (or Ctrl+O). Delete your wallet file. Go back to the first step of the wallet setup process and set it up exactly the same way as you did before (same password etc). When you reconnect to internet, your funds should be there and you can be sure that your process works. 
+
+### Test withdrawal (only needed if this is the frst time depositing to the wallet)
+
+If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one is the most complicated. That procedure is only necessary if you lose one private key and the corresponding hardware wallet. 
+Test withdrawal 1
+Go to send, enter an address to another wallet you control (like Wasabi Wallet). 
+Select around half of the amount you have in the wallet, pick a fee and select “preview”:
+
+![Electrum 25](images/40_electrum_25.png)
+
+In the preview window, select the QR-code in the bottom left corner:
+
+![Electrum 26](images/40_electrum_26.png)
+
+That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
+
+
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that nothing ore no one can see what you do). In Tails, launch Electrum like before. 
+
+Click next at the first window:
+
+![Electrum 27](images/40_electrum_27.png)
+
+We only need the signature, so keep “standard wallet” selected and click Next:
+
+![Electrum 28](images/40_electrum_28.png)
+
+Select “I already have a seed” and click Next:
+
+![Electrum 29](images/40_electrum_29.png)
+
+Enter your 12-word seed on the next screen (again, this is valuable information):
+
+![Electrum 30](images/40_electrum_30.png)
+
+Leave the password field empty (the wallet file will be deleted once finished):
+
+![Electrum 31](images/40_electrum_31.png)
+
+The wallet should now load. Go to `Tools>Load Transaction>From QR code`
+Scan the QR code on your phone. 
+
+This should bring up the same Transaction Window that you had on your main OS.
+Start by first hitting “Sign”. That should Sign the transaction.
+Then click the QR-code:
+
+![Electrum 32](images/40_electrum_32.png)
+
+Take a photo of it with your phone. 
+
+You can now close Electrum and Tails (we won’t be using it anymore). 
+
+Go back to your main computer and open your multi-sig wallet in Electrum. Go to `Tools>Load Transaction>From QR code` and scan the last QR-code. You might have to start Zbar for the camera to work (might be slow to start). 
+
+*Note*, if you are using another way to scan the QR-codes. Scan the QR-code outside of Electrum. In Electrum, go to `Tools>Load Transaction` and paste the text.
+
+That should bring up the transaction window.
+
+Connect one of your hardware wallets and click sign. Follow the instructions on your Hardware Wallet (and control the address)tp sign the transaction. 
+
+If the Hardware Wallet you are using is key 3/3, you’ll probably get a message like this:
+
+![Warning](images/40_warning.png)
+
+Select `No` and wait for Electrum to detect your last Hardware Wallet. Once detected, click `Sign` and follow the instructions on your hardware wallet (this process can be rather slow). Once signed, wait for Electrum to calculate everything. 
+
+Once calculated, click `Broadcast`:
+
+![Electrum 33](images/40_electrum_33.png)
+
+Your transaction should be broadcasted and you’ll probably get a message like this:
+
+![Broadcast](images/40_broadcast.png)
+
+Since we are done with Tails, feel free to update to the latest version whenever you like.
+
+The last transfer is much easier. Simply connect your 2 hardware wallets (could connect both at the same time or one at a time). Create an ordinary transaction with the rest of your test amount on the Send tab and hit `Send`:
+
+![Electrum 33](images/40_electrum_33.png)
+
+Sign the transaction (and control the address)on both of your Hardware Wallets.
+
+Before moving on, we need to fill in the last information in the information packages. 
+
+With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Public Key for `cosigner 1` to `info package B`, to `info package E`.
+
+If you use a password manager, in a secure note, add the master public keys from cosigners 1 and 3 to the secure note.
+
+If you don’t use a password manager, add the master public keys from cosigners 1 and 3 to `info package A`.
+
+Delete all the pictures of QR-codes on your phone or camera.
+
 ---
+
 Next up: [Store your keys >>](hodl-guide_50_store-keys.md)
-
-
