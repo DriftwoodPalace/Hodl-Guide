@@ -57,7 +57,7 @@ The signing was made the same day as the release was uploaded (should be around 
 It´s a `Good signature`. 
 A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to verify that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
 
-### Start creating the multi-sig wallet
+### Create the multi-sig wallet
 
 Start Electrum. We are going to create a new wallet. If you already have a default Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise the install wizard should be launched automatically. 
 
