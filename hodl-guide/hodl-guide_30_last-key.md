@@ -67,7 +67,12 @@ If the computer starts on Tails, the ”Boot Loader Menu” should appear:
 Tails should be selected and start automatically after a few seconds. If it does, follow the instructions on the screen for starting (setting up language and keyboard) and start Tails. 
 
 Otherwise, restart the computer and bring the boot menu up. The key for bringing the boot menu up differs from manufacturer to manufacturer. 
-*On PC*, It´s usually Esc or F12 (but could be F8, F9 or F10 as well). Choose the USB-stick with tails in the menu. If that doesn´t work, you might have to change settings in Bios (turn off secure start, change start order, disable fast start etc).
+*On PC*, It´s usually Esc or F12 (but could be F8, F9 or F10 as well). Usual keys used for the boot menu on different manufacturers:
+
+![Tails boot loader](images/30_boot_menu.png)
+
+
+Choose the USB-stick with tails in the menu. If that doesn´t work, you might have to change settings in Bios (turn off secure start, change start order, disable fast start etc).
 
 Check the troubleshooting guide at the install page for Tails for more information. There could be issues with certain computers or graphic cards, check the troubleshooting guide to see if there´s an easy fix. 
 
