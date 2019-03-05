@@ -3,7 +3,7 @@
 
 ---
 
-# The Hodler’s Guide to Cold Storage
+# The Ultimate Hodl Guide
 
 ---
 
