@@ -82,7 +82,7 @@ Click the QR-code in the bottom right corner:
 ![Electrum 17](images/40_electrum_17.png)
 
 If you have an error with scanning the QR-code, check the Trobleshooting guide [Scan QR-code with Electrum](hodl-guide_71_troubleshooting.md)
-
+###  
 We no longer need internet. To reduce the attack vector, put your computer in flight mode.
 You should now have a master public key as Cosigner 1, before clicking next take note of a few characters in the beginning, the middle and the end. Click Next:
 
