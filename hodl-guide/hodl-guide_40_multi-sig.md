@@ -12,7 +12,7 @@ We are using Electrum on our main computer to construct the multi-signature wall
 On your main computer (or regular OS) go to https://electrum.org/#download
 For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
 
-![Electrum 10](images/40_electrum_10.png
+![Electrum 10](images/40_electrum_10.png)
 
 That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer.
 
