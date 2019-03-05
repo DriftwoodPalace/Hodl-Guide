@@ -1,8 +1,8 @@
-[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ [**Multi-sig Wallet**] ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
+[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ [**Multi-Sig Wallet**] ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ [Troubleshooting](raspibolt_70_troubleshooting.md) ]
 
 ---
 
-# Create multi-sig wallet with Electrum
+# Create a multi-sig wallet with Electrum
 
 We are using Electrum on our main computer to construct the multi-signature wallet.
 
@@ -11,13 +11,19 @@ We are using Electrum on our main computer to construct the multi-signature wall
 
 On your main computer (or regular OS) go to https://electrum.org/#download
 For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
-![Electrum 10](images/40_electrum_10.png)
+
+![Electrum 10](images/40_electrum_10.png
+
 That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer.
 
 Go back to https://electrum.org/#download and check what the latest release is. Chanses are that the latest release is newer then the one used in Tails. If that´s the case we need an older release, click “Previous releases”:
+
 ![Electrum 11](images/40_electrum_11.png)
+
 That should take you to https://download.electrum.org/. Go to the folder with the same version number as the one in Tails (for example 3.1.3 with Tails 3.12.1). Download the file for your OS (tar.gz for Linux, -setup.exe for Windows and .dmg for macOS) and make sure to download the corresponding .asc file as well. Put the files in the same folder as ThomasV’s signing key:
+
 ![Electrum 12](images/40_electrum_12.png)
+
 *Note*, if you´re already using a newer version of Electrum. Downgrading the version might make wallets created with newer versions temporary unusable. Once done with the cold storage, you can upgrade to a newer version of Electrum and everything should work again. Your funds aren´t at risk, you can always recover your funds (or import to an older version) with your recovery seed. 
 
 Once downloaded we need to verify the download in the same way we verified Tails. 
@@ -32,7 +38,9 @@ Import the signing key from ThomasV into your local GPG installation:
 
 Now use the .asc to check that the Electrum installer was signed with the signing key we imported: 
 
-`$ gpg --verify tails- electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` (make sure to change the file name on both places if using a newer version). 
+`$ gpg --verify tails- electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` 
+(make sure to change the file name on both places if using a newer version). 
+
 The verification can take a while. 
 
 Expected output:
@@ -49,26 +57,40 @@ The signing was made the same day as the release was uploaded (should be around 
 It´s a `Good signature`. 
 A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to verify that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
 
-### Start creating the multi-sig
+### Start creating the multi-sig wallet
 
 Start Electrum. We are going to create a new wallet. If you already have a default Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise the install wizard should be launched automatically. 
 
 Pick a name for your multi-sig wallet and click Next:
+
 ![Electrum 13](images/40_electrum_13.png)
+
 Select "Multi-signature wallet" and hit Next:
+
 ![Electrum 14](images/40_electrum_14.png)
+
 Change the first slider to 3 cosigners (with 2 signatures required) and click Next:
+
 ![Electrum 15](images/40_electrum_15.png)
+
 Start with the seed you created in Tails. Select “Use a master key”:
+
 ![Electrum 16](images/40_electrum_16.png)
+
 Click the QR-code in the bottom right corner:
+
 ![Electrum 17](images/40_electrum_17.png)
 
-## Troubleshooting 
+### Troubleshooting 
+
 If you get the following error:
+
 ![Error 1](images/40_error_1.png)
+
 You’ll probably need to install “Zbar” (or launch it if it’s installed). It’s available at http://zbar.sourceforge.net/ and you can view the source code at https://github.com/ZBar/ZBar. (Only Windows and Linux). It’s generally a good idea to not download random programs from file hosting sites. But Zbar has been around a long time and we can try to ensure it’s a legit copy. If you still don’t want to use Zbar, scroll down to “other solutions”- Otherwise go to https://sourceforge.net/projects/zbar/files/zbar/0.10/. Make sure that “Modified” is 2009-10-XX:
+
 ![Zbar](images/40_zbar.png)
+
 Download the file for your operating system (.exe for Windows and tar.gz or tar.bz2 for Linux). No digital signatures are provided, so we are going to generate the SHA256-checksum of the file. Open a new terminal and change the directory to where the file is located:
 
 `$ cd $HOME/Downloads` 
@@ -88,6 +110,7 @@ Should produce the output:
 It’s the best we can do here and Zbar won’t be handling any critical information. If the hashes match, you know that you’ve got the same file that was used in this guide. If you are okey with that, go ahead and install Zbar and follow the instructions on the screen. Go back to Electrum and click the QR-code, you might have to try 2-3 times before it starts. 
 
 If it still doesn’t start, start the program “zbarcam”, pick a video source, click apply and try in Electrum again:
+
 ![Zbarcam](images/40_zbarcam.png)
 
 Scan the QR-code in Electrum. It should read your xpub key and Electrum should automatically show it. 
@@ -104,28 +127,43 @@ Option 3, use an online-service like https://webqr.com/index.html. Know that you
 Continuing
 We no longer need internet. To reduce the attack vector, put your computer in flight mode.
 You should now have a master public key as Cosigner 1, before clicking next take note of a few characters in the beginning, the middle and the end. Click Next:
+
 ![Electrum 18](images/40_electrum_18.png)
+
 The next window is a confirmation of your master public key. Make sure it’s the same that the characters you noticed in the previous step and then click Next:
+
 ![Electrum 19](images/40_electrum_19.png)
+
 It’s now time to add key 2 (and that's a lot easier). 
 
 Select `Cosign with hardware device`, insert Hardware Wallet A. If it’s a wallet with a physical pin like Ledger, enter the pin (make sure to use the pin that uses password A) and click Next, if you enter the password on the computer, simply click Next:
+
 ![Electrum 20](images/40_electrum_20.png)
+
 Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin is entered on the computer (like Trezor), enter the pin and your password:
+
 ![Electrum 21](images/40_electrum_21.png)
+
 It should automatically detect the necessary keys and the next window should be where you add cosigner 3 of 3. Pick “Cosign with hardware device” and click next:
+
 ![Electrum 22](images/40_electrum_22.png)
+
 Repeat the procedure you used for key 2 of 3 but with hardware wallet B.
 
 Once done you should be asked for a password to encrypt your wallets keys. This is for your master public keys that’s stored on your computer and it’s a good idea to protect that with a password. Pick a strong password, preferably generated by a password-manager. You can store this password in LastPass, KeepassX or similar managers. Otherwise, type it down on `Info package A`. The password isn’t crucial for your funds, you can always restore your funds with your seed + the seed password. Enter the password and click Next: 
+
 ![Electrum 23](images/40_electrum_23.png)
+
 You should now see the following:
+
 ![Electrum 24](images/40_electrum_24.png)
 
 Congratulations, your wallet is created! 
 
 If you disconnect your Hardware Wallets, you'll probably get a message like this:
+
 ![Warning](images/40_warning.png)
+
 You can simply click `No`
 
 ### How to validate and broadcast transactions
@@ -161,8 +199,11 @@ If this is the firs time depositing to the wallet, we’re going to do two test 
 Test withdrawal 1
 Go to send, enter an address to another wallet you control (like Wasabi Wallet). 
 Select around half of the amount you have in the wallet, pick a fee and select “preview”:
+
 ![Electrum 25](images/40_electrum_25.png)
+
 In the preview window, select the QR-code in the bottom left corner:
+
 ![Electrum 26](images/40_electrum_26.png)
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
@@ -170,23 +211,35 @@ That should bring up the QR-code. Take a photo of the QR-code with your phone. Y
 
 We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that nothing ore no one can see what you do). In Tails, launch Electrum like before. 
 
-Click next at the first window
+Click next at the first window:
+
 ![Electrum 27](images/40_electrum_27.png)
+
 We only need the signature, so keep “standard wallet” selected and click Next:
+
 ![Electrum 28](images/40_electrum_28.png)
+
 Select “I already have a seed” and click Next:
+
 ![Electrum 29](images/40_electrum_29.png)
+
 Enter your 12-word seed on the next screen (again, this is valuable information):
+
 ![Electrum 30](images/40_electrum_30.png)
+
 Leave the password field empty (the wallet file will be deleted once finished):
+
 ![Electrum 31](images/40_electrum_31.png)
+
 The wallet should now load. Go to `Tools>Load Transaction>From QR code`
 Scan the QR code on your phone. 
 
 This should bring up the same Transaction Window that you had on your main OS.
 Start by first hitting “Sign”. That should Sign the transaction.
 Then click the QR-code:
+
 ![Electrum 32](images/40_electrum_32.png)
+
 Take a photo of it with your phone. 
 
 You can now close Electrum and Tails (we won’t be using it anymore). 
@@ -200,17 +253,25 @@ That should bring up the transaction window.
 Connect one of your hardware wallets and click sign. Follow the instructions on your Hardware Wallet (and control the address)tp sign the transaction. 
 
 If the Hardware Wallet you are using is key 3/3, you’ll probably get a message like this:
+
 ![Warning](images/40_warning.png)
+
 Select `No` and wait for Electrum to detect your last Hardware Wallet. Once detected, click `Sign` and follow the instructions on your hardware wallet (this process can be rather slow). Once signed, wait for Electrum to calculate everything. 
 
 Once calculated, click `Broadcast`:
+
 ![Electrum 33](images/40_electrum_33.png)
+
 Your transaction should be broadcasted and you’ll probably get a message like this:
+
 ![Broadcast](images/40_broadcast.png)
+
 Since we are done with Tails, feel free to update to the latest version whenever you like.
 
 The last transfer is much easier. Simply connect your 2 hardware wallets (could connect both at the same time or one at a time). Create an ordinary transaction with the rest of your test amount on the Send tab and hit `Send`:
+
 ![Electrum 33](images/40_electrum_33.png)
+
 Sign the transaction (and control the address)on both of your Hardware Wallets.
 
 Before moving on, we need to fill in the last information in the information packages. 
