@@ -1,8 +1,8 @@
-[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ **Multi-Sig Wallet** ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ **Troubleshooting** ]
+[ [Intro](README.md) ] -- [ [Preparations](raspibolt_10_preparations.md) ] -- [ [The First Keys] ](hodl-guide_20_first-keys.md) -- [ [The Last Key] ](hodl-guide_30_last-key.md) -- [ Multi-Sig Wallet ] -- [ [Bonus](raspibolt_60_bonus.md) ] -- [ **Troubleshooting** ]
 
 ---
 
-# Scan QR-code
+# Scan QR-code with Electrum
 
 If you try to scan a QR-code with Electrum and get the following error:
 
@@ -48,4 +48,4 @@ Option 3, use an online-service like https://webqr.com/index.html. Know that you
 
 ------
 
-<< Back: [Bonus guides](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#create-the-multi-sig-wallet) 
+<< Back: [Create multi-sig wallet](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#create-the-multi-sig-wallet) 
