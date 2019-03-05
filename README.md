@@ -3,7 +3,7 @@ by Helge Hundingsbane
 
 ---
 
-**The Hodler’s Guide to Cold Storage**
+**The Ultimate Hodl Guide**
 https://github.com/HelgeHunding/guides/blob/master/hodl-guide/README.md
 
 ---
