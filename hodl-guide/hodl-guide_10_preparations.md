@@ -8,7 +8,7 @@
 ## Mandatory Hardware Requirements for Full Setup
 
 *	1 USB-drive with 8GB+ memory. Consider buying a new one, used only for this purpose.
-*	2 different Hardware-wallets (Trezor, Ledger, Coldcard etc). Make sure the hardware-wallets are from two different manufacturers (for example one Trezor and one Ledger). You can use existing devices if you already own some (but they shouldn't be used for other purposes after you're done). If you're buying new ones, make sure to only buy from the official store. It's always sensitive to have Bitcoin-related stuf shipped to your home. Consider having it delivered to a UPS access point or a similar service.
+*	2 different Hardware-wallets (Trezor, Ledger, Coldcard etc). Make sure the hardware-wallets are from two different manufacturers (for example one Trezor and one Ledger). You can use existing devices if you already own some (but they shouldn't be used for other purposes after you're done). If you're buying new ones, make sure to only buy from the official store. It's always sensitive to have Bitcoin-related stuff shipped to your home. Consider having it delivered to a UPS access point or a similar service.
 *	1 internet connected computer. Could be your normal computer. Should have at least 1 USB-slot and a camera (for reading QR-codes). If you only use one computer, the computer needs to have a 64-bit processor.
 *	1 Smartphone (or digital camera with screen)
 
@@ -36,7 +36,7 @@ To verify what we downloaded, we need GnuPG (https://gnupg.org/). The implementa
 
 *Linux:* GnuPG comes pre-installed with Linux distributions.
 
-An easy way to verify a digital signature is to use the a terminal (the command line). 
+An easy way to verify a digital signature is to use a terminal (the command line). 
 In all examples, what´s written to the terminal is everything after the `$` sign (and examples that's specific for Windows uses the symbol `>`). 
 
 For example: `$ cd` 
