@@ -10,7 +10,7 @@ Electrum Personal Server will connect your full node to Electrum and makes it po
 
 Before starting, make sure you’ve got a Bitcoin Core full node running and up to sync. If don’t, see [Install Bitcoin Core](hodl-guide_61_bitcoin-core.md).
 
-You also need Electrum https://electrum.org/#download (you should check the digital signatures before installing, more info on how [HERE]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#download-and-verify-electrum)
+You also need Electrum https://electrum.org/#download (you should check the digital signatures before installing, more info on how [HERE](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#download-and-verify-electrum)
 Go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To) to know what this is and why it’s important. 
 To verify the download, we need Chris Belchers signing-key. It can be found here https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc
 
