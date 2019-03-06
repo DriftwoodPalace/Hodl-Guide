@@ -240,7 +240,7 @@ With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Pu
 
 If you use a password manager, in a secure note, add the master public keys from cosigners 1 and 3 to the secure note.
 
-If you don’t use a password manager, add the master public keys from cosigners 1 and 3 to `info package E`.
+If you don’t use a password manager, add the master public keys from cosigners 1 and 2 to `info package E`.
 
 Delete all the pictures of QR-codes on your phone or camera.
 
