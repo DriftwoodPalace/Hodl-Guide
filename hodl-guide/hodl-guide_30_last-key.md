@@ -110,31 +110,35 @@ On the next step, change “Seed type” to Segwit. Segwit is a newer type of ad
 
 ![Electrum 4](images/30_electrum_4.png)
 
-You should now see 12 words, this is your private key! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other keys with 24 words). Write down the 12 words you see on your screen by hand on a piece of paper of good quality (or on cryptosteel etc). This is your last private key. Then click next:
+You should now see 12 words, this is your private key! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other keys with 24 words). Write down the 12 words you see on your screen by hand on a piece of paper of good quality (or on cryptosteel etc). Then click next:
+
 ![Electrum 5](images/30_electrum_5.png)
-Confirm your seed by typing all the words you wrote down in the field. When finished, click Next:
+
+Confirm your seed by typing all the words you wrote down in the blank field. When finished, click Next:
+
 ![Electrum 6](images/30_electrum_6.png)
-You should see a screen asking for a password. We don’t need a password (since everything is deleted once finished), so click Next:
+
+You should see a screen asking for a password. This is for protecting the walletfile and we don’t need that (since everything is deleted once finished), so leave blank and click Next:
 
 ![Electrum 7](images/30_electrum_7.png)
 
-Electrum is now generating addresses, it can take a few seconds before the main window shows up. The key is generated! 
+Electrum is now generating addresses, it can take a while before the main window shows up. Once the main window loads, the key and all necessary information is now generated!
 
-Before moving on, we need the master public key for our multi-sig contract and check what version of Electrum we are running.
+Before we move on, we need the master public key for our multi-sig contract and check what version of Electrum we are running.
 
-Start with the version. Check what version of Electrum that´s running on Tails. For example, Tails 3.12.1 comes with Electrum 3.1.3. Note this on a piece of paper or on your main computer.
+Start with the version. Check what version of Electrum that´s running on Tails. For example, Tails 3.12.1 comes with Electrum 3.1.3. Note this on a piece of paper or on your main computer (not secret information).
 
 ![Electrum 8](images/30_electrum_8.png)
 
-Now we only need to copy the master public key. The master public key is used in our multi-sig contract and to derive bitcoin addresses to send fund to. To show the master public key in Electrum, go to `Wallet>Information`. 
+Now we only need to copy the master public key. The master public key is used in our multi-sig contract and to derive bitcoin addresses to send funds to. To show the master public key in Electrum, go to `Wallet>Information`. 
 
-We need to copy this to our live system were we´ll construct the multi-signature contract. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our private key leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key. So, for privacy, it should be treated with care (in a multi-sig you would ne, but it isn´t as sensitive as a private key. The key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
+We need to copy this to our live system where we´ll construct the multi-signature wallet. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our private key leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a private key. The key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
 
 ![Electrum 9](images/30_electrum_9.png)
 
 It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no private keys are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key. 
 
-If you use one computer, remove the tails boot USB from the slot and restart the computer on your regular OS (you can keep Tails running if you use two computers). 
+If you use one computer, remove the tails boot USB from the computer and restart the computer on your regular OS (you can keep Tails running if you use two computers). 
 
 ---
 Next up: [Create the multi-sig wallet >>](hodl-guide_40_multi-sig.md)
