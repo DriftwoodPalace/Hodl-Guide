@@ -7,21 +7,21 @@
 
 *Difficulty: easy*
 
- Bitcoin core is the main software implementation of the Bitcoin protocol. It will give you a full node that validates all transactions.
+ Bitcoin Core is the main software implementation of the Bitcoin protocol. Once up and running it will give you a full node that validates all transactions and makes you a first class Bitcoin citizen! 
  
- Before starting, you should have a basic understanding about what it means to run a full node.
-If you don’t use a VPN or Tor whit Bitcoin Core, your IP-address will be exposed to the network. From a privacy standpoint, that should be avoided. It’ll tell everyone that a Bitcoin full node is running on your IP-address. It’s also possible to connect transactions you do with your full node and your IP-address for someone who’s monitoring the network. This is still a huge improvement compared to trusting various third-party wallet providers. But it’s a pretty easy fix to improve it even more.
+Before starting, you should have a basic understanding about what it means to run a full node.
+If you don’t use a VPN or Tor whith Bitcoin Core, your IP-address will be exposed to the network. From a privacy standpoint, that should be avoided. It will tell everyone that a Bitcoin full node is running on your IP-address. It’s also possible to connect transactions you do with your full node and your IP-address for someone who’s monitoring the network. This is still an improvement compared to trusting most third-party wallet providers. But it’s a pretty easy fix to improve it even more.
 
-A VPN is an easy solution. This will improve your privacy, but you trust the VPN provider to not share any logs. If Bitcoin isn’t illegal in your jurisdiction, that shouldn’t be too big of a deal.
-If you´re using a VPN you´ll probably not be able to open ports. That´s needed if you want to accept inbound connections (so people can download data from you). That won´t affect the validation or broadcasting, but you´ll help the network a bit less. 
+A VPN is an easy solution. This will improve your privacy. You trust the VPN provider to not share any logs. If Bitcoin isn’t illegal in your jurisdiction, that shouldn’t be too big of a deal.
+If you´re using a VPN you´ll probably only be able to make outgoing connections (you can't open ports). That won´t affect the validation or broadcasting, but you´ll help the network a bit less since others can't download data from you. 
 
-An even better solution is to run the node over Tor. This’ll make your node very private. Downloading the blockchain over Tor can be very slow. So, it might be a good idea to first download the blockchain and then configure the node to run over Tor. How to configure Bitcoin Core with Tor will be at the end of this guide.
+An even better solution is to run the node over Tor. This’ll make your node very private. Downloading the blockchain over Tor can be very slow. So, it might be a good idea to first download the blockchain (maybe with a VPN) and then configure the node to run over Tor. How to configure Bitcoin Core with Tor will be at the end of this guide.
 
 Start by downloading the latest version of Bitcoin Core at https://bitcoincore.org/.  Make sure that you download SHA256SUMS.asc (should be at the link “Verify release signatures”) and Bitcoin Core Release Signing Keys, laanwj-releases.asc (on the link v0.11.0+).
 
 Before installing, you should always verify the digital signature of the downloaded file. That eliminates many attack vectors.
 
-The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check out this section [Validate signatures]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps)
+The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check out the section [First steps]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) where we validate signatures. The process is a little bit different for Bitcoin Core, but the start is the same.
 
 First, we need to change the active directory. This is done with the command “cd”.
 
@@ -41,9 +41,9 @@ Change the current directory to the one where the 3 downloaded files are located
 
 Import the Bitcoin Core signing key into your local GPG installation:
 
-`$ gpg --import $HOME/Downloads/laanwj-releases.asc`
+`$ gpg --import laanwj-releases.asc`
 
-(change the path to were your file is located and make sure that the name of the .asc file matches the one you downloaded)
+Change the path to were your file is located and make sure that the name of the .asc file matches the one you downloaded.
 Use the key you imported to verify that the “fingerprint file” is legitimate (that the fingerprint file was made by the same person that created the signing key):
 
 `$ gpg --verify SHA256SUMS.asc`
@@ -56,9 +56,14 @@ gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release 
 gpg: Note: This key has expired!
 Primary key fingerprint: 01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964
 ```
-The important part is that the date`12/25/18`is around the same date as the uploaded file, that it´s a `Good signature` and that the fingerprint is `01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964`. You can do a search online and check various sources to control that this is the right signing key.
+The important part is that the date`12/25/18`is around the same date as the uploaded file, that it´s a `Good signature` and that the fingerprint is `01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964`. You can do a search online and check various sources to control that this is the right signing key. This file is not a detached signature. It contains the hashes of the installation file. You can open the file SHA256SUMS.asc and look at the different hashes (for example, right click and select "Edit with Notepad" in Windows). We now know that this was signed with Wladimir van der Laans key.  
 
-If everything looks good, go ahead and install Bitcoin Core. 
+We can now calculate the sha256sum for our installation file and compare hashes in SHA256SUMS.asc. Write the following to the terminal:
+*Windows:* `> Get-FileHash -a sha256 bitcoin-0.17.1-win64-setup.exe`
+*Mac:* `$ shasum -a 256 bitcoin-0.17.0-osx.dmg`
+*Linux:* `$ sha256sum bitcoin-0.17.1-x86_64-linux-gnu.tar.gz`
+
+If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
 
 Once the installation is done, run Bitcoin Core. You should see a screen that looks something like this:
 
