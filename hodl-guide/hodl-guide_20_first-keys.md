@@ -9,7 +9,7 @@ Time to generate the first keys! A few things to keep in mind when generating yo
 
 Try to keep smartphones turned off and/or in another room during the process. They are hard to secure and can record sound/video without you noticing (computers can of course do the same). Generally, use your common sense to make sure that nothing can record your actions.
 
-### Generate keys with Hardware Wallets A and B
+## Generate keys with Hardware Wallets A and B
 
 The first two keys are generated with your two hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the flawed key. 
 
@@ -20,12 +20,13 @@ The method for how to use a password is different for each manufacturer, check t
 
 Most vulnerabilities that’s been detected in hardware wallets would’ve been stopped with a strong password. We humans are pretty terrible at generating random passwords. So, it’s probably safer to use a password manager on your computer then trying to come up with a password yourself. You could use Lastpass, KeypassX or a similar service. A password manager is a great place to store moderately sensitive information in (like public keys and even more sensitive information like the password that protects the seed, but never put your seed on a "hot" computer). If you are given the possibility use a password without symbols that can be confused (big o and zero etc)
 
-
 I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a length of at least 15 characters. That would give you a password with ~80-bit entropy (on average, it would require 2^80 guesses to crack the password). 
 Use two different passphrases for your two different hardware wallets. 
 If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose). 
 
 We are calling the first Hardware wallet, `Hardware wallet A` (protected with `password A`) and the second one `Hardware wallet B` (protected with `password B`)
+
+## Create information packages
 
 Apart from the private keys, we are going to create 3 different information packages on a different piece of paper (if you don’t use a password manager you need 4 info packages). If you want more detail on exactly why we are doing this and naming them this way, look at [Key storage](hodl-guide_50_key-storage.md). 
 
@@ -33,7 +34,7 @@ On each information package, write a short instruction for how to access the fun
 
 `The ultimate hodl guide Github, multi-sig 2 of 3`
 
-That should give enough information to do a search online for how to retrieve funds in case of an emergency.
+That should give enough information for someone else to do a search online for how to retrieve funds in case of an emergency.
 
 Mark the three info packages `B`, `C` and `D` . If you use 4 packages, mark the last on `E`.
 
