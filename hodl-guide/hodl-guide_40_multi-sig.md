@@ -242,7 +242,7 @@ Sign the transaction (and control the address) with both of your Hardware Wallet
 
 Before moving on, we need to fill in the last information in the information packages. 
 
-With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Public Key for `cosigner 1` to `info package C` and to `info package D`. Write `MPK1:` before the key.
+With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Public Key for `cosigner 1` to `info package C` and to `info package D`. Write `MPK1:` before the key, so the line reads `MPK1: xpub....`.
 
 If you use a password manager, in a secure note, copy and paste the master public keys from cosigners 1 and 3.
 
