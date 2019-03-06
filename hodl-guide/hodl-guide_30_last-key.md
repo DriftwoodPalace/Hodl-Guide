@@ -85,12 +85,16 @@ When you get past the boot loader menu, follow the instructions on the screen to
 
 Once started, make sure WiFi is disconnected (arrow in upper right corner, should say “Wi-Fi not connected). 
 
-Go to Applicatios (upper left corner) > Internet > Electrum Bitcoin Wallet. Click on `launch` if a window about persistence appears.
+Go to Applicatios (upper left corner) > Internet > Electrum Bitcoin Wallet. Click on `Launch` if a window about persistence appears.
 
 The Electrum – Install Wizard should appear. The name of the wallet isn’t important (it will be deleted), so “default_wallet” is ok. Click Next:
+
 ![Electrum 1](images/30_electrum_1.png)
+
 On the next step, let “Standard wallet” be selected (we are only interested in generating a seed). Click Next:
+
 ![Electrum 2](images/30_electrum_2.png)
+
 On the next step, let “Create a new seed” be selected. Click Next:
 ![Electrum 3](images/30_electrum_3.png)
 On the next step, change “Seed type” to Segwit. Segwit is a newer type of address, so services that´s slow to update might have issues sending to these types of addresses. But it should be possible from most services and it´s a more “modern” address that usually works better with multi-sig in Electrum. Click Next:
