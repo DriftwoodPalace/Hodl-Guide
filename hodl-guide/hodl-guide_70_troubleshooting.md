@@ -2,3 +2,11 @@
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ **Troubleshooting** ]
 
 ---
+
+In this section, you can find various troubleshooting guides for commin issues. 
+
+## [**Scan QR-code with Electrum**](hodl-guide_71_scan-QR.md)
+
+*Difficulty: easy*
+
+Resolve error with scanning QR-codes in Electrum
