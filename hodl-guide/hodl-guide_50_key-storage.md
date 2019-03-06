@@ -5,18 +5,18 @@
 # Store your keys
 
 You should now have the following information:
-* A
+* **A:**
   * Private key 1
-* B
+* **B:**
   * Private key 2
   * Information package B (with Password A and the pin to Hardware Wallet A)
-* C
+* **C:**
   * Private key 3
   * Information package C (with Master Public key 1, Password B and the pin to Hardware Wallet B)
-* D
+* **D:**
   * Hardware Wallet A (containing private key 2)  
   * Information package D (with Master Public key 1Master Public key 1)
-* E
+* **E:**
   * Hardware Wallet B (containing private key 3)
   * If using, Information package E (with Master Public Key 1 and 2 and Password A and B)
 
