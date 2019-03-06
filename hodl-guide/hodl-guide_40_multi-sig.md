@@ -252,4 +252,4 @@ Delete all the pictures of QR-codes on your phone or camera.
 
 ---
 
-Next up: [Store your keys >>](hodl-guide_50_store-keys.md)
+Next up: [Key storage >>](hodl-guide_50_key-storage.md)
