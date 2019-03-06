@@ -236,11 +236,11 @@ Sign the transaction (and control the address)on both of your Hardware Wallets.
 
 Before moving on, we need to fill in the last information in the information packages. 
 
-With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Public Key for `cosigner 1` to `info package B`, to `info package E`.
+With your wallet open in Electrum, go to `Wallet>Information`. Add the Master Public Key for `cosigner 1` to `info package D` and to `info package D`.
 
 If you use a password manager, in a secure note, add the master public keys from cosigners 1 and 3 to the secure note.
 
-If you don’t use a password manager, add the master public keys from cosigners 1 and 3 to `info package A`.
+If you don’t use a password manager, add the master public keys from cosigners 1 and 3 to `info package E`.
 
 Delete all the pictures of QR-codes on your phone or camera.
 
