@@ -31,28 +31,28 @@ Apart from the private keys, we are going to create 3 different information pack
 
 On each information package, write a short instruction for how to access the funds, someting like this:
 
-`Hodlers guide to cold storage, multi-sig 2 of 3`
+`The ultimate hodl guide Github, multi-sig 2 of 3`
 
 That should give enough information to do a search online for how to retrieve funds in case of an emergency.
 
-If you are using 4 infp packages, mark the first one `A`.
-The other info packages should be marked `B`, `D` (not C) and `E` (you don’t need package `A` if you use a password manager).
+Mark the three info packages `B`, `C` and `D` . If you use 4 packages, mark the last on `E`.
 
-If using, on `info package A`, write `your_password_A` and `your_password_B`
 
-On `info package B`, write `Key 2`
+On `info package B`, write `Key 2`, `your_password_A` and the pin to hardware wallet A `PIN_A`.
 
-On `info package D`, write `Key 2`, `your_password_B` and the pin to hardware wallet B `PIN_B`.
+On `info package C`, write `Key 3`, `your_password_B` and the pin to hardware wallet A `PIN_A`. 
 
 Make sure to be extra careful with symbols that can be confused (like big o and 0, I and small L, etc).
 
-On `info package E` write `Key 3`, `your_password_A` and the pin to hardware wallet A `PIN_B`.
+On `info package D` write `Key 2`.
+
+If using, on `info package E`, write `your_password_A` and `your_password_B`
 
 You should now have:
-* Hardware wallet A and its private key (that we are calling private key 2, we are creating private key 1 in Tails later)
-* Hardware wallet B and its private key (private key 3)
-* Info package “B”, “D” and “E”
-* A secure note,or similar in a password manager, containing your_password_A and your_password_B (never put anything else from your seed on a computer connected to internet). Or Info package "A"
+* Hardware wallet A and its private key (that we are calling private key 2, we are creating private key 1 in Tails later).
+* Hardware wallet B and its private key (private key 3).
+* Info package `B`, `C` and `D`.
+* A secure note,or similar in a password manager, containing `your_password_A` and `your_password_B` (never put anything else from your seed on a computer connected to internet). Or `Info package E`.
 
 Store all information in a secure way during the rest of the process (don't leave your notes lying around visibly).
 
