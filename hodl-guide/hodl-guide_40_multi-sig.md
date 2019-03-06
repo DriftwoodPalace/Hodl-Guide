@@ -8,7 +8,7 @@
 We are using Electrum on our main computer to construct the multi-signature wallet.
 
 
-### Download and verify Electrum
+## Download and verify Electrum
 
 On your main computer (or regular OS) go to https://electrum.org/#download
 For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first, we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
@@ -125,7 +125,7 @@ If you disconnect your Hardware Wallets, you'll probably get a message like this
 
 You can simply click `No`
 
-### How to validate and broadcast transactions
+## How to validate and broadcast transactions
 
 As you can see, we are not connected to the internet (and can’t broadcast transactions). This is intentional. Electrum uses servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
 
@@ -154,11 +154,11 @@ Open your multi-sig wallet in Electrum and enter the password that unlocks the w
 Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send your bitcoin to the receiving address. You should see the unconfirmed balance almost immediately. 
 
 
-### Test withdrawal (only needed if this is the frst time depositing to the wallet)
+## Withdrawal program
 
-If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one is by far the most complicated. That procedure is only necessary if you lose one private key and the corresponding hardware wallet (if you have to access your backup key). 
+If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one is by far the most complicated. That procedure is only necessary if you lose one private key and the corresponding hardware wallet (if you have to access your backup key). Normaly, use the method described in "Test withdrawal 2". 
 
-###### Test withdrawal 1
+#### Withdrawal 1
 In Electrum, go to send, enter an address to another wallet you control (like Wasabi Wallet). 
 Select around half of the amount you have in the wallet, pick a fee and select “preview”:
 
@@ -230,11 +230,13 @@ Your transaction should be broadcasted and you’ll probably get a message like 
 
 Since we are done with Tails, feel free to update to the latest version whenever you like.
 
+#### Withdrawal 2
+
 The last transfer is much easier. Simply connect your 2 hardware wallets (could connect both at the same time or one at a time). Create an ordinary transaction with the rest of your test amount on the Send tab and hit `Send`:
 
 ![Electrum 33](images/40_electrum_33.png)
 
-Sign the transaction (and control the address)with both of your Hardware Wallets.
+Sign the transaction (and control the address) with both of your Hardware Wallets.
 
 Before moving on, we need to fill in the last information in the information packages. 
 
