@@ -29,6 +29,12 @@ Install and connect Electrum Personal Server to Electrum and Bitcoin Core on Win
 
 Install and connect Electrum Personal Server to Electrum and Bitcoin Core on Mac.
 
+## [**Add watch address in Bitcoin Core**](hodl-guide_65_watch-address.md)
+
+*Difficulty: easy*
+
+Add watch addresses in Bitcoin Core and verify transactions yourself.
+
 ---
 
 Next: [Troubleshooting](hodl-guide_70_troubleshooting.md) >>
