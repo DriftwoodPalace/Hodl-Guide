@@ -9,18 +9,19 @@ You should now have the following information:
   * Private key 1
 * **B:**
   * Private key 2
-  * Information package B (with Password A and the pin to Hardware Wallet A)
+  * Information package B (with `PWA: your_password_A` and `PIN_A: pin_hw_a`)
 * **C:**
   * Private key 3
-  * Information package C (with Master Public key 1, Password B and the pin to Hardware Wallet B)
+  * Information package C (with `PWB: your_password_B`, `PIN_B: pin_hw_b` and `MPK1: xpub..`)
 * **D:**
   * Hardware Wallet A (containing private key 2)  
-  * Information package D (with Master Public key 1Master Public key 1)
+  * Information package D (with `MPK1: xpub..`)
 * **E:**
   * Hardware Wallet B (containing private key 3)
-  * If using, Information package E (with Master Public Key 1 and 2 and Password A and B)
+  * If using, Information package E (with `PWA: your_password_A`, `PWB: your_password_B`, `MPK1: xpub..` and `MPK2: xpub..`)
 
 Since you’ve duplicated two of your private keys, this is almost like a 2 of 5 signature scheme (not exactly since you could lose two of the same keys). This means that you could lose 2-3 pieces and still be able to restore your funds. So how should you handle this information? The key concept is to not store 2 pieces of information at the same place. Then you’d risk losing two keys at the same time and a thief could force you to spend your bitcoin. So, how you’ll store your information depends on your situation.
+
 A base case could be:
 1.	Private Key 1 in a vault or safe deposit box at a bank or specialized company (this is the backup key).
 2.	Private Key 2 and its information package B at someone you trust (person 1)
