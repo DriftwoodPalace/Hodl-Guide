@@ -78,11 +78,13 @@ We are now going to construt our multi-sig. Start with the seed you created in T
 
 ![Electrum 16](images/40_electrum_16.png)
 
-Click the QR-code in the bottom right corner:
+Click the QR-code in the bottom right corner and scan the QR-code on your phone:
 
 ![Electrum 17](images/40_electrum_17.png)
 
-If you have an error with scanning the QR-code, check the Trobleshooting guide [Scan QR-code with Electrum](hodl-guide_71_scan-QR.md)
+That should bring up your `xpub...` key
+
+If you have an error with scanning the QR-code, check the Troubleshooting guide [Scan QR-code with Electrum](hodl-guide_71_scan-QR.md)
   
 We no longer need internet. To reduce the attack vector, put your computer in flight mode.
 You should now have a master public key as Cosigner 1, before clicking next take note of a few characters in the beginning, the middle and the end. Click Next:
@@ -131,7 +133,7 @@ As you can see, we are not connected to the internet (and can’t broadcast tran
 
 **[P]** So, how are we going to verify payments? The best solution right now is probably to use “Electrum Personal Server” and connect it to your Bitcoin Core node. This can be a little bit tricky for a non-technical user (especially on Windows and Mac). I’ve created guides for users on Windows and Mac in the bonus section. You can find the guides here, [Windows](hodl-guide_63_eps-win.md), [Mac](hodl-guide_64_eps-mac.md). Linux user can watch a tutorial here: https://www.youtube.com/watch?v=1JMP4NZCC5g (not my tutorial) or follow the official documentation. You can read more about the project on https://github.com/chris-belcher/electrum-personal-server. Once done you can use Electrum as usual, but without relying on someone else for verifying and broadcasting transactions. It’ll also be a perfect setup for your more “day-to-day” spending. You can connect a hardware wallet or use a hot-wallet (private key stored on the computer) and verify all payments yourself. It’s really worth giving it a chance.
 
-**[P]** The second-best option is to use your Bitcoin full node to add watch addresses. If you have a full node running, this is very simple. Check the bonus section for how to [add watch addresses in Bitcoin Core](hodl-guide_65_watch-address.md). You’d still have to connect to random Electrum servers to transact and your privacy might be compromized. You can reduce the risk by using a VPN. You are then leaking information only to your VPN-provider, but at least you know who you put your trust in and limits it to one part. Another option is to look into how you run Electrum with Tor.
+**[P]** The second-best option is to use your Bitcoin full node to add watch addresses. If you have a full node running, this is very simple. Check the bonus section for how to [add watch addresses in Bitcoin Core](hodl-guide_65_watch-address.md). You’d still have to connect to random Electrum servers to transact and your privacy might be compromised. You can reduce the risk by using a VPN. You are then leaking information only to your VPN-provider, but at least you know who you put your trust in and limits it to one part. Another option is to look into how you run Electrum with Tor.
 
 The third option is to simply use Electrum as it is. You’re then connecting to random servers. It’s probably safe but you put your trust for validation on third parties. You will be giving all your addresses to remote servers. There are several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. So, treat every address that’s gone through a third party as non private.
 
@@ -156,9 +158,9 @@ Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send yo
 
 ## Withdrawal program
 
-If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one is by far the most complicated. That procedure is only necessary if you lose one private key and the corresponding hardware wallet (if you have to access your backup key). Normaly, use the method described in "Test withdrawal 2". 
+If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one is by far the most complicated. That procedure is only necessary if you lose one private key and the corresponding hardware wallet (if you have to access your backup key). Normally, use the method described in "Withdrawal method 2". 
 
-#### Withdrawal 1
+#### Withdrawal method 1
 In Electrum, go to send, enter an address to another wallet you control (like Wasabi Wallet). 
 Select around half of the amount you have in the wallet, pick a fee and select “preview”:
 
@@ -230,7 +232,7 @@ Your transaction should be broadcasted and you’ll probably get a message like 
 
 Since we are done with Tails, feel free to update to the latest version whenever you like.
 
-#### Withdrawal 2
+#### Withdrawal method 2
 
 The last transfer is much easier. Simply connect your 2 hardware wallets (could connect both at the same time or one at a time). Create an ordinary transaction with the rest of your test amount on the Send tab and hit `Send`:
 
