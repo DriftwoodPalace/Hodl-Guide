@@ -40,20 +40,21 @@ Should produce the output:
 
 It’s the best we can do here and Zbar won’t be handling any critical information. If the hashes match, you know that you’ve got the same file that was used in this guide. If you are okey with that, go ahead and install Zbar and follow the instructions on the screen. Go back to Electrum and click the QR-code, you might have to try 2-3 times before it starts. 
 
-If it still doesn’t start, start the program “zbarcam”, pick a video source, click apply and try in Electrum again:
+If it still doesn’t start, start the program “zbarcam”, pick a video source, click apply and try 2-3 times in Electrum again:
 
 ![Zbarcam](images/40_zbarcam.png)
 
 Scan the QR-code in Electrum. It should read your xpub key and Electrum should automatically show it. 
 
-Other solutions:
+#### Other solutions:
+
 If you can’t launch or don’t want to use Zbar, you could use a workaround. 
 
-Option 1 is to simply download another QR-reader on your computer (or check if you have one installed) and scan the QR-code. Copy the scanned result to Electrum. 
+*Option 1:* is to simply download another QR-reader on your computer (or check if you have one installed) and scan the QR-code. Copy the scanned result to Electrum. 
 
-Option 2, use a QR-code reader on your smart-phone. Load the photo to the QR-code reader, connect to internet and send the text to your computer with a secure messaging app. 
+*Option 2:* use a QR-code reader on your smart-phone. Load the photo to the QR-code reader, connect to internet and send the text to your computer with a secure messaging app. 
 
-Option 3, use an online-service like https://webqr.com/index.html. Know that you risk to leak your public key to a third party (which reduces your privacy but isn’t terrible in this case since it’s only 1 of 3 needed keys). Copy the result to Electrum.
+*Option 3:* use an online-service like https://webqr.com/index.html. Know that you risk to leak your public key to a third party (which reduces your privacy but isn’t terrible in this case since it’s only 1 of 3 needed keys). Copy the result to Electrum.
 
 
 ------
