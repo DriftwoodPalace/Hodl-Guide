@@ -39,9 +39,9 @@ That should give enough information for someone else to do a search online for h
 Mark the three info packages `B`, `C` and `D` . If you use 4 packages, mark the last on `E`.
 
 
-On `info package B`, write `Key 2`, `your_password_A` and the pin to hardware wallet A `PIN_A`.
+On `info package B`, write `Key 2`, `PWA: your_password_A` and the pin to hardware wallet A `PIN_A: your_pin`.
 
-On `info package C`, write `Key 3`, `your_password_B` and the pin to hardware wallet A `PIN_A`. 
+On `info package C`, write `Key 3`, `PWB: your_password_B` and the pin to hardware wallet B `PIN_B: your_pin`. 
 
 Make sure to be extra careful with symbols that can be confused (like big o and 0, I and small L, etc).
 
