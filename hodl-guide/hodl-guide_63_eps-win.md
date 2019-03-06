@@ -3,7 +3,7 @@
 
 ---
 
-## Run Electrum Personal Server on Widows 10
+## Run Electrum Personal Server on Windows 10
 
 *Difficulty: medium*
 Electrum Personal Server will connect your full node to Electrum and makes it possible to use all functionality in Electrum with your full node (Hardware Wallet support, easy multi-sig setup and more). 
