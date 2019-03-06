@@ -43,8 +43,7 @@ Import the Bitcoin Core signing key into your local GPG installation:
 
 `$ gpg --import laanwj-releases.asc`
 
-Change the path to were your file is located and make sure that the name of the .asc file matches the one you downloaded.
-Use the key you imported to verify that the “fingerprint file” is legitimate (that the fingerprint file was made by the same person that created the signing key):
+Use the key you imported to verify that the that SHA256SUMS.asc was signed with the right signing key:
 
 `$ gpg --verify SHA256SUMS.asc`
 
@@ -58,12 +57,15 @@ Primary key fingerprint: 01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964
 ```
 The important part is that the date`12/25/18`is around the same date as the uploaded file, that it´s a `Good signature` and that the fingerprint is `01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964`. You can do a search online and check various sources to control that this is the right signing key. This file is not a detached signature. It contains the hashes of the installation file. You can open the file SHA256SUMS.asc and look at the different hashes (for example, right click and select "Edit with Notepad" in Windows). We now know that this was signed with Wladimir van der Laans key.  
 
-We can now calculate the sha256sum for our installation file and compare hashes in SHA256SUMS.asc. Write the following to the terminal:
+We can now calculate the sha256sum for our installation file and compare the result with the hashes in SHA256SUMS.asc. Write the following to the terminal (change the name of the file to the version you are using):
+
 *Windows:* `> Get-FileHash -a sha256 bitcoin-0.17.1-win64-setup.exe`
-*Mac:* `$ shasum -a 256 bitcoin-0.17.0-osx.dmg`
+
+*Mac:* `$ shasum -a 256 bitcoin-0.17.1-osx.dmg`
+
 *Linux:* `$ sha256sum bitcoin-0.17.1-x86_64-linux-gnu.tar.gz`
 
-If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
+Compare the output to the content in SHA256SUMS.asc. If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
 
 Once the installation is done, run Bitcoin Core. You should see a screen that looks something like this:
 
