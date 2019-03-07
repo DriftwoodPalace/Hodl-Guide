@@ -49,7 +49,7 @@ On `info package C`, write `Key 3`, `PWB: your_password_B` and the pin to hardwa
 
 Make sure to be extra careful with symbols that can be confused (like big o and 0, I and small L, etc).
 
-On `info package D` write `Key 2`.
+On `info package D` write `Key 2` (it's for the Hardware Wallet containing private key 2).
 
 If using, on `info package E`, write `your_password_A` and `your_password_B`
 
