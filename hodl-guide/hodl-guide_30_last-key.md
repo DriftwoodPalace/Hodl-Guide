@@ -106,7 +106,7 @@ On the next step, let “Create a new seed” be selected. Click Next:
 
 ![Electrum 3](images/30_electrum_3.png)
 
-On the next step, change “Seed type” to Segwit. Segwit is a newer type of address, so services that´s slow to update might have issues sending to these types of addresses. But it should be possible from most services and it´s a more “modern” address that usually works better with multi-sig in Electrum. Click Next:
+On the next step, let standard be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
