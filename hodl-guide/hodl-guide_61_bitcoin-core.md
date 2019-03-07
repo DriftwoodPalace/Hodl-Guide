@@ -77,14 +77,14 @@ Another solution is do use a smaller hard drive and use Bitcoin Core in pruned m
 
 Once you’ve decided where to store your blocks, copy the address. For example, in the screenshot above copy `C:\Users\1\AppData\Roaming\Bitcoin`, if you “Use a custom data directory” copy that path, for example `D:\Bitcoin`
 
-Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`. For example
+Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`. For example on Windows with blocks stored in D:\Bitcoin:
 
 ![Bitcoin Core](images/61_bitcoin_folder.png)
 
-We are going to allocate more RAM to Bitcoin Core. Check how much RAM your computer has (On Windows, Right Click on “This PC” and select “properties”). If you´re not going to run apps that use a lot of CPU during the initial sync, you could probably use 30% (or more) of your RAM without any issues.
-Open bitcoin.conf with a text editor.
-Add the following line:
-`dbcache=2400`
+We are going modify this file to allocate more RAM to Bitcoin Core. Check how much RAM your computer has (On Windows, Right Click on “This PC” and select “properties”). If you´re not going to run apps that use a lot of CPU during the initial sync, you could probably use 30% (or more) of your RAM without any issues.
+Open `bitcoin.conf` with a text editor.
+
+Add the following line: `dbcache=2400`
 
 `2400` is how many MB of your RAM you are allocating to Bitcoin Core (2400MB = 2,4 GB). If you have 8 GB of RAM, this might be a good starting point. If you have more or less RAM, change 2400 to a number that suits you. You can always go back and change this number later. The default allocation is 300 MB so this increase can make the initial download much faster.
 
@@ -95,25 +95,28 @@ Save and close the file.
 
 For changes to have effect we need to restart Bitcoin Core. So, shut down the running application. 
 
-If you have one SSD and store your blockchain on another mechanical hard drive, there´s one more optimization you can do. Quote from https://en.bitcoin.it/wiki/Splitting_the_data_directory:
+Before starting Bitcoin Core again. If you have one SSD and store your blockchain on another mechanical hard drive, there´s one more optimization you can do. Quote from https://en.bitcoin.it/wiki/Splitting_the_data_directory:
 
-Bitcoin Core's overall speed is significantly affected by the random-access speed of the contents of the chainstate directory; if your data directory is located on a magnetic disk, your chainstate access speed will very probably be the biggest performance bottleneck. You can therefore often massively improve performance by moving just the chainstate directory (which is only a few GB) to an SSD drive.  
+"Bitcoin Core's overall speed is significantly affected by the random-access speed of the contents of the chainstate directory; if your data directory is located on a magnetic disk, your chainstate access speed will very probably be the biggest performance bottleneck. You can therefore often massively improve performance by moving just the chainstate directory (which is only a few GB) to an SSD drive."
 
 To move it:
 * Make sure that Bitcoin Core is NOT running
 * From the data directory (where you added bitcoin.conf), *cut* the chainstate directory (not just its contents, but the directory itself) and *paste* it somewhere on the target SSD drive.
-* Open a terminal in the data directory. On Linux, make sure that permissions allow for Bitcoin Core to read/write the directory and its files at the new location.
 
-*Windows*, open Powershell as administrator (search for Powershell, right click and select “Run as Administrator”.
+*Windows*: Open Powershell as administrator (search for Powershell, right click and select “Run as Administrator”).
 Change the directory to your data directory, for example:
 
 `> cd D:\Bitcoin`
 
-Make a link to where you pasted the folder, in the example, chainstate is pasted in “documents”
+Make a link to where you pasted the folder, in the example belowe, chainstate is pasted in “documents”:
 
 `> cmd /c mklink /D chainstate C:\Users\1\documents\chainstate`
 
-On Linux, run `$ ln -s /absolute/path/to/chainstate`. For example, if you moved your chainstate so that its new location is /mnt/ssd/core/chainstate (ie. within that directory are a bunch of ldb files), you'd run `$ ln -s /mnt/ssd/core/chainstate` from immediately within the data directory.
+*Mac/Linux:* Open a terminal in the data directory. On Linux, make sure that permissions allow for Bitcoin Core to read/write the directory and its files at the new location. Run:
+
+`$ ln -s /absolute/path/to/chainstate`. 
+
+For example, if you moved your chainstate so that its new location is /mnt/ssd/core/chainstate (ie. within that directory are a bunch of ldb files), you'd run `$ ln -s /mnt/ssd/core/chainstate` from immediately within the data directory.
 
 You should now see a link in your data directory folder (D:\Bitcoin in the example above)
 
