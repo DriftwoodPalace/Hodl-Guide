@@ -20,7 +20,7 @@ Follow the setup procedure recommended from each manufacturer. Protect the devic
 Update the firmware if you don't have the latest version. 
 
 We are going to protect the seed in our hardware wallets with different passwords/passphrases.
-The method for how to use a password is different for each manufacturer, check their guides. On Ledger it needs to be setup on the device but with Trezor you can do it in Electrum later.
+The method for how to use a password is different for each manufacturer, check their guides (for example [Ledger](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security). On Ledger it needs to be setup on the device but with Trezor you can do it in Electrum later.
 
 Most vulnerabilities that’s been detected in hardware wallets would’ve been stopped with a strong password. We humans are pretty terrible at generating random passwords. So, it’s probably safer to use a password manager on your computer then trying to come up with a password yourself. You could use Lastpass, KeypassX or a similar service. A password manager is a great place to store moderately sensitive information in (like public keys and even more sensitive information like the password that protects the seed, but never put your seed on a "hot" computer). If you are given the possibility generate a password without symbols that can be confused (big o and zero etc)
 
