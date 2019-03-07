@@ -28,7 +28,7 @@ I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a 
 Use two different passphrases for your two different hardware wallets. 
 If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose). 
 
-We are calling the first Hardware wallet, `Hardware wallet A` (protected with `password A`) and the second one `Hardware wallet B` (protected with `password B`)
+We are calling the first Hardware wallet, `Hardware wallet A` (protected with `password A`) and the second one `Hardware wallet B` (protected with `password B`). It doesn't matter which wallet is which, but make sure to keep track of what you select. If you follow the guide, Hardware Wallet A will be store in a remote place and Hardware Wallet B at home.
 
 ## Create information packages
 
