@@ -19,7 +19,7 @@ The guide is for everyone who wants to store their bitcoin in a secure way (you 
 
 The guide gives you the opportunity to create a very private storage solution as well. Those parts are optional (but recommended). They don’t directly affect the security of your private keys. But they reduce the risk of being the victim of a targeted attack (virtual or physical). The privacy parts are marked with a **[P]**. Privacy isn’t black and white, so at least try a few of the methods. It’ll probably payoff in the long run. The best security for your bitcoin is probably that no one knows that you own them in the first place.
 
-At the end of the guide, you’ll have a set of private keys and a plan to store those in a secure way. That includes the possibility for people you trust to access them (if the collaborate) in case of an emergency.
+At the end of the guide, you’ll have a set of private keys and a plan to store those in a secure way. That includes the possibility for people you trust to access them (if they collaborate which each other) in case of an emergency.
 
 ## Cold Storage
 
