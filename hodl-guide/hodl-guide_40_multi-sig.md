@@ -39,7 +39,7 @@ Import the signing key from ThomasV into your local GPG installation:
 
 Now use the .asc to check that the Electrum installer was signed with the signing key we imported: 
 
-`$ gpg --verify tails- electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` 
+`$ gpg --verify electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` 
 (make sure to change the file name on both places if using a different version). 
 
 The verification can take a while. 
