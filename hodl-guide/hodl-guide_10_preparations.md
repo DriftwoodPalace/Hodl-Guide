@@ -53,7 +53,7 @@ To start, we need to change the active directory with `$ cd`.
 
 Change the current directory to the one where the 3 downloaded files are located, for example: 
 
-*Windows* `> cd C:\Users\\User1\Downloads` 
+*Windows* `> cd C:\Users\User1\Downloads` 
 
 *macOS and Linux* `$ cd $HOME/Downloads` 
 
