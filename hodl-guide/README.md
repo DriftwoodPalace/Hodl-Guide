@@ -33,7 +33,7 @@ For more reading on private keys and other approaches for cold storage, see:
 
 https://github.com/rustyrussell/bitcoin-storage-guide
 
-or for even more depth, take a look at:
+Or for even more depth, take a look at:
 
 https://glacierprotocol.org/
 
