@@ -3,7 +3,7 @@
 
 ---
 
-## Install and optimize Bitcoin Core
+# Install and optimize Bitcoin Core
 
 *Difficulty: easy*
 
