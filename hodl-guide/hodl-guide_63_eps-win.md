@@ -84,7 +84,7 @@ You can change the name “multisig_wallet” if you like.
 If you want to add more wallets, for example with one key from a hardware wallet. Follow the same procedure. Connect the hardware wallet and create or open an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
 For example:
 ```
-Hw_wallet1 =  xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
+Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
 If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir`. For example:
 ```
@@ -151,7 +151,7 @@ C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.
 ```
 Rename the new text document to `Electrum-Personal-Server.bat` (make sure to change .txt to .bat). You’ll get a warning about changing the file name extension, select Yes.
 
-Run `Electrum-Personal-Server.bat` by double clicking on it. Electrum Server should now start and import addresses from the master public keys you defined in the config.cfg as watch only addresses in your Bitcoin Core node. Wait for the importing to finish. 
+Run `Electrum-Personal-Server.bat` by double clicking on it. Electrum Server should now start and import addresses from the master public keys you defined in config.cfg as watch only addresses in your Bitcoin Core node. Wait for the importing to finish. 
 
 ### Troubleshooting 1
 
@@ -160,7 +160,7 @@ If the terminal `cmd.exe` starts and quickly exits the server isn’t starting p
 C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
 pause 
 ```
-Save, exit and run agaian. This should leave cmd.exe open to read any error messages when you run the .bat file. Another solution is to check the log file that’s located in `C:\Users\User1\AppData\Local\Temp\electrumpersonalserver.log` for error messages. If you get a error message like:
+Save, exit and run again. This should leave cmd.exe open to read any error messages when you run the .bat file. Another solution is to check the log file that’s located in `C:\Users\User1\AppData\Local\Temp\electrumpersonalserver.log` for error messages. If you get a error message like:
 ```
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
