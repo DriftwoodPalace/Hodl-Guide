@@ -69,7 +69,7 @@ Compare the output to the content in SHA256SUMS.asc. If the hashes matches (capi
 
 Once the installation is done, run Bitcoin Core. You should see a screen that looks something like this:
 
-![Bitcoin Core](61_bitcoin_core.png)
+![Bitcoin Core](images/61_bitcoin_core.png)
 
 We can do a few optimisations to get a faster initial download and a better user experience. Since the size of the blockchain is 220GB and constantly growing you might want to consider storing the blockchain on another disk then your main hard drive. The best solution is an internal hard drive but you could use an external as well (but you’ll have to plug it in every time you run Bitcoin Core).
 
@@ -139,7 +139,7 @@ Change the tab to Console and type `getnetworkinfo` and hit enter.
 
 You should see the following output:
 
-![Bitcoin Core](61_tor.png)
+![Bitcoin Core](images/61_tor.png)
 
 Make sure that “proxy” is 127.0.0.1:9050 and that “onion” is reachable. If that’s the case, you are now using Tor.
 
