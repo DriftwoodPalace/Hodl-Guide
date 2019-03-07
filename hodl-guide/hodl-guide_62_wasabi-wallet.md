@@ -58,7 +58,8 @@ Open your wallet and change tab to CoinJoin:
 ![Wasabi 1](images/62_wasabi_1.png)
 
 When you deposit funds to Wasabi Wallet, you’ll see the unspent outputs that you can queue for mixing here. 
-Anonymity set means how many other outputs of the same amount you mix with. The lowest amount available to mix right now is 0,1 bitcoin. If you mix larger amounts, the change will be mixed as well. 
+Select the outputs you want to mix, enter your password and Click `Enqeue Selected Coins`.
+Anonymity set means how many other outputs of the same amount you mix our coins with (if 50 people participate in the coinjoin, the anonymity set is 50). The lowest amount available to mix right now is 0,1 bitcoin. If you mix larger amounts, the change will be mixed as well and improve your anonymity set. 
 
 Depending on how much you mix and what anonymity set you settle for, you´ll end up with a lot of smaller outputs. If you deposit 1 bitcoin and mix to the smallest denominator, you’ll end up with 10 0,1 bitcoin outputs. We need a best practice for how to handle this.
 
