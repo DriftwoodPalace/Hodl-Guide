@@ -65,19 +65,21 @@ We can now calculate the sha256sum for our installation file and compare the res
 
 *Linux:* `$ sha256sum bitcoin-0.17.1-x86_64-linux-gnu.tar.gz`
 
-Compare the output to the content in SHA256SUMS.asc. If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
+Compare the output to the content in SHA256SUMS.asc for your installation file. If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
 
 Once the installation is done, run Bitcoin Core. You should see a screen that looks something like this:
 
 ![Bitcoin Core](images/61_bitcoin_core.png)
 
-We can do a few optimisations to get a faster initial download and a better user experience. Since the size of the blockchain is 220GB and constantly growing you might want to consider storing the blockchain on another disk then your main hard drive. The best solution is an internal hard drive but you could use an external as well (but you’ll have to plug it in every time you run Bitcoin Core).
+We are going to download a lot of data as you can see. We can do a few optimisations to get a faster initial download and a better user experience overall. Since the size of the blockchain is 220GB and constantly growing you might want to consider storing the blockchain on another disk then your main hard drive. The best solution is an internal hard drive but you could use an external as well (but you’ll have to plug it in every time you run Bitcoin Core). A common setup today is a smaller SSD-disk and a larger mechanical disk, you can then store the blockchain on the mechanical disk.
 
-You can use a smaller hard drive and use Bitcoin Core in pruned mode. This way you’ll discard old transactions and only have to store ~15 GB of data. You won’t be able to help new nodes with the initial sync, but you’ll still validate all transactions yourself.
+Another solution is do use a smaller hard drive and use Bitcoin Core in pruned mode. This way you’ll discard old transactions and only have to store ~15 GB of data. You won’t be able to help new nodes with the initial sync, but you’ll still validate all transactions yourself.
 
 Once you’ve decided where to store your blocks, copy the address. For example, in the screenshot above copy `C:\Users\1\AppData\Roaming\Bitcoin`, if you “Use a custom data directory” copy that path, for example `D:\Bitcoin`
 
-Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`.
+Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`. For example
+
+![Bitcoin Core](images/61_bitcoin_folder.png)
 
 We are going to allocate more RAM to Bitcoin Core. Check how much RAM your computer has (On Windows, Right Click on “This PC” and select “properties”). If you´re not going to run apps that use a lot of CPU during the initial sync, you could probably use 30% (or more) of your RAM without any issues.
 Open bitcoin.conf with a text editor.
