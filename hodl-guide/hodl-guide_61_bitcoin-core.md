@@ -10,7 +10,7 @@
  Bitcoin Core is the main software implementation of the Bitcoin protocol. Once up and running it will give you a full node that validates all transactions and makes you a first class Bitcoin citizen! 
  
 Before starting, you should have a basic understanding about what it means to run a full node.
-If you don’t use a VPN or Tor whith Bitcoin Core, your IP-address will be exposed to the network. From a privacy standpoint, that should be avoided. It will tell everyone that a Bitcoin full node is running on your IP-address. It’s also possible to connect transactions you do with your full node and your IP-address for someone who’s monitoring the network. This is still an improvement compared to trusting most third-party wallet providers. But it’s a pretty easy fix to improve it even more.
+If you don’t use a VPN or Tor with Bitcoin Core, your IP-address will be exposed to the network. From a privacy standpoint, that should be avoided. It will tell everyone that a Bitcoin full node is running on your IP-address. It’s also possible to connect transactions you do with your full node and your IP-address for someone who’s monitoring the network. This is still an improvement compared to trusting most third-party wallet providers. But it’s a pretty easy fix to improve it even more.
 
 A VPN is an easy solution. This will improve your privacy. You trust the VPN provider to not share any logs. If Bitcoin isn’t illegal in your jurisdiction, that shouldn’t be too big of a deal.
 If you´re using a VPN you´ll probably only be able to make outgoing connections (you can't open ports). That won´t affect the validation or broadcasting, but you´ll help the network a bit less since others can't download data from you. 
@@ -53,7 +53,7 @@ gpg: Signature made 12/25/18 09:03:05 W. Europe Standard Time
 gpg:                using RSA key 90C8019E36C2E964
 gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [expired]
 gpg: Note: This key has expired!
-Primary key fingerprint: 01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964
+Primary key fingerprint: 01EA 5486 DE18 A882 D4C2 6845 90C8 019E 36C2 E964
 ```
 The important part is that the date`12/25/18`is around the same date as the uploaded file, that it´s a `Good signature` and that the fingerprint is `01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964`. You can do a search online and check various sources to control that this is the right signing key. This file is not a detached signature. It contains the hashes of the installation file. You can open the file SHA256SUMS.asc and look at the different hashes (for example, right click and select "Edit with Notepad" in Windows). We now know that this was signed with Wladimir van der Laans key.  
 
@@ -65,7 +65,7 @@ We can now calculate the sha256sum for our installation file and compare the res
 
 *Linux:* `$ sha256sum bitcoin-0.17.1-x86_64-linux-gnu.tar.gz`
 
-Compare the output to the content in SHA256SUMS.asc for your installation file. If the hashes matches (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
+Compare the output to the content in SHA256SUMS.asc for your installation file. If the hashes match (capital letters or not doesn't matter), go ahead and install Bitcoin Core. 
 
 Once the installation is done, run Bitcoin Core. You should see a screen that looks something like this:
 
@@ -77,7 +77,7 @@ Another solution is do use a smaller hard drive and use Bitcoin Core in pruned m
 
 Once you’ve decided where to store your blocks, copy the address. For example, in the screenshot above copy `C:\Users\1\AppData\Roaming\Bitcoin`, if you “Use a custom data directory” copy that path, for example `D:\Bitcoin`
 
-Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`. For example on Windows with blocks stored in D:\Bitcoin:
+Click OK and let the initial sync start. Open a new folder and navigate to the directory you copied the path to. In that folder, create a new file and call it `bitcoin.conf`. For example, on Windows with blocks stored in D:\Bitcoin:
 
 ![Bitcoin Core](images/61_bitcoin_folder.png)
 
@@ -108,7 +108,7 @@ Change the directory to your data directory, for example:
 
 `> cd D:\Bitcoin`
 
-Make a link to where you pasted the folder, in the example belowe, chainstate is pasted in “documents”:
+Make a link to where you pasted the folder, in the example below, chainstate is pasted in “documents”:
 
 `> cmd /c mklink /D chainstate C:\Users\1\documents\chainstate`
 
