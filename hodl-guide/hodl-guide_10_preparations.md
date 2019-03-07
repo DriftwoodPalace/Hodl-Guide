@@ -26,7 +26,7 @@
 
 An important part of the guide (and a great skill to have) is to know how to validate digital signatures. We are going to do a validation of this guide as a practice (and to control the guide).
 
-To start, download my signature `hundingsbane.asc`, the guide `hodl-guide.pdf` and the detached signature `hodl-guide.pdf.sig` in the [validation-folder](validation). It’s simply my digital signature a .pdf file with this guide and a detached signature corresponding to the .pdf file. This ensures that the one controlling the public key hundingsbane.asc (me) signed the document.   
+To start, download my signature `hundingsbane.asc`, the guide `hodl-guide.pdf` and the detached signature `hodl-guide.pdf.sig` in the [validation-folder](validation). We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide.pdf.   
 
 To verify what we downloaded, we need GnuPG (https://gnupg.org/). The implementation varies for different OS:
 
