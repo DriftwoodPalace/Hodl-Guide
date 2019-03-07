@@ -229,7 +229,7 @@ If you get the following error:
 ```
 OSError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
 ```
-Chances are that some other service is using a port you are trying to connect to.
+The risk is that some other service is using a port you are trying to connect to.
 Try another port for electrum server by changing the port for "electrum-server" in `config.cfg` file like:
 ```
 [electrum-server]
@@ -242,7 +242,7 @@ Make sure to take use port lower then 40 000. Risk is that a higher port can be 
 ## Setting up Electrum
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. `Select Tool>Network`
+Start Electrum and open a wallet. `Select Tools>Network`
 
 Uncheck Select server automatically and change `Server` to `localhost`:
 
@@ -250,7 +250,7 @@ Uncheck Select server automatically and change `Server` to `localhost`:
 
 If you changed port `50002` in `config.cfg` make sure to change to the same port here. Close this dialaog once finished 
 
-*Pro tip:* Create a shortcut that disables all connections to any other server. In that case you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `C:\Program Files (x86)\Electrum`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
+*Pro tip:* Create a shortcut that disables all connections to any other server. In that case you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `"C:\Program Files (x86)\Electrum`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
 
 ![Eps Win5](images/63_eps-w_5.png)
 
@@ -264,7 +264,7 @@ So, the whole line is something like:
 
 `C:\Program Files (x86)\Electrum\electrum-3.1.3.exe" --oneserver --server localhost:50002:s`
 
-If you’ve changed the port from `50002` in the conf-file, make sure to change to the same port here. Use the shortcut to start Electrum (and make sure to only use this shortcut to start it)
+If you’ve changed the port from `50002` in `config.cfg`, make sure to change to the same port here. Use the shortcut to start Electrum (and make sure to only use this shortcut to start it)
 
 Your wallet should now be connected to your bitcoin full node (the circle in the bottom right corner should be green)! 
 
