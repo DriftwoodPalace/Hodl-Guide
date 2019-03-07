@@ -37,7 +37,7 @@ PWB: your_password_B
 
 ## Create information packages
 
-Apart from the private keys, we are going to create 3 different information packages on a different piece of paper (if you don’t use a password manager you need 4 info packages). If you want more detail on exactly why we are doing this and naming them this way, look at [Key storage](hodl-guide_50_key-storage.md). 
+Apart from the private keys, we are going to create 3 physical information packages on a different piece of paper (if you don’t use a password manager you need 4 info packages). If you want more detail on exactly why we are doing this and naming them this way, look at [Key storage](hodl-guide_50_key-storage.md). 
 
 On each information package, write a short instruction for how to access the funds. Something like this:
 
