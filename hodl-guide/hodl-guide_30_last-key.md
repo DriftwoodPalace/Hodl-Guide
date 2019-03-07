@@ -59,7 +59,7 @@ So, insert the USB you are going to use and follow the instructions at “2/5 In
 
 If you use one computer. Tails is going to be started on the computer you are reading this on. In that case you´re going to have to print or write down the rest of the of the instructions on this page. You could also bring the instructions up on another device (keep them in flight mode and don’t let any cameras see any screens or private keys). Make sure no other USB drives is connected to the computer.
 
-If you are using two computers. Tails is going to be started on the other computer and you can keep the instructions on the main computer. The other computer could be a normal computer that's going to be used for other things after the process. Or for extra security, an eternally quarantined computer. Make sure no other USB drives is connected to the computer.
+If you are using two computers. Tails is going to be started on the other computer and you can keep the instructions on the main computer. The other computer could be a normal computer that's going to be used for other things after the process. Or for extra security, an eternally quarantined computer used only for this purpose. Make sure no other USB drives is connected to the computer.
 
 ## Start computer on Tails
 
@@ -84,9 +84,9 @@ Check the troubleshooting guide at the install page at Tails for more informatio
 *On Mac*, Immediately press-and-hold the Option key (Alt key) until a list of possible start-up disks appears. 
 If the computer starts on Tails, the Boot Loader Menu appears and Tails starts automatically after 4 seconds. 
 
-There could be issues with certain computers or graphic cards, check the troubleshooting guide at the install page to see if there´s an easy fix.
-
 When you get past the boot loader menu, follow the instructions on the screen to start Tails.
+
+*Note:* Tails can be pretty slow if you use an old computer, make sure it's really stuck and not only slow before troubleshooting.
 
 ## Generating the private key with Electrum
 
@@ -138,7 +138,7 @@ We need to copy this to our live system where we´ll construct the multi-signatu
 
 It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no private keys are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key. 
 
-If you use one computer, remove the tails boot USB from the computer and restart the computer on your regular OS (you can keep Tails running if you use two computers). 
+If you use one computer, remove the tails boot USB from the computer and restart the computer on your regular OS. You can keep Tails running if you use two computers, but close Electrum. 
 
 ---
 Next up: [Create the multi-sig wallet >>](hodl-guide_40_multi-sig.md)
