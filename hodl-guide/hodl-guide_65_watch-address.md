@@ -11,16 +11,20 @@ Watch addresses can be used to verify payments with your own full node without g
 
 To begin, make sure you have Bitcoin Core installed and synced (guide [Here]( hodl-guide_61_bitcoin-core.md). Open Bitcoin Core and go to Help> Debug Window and change the tab to “Console”:
 
-![Watch 1](65_watch_1.png)
+![Watch 1](images/65_watch_1.png)
 
 If you are using Electrum to generate addresses, go to the tab “Addresses”. How many addresses you need depends on how many transfers you are going to do into the wallet (never reuse addresses). But a good starting point can be to copy all receiving addresses:
 
-![Watch 2](65_watch_2.png)
+![Watch 2](images/65_watch_2.png)
 
-In the Bitcoin Core window, type (and change the address to your address)
-importaddress 3EFvJremRxxqfhYU5hheRyCvxBV8rQBhwC Label false
-You’ll have to do this for every address you want to import.  This will keep track of all future transactions to these addresses. If you want to import addresses that contains old transaction, change the last imported address to Label true, like
-Importaddress 1HzJgBpj5DdESm7G3bTK3hKZgq5pdtxc4n Label true
+In the Bitcoin Core window, type (and change the address to your address):
+
+`importaddress 3EFvJremRxxqfhYU5hheRyCvxBV8rQBhwC Label false`
+
+You’ll have to do this for every address you want to import.  This will keep track of all future transactions to these addresses. If you want to import addresses that contains old transaction, change the last imported address to Label true, like:
+
+`mportaddress 1HzJgBpj5DdESm7G3bTK3hKZgq5pdtxc4n Label true`
+
 This will rescan the blockchain for any previous transactions. If you are using a pruned node, the rescan probably won’t show all transactions.
 
 ------
