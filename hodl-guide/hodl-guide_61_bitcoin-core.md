@@ -112,19 +112,19 @@ Make a link to where you pasted the folder, in the example belowe, chainstate is
 
 `> cmd /c mklink /D chainstate C:\Users\1\documents\chainstate`
 
-*Mac/Linux:* Open a terminal in the data directory. On Linux, make sure that permissions allow for Bitcoin Core to read/write the directory and its files at the new location. Run:
+*Mac/Linux:* Open a terminal in the data directory. On Linux, make sure that permissions allow for Bitcoin Core to read/write the directory and its files at the new location. Make a link to where you pasted the chainstate folder:
 
 `$ ln -s /absolute/path/to/chainstate`. 
 
-For example, if you moved your chainstate so that its new location is /mnt/ssd/core/chainstate (ie. within that directory are a bunch of ldb files), you'd run `$ ln -s /mnt/ssd/core/chainstate` from immediately within the data directory.
+For example, if you moved your chainstate so that its new location is `/mnt/ssd/core/chainstate` (ie. within that directory are a bunch of ldb files), you'd run `$ ln -s /mnt/ssd/core/chainstate` from immediately within the data directory.
 
-You should now see a link in your data directory folder (D:\Bitcoin in the example above)
+You should now see a link in your data directory folder (D:\Bitcoin in the example on Windows above)
 
 You can now start Bitcoin Core and the sync should be much faster.
 
 You can sync the blockchain in parts, you don't have to keep your computer on until the full blockchain is synced.
 
-Once up and running, you can start and close Bitcoin Core whenever yoy like witout any issues.
+Once up and running, you can start and close Bitcoin Core whenever you like without any issues.
 
 
 ### Running Bitcoin Core over Tor
@@ -134,12 +134,15 @@ If you don’t have Tor installed, go to https://www.torproject.org/projects/tor
 Think about having this process autostart with your computer or put a shortcut to it in your Bitcoin-folder.
 In Bitcoin Core, go to Settings>Options
 Change the tab to Network and select “Connect through SOCKS5 proxy (default proxy):”
-Make sure Proxy IP is `127.0.0.1` and port `9050` (the Tor default port number)
+Make sure Proxy IP is `127.0.0.1` and port `9050` (the Tor default port number):
+
+![Bitcoin Core](images/61_bitcoin_network.png)
+
 Restart Bitcoin Core to activate changes.
 More information at https://en.bitcoin.it/wiki/Tor
 
 
-*Optional*, verify that you are connected via Tor. In Bitcoin Core, go to Help>Debug Window
+*Optional*: Verify that you are connected over Tor. In Bitcoin Core, go to Help>Debug Window
 Change the tab to Console and type `getnetworkinfo` and hit enter.
 
 You should see the following output:
