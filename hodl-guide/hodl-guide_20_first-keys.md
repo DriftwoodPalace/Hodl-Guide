@@ -5,20 +5,24 @@
 
 # Generating the first two keys
 
-Time to generate the first keys! A few things to keep in mind when generating your private keys. This is valuable information and a lot of devices are “spying” on us in one way or the other. If possible, generate all private keys in a room where other electronic devices connected to the internet are turned off. Make sure that your actions aren´t visible from windows or doors and that no home security camera records your actions.
+Time to generate the first keys! 
+
+A few things to keep in mind when generating your private keys. This is valuable information and a lot of devices are “spying” on us in one way or the other. If possible, generate all private keys in a room where other electronic devices connected to the internet are turned off. Make sure that your actions aren´t visible from windows or doors and that no home security camera records your actions.
 
 Try to keep smartphones turned off and/or in another room during the process. They are hard to secure and can record sound/video without you noticing (computers can of course do the same). Generally, use your common sense to make sure that nothing can record your actions.
 
 ## Generate keys with Hardware Wallets A and B
 
-The first two keys are generated with your two hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the flawed key. 
+The first two keys are generated with your two different hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the flawed key. 
 
+Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important. 
 
-Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin that you can remember (use two different pins for the two devices) and use a passphrase with your hardware wallet. Update the firmware if you don't have the latest version. 
+Update the firmware if you don't have the latest version. 
 
+We are going to protect the seed in our hardware wallets with different passwords/passphrases.
 The method for how to use a password is different for each manufacturer, check their guides. On Ledger it needs to be setup on the device but with Trezor you can do it in Electrum later.
 
-Most vulnerabilities that’s been detected in hardware wallets would’ve been stopped with a strong password. We humans are pretty terrible at generating random passwords. So, it’s probably safer to use a password manager on your computer then trying to come up with a password yourself. You could use Lastpass, KeypassX or a similar service. A password manager is a great place to store moderately sensitive information in (like public keys and even more sensitive information like the password that protects the seed, but never put your seed on a "hot" computer). If you are given the possibility use a password without symbols that can be confused (big o and zero etc)
+Most vulnerabilities that’s been detected in hardware wallets would’ve been stopped with a strong password. We humans are pretty terrible at generating random passwords. So, it’s probably safer to use a password manager on your computer then trying to come up with a password yourself. You could use Lastpass, KeypassX or a similar service. A password manager is a great place to store moderately sensitive information in (like public keys and even more sensitive information like the password that protects the seed, but never put your seed on a "hot" computer). If you are given the possibility generate a password without symbols that can be confused (big o and zero etc)
 
 I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a length of at least 15 characters. That would give you a password with ~80-bit entropy (on average, it would require 2^80 guesses to crack the password). 
 Use two different passphrases for your two different hardware wallets. 
