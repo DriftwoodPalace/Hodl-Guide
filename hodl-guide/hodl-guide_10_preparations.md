@@ -76,7 +76,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9
 ```
 
-There's three key points to look at when verifying a signature. When the signature was made (`03/01/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`. 
+There's three key points to look at when verifying a signature. When the signature was made (`03/01/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`). 
 To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc, that’s hard to fake. 
 
 [Twitter](https://twitter.com/HelgeHunding), [Keybase](https://keybase.io/helgehunding)
