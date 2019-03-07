@@ -81,7 +81,7 @@ To check that the fingerprint indeed seems to belong to me, you could check my T
 
 [Twitter](https://twitter.com/HelgeHunding), [Keybase](https://keybase.io/helgehunding)
 
-If someone was try to fake the guide and change one character in hodl-guide.pdf, it would result in a bad signature. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. You can open hodl-guide.pdf and select a few parts of the text and compare it to what’s written here on Github. If it’s not the same, you should stop and investigate further. You can continue with the pdf or on Github.
+If someone was trying to fake the guide and change even one character in hodl-guide.pdf, it would result in a bad signature when you verified it with hundingsbane.asc. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. You can open hodl-guide.pdf and select a few parts of the text and compare it to what’s written here on Github. If it’s not the same, you should stop and investigate further. You can continue with the pdf or on Github.
 
 Now that we have this knowledge, we can start generating private keys! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
 
