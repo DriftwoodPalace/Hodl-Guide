@@ -55,14 +55,14 @@ Once finished, run Wasabi Wallet. Generate a new wallet according to the instruc
 
 Open your wallet and change tab to CoinJoin:
 
-![Wasabi 1](Images/62_wasabi_1.png)
+![Wasabi 1](images/62_wasabi_1.png)
 
 When you deposit funds to Wasabi Wallet, you’ll see the unspent outputs that you can queue for mixing here. 
 Anonymity set means how many other outputs of the same amount you mix with. The lowest amount available to mix right now is 0,1 bitcoin. If you mix larger amounts, the change will be mixed as well. 
 
 Depending on how much you mix and what anonymity set you settle for, you´ll end up with a lot of smaller outputs. If you deposit 1 bitcoin and mix to the smallest denominator, you’ll end up with 10 0,1 bitcoin outputs. We need a best practice for how to handle this.
 
-### Best practise for handle mixed outputs
+## Best practise to handle mixed outputs
 
 This is based on the discussion at https://www.reddit.com/r/WasabiWallet/comments/avxbjy/combining_mixed_coins_privacy_megathread/
 
