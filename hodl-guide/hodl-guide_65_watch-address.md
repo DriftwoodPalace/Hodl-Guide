@@ -13,11 +13,11 @@ To begin, make sure you have Bitcoin Core installed and synced or check the guid
 
 ![Watch 1](images/65_watch_1.png)
 
-If you are using Electrum to generate addresses, go to the tab “Addresses”. How many addresses you need depends on how many transfers you are going to do into the wallet (never reuse addresses). But a good starting point can be to copy all receiving addresses:
+If you are using Electrum to generate addresses. In Electrum, go to the tab `Addresses`. How many addresses you need depends on how many transfers you are going to do into the wallet (never reuse addresses). But a good starting point can be to copy all receiving addresses (and change if you are going to do transfers out of the wallet):
 
 ![Watch 2](images/65_watch_2.png)
 
-In the Bitcoin Core window, type (and change the address to your address):
+In the Bitcoin Core Console, type (and change the address to your address):
 
 `importaddress 3EFvJremRxxqfhYU5hheRyCvxBV8rQBhwC Label false`
 
@@ -25,7 +25,7 @@ You’ll have to do this for every address you want to import.  This will keep t
 
 `mportaddress 1HzJgBpj5DdESm7G3bTK3hKZgq5pdtxc4n Label true`
 
-This will rescan the blockchain for any previous transactions. If you are using a pruned node, the rescan probably won’t show all transactions.
+This will rescan the blockchain for any previous transactions. If you are using a pruned node, the rescan probably won’t show all old transactions.
 
 ------
 
