@@ -60,13 +60,29 @@ A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to
 
 ### [P] Setup Electrum to run over Tor
 
-Electrum uses servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+Electrum use servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
 
-You will be giving all your addresses to remote servers. There are several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that used KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your tru IP-address. You could also use a VPN, both solutions will hide your IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
 
-Using Electrum with Tor should be a very straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature for the file you download as well. You can import the Tor signing key with the command:
+Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature for the file you download as well. You can import the Tor signing key with the command:
 
 `gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
+
+Then use:
+
+`gpg --verify {your_file.asc}`
+
+Make sure the output is similar to this:
+```
+gpg: assuming signed data in 'torbrowser-install-win64-8.0.6_en-US.exe'
+gpg: Signature made 02/12/19 14:26:17 W. Europe Standard Time
+gpg:                using RSA key EB774491D9FF06E2
+gpg: Good signature from "Tor Browser Developers (signing key) <torbrowser@torproject.org>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
+     Subkey fingerprint: 1107 75B5 D101 FB36 BC6C  911B EB77 4491 D9FF 06E2
+```
 
 When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or start Tor.exe (that should be located at ..\Tor Browser\Browser\TorBrowser\Tor). You won't notice anything if you launch Tor.exe (nothing visible will start).
 
