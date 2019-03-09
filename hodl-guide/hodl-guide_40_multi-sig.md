@@ -130,7 +130,7 @@ Change the first slider to 3 cosigners (with 2 signatures required) and click Ne
 
 ![Electrum 15](images/40_electrum_15.png)
 
-We are now going to construt our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select “Use a master key” and click Next:
+We are now going to construt our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select `Use a hardware device` and click Next:
 
 ![Electrum 16](images/40_electrum_16.png)
 
@@ -144,7 +144,7 @@ The next window shows your Master Public Key, we will access this later in Elect
 
 We are now going to add key 2. Select `Cosign with hardware device`, insert Hardware Wallet B and repeat the process you used for key 1. If it’s a wallet with a physical pin like Ledger, enter the pin (and make sure that it uses password A) and click Next. If you enter the password on the computer, like with Trezor, click Next:
 
-![Electrum 20](images/40_electrum_20).
+![Electrum 20](images/40_electrum_20.png).
 
 It should automatically detect your device and the next window should be where you add cosigner 3 of 3. Pick “Cosign with hardware device” and click next:
 
