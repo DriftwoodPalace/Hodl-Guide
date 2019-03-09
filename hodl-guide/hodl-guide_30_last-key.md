@@ -110,7 +110,7 @@ On the next step, let standard be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
-You should now see 12 words, this is your private key! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other keys with 24 words). On a paper of good quality, write `Key 1`and then the 12 words you see on your screen. Then click Next:
+You should now see 12 words, this is your private key! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other keys with 24 words). Write the 12 words you see on your screen on a paper of good quality. Then click Next:
 
 ![Electrum 5](images/30_electrum_5.png)
 
