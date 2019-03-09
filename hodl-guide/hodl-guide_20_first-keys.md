@@ -15,7 +15,7 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 
 The first two keys are generated with your two different hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the flawed key. 
 
-Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). 
+Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). Use PINs you can remember yourself.
 
 Update the firmware if you don't have the latest version. 
 
