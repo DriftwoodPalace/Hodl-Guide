@@ -84,9 +84,9 @@ Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
      Subkey fingerprint: 1107 75B5 D101 FB36 BC6C  911B EB77 4491 D9FF 06E2
 ```
 
-When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or start Tor.exe (that should be located at ..\Tor Browser\Browser\TorBrowser\Tor). You won't notice anything if you launch Tor.exe (nothing visible will start).
+When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (liek tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
 
-Start Electrum. If this is the first time you start Electrum, you'll have to create a wallet first(skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process.
+Start Electrum. If this is the first time you running Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process.
 
 Pick a name for the wallet, click Next:
 
@@ -108,15 +108,15 @@ We don't need a password for this wallet, leave the field blank and click Next:
 
 ![Electrum tor 5](images/30_electrum_7.png)
 
-Electrum should now be started. Go to `Tools>Network`. Change the tab to `Network`. Select "Use Proxy" and make sure `SOCKS5` is `127.0.0.1` and that the port is `9050`:
+Electrum should now be started. Go to `Tools>Network`. Change the tab to `Proxy`. Select "Use Proxy" and make sure `SOCKS5` is `127.0.0.1` and that the port is `9050`:
 
 ![Electrum tor 6](images/40_electrum_tor_6.png)
 
-The blue circle in the bottom right corner should change from green to blue. You have now configured Electrum to run over Tor. It wont connect to anyone unless Tor is running. 
+The circle in the bottom right corner should change color from green to blue. You have now configured Electrum to run over Tor. Electrum wont connect to anyone unless Tor is running. 
 
 ## Create the multi-sig wallet
 
-Start Electrum. We are going to create a new wallet. If you already have a default Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise the install wizard should be launched automatically. 
+We are now going to create our multi-sig wallet. If you already have a Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise start Electrum, the install wizard should be launched automatically. 
 
 Pick a name for your multi-sig wallet and click Next:
 
@@ -130,40 +130,49 @@ Change the first slider to 3 cosigners (with 2 signatures required) and click Ne
 
 ![Electrum 15](images/40_electrum_15.png)
 
-We are now going to construt our multi-sig. Start with the seed you created in Tails. Select “Use a master key”:
+We are now going to construt our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select “Use a master key” and click Next:
 
 ![Electrum 16](images/40_electrum_16.png)
+
+Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password A:
+
+![Electrum 21](images/40_electrum_21.png)
+
+The next window shows your Master Public Key, we will access this later in Electrum and can skip it now, click Next:
+
+![Electrum 19](images/40_electrum_19.png)
+
+We are now going to add key 2. Select `Cosign with hardware device`, insert Hardware Wallet B and repeat the process you used for key 1. If it’s a wallet with a physical pin like Ledger, enter the pin (and make sure that it uses password A) and click Next. If you enter the password on the computer, like with Trezor, click Next:
+
+![Electrum 20](images/40_electrum_20).
+
+It should automatically detect your device and the next window should be where you add cosigner 3 of 3. Pick “Cosign with hardware device” and click next:
+
+![Electrum 22](images/40_electrum_22.png)
+
 
 Click the QR-code in the bottom right corner and scan the QR-code on your phone:
 
 ![Electrum 17](images/40_electrum_17.png)
 
+
+
 That should bring up your `xpub...` key
 
 If you have an error with scanning the QR-code, check the Troubleshooting guide [Scan QR-code with Electrum](hodl-guide_71_scan-QR.md)
   
-We no longer need internet. To reduce the attack vector, put your computer in flight mode.
 You should now have a master public key as Cosigner 1, before clicking next take note of a few characters in the beginning, the middle and the end. Click Next:
 
 ![Electrum 18](images/40_electrum_18.png)
 
 The next window is a confirmation of your master public key. Make sure it’s the same that the characters you noticed in the previous step and then click Next:
 
-![Electrum 19](images/40_electrum_19.png)
 
-It’s now time to add key 2! 
 
-Select `Cosign with hardware device`, insert Hardware Wallet A. If it’s a wallet with a physical pin like Ledger, enter the pin (make sure to use the pin that uses password A) and click Next, if you enter the password on the computer, simply click Next:
 
-![Electrum 20](images/40_electrum_20.png)
 
-Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin is entered on the computer (like Trezor), enter the pin and password A:
 
-![Electrum 21](images/40_electrum_21.png)
 
-It should automatically detect the necessary keys and the next window should be where you add cosigner 3 of 3. Pick “Cosign with hardware device” and click next:
-
-![Electrum 22](images/40_electrum_22.png)
 
 Repeat the procedure you used for key 2 of 3 but with Hardware Wallet B.
 
