@@ -58,6 +58,46 @@ The signing was made the same day as the release was uploaded (should be around 
 It´s a `Good signature`. 
 A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to verify that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
 
+### [P] Setup Electrum to run over Tor
+
+Electrum uses servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+
+You will be giving all your addresses to remote servers. There are several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that used KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your tru IP-address. You could also use a VPN, both solutions will hide your IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+
+Using Electrum with Tor should be a very straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature for the file you download as well. You can import the Tor signing key with the command:
+
+`gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
+
+When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or start Tor.exe (that should be located at ..\Tor Browser\Browser\TorBrowser\Tor). You won't notice anything if you launch Tor.exe (nothing visible will start).
+
+Start Electrum. If this is the first time you start Electrum, you'll have to create a wallet first(skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process.
+
+Pick a name for the wallet, click Next:
+
+![Electrum tor 1](images/40_electrum_13.png)
+
+Let Standard Wallet be selected, click Next:
+
+![Electrum tor 2](images/30_electrum_2.png)
+
+Change to "Use a master key" and click Next:
+
+![Electrum tor 3](images/40_electrum_tor_3.png)
+
+Since we only want a dummy wallet to access the settings, paste this key in the field and click Next: `xpub661MyMwAqRbcF7NVwdGV5gKTj5cqEwDcJv21g1RqF51YmWj5ycNE4S8Vv3dFZRufGJvbfoFM2hapK6Sd7fdXtyF9QrpKBStMX5LAYJVNWoC`
+
+![Electrum tor 4](images/40_electrum_tor_4.png)
+
+We don't need a password for this wallet, leave the field blank and click Next:
+
+![Electrum tor 5](images/30_electrum_7.png)
+
+Electrum should now be started. Go to `Tools>Network`. Change the tab to `Network`. Select "Use Proxy" and make sure `SOCKS5` is `127.0.0.1` and that the port is `9050`:
+
+![Electrum tor 6](images/40_electrum_tor_6.png)
+
+The blue circle in the bottom right corner should change from green to blue. You have now configured Electrum to run over Tor. It wont connect to anyone unless Tor is running. 
+
 ## Create the multi-sig wallet
 
 Start Electrum. We are going to create a new wallet. If you already have a default Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise the install wizard should be launched automatically. 
@@ -129,13 +169,11 @@ You can simply click `No`
 
 ## How to validate and broadcast transactions
 
-As you can see, we are not connected to the internet (and can’t broadcast transactions). This is intentional. Electrum uses servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+As you can see, we are not connected to the internet (and can’t broadcast transactions). This is intentional. 
 
 **[P]** So, how are we going to verify payments? The best solution right now is probably to use “Electrum Personal Server” and connect it to your Bitcoin Core node. This can be a little bit tricky for a non-technical user (especially on Windows and Mac). I’ve created guides for users on Windows and Mac in the bonus section. You can find the guides here, [Windows](hodl-guide_63_eps-win.md), [Mac](hodl-guide_64_eps-mac.md). Linux user can watch a tutorial here: https://www.youtube.com/watch?v=1JMP4NZCC5g (not my tutorial) or follow the official documentation. You can read more about the project on https://github.com/chris-belcher/electrum-personal-server. Once done you can use Electrum as usual, but without relying on someone else for verifying and broadcasting transactions. It’ll also be a perfect setup for your more “day-to-day” spending. You can connect a hardware wallet or use a hot-wallet (private key stored on the computer) and verify all payments yourself. It’s really worth giving it a chance.
 
 **[P]** The second-best option is to use your Bitcoin full node to add watch addresses. If you have a full node running, this is very simple. Check the bonus section for how to [add watch addresses in Bitcoin Core](hodl-guide_65_watch-address.md). You’d still have to connect to random Electrum servers to transact and your privacy might be compromised. You can reduce the risk by using a VPN. You are then leaking information only to your VPN-provider, but at least you know who you put your trust in and limits it to one part. Another option is to look into how you run Electrum with Tor.
-
-The third option is to simply use Electrum as it is. You’re then connecting to random servers. It’s probably safe but you put your trust for validation on third parties. You will be giving all your addresses to remote servers. There are several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. So, treat every address that’s gone through a third party as non private.
 
 Once you made up your mind, you can reconnect to internet.
 We are now going to deposit a small amount of funds to our address to make sure our setup works. In the beginning of 2019, transactions are practically free. So, a few $ worth of bitcoin is plenty to try it out. The amount should cover 3 transaction fees. 
