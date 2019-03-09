@@ -65,6 +65,8 @@ Now use the “detached signature” to check that the .pdf file was signed with
 
 `$ gpg --verify hodl-guide.pdf.sig hodl-guide.pdf` 
 
+*Hint:* If the name of the file and the signature is the same, you don't need to write the name of the file (you could use only `$ gpg --verify hodl-guide.pdf.sig` in our example). 
+
 The expected output should be something like:
 
 ```
