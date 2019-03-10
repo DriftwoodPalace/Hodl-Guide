@@ -25,7 +25,7 @@ You should now have the following information:
 Since you’ve duplicated two of your private keys, this is almost like a 2 of 5 signature scheme (not exactly since you could lose two of the same keys). This means that you could lose 2-3 pieces and still be able to restore your funds. So how should you handle this information? One option is to make the funds unavailible to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case.
 
 Base case for storage:
-**1.**	Private Key 1 and information package A at someone you trust (person 1). 
+**1.**	Private Key 1 and information package A at someone you trust. 
 **2.**	Private Key 2 and information package B at someone else you trust or in a different location then your home. 
 **3.**	Private Key 3 and information package C in a vault or a safe deposit box at a bank or at a speicialized company. Or at someone you trust.
 **4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). The hardware wallets can be used to check addresses when you deposit funds to the storage. It also gives you the possibility to spend your bitcoin. 
@@ -45,13 +45,25 @@ Everything is now set to start to HODL with a peace of mind!
 
 ## Worst case scenarios
 
+We need to think of the worst case scenarious to be able to understand how to best protect the keys. 
+
 Your funds are most vulnerable to "the $5 wrench attack". That means, if someone breaks into your house and threatens you until you give them your bitcoins. This is why
 
-![First Rule](/images/50_first_rule.png)
+![First Rule](images/50_first_rule.png)
 
 Feel free to talk about Bitcoin, but never about how much bitcoin you own (that's not very classy anyways). That's the best defence against this type of attack. Even if you couldn't access your funds from your home, an attacker could hold you hostage until you pay. You could use multiple wallets and different PINs on your hardware wallets to reduce the risk of losing your main stash in an attack.
 
-Another bad case is if your computer is compromised. If an attacker got access to your secure note or your wallet file in Electrum, they would be able to derive all your addresses. If they had this access, it's very possible that they could be able to get your name and address as well. If this attacker attact you in your home, multiple wallets wouldn't help since the attacker would know how much you owned. We do what we can to reduce this risk and our setup reduces it a lot compared to using wallets witout Tor or your full node. But it's still a risk that we need to acknowledge. As long as the harware wallets are secure and your private key was generated properly in Tails, your funds aren't at risk only because someone compromises your computer. They would need to physically extort you.
+Another bad case is if your computer is compromised. If an attacker got access to your secure note or your wallet file in Electrum, they would be able to derive all your addresses. If they had this access, it's very possible that they could be able to get your name and address as well. If this attacker attact you in your home, multiple wallets wouldn't help since the attacker would know how much you owned. We do what we can to reduce this risk. If you use Tor and/or your full node you reduce the risk compared to giving remote servers your private information. But it's still a risk that we need to acknowledge. As long as the harware wallets are secure and your private key was generated properly in Tails, your funds aren't at risk only because someone compromises your computer. They would need to physically extort you. This is why KYC (know your customer) is bad and dangerous and you should use it as little as possible.
+
+If the people you trust with your keys was going to collude against you, they would need all 3 keys. If the ones holding key 1 and 2 tried to spend they wouldn't have password B. If 1 and 3 tried they wouldn't have password A and if 2 and 3 tried they wouldn't have the public key for key 1 (needed to constuct the multi-sig).
+
+What if someone needed to access your funds in case you are hospitalized or worse?
+
+The worst case would be if your house burned down and you and your hardware wallets with it. All three keys stored in other places would then be needed to access your funds. 
+
+If your house burns down but you survive, you can construct the multi-sig wallet with your secure note and any 2 of your keys.
+
+If you are hospitalized or die, access to private key 1 is needed to spend your funds.  
 
 ---
 
