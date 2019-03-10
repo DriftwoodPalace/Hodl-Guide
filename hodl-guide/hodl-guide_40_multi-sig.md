@@ -220,17 +220,19 @@ If this is the firs time depositing to the wallet, we’re going to do two test 
 
 #### Withdrawal method 1
 
-The last transfer is much easier. Simply connect your 2 hardware wallets (could connect both at the same time or one at a time). Create an ordinary transaction with the rest of your test amount on the Send tab and hit `Send`:
+Open your wallet in Electrum. Connect your 2 hardware wallets. You can connect both at the same time or one at a time. If you use them one at a time, start with Hardware Wallet A. On the Send tab, create an ordinary transaction with half of your test amount to an address you control (like an address in Wasabi Wallet or in another Electrum Wallet). Once the transaction is constructed click `Send`:
 
 ![Electrum 33](images/40_electrum_33.png)
 
-Sign the transaction (and control the address) with both of your Hardware Wallets.
+Sign and confirm the transaction with one Hardware Wallet at the time, start with Hardware Wallet A. If your hardware wallet has a screen, control the information (like address and amount) on the screen.
 
 
 #### Withdrawal method 2
 
-In Electrum, go to send, enter an address to another wallet you control (like Wasabi Wallet). 
-Select around half of the amount you have in the wallet, pick a fee and select “preview”:
+This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works.
+
+In Electrum, go to send, enter an address to another wallet you control. 
+Select the rest of the test amount you have left in the wallet, pick a fee and select “preview”:
 
 ![Electrum 25](images/40_electrum_25.png)
 
@@ -240,8 +242,7 @@ In the preview window, select the QR-code in the bottom left corner:
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
 
-
-We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that nothing ore no one can see what you do). In Tails, launch Electrum like before. 
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that nothing ore no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
 
 Click next at the first window:
 
@@ -266,29 +267,30 @@ Leave the password field empty (the wallet file will be deleted once finished):
 The wallet should now load. Go to `Tools>Load Transaction>From QR code`
 Scan the QR code on your phone. 
 
-This should bring up the same Transaction Window that you had on your main OS.
+This should bring up the same Transaction Window that you had on your main OS. If you get an error, check that the Electrum version is the same in Tails as on your main computer.
+
 Start by first clicking “Sign”. That should Sign the transaction.
 Then click the QR-code:
 
 ![Electrum 32](images/40_electrum_32.png)
 
-Take a photo of it with your phone. 
+Take a photo of the QR-code with your phone. 
 
-You can now close Electrum and Tails (we won’t be using it anymore). 
+You can now close Electrum and Tails (we won’t be using it anymore). Remove the Tails USB from the computer to delete all information.
 
-Go back to your main computer and open your multi-sig wallet in Electrum. Go to `Tools>Load Transaction>From QR code` and scan the last QR-code. You might have to start Zbar for the camera to work (might be slow to start, so try 2-3 times). 
+Go back to your main computer and open your multi-sig wallet in Electrum. Go to `Tools>Load Transaction>From QR code` and scan the last QR-code. You might have to start Zbar and select a camera for the camera to work (and it might be slow to start, so try 2-3 times). 
 
 *Note*, if you are using another way to scan the QR-codes. Scan the QR-code outside of Electrum. In Electrum, go to `Tools>Load Transaction` and paste the text.
 
 That should bring up the transaction window.
 
-Connect one of your hardware wallets and click sign. Follow the instructions on your Hardware Wallet (and control the address)tp sign the transaction. 
+Connect one of your hardware wallets and click sign. Follow the instructions on your Hardware Wallet, control the address and the amount, and sign the transaction. 
 
-If the Hardware Wallet you are using is key 3/3, you’ll probably get a message like this:
+If you are using Hardware Wallet B to sign, you’ll probably get a message like this:
 
 ![Warning](images/40_warning.png)
 
-Select `No` and wait for Electrum to detect your last Hardware Wallet. Once detected, click `Sign` and follow the instructions on your hardware wallet (this process can be rather slow). Once signed, wait for Electrum to calculate everything. 
+Select `No` and wait for Electrum to detect Hardware Wallet B. Once detected, click `Sign` and follow the instructions on your Hardware Wallet (this process can be rather slow). Once signed, wait for Electrum to calculate everything. 
 
 Once calculated, click `Broadcast`:
 
