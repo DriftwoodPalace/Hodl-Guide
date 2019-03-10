@@ -7,6 +7,8 @@
 
 ---
 
+**__ This is a draft, all feedback is appreciated __**
+
 Bitcoin gives you the possibility to store value in ways earlier generations only could dream about. A common man can store value in a more secure and trust minimized way then any king throughout history. If done right, no one even needs to know what you own.
 
 I wrote this guide in my own quest to becoming a first-class Bitcoin citizen. A first-class Bitcoin citizen has control of his own keys, runs his own full node to validate all transactions and does this in a secure and private way. I’m no technical expert myself, so this guide only uses tools that’s been properly battletested throughout the years. The goal of the guide is to find a middle ground in the constant battle between usability and security. More bitcoin has probably been lost because of a complicated process with paper wallets then has been stolen. This guide uses HD-wallets with mnemonic seeds (12-24 regular English words) for your private keys that reduce the risk of fatal mistakes. In the end of the guide, you'll have a reliable and secure **cold storage**!
