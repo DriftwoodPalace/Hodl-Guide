@@ -7,7 +7,7 @@
 
 ---
 
-_ **This is a draft, all feedback is appreciated** _
+_*This is a draft, all feedback is appreciated!*_
 
 Bitcoin gives you the possibility to store value in ways earlier generations only could dream about. A common man can store value in a more secure and trust minimized way then any king throughout history. If done right, no one even needs to know what you own.
 
