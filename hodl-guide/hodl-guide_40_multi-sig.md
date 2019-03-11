@@ -184,13 +184,11 @@ If you disconnected one, or both, of your Hardware Wallets. You'll probably get 
 
 You can simply click `No`
 
-## How to validate and broadcast transactions
-
 If you use Electrum over Tor (the circle in the bottom right corner should be blue), you have a pretty solid setup and can use this as it is. Electrum wont connect unless you use Tor and you will hide your real IP-address from any servers. But you still rely on third parties for validation and broadcasting. It's fine for our test deposit and we can improve this later. 
 
 We are going to deposit a small amount of bitcoin to one of our addresses to make sure everything works. In the beginning of 2019, transactions are practically free. So, a few $ worth of bitcoin is plenty to try it out. The amount should cover 3 transaction fees. 
 
-Always think twice before depositing funds to your cold storage. I highly recommend to properly mix any coins deposited to cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address, so mixing is not that important here. You can deposit from any normal wallet.
+*Note:* Always think twice before depositing funds to your cold storage. I highly recommend to properly mix any coins deposited to cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address, so mixing is not that important here. You can deposit from any normal wallet and can think about mixing later.
 
 
 ## Deposit Program
