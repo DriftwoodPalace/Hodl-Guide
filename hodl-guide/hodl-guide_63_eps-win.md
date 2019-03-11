@@ -78,7 +78,7 @@ If you are following the hodl-guide or already have an electrum wallet, open the
 ```
 Start by removing `#` (otherwise it’s treated as a comment and skipped by the application). If you are using a 2 of 3 multi-sig, change `2` to `3`. Remove the two example keys and paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 ```
-multisig_wallet = 3 xpub661MyMwA… xpub6AMQ6ZPNa6... xpub6A2po6ffdf…
+multisig_wallet = 3 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
 ```
 
 You can change the name “multisig_wallet” if you like.
@@ -92,13 +92,15 @@ For example:
 ```
 Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
+### Rest of the configcfg file
+
 If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir`. For example:
 ```
 datadir = D:\Bitcoin
 ```
 The best solution is to use a strong (many random characters) `rpcuser` and `rpcpassword` in Bitcoin Core (not the default).  
 
-You need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. 
+You need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
 
 To use a rpcuser and rpcpassword you need to add this to your `bitcoin.conf` file. If you are unsure if you’ve set this or not, look in the default location (C:\Users\User1\AppData\Roaming\Bitcoin\bitcoin.conf). If you’ve moved the data directory, Bitcoin Core will try to use the .conf file in the new location (if it exists). Edit the file at that location. 
 
