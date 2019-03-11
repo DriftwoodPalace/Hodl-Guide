@@ -220,10 +220,15 @@ Open your wallet in Electrum. Connect your 2 hardware wallets. You can connect b
 
 Sign and confirm the transaction with one Hardware Wallet at the time, start with Hardware Wallet A. If your hardware wallet has a screen, control the information (like address and amount) on the screen.
 
+Your transaction should be broadcasted and you’ll probably get a message like this:
+
+![Broadcast](images/40_broadcast.png)
+
+Click OK, we can update once we are done with Tails
 
 #### Withdrawal method 2
 
-This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works.
+This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works. You'll probably need the same version of Electrum running on your computer and in Tails.
 
 In Electrum, go to send, enter an address to another wallet you control. 
 Select the rest of the test amount you have left in the wallet, pick a fee and select “preview”:
