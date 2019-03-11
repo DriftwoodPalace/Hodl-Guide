@@ -11,6 +11,7 @@ We are using Electrum on our main computer to construct the multi-signature wall
 ## Download and verify Electrum
 
 On your main computer (or regular OS) go to https://electrum.org/#download
+
 For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first, we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
 
 ![Electrum 10](images/40_electrum_10.png)
@@ -40,11 +41,11 @@ Import the signing key from ThomasV into your local GPG installation:
 Now use the .asc to check that the Electrum installer was signed with the signing key we imported: 
 
 `$ gpg --verify electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` 
-(make sure to change the file name on both places if using a different version). 
+(make sure to change the file name if using a different version). 
 
 The verification can take a while. 
 
-Expected output:
+Expected output should be something like:
 ```
 gpg: assuming signed data in 'electrum-3.1.3-setup.exe'
 gpg: Signature made 04/18/18 17:10:44 W. Europe Daylight Time
@@ -56,15 +57,15 @@ Primary key fingerprint: 6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6
 ```
 The signing was made the same day as the release was uploaded (should be around the same time). 
 It´s a `Good signature`. 
-A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to verify that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
+A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to confirm that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
 
 ### [P] Setup Electrum to run over Tor
 
-Electrum use servers that’s run by volunteers. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+Electrum use servers that’s run by volunteers to validate and boradcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
 
-There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
 
-Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature for the file you download as well. You can import the Tor signing key with the command:
+Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
 
 `gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
 
@@ -84,9 +85,9 @@ Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
      Subkey fingerprint: 1107 75B5 D101 FB36 BC6C  911B EB77 4491 D9FF 06E2
 ```
 
-When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (liek tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
+When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (like tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
 
-Start Electrum. If this is the first time you running Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process.
+Start Electrum. If this is the first time starting Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process. We only want to access the settings.
 
 Pick a name for the wallet, click Next:
 
@@ -108,11 +109,11 @@ We don't need a password for this wallet, leave the field blank and click Next:
 
 ![Electrum tor 5](images/30_electrum_7.png)
 
-Electrum should now be started. Go to `Tools>Network`. Change the tab to `Proxy`. Select "Use Proxy" and make sure `SOCKS5` is `127.0.0.1` and that the port is `9050`:
+Electrum should now start. Go to `Tools>Network`. Change the tab to `Proxy`. Select "Use Proxy" and make sure `SOCKS5` is `127.0.0.1` and that the port is `9050`:
 
 ![Electrum tor 6](images/40_electrum_tor_6.png)
 
-The circle in the bottom right corner should change color from green to blue. You have now configured Electrum to run over Tor. Electrum wont connect to anyone unless Tor is running. 
+Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum wont connect to anyone unless Tor is running (even if you restart it). 
 
 ## Create the multi-sig wallet
 
@@ -134,7 +135,7 @@ We are now going to construt our multi-sig. Start with `Hardware Wallet A`. If y
 
 ![Electrum 16](images/40_electrum_16.png)
 
-Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password A:
+Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password A after you've clicked Next:
 
 ![Electrum 21](images/40_electrum_21.png)
 
@@ -146,7 +147,7 @@ We are now going to add key 2. Remove Hardware Wallet A and insert Hardware Wall
 
 ![Electrum 20](images/40_electrum_20.png).
 
-Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password B:
+Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password B after you've clicked Next: 
 
 ![Electrum 22](images/40_electrum_35.png)
 
@@ -185,16 +186,11 @@ You can simply click `No`
 
 ## How to validate and broadcast transactions
 
-If you use Electrum over Tor (the circle in the bottom right corner should be blue), you have a pretty solid setup and can use this as it is. Electrum wont connect unless you use Tor and you will hide your real IP-address from any servers. But you still rely on third parties for validation and broadcasting. This is not what a first class Bitcoin citizen do! To verify everything ourselfs, we need to connect Electrum to our Bitcoin Core full node.
+If you use Electrum over Tor (the circle in the bottom right corner should be blue), you have a pretty solid setup and can use this as it is. Electrum wont connect unless you use Tor and you will hide your real IP-address from any servers. But you still rely on third parties for validation and broadcasting. It's fine for our test deposit and we can improve this later. 
 
-**[P]** So, if you run a Bitcoin Core node you can use “Electrum Personal Server” to connect it with Electrum. This can be a little bit tricky for a non-technical user (especially on Windows and Mac). I’ve created guides for users on Windows and Mac in the bonus section. You can find the guides here: [Windows](hodl-guide_63_eps-win.md), [Mac](hodl-guide_64_eps-mac.md). Linux user can watch a tutorial here: https://www.youtube.com/watch?v=1JMP4NZCC5g (not my tutorial) or follow the official documentation. You can read more about the project on https://github.com/chris-belcher/electrum-personal-server. Once done you can use Electrum as usual, but without relying on someone else for verifying and broadcasting transactions. You can use it for more “day-to-day” spending as well. You can connect a hardware wallet to Electrum or use a hot-wallet (private key stored on the computer) and verify all transactions yourself.
+We are going to deposit a small amount of bitcoin to one of our addresses to make sure everything works. In the beginning of 2019, transactions are practically free. So, a few $ worth of bitcoin is plenty to try it out. The amount should cover 3 transaction fees. 
 
-**[P]** The second-best option is to use your Bitcoin full node to add watch addresses. You simply add all addresses you want to keep track off and your node checks for any activity on those addresses. If you have a full node running, this is very simple. Check the bonus section for how to [add watch addresses in Bitcoin Core](hodl-guide_65_watch-address.md). You’d still have to connect to random Electrum servers to broadcast transactions, but that isn't terrible if you use Tor or a VPN. The crucial part is to validate every transaction you receive.
-
-Once we have h setup, we are going to deposit a small amount of funds to one of our addresses to make sure everything works. In the beginning of 2019, transactions are practically free. So, a few $ worth of bitcoin is plenty to try it out. The amount should cover 3 transaction fees. 
-
-**[P]** Always think twice before depositing funds to your cold storage. I highly recommend to properly mix any coins deposited to our cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address, so mixing is not super important here. But it’s a great time to read up on mixing and start preparing your main stash.
-Take a look at the guide and best practises in the bonus section for how to [mix your coins with Wasabi Wallet](hodl-guide_62_wasabi-wallet.md). *Note:* Some exchanges treat coins involved in coin join transactions as suspiscous. If you do a coin join transaction and then tries to transfer the coins to an exchange, they might reject your deposit. You have to decide yourself about privacy vs easy of selling. 
+Always think twice before depositing funds to your cold storage. I highly recommend to properly mix any coins deposited to cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address, so mixing is not that important here. You can deposit from any normal wallet.
 
 
 ## Deposit Program
@@ -207,7 +203,7 @@ Open your multi-sig wallet in Electrum and enter the password that unlocks the w
 
 Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send your bitcoin to the receiving address. You should see the unconfirmed balance almost immediately. 
 
-*Optional:* If you want to know that your backup works, you might want to go through the trouble of doing a full restore of your wallet. Do this by disconnecting from the internet, open a wallet in Electrum, go to File>Open (or Ctrl+O). Delete your wallet file. Go back to the first step of the wallet setup process and set it up exactly the same way as you did before (same password etc). When you reconnect to internet, your funds should be there and you can be sure that your process works. 
+*Optional:* If you want to know that your backup works, you might want to go through the trouble of doing a full restore of your wallet. Do this by opening a wallet in Electrum, go to File>Open (or Ctrl+O). Delete your wallet file and close the wallet you deleted if it's open. Go back to the first step of [create the multi sig wallet](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#create-the-multi-sig-wallet) and set it up exactly the same way as you did before (same password etc). But this time use another source of information. If you used your secure note for the passwords the first time, use the information in the information packages this time. When the wallet is recovered, your funds should be there and you can be sure that your process works. 
 
 
 ## Withdrawal program
