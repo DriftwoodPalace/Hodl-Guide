@@ -118,19 +118,21 @@ Confirm your seed by typing all the words you wrote down in the blank field. Whe
 
 ![Electrum 6](images/30_electrum_6.png)
 
-You should see a screen asking for a password. This is for protecting the walletfile and we don’t need that (since everything is deleted once finished), so leave blank and click Next:
+We are done with the seed for now, put it away during the rest of the process so it's not visibly lying around. 
+
+You should now be asked for a password. This is for protecting the wallet file and we don’t need that (since everything is deleted once finished), so leave it blank and click Next:
 
 ![Electrum 7](images/30_electrum_7.png)
 
 Electrum is now generating addresses, it can take a while before the main window shows up. Once the main window loads, the key and all necessary information is now generated!
 
-Before we move on, we need the master public key for our multi-sig contract and check what version of Electrum we are running.
+Before we move on, we need to check what version of Electrum we are running and what our `master public key` is.
 
-Start with the version. Check what version of Electrum that´s running on Tails. For example, Tails 3.12.1 comes with Electrum 3.1.3. Note this on a piece of paper or on your main computer (not secret information).
+Start with the version. Check what version of Electrum that´s running on Tails. For example, Tails 3.12.1 comes with Electrum 3.1.3. Remember this or note it down (not sensitive information).
 
 ![Electrum 8](images/30_electrum_8.png)
 
-Now we only need to copy the master public key. The master public key is used in our multi-sig contract and to derive bitcoin addresses to send funds to. To show the master public key in Electrum, go to `Wallet>Information`. 
+Now we need to copy the master public key. The master public key is used to construct our multi-sig wallet later. To show the master public key in Electrum, go to `Wallet>Information`. 
 
 We need to copy this to our live system where we´ll construct the multi-signature wallet. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our private key leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a private key. The key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
 
