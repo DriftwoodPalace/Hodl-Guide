@@ -228,7 +228,7 @@ Click OK, we can update once we are done with Tails
 
 #### Withdrawal method 2
 
-This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works. You'll probably need the same version of Electrum running on your computer and in Tails.
+This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works. If you are doing this at a later date, remember that you'll probably need the same version of Electrum running on your computer as in Tails.
 
 In Electrum, go to send, enter an address to another wallet you control. 
 Select the rest of the test amount you have left in the wallet, pick a fee and select “preview”:
@@ -241,7 +241,7 @@ In the preview window, select the QR-code in the bottom left corner:
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
 
-We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that nothing ore no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
 
 Click next at the first window:
 
@@ -313,9 +313,9 @@ MPK1: xpub668...
 MPK2: xpub78e...
 MPK3: xpub87t...
 ```
-In `information package A` add the master public key from cosigner 3:
+In `information package A` add the master public key from cosigner 3 This is like backup for the backup but should still be treated with care. It's easy to miss a character if typing it by hand, consider printing it on a printer, if you own one, and attahing it to the note. Oterhwise double check what you orint:
 
-`MPK1: xpub668...`
+`MPK3: xpub668...`
 
 In `information package C` add the master public key from cosigner 2:
 
