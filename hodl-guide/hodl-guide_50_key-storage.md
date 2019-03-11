@@ -27,7 +27,7 @@ You should now have the following information:
   MPK2: master_pub_key_2
   MPK3: master_pub_key_3
   ```
-Since two of your private keys are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. This means that you could lose 3 pieces and still be able to restore your funds (as long as you have your secure note or your Electrum wallet file). So how should you handle this information? One option is to make the funds unavailible to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
+Since two of your private keys are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. This means that you could lose 3 pieces and still be able to restore your funds (as long as you have your secure note). So how should you handle this information? One option is to make the funds unavailible to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
 
 Base case for storage:
 
