@@ -18,7 +18,7 @@ For our multi-sig to work on both systems, you might need the same version of El
 
 That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer.
 
-Go back to https://electrum.org/#download and check what the latest release is. Chanses are that the latest release is newer then the one used in Tails. If that´s the case we need an older release, click “Previous releases”:
+Go back to https://electrum.org/#download and check what the latest release is. Chances are that the latest release is newer then the one used in Tails. If that´s the case we need an older release, click “Previous releases”:
 
 ![Electrum 11](images/40_electrum_11.png)
 
@@ -61,11 +61,11 @@ A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to
 
 ### [P] Setup Electrum to run over Tor
 
-Electrum use servers that’s run by volunteers to validate and boradcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+Electrum use servers that’s run by volunteers to validate and broadcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
 
-There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic go through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
 
-Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
+Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
 
 `gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
 
@@ -87,7 +87,7 @@ Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
 
 When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (like tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
 
-Start Electrum. If this is the first time starting Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you alreade have one). The wallet you create can be a "dummy" wallet that you delete after the process. We only want to access the settings.
+Start Electrum. If this is the first-time starting Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you already have one). The wallet you create can be a "dummy" wallet that you delete after the process. We only want to access the settings.
 
 Pick a name for the wallet, click Next:
 
@@ -113,7 +113,7 @@ Electrum should now start. Go to `Tools>Network`. Change the tab to `Proxy`. Sel
 
 ![Electrum tor 6](images/40_electrum_tor_6.png)
 
-Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum wont connect to anyone unless Tor is running (even if you restart it). 
+Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t  connect to anyone unless Tor is running (even if you restart it). 
 
 ## Create the multi-sig wallet
 
@@ -131,7 +131,7 @@ Change the first slider to 3 cosigners (with 2 signatures required) and click Ne
 
 ![Electrum 15](images/40_electrum_15.png)
 
-We are now going to construt our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select `Use a hardware device` and click Next:
+We are now going to construct our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select `Use a hardware device` and click Next:
 
 ![Electrum 16](images/40_electrum_16.png)
 
@@ -184,7 +184,7 @@ If you disconnected one, or both, of your Hardware Wallets. You'll probably get 
 
 You can simply click `No`
 
-If you use Electrum over Tor (the circle in the bottom right corner should be blue), you have a pretty solid setup and can use this as it is. Electrum wont connect unless you use Tor and you will hide your real IP-address from any servers. But you still rely on third parties for validation and broadcasting. It's fine for our test deposit and we can improve this later. 
+If you use Electrum over Tor (the circle in the bottom right corner should be blue), you have a pretty solid setup and can use this as it is. Electrum won’t connect unless you use Tor and you will hide your real IP-address from any servers. But you still rely on third parties for validation and broadcasting. It's fine for our test deposit and we can improve this later. 
 
 We are going to deposit a small amount of bitcoin to one of our addresses to make sure everything works. In the beginning of 2019, transactions are practically free. So, a few $ worth of bitcoin is plenty to try it out. The amount should cover 3 transaction fees. 
 
@@ -208,7 +208,7 @@ Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send yo
 
 This can be used when you want to withdraw funds from your cold storage. 
 
-**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses togheter and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similiar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspiscous and deny your deposit. You have to decide yourself between privacy and ease of selling.
+**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
 
 If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals (and we don't have to think about mixing). The first one with your two hardware wallets. The second one is with your third backup key and one hardware wallet. That procedure is only necessary if you lose one private key or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
 
@@ -313,7 +313,7 @@ MPK1: xpub668...
 MPK2: xpub78e...
 MPK3: xpub87t...
 ```
-In `information package A` add the master public key from cosigner 3 This is like backup for the backup but should still be treated with care. It's easy to miss a character if typing it by hand, consider printing it on a printer, if you own one, and attahing it to the note. Oterhwise double check what you orint:
+In `information package A` add the master public key from cosigner 3 This is like backup for the backup but should still be treated with care. It's easy to miss one character if typing it by hand. Consider printing it on a printer, if you own one, and attaching it to the note. Otherwise double check what you print:
 
 `MPK3: xpub668...`
 
@@ -321,7 +321,7 @@ In `information package C` add the master public key from cosigner 2:
 
 `MPK2: xpub78e...`
 
-Thats it! Finish by deleting all the pictures of QR-codes on your phone or camera.
+That’s it! Finish by deleting all the pictures of QR-codes on your phone or camera.
 
 ---
 
