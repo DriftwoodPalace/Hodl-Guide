@@ -31,13 +31,13 @@ Since two of your private keys are both on paper and in hardware wallets, this i
 
 Base case for storage:
 
-**1.**	Private Key 1 and information package A at someone you trust (this package is a little bit more important then the other two). 
+**1.**	`Package 1` (private Key 1 and information package A) at someone you trust. This package is a little bit more important then the other two. 
 
-**2.**	Private Key 2 and information package B at someone else you trust or in a different location then your home. 
+**2.**	`Package 2` (private Key 2 and information package B) at someone else you trust or in a different location then your home. 
 
-**3.**	Private Key 3 and information package C in a vault or a safe deposit box at a bank or at a speicialized company. 
+**3.**	`Package 3` (private Key 3 and information package C) in a vault or a safe deposit box at a bank or at a speicialized company. 
 
-**4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). The hardware wallets can be used to check addresses when you deposit funds to the storage. It also gives you the possibility to spend your bitcoin. 
+**4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). The hardware wallets can be used to check addresses when you deposit funds to the storage. It also gives you the possibility to spend from your cold storage. 
 
 **5.** Secure note, encrypted and stored on a server you can access away from your home or on a USB stored in another location then your home.
 
