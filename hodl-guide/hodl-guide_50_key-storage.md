@@ -31,15 +31,15 @@ Since two of your private keys are both on paper and in hardware wallets, this i
 
 Base case for storage:
 
-**1.**	`Package 1` (private Key 1 and information package A) at someone you trust. This package is a little bit more important then the other two. 
+**1.**	`Package 1` (private Key 1 and information package A) at someone you trust. This package is a little bit more important then the other two as it's easier to restore funds with this package. 
 
 **2.**	`Package 2` (private Key 2 and information package B) at someone else you trust or in a different location then your home. 
 
 **3.**	`Package 3` (private Key 3 and information package C) in a vault or a safe deposit box at a bank or at a speicialized company. 
 
-**4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). The hardware wallets can be used to check addresses when you deposit funds to the storage. It also gives you the possibility to spend from your cold storage. 
+**4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). This gives you the possibility to spend from your cold storage at any time. 
 
-**5.** Secure note, encrypted and stored on a server you can access away from your home or on a USB stored in another location then your home.
+**5.** Digital note, encrypted and stored on a server you can access away from your home or on a USB stored in another location then your home.
 
 You can of course modify this to fit your situation (only use persons you trust, only use vaults etc). But you shouldn't store the private keys in the same building or store more then your two hardware wallets at home.
 
@@ -65,21 +65,33 @@ Feel free to talk about Bitcoin, but never talk about how much bitcoin you own (
 
 Another bad case is if your computer is compromised. If an attacker got access to your secure note or your wallet file in Electrum, they would be able to derive all your addresses. If they had this access, it's very possible that they could be able to get your name and address as well. If this attacker attact you in your home, multiple wallets wouldn't help since the attacker would know how much you owned. This is truly a worst case scenario and we do what we can to reduce this risk. If you use Tor and/or your full node you reduce the risk compared to simply giving remote servers a lot of this information. But it's still a risk we need to acknowledge. 
 
-Important to remember, your funds aren't at risk only because your computer is compromized. As long as one of the hardware wallets do what they are designed to do (not leak the private key) and your private key was generated properly in Tails, your funds are safe. An attacker would need you to give them access to the funds (physical attack or social engineering). 
+Important to remember, your funds aren't at risk only because your computer is compromized. As long as one of the hardware wallets do what they are designed to do (not leak the private key) and the last private key was generated properly in Tails, your funds are safe. An attacker would need you to give them access to the funds (physical attack or social engineering). 
 
-If the people you trust with your packages were going to collude against you, they would need all 3 packages. If the ones holding package 1 and 2 tried to spend they wouldn't have password B. If person 1 got access to package 3 she wouldn't have password A and if person 2 had access to packge 3 she wouldn't have the public key for key 1 (needed to constuct the multi-sig).
+If the people you trust with your packages were going to collude against you, they would need all 3 packages. If the ones holding package 1 and 2 tried to spend they wouldn't have password B. If person 1 got access to package 3 she wouldn't have password A and if person 2 had access to package 3 she wouldn't have the public key for key 1 (needed to constuct the multi-sig).
 
 What if someone needed to access your funds in case you are hospitalized or worse?
 
-The worst case would be if your house burned down and you and your hardware wallets with it. All three keys stored in other places would then be needed to access your funds. The multi-sig contract could be reconstructed by combining all private keys+the passwords or two private keys and the last master public key (in the right order).
+The worst case would be if your house burned down and you and your hardware wallets with it. All three keys stored in other places would then be needed to access your funds. The multi-sig contract could be reconstructed by combining all private keys (+ the seed passwords) or two private keys and the last master public key (in the right order).
 
-If you are hospitalized or die (without your house burning down) and a trusted person needs to access your funds, access to package 1 is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine it package with either package 2 and the hardware wallets or package 3 and the hardware wallets. They can of course combine it with package 2 and 3 and get access as well.
+If you are in a coma or die (without your house burning down) and a trusted person needs to access your funds, access to package 1 is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine its package with either package 2 and the hardware wallets or package 3 and the hardware wallets. They can of course combine it with package 2 and 3 and get access as well.
 
 What about loss of keys?
 
 If your house burns down with your hardware wallets in it, but you survive, you can construct the multi-sig wallet with your secure note and any 2 of the private keys.
 
 If your computer crashes and you lose access to your electrum wallet file and you somehowe lose your secure note, you can reconstruct the wallet with your hardware wallets and package 1 or 3.
+
+## **[P]** Improvments
+
+To be a true Bitcoin first class citizen you need to run your own Bitcoin full node and validate all transactions yourself. That way you don't rely on trusted third party servers and as a bonus improves your privacy.
+
+If you run a Bitcoin Core node you can use “Electrum Personal Server” to connect it with Electrum. This can be a little bit tricky for a non-technical user (especially on Windows and Mac). I’ve created guides for users on Windows and Mac in the bonus section. You can find the guides here: [Windows](hodl-guide_63_eps-win.md), [Mac](hodl-guide_64_eps-mac.md). Linux user can watch a tutorial here: https://www.youtube.com/watch?v=1JMP4NZCC5g (not my tutorial) or follow the official documentation. You can read more about the project on https://github.com/chris-belcher/electrum-personal-server. Once done you can use Electrum as usual, but without relying on someone else for verifying and broadcasting transactions. You can use it for more “day-to-day” spending as well. You can connect a hardware wallet to Electrum or use a hot-wallet (private key stored on the computer) and verify all transactions yourself.
+
+The second-best option is to use your Bitcoin full node to add watch addresses. You simply add all addresses you want to keep track off and your node checks for any activity on those addresses. If you have a full node running, this is very simple. Check the bonus section for how to [add watch addresses in Bitcoin Core](hodl-guide_65_watch-address.md). You’d still have to connect to random Electrum servers to broadcast transactions, but that isn't terrible if you use Tor or a VPN. The crucial part is to validate every transaction you receive.
+
+Another very important aspect of privacy is what traces you leave on chain. A very common example is that you buy bitcoin on an exchange that use KYC (know your customer). They then have all your personal information. If you then transfer your funds directly from the exchange to your cold storage, they would still know what bitcoin you most likely own. There are multiple other ways your funds can be linked to you. An easy way to break this link is to mix your coins with a technique called coinjoin. This has often been done by central parties, I would advice against those services. You put your trust in them, both with your privacy and with your keys as they could steal your bitcoin. A better alternative is to use a service that never control our keys. Two alterinatives are [Joinmarket](https://github.com/JoinMarket-Org/joinmarket) and Wasabi Wallet. You can find a guide and best practises for [Wasabi Wallet](hodl-guide_62_wasabi-wallet.md) in the bonus section.
+
+*Note:* Some exchanges treat coins involved in coin join transactions as suspiscous. If you do a coin join transaction and then tries to transfer the coins to an exchange, they might reject your deposit. You have to decide yourself about privacy vs ease of selling. 
 
 ---
 
