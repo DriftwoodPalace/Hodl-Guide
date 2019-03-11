@@ -27,13 +27,18 @@ You should now have the following information:
   MPK2: master_pub_key_2
   MPK3: master_pub_key_3
   ```
-Since you’ve duplicated two of your private keys, this is almost like a 2 of 5 signature scheme (not exactly since you could lose two of the same keys). This means that you could lose 2-3 pieces and still be able to restore your funds. So how should you handle this information? One option is to make the funds unavailible to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case.
+Since two of your private keys are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. This means that you could lose 3 pieces and still be able to restore your funds (as long as you have your secure note). So how should you handle this information? One option is to make the funds unavailible to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
 
 Base case for storage:
+
 **1.**	Private Key 1 and information package A at someone you trust (this package is a little bit more important then the other two). 
+
 **2.**	Private Key 2 and information package B at someone else you trust or in a different location then your home. 
+
 **3.**	Private Key 3 and information package C in a vault or a safe deposit box at a bank or at a speicialized company. 
+
 **4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). The hardware wallets can be used to check addresses when you deposit funds to the storage. It also gives you the possibility to spend your bitcoin. 
+
 **5.** Secure note, encrypted and stored on a server you can access away from your home or on a USB stored in another location then your home.
 
 You can of course modify this to fit your situation (only use persons you trust, only use vaults etc). But you shouldn't store the private keys in the same building or store more then your two hardware wallets at home.
