@@ -314,9 +314,13 @@ MPK1: xpub668...
 MPK2: xpub78e...
 MPK3: xpub87t...
 ```
-In `information package A`add the master public key from cosigner 1:
+In `information package A` add the master public key from cosigner 3:
 
 `MPK1: xpub668...`
+
+In `information package C` add the master public key from cosigner 2:
+
+`MPK2: xpub78e...`
 
 Thats it! Finish by deleting all the pictures of QR-codes on your phone or camera.
 
