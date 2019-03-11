@@ -3,7 +3,7 @@
 
 ---
 
-# The Ultimate Hodl Guide
+# The Hodl Guide
 
 ---
 
