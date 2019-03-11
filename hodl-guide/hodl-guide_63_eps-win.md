@@ -58,7 +58,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
 ```
 
-We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. A search online on the fingerprint shows that it confirms that the key seems to belong to Chris Belcher. We can go ahead an unzip the .zip file to any location on your computer.
+We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. We can go ahead an unzip the .zip file to any location on your computer.
 
 ## Change the config-file
 
@@ -68,7 +68,11 @@ Go into the unzipped folder and make a copy of the file `config.cfg_sample` and 
 
 ![Eps Win3](images/63_eps-w_3.png)
 
-Right click on the file and select edit to edit it with a text editor (notepad etc). If you are following the cold storage guide or already have an electrum wallet, open the wallet in Electrum (otherwise, create a new wallet). Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. In the config.cfg-file, we are going to change the row
+Right click on the file and select edit to edit it with a text editor (notepad etc). 
+
+#### For multi-sig wallets
+
+If you are following the hodl-guide or already have an electrum wallet, open the wallet in Electrum (otherwise, create a new wallet). Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. In the config.cfg-file, we are going to change the row
 ```
 # multisig_wallet = 2 xpub……
 ```
@@ -80,6 +84,8 @@ multisig_wallet = 3 xpub661MyMwA… xpub6AMQ6ZPNa6... xpub6A2po6ffdf…
 You can change the name “multisig_wallet” if you like.
 
 *Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk).
+
+#### Single wallet
 
 If you want to add more wallets, for example with one key from a hardware wallet. Follow the same procedure. Connect the hardware wallet and create or open an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
 For example:
