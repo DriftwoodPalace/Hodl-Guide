@@ -119,7 +119,7 @@ rpcpassword=your_password
 Then, we need Python3 to install the server. Check if it’s installed by going back to Powershell.
 Type in :
 
-`> python –version`
+`> python –-version`
 
 If it gives an error, try
 
@@ -127,12 +127,11 @@ If it gives an error, try
 
 *Note:* `Py` is the Windows Python Launcher and can in some situation work when `python` doesn’t. But try to use `python` and if only `py` works change python to py in the following examples.
 
-If Python is installed, it should give an output with the version like `Python 3.7.0`. Otherwise go to https://www.python.org/downloads/ and download and install the latest version.
+If Python 3 (not Python 2.7) is installed, it should give an output with the version like `Python 3.7.0`. Otherwise go to https://www.python.org/downloads/ and download and install the latest version.
 
 We are going to use `pip` to install the personal server. It should be installed with Python, but make sure you have the latest version by running this in powershell:
 
 `> python -m pip install -U pip`
-
 
 When it’s done, run the following (and make sure to change the path to where you unzipped the file):
 
