@@ -151,6 +151,8 @@ You should see the following output:
 
 Make sure that “proxy” is 127.0.0.1:9050 and that “onion” is reachable. If that’s the case, you are now using Tor.
 
+Once this is done, Bitcoin Core won't connect to anyone else unless Tor is running.
+
 ------
 
 << Back: [Bonus guides](hodl-guide_60_bonus.md) 
