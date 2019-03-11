@@ -92,7 +92,7 @@ For example:
 ```
 Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
-### Rest of the configcfg file
+#### Rest of the configcfg file
 
 If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir`. For example:
 ```
@@ -102,9 +102,11 @@ The best solution is to use a strong (many random characters) `rpcuser` and `rpc
 
 You need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
 
+#### Change the bitcoin.conf file
+
 To use a rpcuser and rpcpassword you need to add this to your `bitcoin.conf` file. If you are unsure if you’ve set this or not, look in the default location (C:\Users\User1\AppData\Roaming\Bitcoin\bitcoin.conf). If you’ve moved the data directory, Bitcoin Core will try to use the .conf file in the new location (if it exists). Edit the file at that location. 
 
-The file also needs to contain the line `server=1` (to accept connection from other programs). 
+The file also needs to contain the line `server=1` (to accept connection from other programs). Add or change this linein your file. 
 
 If you don’t have a bitcoin.conf file, simply create a .txt file in your data directory (where you store the blocks) and add the information, save and rename the file to `bitcoin.conf` (make sure to change the extension from .txt to conf). So the file should at least contain the following:
 ```
@@ -143,7 +145,7 @@ To make sure that everything worked, open a new folder and navigate to the locat
 
 `C:\Users\User1\AppData\Roaming\Python\Python37\Scripts`
 
-Copy the full path to electrum-personal-server.exe. 
+Copy the full path to the file `electrum-personal-server.exe`. 
 
 *Hint*, right click on the file, select properties, change to the “Security” tab and copy the full path in “Object Name”. 
 
@@ -153,7 +155,7 @@ To make life easier in the future, we’re going to create a `.bat` file to auto
 
 Open the Text Document you created and paste the path to `electrum-personal-server.exe`, keep the document open. Navigate to the folder you unzipped earlier and copy the path to the `config.cfg` file. 
 
-Paste the path to `config.cfg` after the path to `electrum-personal-server.exe`. For example
+Paste the path to `config.cfg` after the path to `electrum-personal-server.exe`. For example:
 ```
 C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
 ```
@@ -183,7 +185,7 @@ Once the importing is done Electrum Server will exit. If you want to import old 
 ```
 C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server-rescan.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
 ```
-Run Electrum-Personal-Server-Rescan.bat and enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished).
+Run Electrum-Personal-Server-Rescan.bat and enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance ifyou rescan).
 
 Once the rescanning is done, or if you only use new addresses. Run Electrum-Personal-Server.bat again. This will start the server. Wait for this message:
 ```
@@ -256,7 +258,15 @@ Uncheck Select server automatically and change `Server` to `localhost`:
 
 ![Eps Win4](images/63_eps-w_4.png)
 
-If you changed port `50002` in `config.cfg` make sure to change to the same port here. Close this dialaog once finished 
+If you changed port `50002` in `config.cfg` make sure to change to the same port here. 
+
+If you use Electrum over Tor you have to disable this (no need to connect to your own server over Tor). Change tab to "Proxy" and uncheck "Use Tor":
+
+![Eps Win7](images/63_eps-w_7.png)
+
+Close the dialaog once finished.
+
+It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
 
 *Pro tip:* Create a shortcut that disables all connections to any other server. In that case you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `"C:\Program Files (x86)\Electrum`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
 
