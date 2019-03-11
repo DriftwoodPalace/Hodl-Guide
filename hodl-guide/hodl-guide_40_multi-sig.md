@@ -208,15 +208,15 @@ Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send yo
 
 This can be used when you want to withdraw funds from your cold storage. 
 
-**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses togheter and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similiar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Like said before, some exchanges might treat bitcoins involved in coin join transactions as suspiscous. 
+**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses togheter and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similiar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspiscous and deny your deposit. You have to decide yourself between privacy and ease of selling.
 
-If this is the firs time depositing to the wallet, we’re going to do two test withdrawals. The first one use your two hardware wallets and should be fairly easy. The second one is with your third backup key. That procedure is only necessary if you lose one private key or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
+If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals. The first one with your two hardware wallets. The second one is with your third backup key and one hardware wallet. That procedure is only necessary if you lose one private key or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
 
 #### Withdrawal method 1
 
 Open your wallet in Electrum. Connect your 2 hardware wallets. You can connect both at the same time or one at a time. If you use them one at a time, start with Hardware Wallet A. On the Send tab, create an ordinary transaction with half of your test amount to an address you control (like an address in Wasabi Wallet or in another Electrum Wallet). Once the transaction is constructed click `Send`:
 
-![Electrum 33](images/40_electrum_33.png)
+![Electrum 33](images/40_electrum_34.png)
 
 Sign and confirm the transaction with one Hardware Wallet at the time, start with Hardware Wallet A. If your hardware wallet has a screen, control the information (like address and amount) on the screen.
 
