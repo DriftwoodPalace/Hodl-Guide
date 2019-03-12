@@ -57,7 +57,12 @@ Everything is now set to start to HODL with a peace of mind!
 
 So, what are the worst case scenarios? How vulnerable are you to theft or loss and how are your trusted persons going to access your funds in case of an emergency?
 
-Your funds are most vulnerable to "the $5 wrench attack". That means, if someone breaks into your house and threatens you until you give them your bitcoins. This is why
+Your funds are most vulnerable to "the $5 wrench attack":
+
+![Wrench](images/50_wrench.png)
+_$5 wrench attack by https://xkcd.com/538/ _
+
+That means, if someone breaks into your house and threatens you until you give them your bitcoins amd this is why:
 
 ![First Rule](images/50_first_rule.png)
 
