@@ -60,6 +60,7 @@ So, what are the worst case scenarios? How vulnerable are you to theft or loss a
 Your funds are most vulnerable to "the $5 wrench attack":
 
 ![Wrench](images/50_wrench.png)
+
 *$5 wrench attack by https://xkcd.com/538/*
 
 That means, if someone breaks into your house and threatens you until you give them your bitcoins amd this is why:
