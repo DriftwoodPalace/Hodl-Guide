@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ **Preparations** ] -- [ [First Keys](hodl-guide_20_first-keys.md) ] -- [ [Last Key](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Key Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ **Preparations** ] -- [ [First Seeds](hodl-guide_20_first-keys.md) ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_key-storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 -------
@@ -85,14 +85,14 @@ To check that the fingerprint indeed seems to belong to me, you could check my T
 
 If someone was trying to fake the guide and change even one character in hodl-guide.pdf, it would result in a bad signature when you verified it with hundingsbane.asc. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. You can open hodl-guide.pdf and select a few parts of the text and compare it to what’s written here on Github. If it’s not the same, you should stop and investigate further. You can continue with the pdf or on Github.
 
-Now that we have this knowledge, we can start generating private keys! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
+Now that we have this knowledge, we can start generating seeds! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
 
 ## [P] Bitcoin Core
 
-We don´t want to go through all this trouble to secure our keys and then rely on trusted third parties for validations. That´s why our first option should be to use Bitcoin Core to validate all transactions. Bitcoin core is the main software implementation of the Bitcoin protocol. By running your own node, you´re also helping the network and making it more decentralized. 
+We don´t want to go through all this trouble to secure our seeds and then rely on trusted third parties for validations. That´s why our first option should be to use Bitcoin Core to validate all transactions. Bitcoin core is the main software implementation of the Bitcoin protocol. By running your own node, you´re also helping the network and making it more decentralized. 
 Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md)
 
 *Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store as little as 15 GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
 
 ---
-Move on to: [Generate the first two keys >>](hodl-guide_20_first-keys.md)
+Move on to: [Generate the first two seeds >>](hodl-guide_20_first-keys.md)
