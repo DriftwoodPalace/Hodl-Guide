@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ **Preparations** ] -- [ [First Seeds](hodl-guide_20_first-keys.md) ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ **Preparations** ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 -------
@@ -95,4 +95,4 @@ Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bit
 *Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store as little as 15 GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
 
 ---
-Move on to: [Generate the first two seeds >>](hodl-guide_20_first-keys.md)
+Move on to: [Generate the first two seeds >>](hodl-guide_20_first-seeds.md)
