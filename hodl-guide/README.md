@@ -1,4 +1,4 @@
-[ **Intro** ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Keys](hodl-guide_20_first-keys.md) ] -- [ [Last Key](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Key Storage](hodl-guide_50_key-storage.md
+[ **Intro** ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-keys.md) ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_key-storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
@@ -15,7 +15,7 @@ I wrote this guide in my own quest to become a first-class Bitcoin citizen. A fi
 
 ## Who is this for?
 
-The guide is for everyone who wants to store their bitcoin in a secure way (you don’t need any specific technical knowledge). You should have a basic understanding of what a seed that you can generate private keys from is and why it´s important to store it in a secure way. The guide is flexible and can be utilized in different ways. The full setup is with two different hardware wallets and one backup key created with the Tails operating system. The most time consuming, and slightly more technical, part is related to Tails. You could skip that part for an easier (but less secure) setup. If you don’t trust, or want to buy, hardware wallets you could do the whole setup with 3 keys in Tails. If you make modifications to the guide, you'll have to adjust accordingly. The full setup should take 2-3 hours, excluding download and sync-times. The guide is meant for normal users and not individuals that might be extra targeted for specific attacks (but they can probably use parts of the guide).  
+The guide is for everyone who wants to store their bitcoin in a secure way (you don’t need any specific technical knowledge). You should have a basic understanding of what a seed that you can generate private keys from is and why it´s important to store it in a secure way. The guide is flexible and can be utilized in different ways. The full setup is with two different hardware wallets and one backup seed created with the Tails operating system. The most time consuming, and slightly more technical, part is related to Tails. You could skip that part for an easier (but less secure) setup. If you don’t trust, or want to buy, hardware wallets you could do the whole setup with 3 seeds in Tails. If you make modifications to the guide, you'll have to adjust accordingly. The full setup should take 2-3 hours, excluding download and sync-times. The guide is meant for normal users and not individuals that might be extra targeted for specific attacks (but they can probably use parts of the guide).  
 
 ## Privacy
 
