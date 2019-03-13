@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-keys.md) ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ **Multi-Sig** ] -- [ [Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ **Multi-Sig** ] -- [ [Storage](hodl-guide_50_storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
@@ -325,4 +325,4 @@ That’s it! Finish by deleting all the pictures of QR-codes on your phone or ca
 
 ---
 
-Next up: [Storage >>](hodl-guide_50_key-storage.md)
+Next up: [Storage >>](hodl-guide_50_storage.md)
