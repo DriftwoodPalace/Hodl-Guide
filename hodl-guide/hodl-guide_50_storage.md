@@ -2,7 +2,7 @@
 
 ---
 
-# Store your keys
+# Store your information
 
 You should now have the following information:
 * **Package 1:**
