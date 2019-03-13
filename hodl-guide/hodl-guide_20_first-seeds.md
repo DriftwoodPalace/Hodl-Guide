@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ [Preparations](hodl-guide_10_preparations.md) ] -- [ **First Seeds** ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ [Preparations](hodl-guide_10_preparations.md) ] -- [ **First Seeds** ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
@@ -37,7 +37,7 @@ PWB: your_password_B
 
 ## Create information packages
 
-Apart from the seeds, we are going to create 3 physical information packages on a different piece of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Storage](hodl-guide_50_key-storage.md). 
+Apart from the seeds, we are going to create 3 physical information packages on a different piece of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Storage](hodl-guide_50_storage.md). 
 
 On each information package, write a short instruction for how to access the funds. Something like this:
 
