@@ -72,7 +72,7 @@ Right click on the file and select edit to edit it with a text editor (notepad e
 
 #### For multi-sig wallets
 
-If you are following the hodl-guide or already have an electrum wallet, open the wallet in Electrum (otherwise, create a new wallet). Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. In the config.cfg-file, we are going to change the row
+If you are following the hodl-guide or have an electrum multi-sig wallet you'd like to import, open the wallet in Electrum (otherwise, create a new wallet). Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. In the config.cfg-file, we are going to change the row
 ```
 # multisig_wallet = 2 xpub……
 ```
@@ -87,14 +87,14 @@ You can change the name “multisig_wallet” if you like.
 
 #### Single wallet
 
-If you want to add more wallets, for example with one key from a hardware wallet. Follow the same procedure. Connect the hardware wallet and create or open an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
+If you want to add more wallets, or create a new single wallet, for example with one key from a hardware wallet. Follow the same procedure. Connect the hardware wallet and create or open an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
 For example:
 ```
 Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
 #### Rest of the configcfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir`. For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the deafult location). For example:
 ```
 datadir = D:\Bitcoin
 ```
