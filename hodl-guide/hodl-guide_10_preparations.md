@@ -19,7 +19,7 @@
 *	Home safe. For safe, waterproof and fireproof storage for one of the Hardware Wallets.
 *	TerraSlate paper (https://www.amazon.com/dp/B076JKVNWY/), waterproof, heat resistant and tear-resistant paper.
 *	Envelopes to store sensitive information in. 
-*	Cryptosteel or similar product that stores a private key on a metal plate (then you don´t need TerraSlate).
+*	Cryptosteel or similar product that stores a seed on a metal plate (then you don´t need TerraSlate).
 *	Tamper-resistant seals or tape.
 
 ## First steps
