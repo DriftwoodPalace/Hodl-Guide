@@ -56,8 +56,8 @@ On `info package B`, write your first password for the seed `PWA: your_password_
 On `info package C`, write the second password for the seed `PWB: your_password_B`
 
 You should now have:
-* `Hardware wallet A` and its private key (`private key 1`).
-* `Hardware wallet B` and its private key (`private key 2`).
+* `Hardware wallet A` and its seed (`seed A`).
+* `Hardware wallet B` and its seed (`seed B`).
 * Info package `A`, `B` and `C`.
 * A `digital note` in a password manager or on a USB (that´s going to be store in another location), containing `your_password_A` and `your_password_B` (never put anything else from your seed on a computer connected to internet). 
 
