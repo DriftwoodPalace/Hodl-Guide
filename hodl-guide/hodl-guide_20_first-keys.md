@@ -1,19 +1,19 @@
-[ [Intro](README.md) ] -- [ [Preparations](hodl-guide_10_preparations.md) ] -- [ **First Keys** ] -- [ [Last Key](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Key Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ [Preparations](hodl-guide_10_preparations.md) ] -- [ **First Seeds** ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_key-storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
 
-# Generating the first two keys
+# Generating the first two seeds
 
-Time to generate the first keys! 
+Time to generate the first seeds! 
 
-A few things to keep in mind when generating your private keys. This is valuable information and a lot of devices are “spying” on us in one way or the other. If possible, generate all private keys in a room where other electronic devices connected to the internet are turned off. Make sure that your actions aren´t visible from windows or doors and that no home security camera records your actions.
+A few things to keep in mind when generating your seeds. This is valuable information. If someone gets access to your seeds, they get access to your funds. A lot of devices are “spying” on us in one way or the other. If possible, generate all seeds in a room where other electronic devices connected to the internet are turned off. Make sure that your actions aren´t visible from windows or doors and that no home security camera records your actions.
 
 Try to keep smartphones turned off and/or in another room during the process. They are hard to secure and can record sound/video without you noticing (computers can of course do the same). Generally, use your common sense to make sure that nothing can record your actions.
 
-## Generate keys with Hardware Wallets A and B
+## Generate seeds with Hardware Wallets A and B
 
-The first two keys are generated with your two different hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the flawed key. 
+The first two seeds are generated with your two different hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed. 
 
 Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). Use PINs you can remember yourself.
 
@@ -28,7 +28,7 @@ I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a 
 Use two different passphrases for your two different hardware wallets. 
 If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose). 
 
-We are calling the first Hardware wallet, `Hardware wallet A` (used with `password A`) and the second one `Hardware wallet B` (used with `password B`). It doesn't matter which wallet is which, but make sure to keep track of what you select so you don't mix them later and make sure which private key belongs to which wallet. In your `digital note`, store the passwords like this:
+We are calling the first Hardware wallet, `Hardware wallet A` (used with `password A`) and the second one `Hardware wallet B` (used with `password B`). It doesn't matter which wallet is which, but make sure to keep track of what you select so you don't mix them later and make sure you know which seed belongs to which wallet (you can mark the seeds with "A" and "B"). In your `digital note`, store the passwords like this:
 ```
 PWA: your_password_A
 PWB: your_password_B
@@ -37,7 +37,7 @@ PWB: your_password_B
 
 ## Create information packages
 
-Apart from the private keys, we are going to create 3 physical information packages on a different piece of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Key storage](hodl-guide_50_key-storage.md). 
+Apart from the seeds, we are going to create 3 physical information packages on a different piece of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Storage](hodl-guide_50_key-storage.md). 
 
 On each information package, write a short instruction for how to access the funds. Something like this:
 
@@ -64,6 +64,6 @@ You should now have:
 Store all information in a secure way during the rest of the process (don't leave your notes lying around visibly).
 
 ---
-Next up: [Generate the last key with Tails >>](hodl-guide_30_last-key.md)
+Next up: [Generate the last seed with Tails >>](hodl-guide_30_last-key.md)
 
 
