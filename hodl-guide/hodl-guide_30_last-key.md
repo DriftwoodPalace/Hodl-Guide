@@ -3,9 +3,9 @@
 
 ---
 
-# Generate the last key with Tails
+# Generate the last seed with Tails
 
-We are generating the last key with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
+We are generating the last seed with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
 It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased when the USB is ejected (and your computer will start with your usual operating system like nothing happened). 
 
 ## Download Tails
@@ -49,7 +49,7 @@ This ensures that the .img file was signed with a key with the fingerprint A490 
 
 Another match is a post from 2015 on the official webpage that announces a change to this key and we can also see several old posts from Reddit. We can be almost certain (not possible to do much more without meeting the signer IRL and get the signature confirmed that way) that this release was indeed signed by the developers. This process would catch a scenario were a malicious actor had taken control over the webpage and uploaded a bad file and a bad signing key. If you get a bad signature or another fingerprint, stop and investigate further before installing anything. 
 
-If everything is good, go ahead and create the boot USB. This is going to be used to create the last private key.  
+If everything is good, go ahead and create the boot USB. This is going to be used to create the last seed.  
 
 ## Flash Tails to USB
 
@@ -57,7 +57,7 @@ The easiest way is to follow the instructions on https://tails.boum.org/install 
 
 So, insert the USB you are going to use and follow the instructions at “2/5 Install Tails”. In Mars 2019 that means downloading, running and flashing the USB with Etcher for Windows and macOS and with GNOME Disks for Linux. When step 2/5 is completed, you´ve got two choices. 
 
-If you use one computer. Tails is going to be started on the computer you are reading this on. In that case you´re going to have to print or write down the rest of the of the instructions on this page. You could also bring the instructions up on another device (keep them in flight mode and don’t let any cameras see any screens or private keys). Make sure no other USB drives is connected to the computer.
+If you use one computer. Tails is going to be started on the computer you are reading this on. In that case you´re going to have to print or write down the rest of the of the instructions on this page. You could also bring the instructions up on another device (keep them in flight mode and don’t let any cameras see any screens or seeds). Make sure no other USB drives is connected to the computer.
 
 If you are using two computers. Tails is going to be started on the other computer and you can keep the instructions on the main computer. The other computer could be a normal computer that's going to be used for other things after the process. Or for extra security, an eternally quarantined computer used only for this purpose. Make sure no other USB drives is connected to the computer.
 
@@ -88,7 +88,7 @@ When you get past the boot loader menu, follow the instructions on the screen to
 
 *Note:* Tails can be pretty slow if you use an old computer, make sure it's really stuck and not only slow before troubleshooting.
 
-## Generating the private key with Electrum
+## Generating the seed with Electrum
 
 Once started, make sure WiFi is disconnected (arrow in upper right corner, should say “Wi-Fi not connected). 
 
@@ -98,7 +98,7 @@ The Electrum – Install Wizard should appear. The name of the wallet isn’t im
 
 ![Electrum 1](images/30_electrum_1.png)
 
-On the next step, let “Standard wallet” be selected (we are only interested in generating a key). Click Next:
+On the next step, let “Standard wallet” be selected (we are only interested in generating a seed). Click Next:
 
 ![Electrum 2](images/30_electrum_2.png)
 
@@ -110,7 +110,7 @@ On the next step, let standard be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
-You should now see 12 words, this is your private key! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other keys with 24 words). Write the 12 words you see on your screen on a paper of good quality. Then click Next:
+You should now see 12 words, this is your seed! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other seeds with 24 words). Write the 12 words you see on your screen on a paper of good quality. Then click Next:
 
 ![Electrum 5](images/30_electrum_5.png)
 
@@ -124,7 +124,7 @@ You should now be asked for a password. This is for protecting the wallet file a
 
 ![Electrum 7](images/30_electrum_7.png)
 
-Electrum is now generating addresses, it can take a while before the main window shows up. Once the main window loads, the key and all necessary information is now generated!
+Electrum is now generating addresses, it can take a while before the main window shows up. Once the main window loads, all necessary information is generated!
 
 Before we move on, we need to check what version of Electrum we are running and what our `master public key` is.
 
@@ -134,11 +134,11 @@ Start with the version. Check what version of Electrum that´s running on Tails.
 
 Now we need to copy the master public key. The master public key is used to construct our multi-sig wallet later. To show the master public key in Electrum, go to `Wallet>Information`. 
 
-We need to copy this to our live system where we´ll construct the multi-signature wallet. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our private key leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a private key. The key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
+We need to copy this to our live system where we´ll construct the multi-signature wallet. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our seed leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a seed that you can generate private keys from. The public key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
 
 ![Electrum 9](images/30_electrum_9.png)
 
-It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no private keys are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key. 
+It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no seeds are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key. 
 
 If you use one computer, remove the tails boot USB from the computer and restart the computer on your regular OS. You can keep Tails running if you use two computers, but close Electrum. 
 
