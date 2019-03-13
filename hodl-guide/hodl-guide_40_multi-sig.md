@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Keys](hodl-guide_20_first-keys.md) ] -- [ [Last Key](hodl-guide_30_last-key.md) ] -- [ **Multi-Sig** ] -- [ [Key Storage](hodl-guide_50_key-storage.md
+[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-keys.md) ] -- [ [Last Seed](hodl-guide_30_last-key.md) ] -- [ **Multi-Sig** ] -- [ [Storage](hodl-guide_50_key-storage.md
 ) ] -- [ [Bonus](hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
 
 ---
@@ -131,7 +131,7 @@ Change the first slider to 3 cosigners (with 2 signatures required) and click Ne
 
 ![Electrum 15](images/40_electrum_15.png)
 
-We are now going to construct our multi-sig. Start with `Hardware Wallet A`. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select `Use a hardware device` and click Next:
+We are now going to construct our multi-sig. Start with `Hardware Wallet A`, that's going to be cosigner A. If you use a wallet, like Ledger, where the password is written on the device. Make sure the password is active before moving on. Select `Use a hardware device` and click Next:
 
 ![Electrum 16](images/40_electrum_16.png)
 
@@ -139,11 +139,11 @@ Electrum should detect your hardware wallet and show its name. If detected, clic
 
 ![Electrum 21](images/40_electrum_21.png)
 
-The next window shows your Master Public Key, we will access this later in Electrum and can skip it now, click Next:
+The next window shows your Master Public Key, we will access this later in Electrum and can skip it now. Click Next:
 
 ![Electrum 19](images/40_electrum_19.png)
 
-We are now going to add key 2. Remove Hardware Wallet A and insert Hardware Wallet B and repeat the process you used for key 1. If it’s a wallet with a physical pin like Ledger, enter the pin (and make sure that it uses `password B`). Select `Cosign with hardware device` and click Next. 
+We are now going to add cosigner 2. Remove Hardware Wallet A and insert Hardware Wallet B and repeat the process you used for cosigner 1. If it’s a wallet with a physical pin like Ledger, enter the pin (and make sure that it uses `password B`). Select `Cosign with hardware device` and click Next. 
 
 ![Electrum 20](images/40_electrum_20.png).
 
@@ -151,7 +151,7 @@ Electrum should detect your hardware wallet and show its name. If detected, clic
 
 ![Electrum 22](images/40_electrum_35.png)
 
-The next window should be where you add cosigner 3 of 3. We are now going to use the key we created with Tails. Select “Enter cosigner key” and click next:
+The next window should be where you add cosigner 3 of 3. We are now going to use the seed we created with Tails. Select “Enter cosigner key” and click next:
 
 ![Electrum 36](images/40_electrum_36.png)
 
@@ -210,7 +210,7 @@ This can be used when you want to withdraw funds from your cold storage.
 
 **[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
 
-If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals (and we don't have to think about mixing). The first one with your two hardware wallets. The second one is with your third backup key and one hardware wallet. That procedure is only necessary if you lose one private key or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
+If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals (and we don't have to think about mixing). The first one with your two hardware wallets. The second one is with your third backup seed and one hardware wallet. That procedure is only necessary if you lose one seed or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
 
 #### Withdrawal method 1
 
@@ -228,7 +228,7 @@ Click OK, we can update once we are done with Tails
 
 #### Withdrawal method 2
 
-This is the backup method and should only be needed in case you lose some of your keys. But it's a good check to make sure our third key was works. If you are doing this at a later date, remember that you'll probably need the same version of Electrum running on your computer as in Tails.
+This is the backup method and should only be needed in case you lose one hardware wallet and its seed. It makes sure that our third seed works. If you are doing this at a later date, remember that you'll probably need the same version of Electrum running on your computer as in Tails.
 
 In Electrum, go to send, enter an address to another wallet you control. 
 Select the rest of the test amount you have left in the wallet, pick a fee and select “preview”:
@@ -241,7 +241,7 @@ In the preview window, select the QR-code in the bottom left corner:
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
 
-We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a private key, make sure to follow the same procedure that you used when generating the keys (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a seeds, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
 
 Click next at the first window:
 
@@ -325,4 +325,4 @@ That’s it! Finish by deleting all the pictures of QR-codes on your phone or ca
 
 ---
 
-Next up: [Key storage >>](hodl-guide_50_key-storage.md)
+Next up: [Storage >>](hodl-guide_50_key-storage.md)
