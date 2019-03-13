@@ -76,9 +76,9 @@ If you are following the hodl-guide or already have an electrum wallet, open the
 ```
 # multisig_wallet = 2 xpub……
 ```
-Start by removing `#` (otherwise it’s treated as a comment and skipped by the application). If you are using a 2 of 3 multi-sig, change `2` to `3`. Remove the two example keys and paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
+Start by removing `#` (otherwise it’s treated as a comment and skipped by the application). If you are using a 2 of 3 multi-sig, keep `2` (required-signatures). Remove the two example keys and paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 ```
-multisig_wallet = 3 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
+multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
 ```
 
 You can change the name “multisig_wallet” if you like.
@@ -203,7 +203,7 @@ That means that the server can’t connect to your Bitcoin Core full node. This 
 ## Comments start with #
 
 [master-public-keys]
-multisig_wallet = 3 xpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB xpub127pc4e5YKw4zsBBznm7zEfaZdwAA125UZvfs8cy2D3b58BpBL6Utgz3NdLWgninZAxdCv8J1HzSz97yXBsEeVSLX7w8SYEcbRqAwMyM9LB xpub7g5pc4e5YKwBL9MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB
+multisig_wallet = 2 xpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB xpub127pc4e5YKw4zsBBznm7zEfaZdwAA125UZvfs8cy2D3b58BpBL6Utgz3NdLWgninZAxdCv8J1HzSz97yXBsEeVSLX7w8SYEcbRqAwMyM9LB xpub7g5pc4e5YKwBL9MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB
 [watch-only-addresses]
 
 [bitcoin-rpc]
