@@ -26,7 +26,7 @@
 
 An important part of the guide (and a great skill to have) is to know how to validate digital signatures. We are going to do a validation of this page as a practice (and to control that I've signed the guide).
 
-To start, download my signature `hundingsbane.asc` and the detached signature `hodl-guide_10_preparations.md.sig` in the [validation-folder](validation). Then go to the top of this page and select "Raw". Use `Ctrl+S` and save the file as hodl-guide_10_preparations.md in the same folder as the other signatures. We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide_10_preparations.md.   
+To start, download my signature `hundingsbane.asc` (select "Raw" and use `Ctrl+S` to save it to your computer) and the detached signature `hodl-guide_10_preparations.md.sig` in the [validation-folder](validation). Then go to the top of this page and select "Raw". Use `Ctrl+S` and save the file as hodl-guide_10_preparations.md in the same folder as the other signatures. We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide_10_preparations.md.   
 
 To verify what we downloaded, we need GnuPG (https://gnupg.org/). The implementation varies for different OS:
 
