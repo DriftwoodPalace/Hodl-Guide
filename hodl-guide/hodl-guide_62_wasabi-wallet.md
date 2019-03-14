@@ -5,7 +5,7 @@
 
 # Wasabi Wallet
 
-Wasabi Wallet is a bitcoin wallet that you can use to "mix" bitcoin. The method is often referd to as "coinjoin". It's a technique where you create transactions together with other people to make tracking on the blockchain harder.  
+Wasabi Wallet is a bitcoin wallet that you can use to "mix" bitcoin. The method is often referred to as "coinjoin". It's a technique where you create transactions together with other people to make tracking on the blockchain harder.  
 
 Many mixers are central services. That means that they can steal your funds and destroy your privacy at will. This is not the case with Wasabi Wallet. The only central part is a "coordinator" that constructs the transactions and that you connect to with Tor to ensure anonymity. You control your own private keys during the whole process. 
 
@@ -13,8 +13,8 @@ To mix bitcoins is extra crucial if you bought your bitcoin on an exchange with 
 
 To download and install the wallet, go to https://www.wasabiwallet.io/ and download the latest version for your OS. If you use Tor, use this address http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/
 Make sure that you download the detached signature as well so we can verify the download.
-To verify the signature, you need GNUPgp and the signing key from nopara73.
-If you don’t have GNUPgp, you can find a guide and some basic instructions [Here]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps). 
+To verify the signature, you need GNUPGP and the signing key from nopara73.
+If you don’t have GNUPGP, you can find a guide and some basic instructions [Here]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps). 
 
 You can find nopara73’s key on https://github.com/zkSNACKs/WalletWasabi/blob/master/PGP.txt. Click Raw and hit Ctrl+S and save the key in the same folder as your downloaded files. 
 Open a new terminal window
