@@ -72,7 +72,7 @@ This is based on the discussion at https://www.reddit.com/r/WasabiWallet/comment
 
 This is targeted for how you should handle transfers to cold storage. You can safely transfer bitcoin from WasabiWallet to your cold storage. WasabiWallet doesn’t use your full node but automatically use Tor and a version of Neutrino that makes it very private.
 
-But you don’t want to transfer all your bitcoin in the same transaction. The key is to be unpredictable. Chain analysis is looking for patterns. If you deposit 1 bitcoin and mix it and then combine all the outputs and transfer 1 bitcoin out, you can make the assumption that it’s the same bitcoin and the mixing is wasted. 
+If you mix larger amounts you don’t want to transfer all your mixed bitcoins in the same transaction. The key is to be unpredictable. Chain analysis is looking for patterns. If you deposit 1 bitcoin and mix it and then combine all the outputs and transfer 1 bitcoin out, you can make the assumption that it’s the same bitcoin and the mixing is wasted. 
 
 * Be unpredictable. If you have 5 bitcoins, deposit it in uneven chunks (and don’t put 5 bitcoins in a hot wallet). For example, start by depositing 1 bitcoin, then 0,7 then 1,2 and so on. Do the transactions at different times during the day. This can seem like a lot of work. But, if you do the mixing well, this is the only time you have to do it. If you do it poorly, you might have to go back later and do it again. 
 * Aim for an anonymity set of at least 50. This’ll be visible at each separate output in Wasabi Wallet.
