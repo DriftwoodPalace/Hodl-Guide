@@ -70,7 +70,7 @@ Depending on how much you mix and what anonymity set you settle for, you´ll end
 
 This is based on the discussion at https://www.reddit.com/r/WasabiWallet/comments/avxbjy/combining_mixed_coins_privacy_megathread/
 
-It’s targeted for how you should handle transfers to cold storage. You can safely transfer bitcoin from WasabiWallet to your cold storage. WasabiWallet doesn’t use your full node but automatically use Tor and a version of Neutrino that makes it very private.
+This is targeted for how you should handle transfers to cold storage. You can safely transfer bitcoin from WasabiWallet to your cold storage. WasabiWallet doesn’t use your full node but automatically use Tor and a version of Neutrino that makes it very private.
 
 But you don’t want to transfer all your bitcoin in the same transaction. The key is to be unpredictable. Chain analysis is looking for patterns. If you deposit 1 bitcoin and mix it and then combine all the outputs and transfer 1 bitcoin out, you can make the assumption that it’s the same bitcoin and the mixing is wasted. 
 
