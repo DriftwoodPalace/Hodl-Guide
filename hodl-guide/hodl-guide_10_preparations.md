@@ -24,9 +24,9 @@
 
 ## First steps
 
-An important part of the guide (and a great skill to have) is to know how to validate digital signatures. We are going to do a validation of this guide as a practice (and to control the guide).
+An important part of the guide (and a great skill to have) is to know how to validate digital signatures. We are going to do a validation of this page as a practice (and to control that I've signed the guide).
 
-To start, download my signature `hundingsbane.asc`, the guide `hodl-guide.pdf` and the detached signature `hodl-guide.pdf.sig` in the [validation-folder](validation). We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide.pdf.   
+To start, download my signature `hundingsbane.asc` and the detached signature `hodl-guide_10_preparations.md.sig` in the [validation-folder](validation). Then go to the top of this page and select "Raw". Use `Ctrl+S` and save the file as hodl-guide_10_preparations.md in the same folder as the other signatures. We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide_10_preparations.md.   
 
 To verify what we downloaded, we need GnuPG (https://gnupg.org/). The implementation varies for different OS:
 
@@ -63,9 +63,9 @@ To be able to verify the signature, import hundingsbane.asc into your local GPG 
 
 Now use the “detached signature” to check that the .pdf file was signed with the signing key we imported: 
 
-`$ gpg --verify hodl-guide.pdf.sig hodl-guide.pdf` 
+`$ gpg --verify hodl-guide_10_preparations.md.sig hodl-guide_10_preparations.md` 
 
-*Hint:* If the name of the file and the signature is the same, you don't need to write the name of the file (you could use only `$ gpg --verify hodl-guide.pdf.sig` in our example). 
+*Hint:* If the name of the file and the signature is the same, you don't need to write the name of the file (you could use only `$ gpg --verify hodl-guide_10_preparations.md.sig` in our example). 
 
 The expected output should be something like:
 
@@ -79,13 +79,15 @@ Primary key fingerprint: FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9
 ```
 
 There's three key points to look at when verifying a signature. When the signature was made (`03/01/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`). 
-To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc, that’s hard to fake. 
+To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc that’s hard to fake. 
 
 [Twitter](https://twitter.com/HelgeHunding), [Keybase](https://keybase.io/helgehunding)
 
-If someone was trying to fake the guide and change even one character in hodl-guide.pdf, it would result in a bad signature when you verified it with hundingsbane.asc. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. You can open hodl-guide.pdf and select a few parts of the text and compare it to what’s written here on Github. If it’s not the same, you should stop and investigate further. You can continue with the pdf or on Github.
+If someone was trying to change even one character in hodl-guide_10_preparations.md, it would result in a bad signature when you verified it with hundingsbane.asc. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. 
 
-Now that we have this knowledge, we can start generating seeds! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
+You can go to https://github.com/HelgeHunding/guides/commits/master/hodl-guide and make sure that the guide wasn't updated after the date that signature was made. If it was, something is wrong.
+
+Now that we have this knowledge (and that everthing hopefully looks good) we can start creating our wallet! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
 
 ## [P] Bitcoin Core
 
