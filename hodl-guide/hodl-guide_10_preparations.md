@@ -78,7 +78,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9
 ```
 
-There's three key points to look at when verifying a signature. When the signature was made (`03/01/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`). 
+There's three key points to look at when verifying a signature. When the signature was made (`03/14/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`). 
 To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc that’s hard to fake. 
 
 [Twitter](https://twitter.com/HelgeHunding), [Keybase](https://keybase.io/helgehunding)
@@ -94,7 +94,7 @@ Now that we have this knowledge (and that everthing hopefully looks good) we can
 We don´t want to go through all this trouble to secure our seeds and then rely on trusted third parties for validations. That´s why our first option should be to use Bitcoin Core to validate all transactions. Bitcoin core is the main software implementation of the Bitcoin protocol. By running your own node, you´re also helping the network and making it more decentralized. 
 Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md)
 
-*Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store as little as 15 GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
+*Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store a few GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
 
 ---
 Move on to: [Generate the first two seeds >>](hodl-guide_20_first-seeds.md)
