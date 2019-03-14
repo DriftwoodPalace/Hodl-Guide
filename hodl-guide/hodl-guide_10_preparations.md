@@ -70,7 +70,7 @@ Now use the “detached signature” to check that the .pdf file was signed with
 The expected output should be something like:
 
 ```
-gpg: Signature made 03/01/19 16:32:53 W. Europe Standard Time
+gpg: Signature made 03/14/19 20:36:06 W. Europe Standard Time
 gpg:                using RSA key FF541B4EE4E6D84593011D403D27D7D359A0E4A9
 gpg: Good signature from "Helge Hundingsbane" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
