@@ -115,6 +115,12 @@ Electrum should now start. Go to `Tools>Network`. Change the tab to `Proxy`. Sel
 
 Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t  connect to anyone unless Tor is running (even if you restart it). 
 
+*Troubleshooting:* If you aren't getting a blue circle or any connections try changing the port to `9150`. Tor can sometimes use this port on Windows.
+
+Seems like Tor sometimes use that port on Windows (or according to this tread https://github.com/bitcoin/bitcoin/issues/2475 if only the browser bundle is used, but that might be outdated).
+
+
+
 ## Create the multi-sig wallet
 
 We are now going to create our multi-sig wallet. If you already have a Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise start Electrum, the install wizard should be launched automatically. 
