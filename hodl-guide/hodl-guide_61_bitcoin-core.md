@@ -141,6 +141,7 @@ Make sure Proxy IP is `127.0.0.1` and port `9050` (the Tor default port number):
 Restart Bitcoin Core to activate changes.
 More information at https://en.bitcoin.it/wiki/Tor
 
+*Troubleshooting:* If you aren't getting any connections (you can see the number of connections by holding your mouse on the network symbol in the bottom right corner or by going to `Help>Debug Window` and change the tab to `Peers`), try changing the port to `9150`. Tor can sometimes use this port on Windows. 
 
 *Optional*: Verify that you are connected over Tor. In Bitcoin Core, go to Help>Debug Window
 Change the tab to Console and type `getnetworkinfo` and hit enter.
