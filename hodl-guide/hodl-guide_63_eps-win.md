@@ -83,7 +83,7 @@ multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
 
 You can change the name “multisig_wallet” if you like.
 
-*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk beacuse of this).
+*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk because of this).
 
 #### Single wallet
 
@@ -94,7 +94,7 @@ Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
 #### Rest of the config.cfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the deafult location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
 ```
 datadir = D:\Bitcoin
 ```
@@ -191,7 +191,7 @@ Once the importing is done Electrum Server will exit. If you want to import old 
 ```
 C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server-rescan.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
 ```
-Run Electrum-Personal-Server-Rescan.bat and enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance ifyou rescan).
+Run Electrum-Personal-Server-Rescan.bat and enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
 
 Once the rescanning is done, or if you only use new addresses. Run Electrum-Personal-Server.bat again. This will start the server. Wait for this message:
 ```
