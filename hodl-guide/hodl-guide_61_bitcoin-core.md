@@ -150,7 +150,7 @@ You should see the following output:
 
 ![Bitcoin Core](images/61_tor.png)
 
-Make sure that “proxy” is 127.0.0.1:9050 and that “onion” is reachable. If that’s the case, you are now using Tor.
+Make sure that “proxy” is 127.0.0.1:9050 (or 9150 if you've changed it) and that “onion” is reachable. If that’s the case (and you get connections) you are now using Tor.
 
 Once this is done, Bitcoin Core won't connect to anyone else unless Tor is running.
 
