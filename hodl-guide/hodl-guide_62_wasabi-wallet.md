@@ -13,8 +13,8 @@ To mix bitcoins is extra crucial if you bought your bitcoin on an exchange with 
 
 To download and install the wallet, go to https://www.wasabiwallet.io/ and download the latest version for your OS. If you use Tor, use this address http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/
 Make sure that you download the detached signature as well so we can verify the download.
-To verify the signature, you need GNUPGP and the signing key from nopara73.
-If you don’t have GNUPGP, you can find a guide and some basic instructions [Here]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps). 
+To verify the signature, you need GnuPG and the signing key from nopara73.
+If you don’t have GnuPG, you can find a guide and some basic instructions [Here]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps). 
 
 You can find nopara73’s key on https://github.com/zkSNACKs/WalletWasabi/blob/master/PGP.txt. Click Raw and hit Ctrl+S and save the key in the same folder as your downloaded files. 
 Open a new terminal window
