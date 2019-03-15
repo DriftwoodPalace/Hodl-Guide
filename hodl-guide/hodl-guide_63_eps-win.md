@@ -28,7 +28,7 @@ To verify the signature, we need Gpg4win. If it’s not already installed, go to
 
 We need to start a new terminal. Open “Powershell” (search for it or use Win+R, type powershell and hit return).
 
-We need to change the working directory to the directory where the file is located. Type the following (everything after `>`) to the terminal (if you placed the file in downloads):
+We need to change the working directory to the directory where the file is located. If you've placed the file in "downloads" type the following (everything after `>`) to the terminal:
 
 `> cd downloads`
 
@@ -44,7 +44,7 @@ It’s now imported. Navigate to the release page at https://github.com/chris-be
 
 ![Eps Win2](images/63_eps-w_2.png)
 
-Once downloaded, make sure that the working directory is the one where the files are located. Enter the following command (if you downloaded another version, change the file names)
+Once downloaded, make sure that the working directory is the one where the files are located. Enter the following command (if you downloaded another version, change the file names):
 
 `> gpg --verify eps-v0.1.6.zip.asc electrum-personal-server-eps-v0.1.6.zip`
 
@@ -58,7 +58,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
 ```
 
-We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. We can go ahead an unzip the .zip file to any location on your computer.
+We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. You can go ahead an unzip the .zip file to any location on your computer.
 
 ## Change the config-file
 
@@ -83,32 +83,36 @@ multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
 
 You can change the name “multisig_wallet” if you like.
 
-*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk).
+*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk beacuse of this).
 
 #### Single wallet
 
-If you want to add more wallets, or create a new single wallet, for example with one key from a hardware wallet. Follow the same procedure. Connect the hardware wallet and create or open an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
+If you want to add more wallets, or create a new single wallet, for example with one key from a hardware wallet. Follow the same procedure. Open the wallet or connect the hardware wallet and create an existing wallet in Electrum. Go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file. 
 For example:
 ```
 Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
-#### Rest of the configcfg file
+#### Rest of the config.cfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the deafult location). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the deafult location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
 ```
 datadir = D:\Bitcoin
 ```
-The best solution is to use a strong (many random characters) `rpcuser` and `rpcpassword` in Bitcoin Core (not the default).  
+You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.cfg
 
-You need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
+Another alternative is to use a `rpcuser` and a strong (many random chracters) `rpcpassword` with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
 
 #### Change the bitcoin.conf file
 
-To use a rpcuser and rpcpassword you need to add this to your `bitcoin.conf` file. If you are unsure if you’ve set this or not, look in the default location (C:\Users\User1\AppData\Roaming\Bitcoin\bitcoin.conf). If you’ve moved the data directory, Bitcoin Core will try to use the .conf file in the new location (if it exists). Edit the file at that location. 
+We need to add the line `server=1` to our Bitcoin configuration file for Bitcoin Core to accepts connections from Electrum Personal Server. If you are unsure if you have a configuration file or not, open Bitcoin Core and go to `Settings>Options` and select `Open Configuration File` on the main tab. That should either create a new file in the right directory or open your existing file.
 
-The file also needs to contain the line `server=1` (to accept connection from other programs). Add or change this linein your file. 
+Make sure to add:
+```
+server=1
+```
+to a new line.
 
-If you don’t have a bitcoin.conf file, simply create a .txt file in your data directory (where you store the blocks) and add the information, save and rename the file to `bitcoin.conf` (make sure to change the extension from .txt to conf). So the file should at least contain the following:
+If you use a rpcuser and rpcpassword add this to new lines as well. The file should in that case look like this:
 ```
 server =1
 rpcuser=your_user
@@ -116,7 +120,7 @@ rpcpassword=your_password
 ```
 ## Install with Python
 
-Then, we need Python3 to install the server. Check if it’s installed by going back to Powershell.
+We need Python3 to install the server. Check if it’s installed by going back to Powershell.
 Type in :
 
 `> python –-version`
@@ -137,27 +141,30 @@ When it’s done, run the following (and make sure to change the path to where y
 
 `> python -m pip install --user C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6`
 
-
-You should now have the two scripts, `electrum-personal-server.exe` and `electrum-personal-server-rescan.exe` in a Python folder in the `%Appdata` location (that’s usually a hidden folder and that’s why we need to show hidden items).
+You should now have the two scripts, `electrum-personal-server.exe` and `electrum-personal-server-rescan.exe` in a Python folder in the `%Appdata` location (that’s usually a hidden folder and that’s why we need to show hidden items). 
 
 To make sure that everything worked, open a new folder and navigate to the location. If you used Python 3.7, the location should be something like:
 
 `C:\Users\User1\AppData\Roaming\Python\Python37\Scripts`
 
-Copy the full path to the file `electrum-personal-server.exe`. 
+Copy the full path to the file `electrum-personal-server.exe`.
 
 *Hint*, right click on the file, select properties, change to the “Security” tab and copy the full path in “Object Name”. 
 
+*Troubleshooting:* If you are getting errors or can't find the scripts, make sure you have the latest version of Python and Pip installed.
+
 ## Automate the start of the server
 
-To make life easier in the future, we’re going to create a `.bat` file to automate the start of the server. On your desktop, or in any folder of your choice, Right click in a blank area and select `New>Text Document`.
+To make life easier, we’re going to create a `.bat` file to automate the start of the server. On your desktop, or in any folder of your choice, right click in a blank area and select `New>Text Document`.
 
 Open the Text Document you created and paste the path to `electrum-personal-server.exe`, keep the document open. Navigate to the folder you unzipped earlier and copy the path to the `config.cfg` file. 
 
 Paste the path to `config.cfg` after the path to `electrum-personal-server.exe`. For example:
 ```
-C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
+"C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe" "C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg"
 ```
+If your path has spaces in it, make sure you add `" "`to your path.
+
 Rename the new text document to `Electrum-Personal-Server.bat` (make sure to change .txt to .bat). You’ll get a warning about changing the file name extension, select Yes.
 
 Run `Electrum-Personal-Server.bat` by double clicking on it. Electrum Server should now start and import addresses from the master public keys you defined in config.cfg as watch only addresses in your Bitcoin Core node. Wait for the importing to finish. 
@@ -166,7 +173,7 @@ Run `Electrum-Personal-Server.bat` by double clicking on it. Electrum Server sho
 
 If the terminal `cmd.exe` starts and quickly exits the server isn’t starting properly. Go to Electrum-Personal-Server.bat, right click and select edit. Add `Pause` to a new line in the file. So, the content is something like:
 ```
-C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg
+"C:\Users\User1\AppData\Roaming\Python\Python37\Scripts\electrum-personal-server.exe" "C:\Users\User1\Downloads\electrum-personal-server-eps-v0.1.6\config.cfg"
 pause 
 ```
 Save, exit and run again. This should leave cmd.exe open to read any error messages when you run the .bat file. Another solution is to check the log file that’s located in `C:\Users\User1\AppData\Local\Temp\electrumpersonalserver.log` for error messages. If you get a error message like:
@@ -176,7 +183,7 @@ WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datad
 
 You need to set a `rpc_user` and a `rpc_password` or change `datadir` to the correct path.
 
-If the server starts but you get a `JSON-error`, your rpc_user and/or rpc_password is probably wrong. Try to check if you have multiple -config files (in the default location and in the new location if you moved the installation).
+If the server starts but you get a `JSON-error`, your rpc_user and/or rpc_password is probably wrong. Check your configuration files and check so you don't have multiple -config files (in the default location and in the new location if you moved the installation). You can also try to change the authentication method. If you use rpcuser and rpcpassword try the cookie method or the other way around.
 
 ## Start the server
 
