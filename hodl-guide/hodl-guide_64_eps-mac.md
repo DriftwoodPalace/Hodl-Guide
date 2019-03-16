@@ -121,17 +121,19 @@ Type in :
 
 `$ sudo python3 –-version`
 
+(if you get strange errors while copy and pasting, try removing `--` and type them yourself in the terminal)
+
 If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to https://www.python.org/downloads/ and download and install the latest version.
 
 We are going to use `pip` to install the personal server. It should be installed with Python, but make sure you have the latest version by running this in the Terminal:
 
 `$ sudo pip3 install --upgrade pip`
 
-When it’s done, change the directory to the folder you unzipped electrum-personal-server to. If you unzipped it in "Downloads" (make sure to change the name in the command if using a newer version):
+When it’s done, change the directory to the folder electrum-personal-server. If you it's located in "Downloads" (make sure to change the name in the command if using a newer version):
 
-`$ cd electrum-personal-server-eps-v0.1.6`
+`$ cd ~/downloads/electrum-personal-server-eps-v0.1.6`
 
-Or if you unzipped in your home directory:
+Or if it's located in your home directory (all further examples will be with the folder located in the home directory):
 
 `$ cd ~/electrum-personal-server-eps-v0.1.6`
 
@@ -143,7 +145,7 @@ To install Electrum personal server.
 
 ### Troubleshooting 1
 
-If you are getting errors or can't find the scripts, make sure you have the latest version of Python and Pip installed.
+If you are getting errors, make sure you have the latest version of Python and Pip installed.
 
 If you get a `DistutilsError` when installing the server you might not have all dependecies installd. Check the last line in the error, it should look something like `Could not find suitable distribution for Requirement.parse('pytest-runner')`. If that's the case, you need to install `pytest-runner`. 
 
@@ -157,17 +159,17 @@ Then repeat the command:
 
 ## Starting the server
 
-You should now have the two scripts, `electrum-personal-server` and `electrum-personal-server-rescan` in a Python folder on your computer. The default location for the scripts should be `~/Library/Python/3.7/bin`. Open a new finder window and navigate to the folder by pasting the path in `Go>Go To Folder`. If you used Python 3.6 change 3.7 to 3.6. If you want to navigate to the folder manually you might have to show hidden folders to find it.
+If everything was installed without errors, you should have two scripts; `electrum-personal-server` and `electrum-personal-server-rescan` in a Python folder on your computer. The default location for the scripts should be `~/Library/Python/3.7/bin`. Open a new finder window and navigate to the folder by pasting the path in `Go>Go To Folder` to make sure the scripts are created. If you used Python 3.6 change 3.7 to 3.6. If you want to navigate to the folder manually you might have to show hidden folders to find it.
 
 We are going to create a simple script to automate the start of the server.
 
-We need the path to the file `electrum-personal-server` and to the file `config.cfg` that we modified in the unzipped folder earlier. I'm going to place the script on the desktop, you can place it there for now and move it later if you like.
+We need the path to the file `electrum-personal-server` and to the file `config.cfg` that we modified in the unzipped folder earlier. We are going to place the script on the desktop, you can place it there for now and move it later if you like.
 
-Create a new textfile and paste the paths to the file. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
+Create a new textfile and paste the paths to the file after each other. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
 ```
 ~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.1.6/config.cfg
 ```
-Before saving, go to settings and make sure `Plan Text` is selected and that the “If no extension is provided, use ‘.txt’.” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
+Before saving, go to settings and make sure `Plain Text` is selected and that the “If no extension is provided, use ‘.txt’.” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
 
 In your terminal type:
 
@@ -181,7 +183,7 @@ If you get an error message like this:
 ```
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
-You need to set a `rpc_user` and a `rpc_password` or change `datadir` to the correct path.
+You need to set a `rpc_user` and a `rpc_password` (don't use `#` in your password) or change `datadir` to the correct path and make sure Bitcoin Core is running.
 
 If you get an error with something like:
 ```
@@ -224,13 +226,13 @@ rpcpassword=password
 ```
 You need to restart Bitcoin Core for changes in `bitcoin.conf` to have effect.
 
-Another check you can do is to check so you don't have multiple -config files (in the default location and in the new location if you moved the installation). Rename one of the files so it's not used by mistake (if you don't want to delete it).
+Another check you can do is to check so you don't have multiple bitcoin.conf files (in the default location and in the new location if you moved the installation). If you do. rename one of the files so it's not used by mistake (if you don't want to delete it).
 
 You can also try to change the authentication method. If you use rpcuser and rpcpassword try the cookie method or the other way around.
 
 ## Start the server
 
-Once the importing is done Electrum Personal Server will exit. If you use an old wallet tha you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
+Once the importing is done Electrum Personal Server will exit. If you use an old wallet that you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
 
 `~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.1.6/config.cfg`
 
