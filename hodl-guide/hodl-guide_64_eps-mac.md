@@ -24,7 +24,7 @@ Click “raw”:
 
 ![Eps Win1](images/63_eps-w_1.png)
 
-Hit `Ctrl+S` and save the key in a folder on your computer (preferably where you download files to).
+Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
 To verify the signature, we need Gpg Suite. If it’s not already installed, go to Download and install the latest version of GPG Suite https://gpgtools.org/ and download the latest release. 
 
@@ -44,7 +44,7 @@ It’s now imported. Navigate to the release page at https://github.com/chris-be
 
 Once downloaded, make sure that the working directory is the one where the files are located. Enter the following command (if you downloaded another version, change the file names):
 
-`> gpg --verify eps-v0.1.6.zip.asc electrum-personal-server-eps-v0.1.6.zip`
+`> gpg --verify eps-v0.1.6.zip.asc electrum-personal-server-eps-v0.1.6`
 
 The output should be something similar to this:
 ```
@@ -56,11 +56,11 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
 ```
 
-We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. You can go ahead an unzip the .zip file to any location on your computer.
+We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. If you want to move the folder out of downloads, do that now.
 
 ## Change the config-file
 
-Go into the unzipped folder and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
+Open the folder electrum-personal-server-eps-v0.1.6 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
 
 *Note:* Make sure that you can change the file extension from `.cfg_sample` to `.cfg`
 
