@@ -5,8 +5,28 @@
 
 # Generate the last seed with Tails
 
-We are generating the last seed with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
-It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased when the USB is ejected (and your computer will start with your usual operating system like nothing happened). 
+You should now have the following information:
+* `Seed A`
+* `Information package A` containing `PIN_A: pin_hw_a`
+* `Seed B`
+* `Information package B` containing `PWA: your_password_A` and `PIN_B: pin_hw_b`
+* `Information package C` containing `PWB: your_password_B`
+`Hardware Wallet A` (containing seed A)  
+`Hardware Wallet B` (containing Seed B)
+* `Secure note` containing: 
+```
+PWA: your_password_A
+PWB: your_password_B
+```
+
+You need to have this at hand to generate the last seed:
+* A computer connected to the internet (can be your normal computer).
+* 1 note to write your seed on.
+* 1 phone with a camera or a digital camera.
+* *Optional:* A second computer to run Tails on. This computer can be made eternally quarantined.
+
+We are generating the last seed (seed C) with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
+It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased once the USB is removed (and your computer will start with your usual operating system like nothing happened). 
 
 ## Download Tails
 Go to https://tails.boum.org/install/index.en.html and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”. 
@@ -110,7 +130,7 @@ On the next step, let standard be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
-You should now see 12 words, this is your seed! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other seeds with 24 words). Write the 12 words you see on your screen on a paper of good quality (you can mark the note "C". Then click Next:
+You should now see 12 words, this is your seed! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other seeds with 24 words). Write the 12 words you see on your screen on your note (you can mark the note "C"). Then click Next:
 
 ![Electrum 5](images/30_electrum_5.png)
 
