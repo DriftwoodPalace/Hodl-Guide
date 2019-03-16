@@ -13,11 +13,14 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 
 ## Generate seeds with Hardware Wallets A and B
 
-The first two seeds are generated with your two different hardware wallets. Make sure that the hardware wallets are from two different manufacturers. In that case, if a fatal flaw is found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed. 
+You should have the following at hand:
+* Hardware Wallet A
+* Hardware Wallet B from a different manufacturer the Hardware Wallet A.
+Make sure to update the firmware on the hardware wallets if you don't have the latest version. 
+
+The first two seeds are generated with your two different hardware wallets. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed. 
 
 Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). Use PINs you can remember yourself.
-
-Update the firmware on the hardware wallets if you don't have the latest version. 
 
 We are going to protect the seed in our hardware wallets with different passwords/passphrases.
 The method for how to use a password with your seed is different for each manufacturer, check their guides (for example [Ledger](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security)). On Ledger it needs to be setup on the device (you can use a temporary passphrase since we wont use it much) and with Trezor you can do it in Electrum later. You don't need to set it up on the devices now, generate the passwords now and put it into the devices when we construct the multi-sig wallet.
