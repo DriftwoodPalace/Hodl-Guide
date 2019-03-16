@@ -15,7 +15,7 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 
 You should have the following at hand:
 * Hardware Wallet A
-* Hardware Wallet B from a different manufacturer the Hardware Wallet A.
+* Hardware Wallet B from a different manufacturer then Hardware Wallet A.
 
 Make sure to update the firmware on the hardware wallets if you don't have the latest version. 
 
