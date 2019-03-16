@@ -11,8 +11,8 @@ You should now have the following information:
 * `Seed B`
 * `Information package B` containing `PWA: your_password_A` and `PIN_B: pin_hw_b`
 * `Information package C` containing `PWB: your_password_B`
-`Hardware Wallet A` (containing seed A)  
-`Hardware Wallet B` (containing Seed B)
+* `Hardware Wallet A` (containing seed A)  
+* `Hardware Wallet B` (containing Seed B)
 * `Secure note` containing: 
 ```
 PWA: your_password_A
