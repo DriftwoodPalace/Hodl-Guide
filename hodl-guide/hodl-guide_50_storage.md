@@ -27,7 +27,7 @@ You should now have the following information:
   MPK2: master_pub_key_2
   MPK3: master_pub_key_3
   ```
-Since two of your seeds are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. As long as you have your secure note, you can lose 3 pieces and still be able to restore your funds (unless the only 2 pieces left is one hardware wallet and its corersponding seed). So how should you handle this information? One option is to make the funds unavailable to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
+Since two of your seeds are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. As long as you have your secure note, you can lose 3 pieces and still be able to restore your funds (unless the only 2 pieces left is one hardware wallet and its corresponding seed). So how should you handle this information? One option is to make the funds unavailable to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
 
 Base case for storage:
 
@@ -65,7 +65,7 @@ Your funds are most vulnerable to "the $5 wrench attack":
 
 *$5 wrench attack by https://xkcd.com/538/*
 
-That means, if someone breaks into your house and threatens you until you give them your bitcoins amd this is why:
+That means, if someone breaks into your house and threatens you until you give them your bitcoins and this is why:
 
 ![First Rule](images/50_first_rule.png)
 
