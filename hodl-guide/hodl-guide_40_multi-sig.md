@@ -87,7 +87,9 @@ Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
 
 When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (like tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
 
-Start Electrum. If this is the first-time starting Electrum, you'll have to create a wallet first (skip these steps and open a wallet if you already have one). The wallet you create can be a "dummy" wallet that you delete after the process. We only want to access the settings.
+Start Electrum. To access the settings in Electrum, you need to open a wallet. 
+
+If this is the first-time using Electrum, you'll have to create a wallet (skip these steps and open a wallet if you already have one). The wallet you create can be a "dummy" wallet that you delete after the process. We only use this wallet to access the settings so you don't connect to random servers with your real IP-address (and give them all your addresses) once your cold storage multi-sig wallet is created.
 
 Pick a name for the wallet, click Next:
 
