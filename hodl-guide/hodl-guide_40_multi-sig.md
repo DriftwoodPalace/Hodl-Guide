@@ -5,6 +5,31 @@
 
 # Create a multi-sig wallet with Electrum
 
+You should now have the following information:
+* `Seed A`
+* `Information package A` containing `PIN_A: pin_hw_a`
+* `Seed B`
+* `Information package B` containing `PWA: your_password_A` and `PIN_B: pin_hw_b`
+* `Seed C`
+* `Information package C` containing `PWB: your_password_B`
+* `Hardware Wallet A` (containing seed A)  
+* `Hardware Wallet B` (containing Seed B)
+* `Secure note` containing: 
+```
+PWA: your_password_A
+PWB: your_password_B
+```
+
+You need to have this at hand to finish the process:
+* A computer connected to the internet (can be your normal computer).
+* 1 note to write your seed on.
+* 1 phone with a camera or a digital camera (don't bring this near the computer until your seed is generated).
+* *Optional:* A second computer that you run Tails on. 
+* `Seed C`
+* `Hardware Wallet A` (containing seed A)  
+* `Hardware Wallet B` (containing Seed B)
+* `Information package A, B and C`
+
 We are using Electrum on our main computer to construct the multi-signature wallet.
 
 
