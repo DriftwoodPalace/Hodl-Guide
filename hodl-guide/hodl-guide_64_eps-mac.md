@@ -6,7 +6,8 @@
 ## Run Electrum Personal Server on Mac
 
 *Difficulty: medium*
-*Note: I am not normally a Mac user, any suggestions for improvments to the guide is appreciated.*
+
+*Note: I am not normally a Mac user, any suggestions for improvements to the guide is appreciated.*
 
 Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum with your full node (Hardware Wallet support, easy multi-sig setup and more). 
 
@@ -25,7 +26,7 @@ Click “raw”:
 
 Hit `Ctrl+S` and save the key in a folder on your computer (preferably where you download files to).
 
-To verify the signature, we need Gpg Suite. If it’s not already installed, go to Download and install the latest version of GPG Suite https://gpgtools.org/ and download the latest releas. 
+To verify the signature, we need Gpg Suite. If it’s not already installed, go to Download and install the latest version of GPG Suite https://gpgtools.org/ and download the latest release. 
 
 We need to open a new terminal window. Click the Searchlight (magnifying glass) icon in the menu bar and type terminal. Select the Terminal application from the search results.
 
@@ -89,7 +90,7 @@ Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
 #### Rest of the config.cfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location ~/Library/Application Support/Bitcoin/). For example:
 ```
 datadir = /Volumes/External_Disk
 ```
@@ -156,12 +157,11 @@ Then repeat the command:
 
 ## Starting the server
 
-
 You should now have the two scripts, `electrum-personal-server` and `electrum-personal-server-rescan` in a Python folder on your computer. The default location for the scripts should be `~/Library/Python/3.7/bin`. Open a new finder window and navigate to the folder by pasting the path in `Go>Go To Folder`. If you used Python 3.6 change 3.7 to 3.6. If you want to navigate to the folder manually you might have to show hidden folders to find it.
 
 We are going to create a simple script to automate the start of the server.
 
-We need the path to the file `electrum-personal-server` and to the file `config.cfg` that we modified in the unziooed folder earlier. I'm going to place the script on the desktop, you can place it there for now and move it later if you like.
+We need the path to the file `electrum-personal-server` and to the file `config.cfg` that we modified in the unzipped folder earlier. I'm going to place the script on the desktop, you can place it there for now and move it later if you like.
 
 Create a new textfile and paste the paths to the file. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
 ```
@@ -177,29 +177,11 @@ That should make the file executable. Go back to your desktop and double click o
 
 ### Troubleshooting 2
 
-If you get a error message like this in the terminal:
+If you get an error message like this:
 ```
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
-
 You need to set a `rpc_user` and a `rpc_password` or change `datadir` to the correct path.
-
-If the server starts but you get a `JSON-error`, your rpc_user and/or rpc_password is probably wrong. Check your configuration files and check so you don't have multiple -config files (in the default location and in the new location if you moved the installation). You can also try to change the authentication method. If you use rpcuser and rpcpassword try the cookie method or the other way around.
-
-## Start the server
-
-Once the importing is done Electrum Personal Server will exit. If you use an old wallet tha you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
-
-`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.1.6/config.cfg`
-
-When asked, enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
-
-Once the rescanning is done, or if you only use new addresses. Run Electrum Personal Server from the "eps" script on your desktop again. This will start the server. Wait for this message:
-```
-Listening for Electrum Wallet ...
-```
-
-### Troubleshooting 2
 
 If you get an error with something like:
 ```
@@ -217,7 +199,7 @@ multisig_wallet = 2 xpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU
 [bitcoin-rpc]
 host = 127.0.0.1
 port = 8332
-datadir = 
+datadir = ~/Library/Application Support/Bitcoin/
 rpc_user = user
 rpc_password = password
 
@@ -242,6 +224,23 @@ rpcpassword=password
 ```
 You need to restart Bitcoin Core for changes in `bitcoin.conf` to have effect.
 
+Another check you can do is to check so you don't have multiple -config files (in the default location and in the new location if you moved the installation). Rename one of the files so it's not used by mistake (if you don't want to delete it).
+
+You can also try to change the authentication method. If you use rpcuser and rpcpassword try the cookie method or the other way around.
+
+## Start the server
+
+Once the importing is done Electrum Personal Server will exit. If you use an old wallet tha you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
+
+`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.1.6/config.cfg`
+
+When asked, enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
+
+Once the rescanning is done, or if you only use new addresses. Run Electrum Personal Server from the "eps" script on your desktop again. This will start the server. Wait for this message:
+```
+Listening for Electrum Wallet ...
+```
+
 ## Setting up Electrum
 Now we only need to tell Electrum to listen to our server!
 
@@ -256,27 +255,20 @@ If you use Electrum over Tor you have to disable this (no need to connect to you
 
 ![Eps Win7](images/63_eps-w_7.png)
 
-Close the dialaog once finished.
+Close the dialog once finished.
 
 It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
 
 
-//In progress
-*Pro tip:* Create a shortcut that disables all connections to any other server. In that case you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `"C:\Program Files (x86)\Electrum`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
+*Pro tip:* Create a script that starts Electrum and disables all connections to other servers. In that case you don’t risk connecting to a public server by mistake. Go to your desktop and make a copy of the script `eps`. Rename it `electrum-starter`. Right click on the file and open it with a text editor.
 
-![Eps Win5](images/63_eps-w_5.png)
+Change the content to (if you have Electrum installed in applications):
 
-Select Yes
+`open -a /applications/Electrum.app --args --oneserver --server localhost:50002:s`
 
-Navigate to the desktop and right click on the shortcut. Select `properties`. In `Target` add the following to the end of the line:
+Save and close the file.
 
-`--oneserver --server localhost:50002:s`
-
-So, the whole line is something like:
-
-`C:\Program Files (x86)\Electrum\electrum-3.1.3.exe" --oneserver --server localhost:50002:s`
-
-If you’ve changed the port from `50002` in `config.cfg`, make sure to change to the same port here. Use the shortcut to start Electrum (and make sure to only use this shortcut to start it)
+You can now use this script to start Electrum and never have to worry about connecting to any remote server by mistake. You can close the script once Electrum has started.
 
 Your wallet should now be connected to your bitcoin full node (the circle in the bottom right corner should be green)! 
 
