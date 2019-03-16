@@ -123,11 +123,11 @@ rpcpassword=your_password
 We need Python3 to install the server. Check if it’s installed by going back to Powershell.
 Type in :
 
-`> python –-version`
+`> python --version`
 
 If it gives an error, try
 
-`> py –version`
+`> py --version`
 
 *Note:* `Py` is the Windows Python Launcher and can in some situation work when `python` doesn’t. But try to use `python` and if only `py` works change python to py in the following examples.
 
