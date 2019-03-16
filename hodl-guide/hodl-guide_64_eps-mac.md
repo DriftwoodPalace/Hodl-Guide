@@ -119,9 +119,7 @@ rpcpassword=your_password
 We need Python3 to install the server. Check if it’s installed for your user by going back to the terminal.
 Type in :
 
-`$ sudo python3 –-version`
-
-(if you get strange errors while copy and pasting, try removing `--` and type them yourself in the terminal)
+`$ sudo python3 --version`
 
 If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to https://www.python.org/downloads/ and download and install the latest version.
 
