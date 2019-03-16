@@ -22,7 +22,7 @@ PWB: your_password_B
 You need to have this at hand to generate the last seed:
 * A computer connected to the internet (can be your normal computer).
 * 1 note to write your seed on.
-* 1 phone with a camera or a digital camera.
+* 1 phone with a camera or a digital camera (don't bring this near the computer until your seed is generated).
 * *Optional:* A second computer to run Tails on. This computer can be made eternally quarantined.
 
 We are generating the last seed (seed C) with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
