@@ -22,7 +22,6 @@ PWB: your_password_B
 
 You need to have this at hand to finish the process:
 * A computer connected to the internet (can be your normal computer).
-* 1 note to write your seed on.
 * 1 phone with a camera or a digital camera (don't bring this near the computer until your seed is generated).
 * *Optional:* A second computer that you run Tails on. 
 * `Seed C`
