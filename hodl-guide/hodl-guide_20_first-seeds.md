@@ -16,6 +16,7 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 You should have the following at hand:
 * Hardware Wallet A
 * Hardware Wallet B from a different manufacturer the Hardware Wallet A.
+
 Make sure to update the firmware on the hardware wallets if you don't have the latest version. 
 
 The first two seeds are generated with your two different hardware wallets. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed. 
