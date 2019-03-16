@@ -4,7 +4,7 @@
 
 # Store your information
 
-You should now have the following information:
+You should now have all necessary information. You can add the seeds and the information packages into packages so you have the following information:
 * **Package 1:**
   * `Seed A`
   * `Information package A` containing `PIN_A: pin_hw_a` and `MPK3: master_pub_key_3`
