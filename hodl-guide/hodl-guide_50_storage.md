@@ -27,7 +27,7 @@ You should now have the following information:
   MPK2: master_pub_key_2
   MPK3: master_pub_key_3
   ```
-Since two of your seeds are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. This means that you could lose 3 pieces and still be able to restore your funds (as long as you have your secure note). So how should you handle this information? One option is to make the funds unavailable to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
+Since two of your seeds are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. As long as you have your secure note, you can lose 3 pieces and still be able to restore your funds (unless the only 2 pieces left is one hardware wallet and its corersponding seed). So how should you handle this information? One option is to make the funds unavailable to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
 
 Base case for storage:
 
@@ -47,7 +47,9 @@ This is a solid setup. The persons you trust can’t access your funds or even s
 
 If you are giving your packages to other persons. Try to deliver them yourself, never put anything in an e-mail. In the worst case, mail the packages one at a time with snail mail and confirm that they are delivered properly. Tell the persons that are holding the packages what it is and who they need to contact in case of an emergency where they need to access the funds.
 
-It’s a good idea to store everything in envelopes and seal with tape (so you'd notice if it’s been open). Avoid writing “Bitcoin” or something on the envelopes, they should look as normal as possible. Control your packages from time to time (like once a year). Move your funds to a new multi-sig wallet if one of the packages gets lost or compromised.
+It’s a good idea to store everything in envelopes and seal with tape (so you'd notice if it’s been open). Avoid writing “Bitcoin” or something on the envelopes, they should look as normal as possible (you can write "1", "2" and "3" on them to keep them apart). Move your funds to a new multi-sig wallet if one of the packages gets lost or compromised. 
+
+*Optional:* Inspect the packages stored in other locations once a year. Make sure that no seals are broken. If something looks compromised, create a new multi-sig wallet and move your funds.
 
 Finish up by sealing the USB you used for Tails with tape (so you don't use it for something else) and if you used an eternally quarantined computer, put a tape on the ethernet-port and mark it so you or, someone else, don't use it by accident.
 
