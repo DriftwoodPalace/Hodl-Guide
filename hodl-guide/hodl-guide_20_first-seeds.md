@@ -16,6 +16,8 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 You should have the following at hand:
 * Hardware Wallet A
 * Hardware Wallet B from a different manufacturer then Hardware Wallet A.
+* 2 notes to write your seeds on (or crypto steel or similar product).  
+* 3 notes to create your information packages. Can be of the same size as the notes you write your seeds on.
 
 Make sure to update the firmware on the hardware wallets if you don't have the latest version. 
 
