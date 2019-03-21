@@ -36,13 +36,13 @@ We are using Electrum on our main computer to construct the multi-signature wall
 
 ## Download and verify Electrum
 
-As we've alreade verified all signatures, go ahead and run or install Electrum. When you start Electrum you should be asked to create a new wallet (or load a default one if this isn't the first time). Before creating our multi-sig wallet, you should consider configuring Electrum to run over Tor.
+As we've already verified all signatures, go ahead and run or install Electrum. When you start Electrum you should be asked to create a new wallet (or load a default one if this isn't the first time). Before creating our multi-sig wallet, you should consider configuring Electrum to run over Tor.
 
 ### [P] Setup Electrum to run over Tor
 
 Electrum use servers that’s run by volunteers to validate and broadcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all your bitcoin addresses.
 
-There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your real IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+There're several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your real IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
 
 Using Electrum with Tor should be a fairly straightforward process and we might as well do it from the start. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
 
@@ -64,7 +64,7 @@ Primary key fingerprint: EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290
      Subkey fingerprint: 1107 75B5 D101 FB36 BC6C  911B EB77 4491 D9FF 06E2
 ```
 
-When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (like tor.exe on WIndows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
+When Tor is installed, start Tor. That could be done in two ways. You can launch the browser (it’s much easier to use then a few years ago) or only start Tor (like tor.exe on Windows). Only Tor should be located at `.\Tor Browser\Browser\TorBrowser\Tor`. You won't notice anything if you launch Tor without the browser (nothing visible will start).
 
 Start Electrum. To access the settings in Electrum, you need to open a wallet. 
 
@@ -100,7 +100,7 @@ Close the network dialog. The circle in the bottom right corner should now be bl
 
 ## Create the multi-sig wallet
 
-We are now going to create our multi-sig wallet. If you already have a Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise start Electrum, the install wizard should be launched automatically. 
+We are now going to create our multi-sig wallet. If you already have an Electrum Wallet open, go to `File>New/Restore` (or use Ctrl+N). Otherwise start Electrum, the install wizard should be launched automatically. 
 
 Pick a name for your multi-sig wallet and click Next:
 
@@ -122,7 +122,7 @@ Electrum should detect your hardware wallet and show its name. If detected, clic
 
 ![Electrum 21](images/40_electrum_21.png)
 
-You should then be asked what type of address you'd like to use. You can let native segwit multisig (p2wsh) be selected. It'll give you the lowest transaction fees:
+You should then be asked what type of address you'd like to use. You can let native segwit multisig (p2wsh) be selected. It'll give you the lowest transaction fees. So, click Next:
 
 ![Electrum 21](images/40_electrum_39.png)
 
@@ -197,7 +197,7 @@ Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send yo
 
 This can be used when you want to withdraw funds from your cold storage. 
 
-**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. Or learn about simple coin control. The most improtant thing is to not mix different outputs with each other unless you know it won't hurt your privacy. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
+**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. Or learn about simple coin control. The most important thing is to not mix different unspent outputs with each other unless you know it won't hurt your privacy. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
 
 If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals (and we don't have to think about mixing). The first one with your two hardware wallets. The second one is with your third backup seed and one hardware wallet. That procedure is only necessary if you lose one seed or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
 
@@ -227,7 +227,7 @@ In the preview window, select the QR-code in the bottom left corner:
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
 
-We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a seeds, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before to check that our seed works).
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a seed, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before to check that our seed works).
 
 Click next at the first window:
 
