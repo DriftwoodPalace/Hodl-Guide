@@ -21,6 +21,8 @@ PWB: your_password_B
 
 You need to have this at hand to generate the last seed:
 * A computer connected to the internet (can be your normal computer).
+* 1 USB flash drive with at least 8 GB of memory (USB1).
+* 1 other USB flash drive, memory not important (USB2).
 * 1 note to write your seed on.
 * 1 phone with a camera or a digital camera (don't bring this near the computer until your seed is generated).
 * *Optional:* A second computer to run Tails on. This computer can be made eternally quarantined.
@@ -28,25 +30,90 @@ You need to have this at hand to generate the last seed:
 We are generating the last seed (seed C) with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
 It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased once the USB is removed (and your computer will start with your usual operating system like nothing happened). 
 
+## Download and verify Electrum
+
+Electrum is a wallet that has been around for many years. It offers great usability (support for multi-sig, hardware wallets etc) and you can connect it to your Bitcoin Core full node. Tails is shipped with Electrum pre-installed. Unfortunately the version in recent Tail releases isn't compatible with offline signing in newer releases. So, we need use a newer version. If this changes in future releases, the part with upgrading Electrum can be skipped.  
+
+Go to https://electrum.org/#download and download the "Appimage" for Linux. If you are using Windows or macOs download the installers for your operating system as well (if you are using Windows, read the note on the bottom of the download page). For any file you download, download the signature as well (the link is next to the installer).
+
+We need the signing key of Electrum developer Thomas Voegtlin to verify the signatures. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
+
+![Electrum 10](images/40_electrum_10.png)
+
+That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer (preferably in the same location as the downloaded installer).
+
+Once downloaded we need to verify the signatures to make sure the developers signed this release (check the [Preparations](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) if you want more information about validating signatures).
+
+Open a terminal (for example Powershell on Windows).
+
+Change the current directory to the one where the 3 downloaded files are located: 
+
+`$ cd ~/Downloads` 
+
+Import the signing key from ThomasV into your local GPG installation: 
+
+`$ gpg --import ThomasV.asc` 
+
+Start by verifiying the appimage. Use the .asc-file to check that the file was signed with the signing key we imported: 
+
+`$ gpg --verify electrum-3.3.4-x86_64.AppImage.asc`
+
+(make sure to change the file name if using a different version). 
+
+The verification can take a while. 
+
+The output should be something like:
+```
+gpg: assuming signed data in 'electrum-3.3.4-x86_64.AppImage'
+gpg: Signature made 02/13/19 23:08:30 W. Europe Standard Time
+gpg:                using RSA key 6694D8DE7BE8EE5631BED9502BD5824B7F9470E6
+gpg: Good signature from "ThomasV <thomasv1@gmx.de>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6
+```
+The signing was made the same day as the release was uploaded (should be around the same time), you can see the dates here https://download.electrum.org/.
+
+It´s a `Good signature`. 
+
+A search online on `6694 D8DE 7BE8 EE56 31BE D950 2BD5 824B 7F94 70E6` seems to confirm that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
+
+If you are using Windows or macOs, go ahead and verify that file as well. For example on Windows:
+
+`$ gpg --verify electrum-3.1.3-setup.exe.asc` 
+
+The output should be almost the same, for example:
+```
+gpg: assuming signed data in 'electrum-3.3.4-setup.exe'
+gpg: Signature made 02/13/19 23:08:30 W. Europe Standard Time
+gpg:                using RSA key 6694D8DE7BE8EE5631BED9502BD5824B7F9470E6
+gpg: Good signature from "ThomasV <thomasv1@gmx.de>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6
+```
+
+Insert USB2 in the computer and copy the appimage to the USB. Eject the USB once the file is copied.
+
+We are leaving Electrum for now and can rest assure that we have a legit version.
+
 ## Download Tails
 
-#### This part is outdated. The version of Electrum is Tails isn't compatible for offline signing with newer versions. Working on a solution.
-
-Go to https://tails.boum.org/install/index.en.html and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”. 
+Go ahead with installing Tails. Go to https://tails.boum.org/install/index.en.html and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”. 
 Select “Let´s go” and download the USB image at step 1.1 to a directory on your computer. At the download page, make sure to download `tails-signing.key` and `tails-amd64-3.12.1.img.sig` (at the “OpenPGP signature for the Tails 3.12.1 USB image” link, the exact name should change for future versions) and place the files in the same directory as the .img file. 
 Wait until the USB image is downloaded.
 
 ## Verify signatures
 
-We need to verify what we downloaded (and that´s why we downloaded the last two files). As we are verifying the download ourselves, skip step 1.2 “Verify your download using your browser”. The browser extension is probably fine, but it´s a great practice to do it yourself as the process can be used for other files as well. And browser extensions always comes with a risk of leaking personal information, so always be cautious with browser extensions (no idea if this particular extension does that, probably not). 
+We need to verify what we downloaded (and that´s why we downloaded the last two files). As we are verifying the download ourselves, skip step 1.2 “Verify your download using your browser”. The browser extension is probably fine, but it´s a great practice to do it yourself as the process can be used for other files as well. And browser extensions always come with a risk of leaking personal information, so always be cautious with browser extensions (no idea if this particular extension does that, probably not). 
 
-It’s the same procedure as before (check the [Preparations](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) for more information about validating signatures). 
+It’s the same procedure as before. 
 
-Start a terminal window (like Powershell on Windows).
+Open a terminal window (like Powershell on Windows).
 
 Change the current directory to the one where the 3 downloaded files are located, for example: 
 
-`$ cd $HOME/Downloads`
+`$ cd ~Downloads`
 
 To be able to verify the signature, import the Tails-signing key into your local GPG installation: 
 
@@ -78,7 +145,7 @@ If everything is good, go ahead and create the boot USB. This is going to be use
 
 The easiest way is to follow the instructions on https://tails.boum.org/install for your operating system. 
 
-So, insert the USB you are going to use and follow the instructions at “2/5 Install Tails”. In Mars 2019 that means downloading, running and flashing the USB with Etcher for Windows and macOS and with GNOME Disks for Linux. When step 2/5 is completed, you´ve got two choices. 
+So, insert USB1 and follow the instructions at “2/5 Install Tails”. In Mars 2019 that means downloading, running and flashing the USB with Etcher for Windows and macOS and with GNOME Disks for Linux. When step 2/5 is completed, you´ve got two choices. 
 
 If you use one computer. Tails is going to be started on the computer you are reading this on. In that case you´re going to have to print or write down the rest of the of the instructions on this page. You could also bring the instructions up on another device (keep them in flight mode and don’t let any cameras see any screens or seeds). Make sure no other USB drives is connected to the computer.
 
@@ -86,7 +153,7 @@ If you are using two computers. Tails is going to be started on the other comput
 
 ## Start computer on Tails
 
-Go ahead and make sure that the USB with Tails is inserted in the right computer. Start (or restart) the computer.
+Go ahead and make sure that USB1, with Tails, is inserted in the right computer. Start (or restart) the computer.
 
 If the computer starts on Tails, the ”Boot Loader Menu” should appear:
 ![Tails boot loader](images/30_boot_loader.png)
@@ -99,7 +166,6 @@ Otherwise, restart the computer and bring the boot menu up. The key for bringing
 
 ![Tails boot loader](images/30_boot_menu.png)
 
-
 Choose the USB-stick with Tails in the boot menu. If that doesn´t work, you might have to change settings in Bios (turn off secure start, change start order, disable fast start etc).
 
 Check the troubleshooting guide at the install page at Tails for more information. There could be issues with certain computers or graphic cards, check the troubleshooting guide to see if there´s an easy fix. 
@@ -111,10 +177,24 @@ When you get past the boot loader menu, follow the instructions on the screen to
 
 *Note:* Tails can be pretty slow if you use an old computer, make sure it's really stuck and not only slow before troubleshooting.
 
+## Run Electrum on Tails
+
+Once everything is started (the desktop should be loaded), start by making sure that the WiFi is disconnected (arrow in upper right corner, should say “Wi-Fi not connected). 
+
+Then do the following:
+* Insert your USB3 in the computer.
+* Open the home folder (double click on the icon on the desktop).
+* Change folder to your USB, it should be visible in the sidebar (/media/amnesia/your_usb)
+* Drag the Electrum appimage to the Home folder (in the sidebar or to the folder on the desktop)
+* Open a new terminal window by going to `Applications>Favorites>Terminal`
+* Type `$ chmod a+x electrum-3.3.4-x86_64.AppImage` (change the name if you use another version).
+* Start Electrum by typing `$ ./electrum-3.3.4-x86_64.AppImage`
+
+Electrum should now start.
+
 ## Generating the seed with Electrum
 
-Once started, make sure WiFi is disconnected (arrow in upper right corner, should say “Wi-Fi not connected). 
-
+Once started, 
 Go to Applications (upper left corner)>Internet>Electrum Bitcoin Wallet. Click on `Launch` if a window about persistence appears.
 
 The Electrum – Install Wizard should appear. The name of the wallet isn’t important (it will be deleted), so “default_wallet” is ok. Click Next:
@@ -129,7 +209,7 @@ On the next step, let “Create a new seed” be selected. Click Next:
 
 ![Electrum 3](images/30_electrum_3.png)
 
-On the next step, let standard be selected. Click Next:
+On the next step, let Segwit be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
@@ -147,23 +227,18 @@ You should now be asked for a password. This is for protecting the wallet file a
 
 ![Electrum 7](images/30_electrum_7.png)
 
-Electrum is now generating addresses, it can take a while before the main window shows up. Once the main window loads, all necessary information is generated!
+Electrum is now generating addresses, it can take a while before the main window shows up. When Electrum starts you might see a window asking you if you want to "Enable update check". Simply select "No" (it doesn't matter since we are offline).
 
-Before we move on, we need to check what version of Electrum we are running and what our `master public key` is.
+Before we move on, we need to export our `master public key`.
+The master public key is used to construct our multi-sig wallet later. To show the master public key in Electrum, go to `Wallet>Information`. 
 
-Start with the version. Check what version of Electrum that´s running on Tails. For example, Tails 3.12.1 comes with Electrum 3.1.3. Remember this or note it down (not sensitive information).
-
-![Electrum 8](images/30_electrum_8.png)
-
-Now we need to copy the master public key. The master public key is used to construct our multi-sig wallet later. To show the master public key in Electrum, go to `Wallet>Information`. 
-
-We need to copy this to our live system where we´ll construct the multi-signature wallet. But we don’t want to put another USB in to our system at this point (reduce any risk of information about our seed leaking). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a seed that you can generate private keys from. The public key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
+We never want to put a USB flash drive, or something similiar, that's been connected to our "cold system" in to our "hot computer" (reduce any risk of leaks). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a seed that you can generate private keys from. The public key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”: 
 
 ![Electrum 9](images/30_electrum_9.png)
 
 It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no seeds are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key. 
 
-If you use one computer, remove the tails boot USB from the computer and restart the computer on your regular OS. You can keep Tails running if you use two computers, but close Electrum. 
+If you use one computer, remove both USBs from the computer and restart the computer on your regular OS. You can keep Tails running and Electrum open if you use two computers. 
 
 ---
 Next up: [Create the multi-sig wallet >>](hodl-guide_40_multi-sig.md)
