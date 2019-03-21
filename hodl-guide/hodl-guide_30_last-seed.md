@@ -29,6 +29,9 @@ We are generating the last seed (seed C) with Electrum on a computer booted with
 It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased once the USB is removed (and your computer will start with your usual operating system like nothing happened). 
 
 ## Download Tails
+
+#### This part is outdated. The version of Electrum is Tails isn't compatible for offline signing with newer versions. Working on a solution.
+
 Go to https://tails.boum.org/install/index.en.html and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”. 
 Select “Let´s go” and download the USB image at step 1.1 to a directory on your computer. At the download page, make sure to download `tails-signing.key` and `tails-amd64-3.12.1.img.sig` (at the “OpenPGP signature for the Tails 3.12.1 USB image” link, the exact name should change for future versions) and place the files in the same directory as the .img file. 
 Wait until the USB image is downloaded.
