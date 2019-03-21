@@ -34,6 +34,8 @@ We are using Electrum on our main computer to construct the multi-signature wall
 
 ## Download and verify Electrum
 
+#### *This part is outdated. The newest version of Electrum is incompatible for offline signing with the version in Tails and because of a critical bug you can't connect to any servers unless you are running a newer version of Electrum. You can still use this setup if you are running your own server. Otherwise wait for a updare of Tails or this guide* 
+
 On your main computer (or regular OS) go to https://electrum.org/#download
 
 For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first, we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
