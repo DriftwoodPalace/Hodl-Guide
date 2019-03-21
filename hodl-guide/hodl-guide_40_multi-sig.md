@@ -23,6 +23,8 @@ PWB: your_password_B
 You need to have this at hand to finish the process:
 * A computer connected to the internet (can be your normal computer).
 * 1 phone with a camera or a digital camera (don't bring this near the computer until your seed is generated).
+* 1 USB flash drive with Tails flashed to it (USB1).
+' 1 USB flash drive with the Electrum appimage (USB2).
 * *Optional:* A second computer that you run Tails on. 
 * `Seed C`
 * `Hardware Wallet A` (containing seed A)  
@@ -34,64 +36,15 @@ We are using Electrum on our main computer to construct the multi-signature wall
 
 ## Download and verify Electrum
 
-#### *This part is outdated. The newer versions of Electrum are incompatible for offline signing with the Electrum version in Tails. Because of a critical bug in older versions, you can't connect to any servers unless you are running a newer version of Electrum. You can still use this setup if you are running your own personal Electrum server. Otherwise wait for a update of Tails or this guide* 
-
-On your main computer (or regular OS) go to https://electrum.org/#download
-
-For our multi-sig to work on both systems, you might need the same version of Electrum as the one used in Tails. But first, we need the signing key of Electrum developer Thomas Voegtlin. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
-
-![Electrum 10](images/40_electrum_10.png)
-
-That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer.
-
-Go back to https://electrum.org/#download and check what the latest release is. Chances are that the latest release is newer then the one used in Tails. If that´s the case we need an older release, click “Previous releases”:
-
-![Electrum 11](images/40_electrum_11.png)
-
-That should take you to https://download.electrum.org/. Go to the folder with the same version number as the one in Tails (for example 3.1.3 with Tails 3.12.1). Download the file for your OS (tar.gz for Linux, -setup.exe for Windows and .dmg for macOS) and make sure to download the corresponding .asc file as well. Put the files in the same folder as ThomasV’s signing key:
-
-![Electrum 12](images/40_electrum_12.png)
-
-*Note*, if you´re already using a newer version of Electrum. Downgrading the version might make wallets created with newer versions temporary unusable. Once done with the cold storage, you can upgrade to a newer version of Electrum and everything should work again. Your funds aren´t at risk, you can always recover your funds (or import to an older version) with your recovery seed. 
-
-Once downloaded we need to verify the download in the same way we verified Tails. 
-Open a terminal (for example Powershell on Windows).
-Change the current directory to the one where the 3 downloaded files are located: 
-
-`$ cd $HOME/Downloads` 
-
-Import the signing key from ThomasV into your local GPG installation: 
-
-`$ gpg --import ThomasV.asc` 
-
-Now use the .asc to check that the Electrum installer was signed with the signing key we imported: 
-
-`$ gpg --verify electrum-3.1.3-setup.exe.asc electrum-3.1.3-setup.exe` 
-(make sure to change the file name if using a different version). 
-
-The verification can take a while. 
-
-Expected output should be something like:
-```
-gpg: assuming signed data in 'electrum-3.1.3-setup.exe'
-gpg: Signature made 04/18/18 17:10:44 W. Europe Daylight Time
-gpg:                using RSA key 2BD5824B7F9470E6
-gpg: Good signature from "ThomasV <thomasv1@gmx.de>" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6
-```
-The signing was made the same day as the release was uploaded (should be around the same time). 
-It´s a `Good signature`. 
-A search online on `6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6` seems to confirm that this key belongs to Thomas V. We are good to go. Install Electrum and follow the instructions on screen.
+As we've alreade verified all signatures, go ahead and run or install Electrum. When you start Electrum you should be asked to create a new wallet (or load a default one if this isn't the first time). Before creating our multi-sig wallet, you should consider configuring Electrum to run over Tor.
 
 ### [P] Setup Electrum to run over Tor
 
-Electrum use servers that’s run by volunteers to validate and broadcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all the bitcoin addresses you’re asking for. 
+Electrum use servers that’s run by volunteers to validate and broadcast transactions. Anyone can start a server and if you don’t specify a server, you’ll be connected to one randomly. This is terrible for privacy (and has been used for phishing attacks). If you don’t use Tor or a VPN you’re essentially giving a random server your IP-address and all your bitcoin addresses.
 
-There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your true IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
+There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that your private data will be leaked sooner or later. If you don't do something about it, risk is that almost every transaction you do can be linked to you. A first good step is to use Tor. It uses "onion routing" to hide your real IP-address. You can also use a VPN, both solutions will hide your real IP-address from random servers. With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe as long as Bitcoin is legal in your jurisdiction (but you never know).
 
-Using Electrum with Tor should be a fairly straightforward process. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
+Using Electrum with Tor should be a fairly straightforward process and we might as well do it from the start. If you don't have Tor, go to https://www.torproject.org/projects/torbrowser.html and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
 
 `gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
 
@@ -141,7 +94,7 @@ Electrum should now start. Go to `Tools>Network`. Change the tab to `Proxy`. Sel
 
 ![Electrum tor 6](images/40_electrum_tor_6.png)
 
-Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t  connect to anyone unless Tor is running (even if you restart it). 
+Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t connect to anyone unless Tor is running (even if you restart it). 
 
 *Troubleshooting:* If you aren't getting a blue circle or any connections try changing the port to `9150`. Tor can sometimes use this port on Windows.
 
@@ -165,9 +118,15 @@ We are now going to construct our multi-sig. Start with `Hardware Wallet A`, tha
 
 ![Electrum 16](images/40_electrum_16.png)
 
-Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and password A after you've clicked Next:
+Electrum should detect your hardware wallet and show its name. If detected, click Next (otherwise, rescan by clicking Next). If using a hardware wallet where the pin and password is entered on the computer (like Trezor), enter the pin and `password A` after you've clicked Next:
 
 ![Electrum 21](images/40_electrum_21.png)
+
+You should then be asked what type of address you'd like to use. You can let native segwit multisig (p2wsh) be selected. It'll give you the lowest transaction fees:
+
+![Electrum 21](images/40_electrum_39.png)
+
+*Note:* Some services are slow to update and can't send directly to native segwit addresses. Most should update soon and you can always use an intermediate wallet (like a normal Electrum wallet) if you can't send directly.
 
 The next window shows your Master Public Key, we will access this later in Electrum and can skip it now. Click Next:
 
@@ -231,14 +190,14 @@ Open your multi-sig wallet in Electrum and enter the password that unlocks the w
 
 Go to another wallet (like Wasabi Wallet or another Electrum wallet) and send your bitcoin to the receiving address. You should see the unconfirmed balance almost immediately. 
 
-*Optional:* If you want to know that your backup works, you might want to go through the trouble of doing a full restore of your wallet. Do this by opening a wallet in Electrum, go to File>Open (or Ctrl+O). Delete your wallet file and close the wallet you deleted if it's open. Go back to the first step of [create the multi sig wallet](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#create-the-multi-sig-wallet) and set it up exactly the same way as you did before (same password etc). But this time use another source of information. If you used your secure note for the passwords the first time, use the information in the information packages this time. When the wallet is recovered, your funds should be there and you can be sure that your process works. 
+*Optional:* If you want to know that your backup works, you might want to go through the trouble of doing a full restore of your wallet. Do this by opening your wallet in Electrum, go to File>Delete (or Ctrl+O) to delete your wallet file. Close the wallet you deleted in Electrum. Go back to the first step of [create the multi sig wallet](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#create-the-multi-sig-wallet) and set it up exactly the same way as you did before (same password etc). But this time use another source of information. If you used your secure note for the passwords the first time, use the information in the information packages this time. When the wallet is recovered, your funds should be there and you can be sure that your process works. 
 
 
 ## Withdrawal program
 
 This can be used when you want to withdraw funds from your cold storage. 
 
-**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
+**[P]** If you don't know about coin control and have 100% control of your unspent outputs. Never use funds in your cold storage for day to day spending and don't transfer funds from your cold storage directly to someone that knows your real name or address (like a friend or an exchange). If you connect your real name and/or physical address with addresses in your cold storage, that could be used to "cluster" addresses together and reveal what addresses you control. A good rule of thumb is to use Wasabi Wallet, or a similar service, to mix all funds going into cold storage and all funds going out of cold storage. Or learn about simple coin control. The most improtant thing is to not mix different outputs with each other unless you know it won't hurt your privacy. *Note:* Some exchanges might treat bitcoins involved in coin join transactions as suspicious and deny your deposit. You have to decide yourself between privacy and ease of selling.
 
 If this is the firs time withdrawing from the wallet, we’re going to do two test withdrawals (and we don't have to think about mixing). The first one with your two hardware wallets. The second one is with your third backup seed and one hardware wallet. That procedure is only necessary if you lose one seed or its password and the corresponding hardware wallet. Normally, use the method described in "Withdrawal method 1". 
 
@@ -250,15 +209,12 @@ Open your wallet in Electrum. Connect your 2 hardware wallets. You can connect b
 
 Sign and confirm the transaction with one Hardware Wallet at the time, start with Hardware Wallet A. If your hardware wallet has a screen, control the information (like address and amount) on the screen.
 
-Your transaction should be broadcasted and you’ll probably get a message like this:
+Once confirmed, your transaction should be broadcasted!
 
-![Broadcast](images/40_broadcast.png)
-
-Click OK, we can update once we are done with Tails
 
 #### Withdrawal method 2
 
-This is the backup method and should only be needed in case you lose one hardware wallet and its seed. It makes sure that our third seed works. If you are doing this at a later date, remember that you'll probably need the same version of Electrum running on your computer as in Tails.
+This is the backup method and should only be needed in case you lose one hardware wallet and its seed. It makes sure that our third seed works. 
 
 In Electrum, go to send, enter an address to another wallet you control. 
 Select the rest of the test amount you have left in the wallet, pick a fee and select “preview”:
@@ -271,7 +227,7 @@ In the preview window, select the QR-code in the bottom left corner:
 
 That should bring up the QR-code. Take a photo of the QR-code with your phone. You can close the Transaction dialog.
 
-We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a seeds, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before as a check that our seed works).
+We are now going back to Tails. So, either go to your second computer or restart your main computer on Tails. We are going to handle a seeds, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum like before. If you already have Electrum running create a new wallet by going to `File>New/Restore` (we are going to create the exact same wallet as before to check that our seed works).
 
 Click next at the first window:
 
@@ -305,7 +261,7 @@ Then click the QR-code:
 
 Take a photo of the QR-code with your phone. 
 
-You can now close Electrum and Tails (we won’t be using it anymore). Remove the Tails USB from the computer to delete all information.
+You can now close Electrum and Tails (we won’t be using it anymore). Remove both USB flash drives from the computer to close Tails and delete all sensitive information.
 
 Go back to your main computer and open your multi-sig wallet in Electrum. Go to `Tools>Load Transaction>From QR code` and scan the last QR-code. You might have to start Zbar and select a camera for the camera to work (and it might be slow to start, so try 2-3 times). 
 
@@ -325,11 +281,7 @@ Once calculated, click `Broadcast`:
 
 ![Electrum 33](images/40_electrum_33.png)
 
-Your transaction should be broadcasted and you’ll probably get a message like this:
-
-![Broadcast](images/40_broadcast.png)
-
-Since we are done with Tails, feel free to update to the latest version whenever you like.
+Your transaction should be broadcasted to the network!
 
 ## Update information packages
 
