@@ -34,7 +34,7 @@ We are using Electrum on our main computer to construct the multi-signature wall
 
 ## Download and verify Electrum
 
-#### *This part is outdated. The newest version of Electrum is incompatible for offline signing with the version in Tails and because of a critical bug you can't connect to any servers unless you are running a newer version of Electrum. You can still use this setup if you are running your own server. Otherwise wait for a updare of Tails or this guide* 
+#### *This part is outdated. The newer versions of Electrum are incompatible for offline signing with the Electrum version in Tails. Because of a critical bug in older versions, you can't connect to any servers unless you are running a newer version of Electrum. You can still use this setup if you are running your own personal Electrum server. Otherwise wait for a update of Tails or this guide* 
 
 On your main computer (or regular OS) go to https://electrum.org/#download
 
