@@ -37,7 +37,9 @@ Add watch addresses in Bitcoin Core and verify transactions yourself.
 
 ## [**Setup Electrum to run over Tor**](hodl-guide_66_electrum-tor.md)
 
-*Difficulty: easy*  
+*Difficulty: easy* 
+
+Setup Electrum to run over Tor and hide your real IP-address
 
 ---
 
