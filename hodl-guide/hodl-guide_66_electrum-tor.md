@@ -82,7 +82,7 @@ In Electrum go to `Tools>Network`. Change the tab to `Proxy`. Select "Use Proxy"
 
 ![Electrum tor 6](images/40_electrum_tor_6.png)
 
-Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t connect to anyone unless Tor is running (even if you restart it). You still rely on third parties for validation and broadcasting, but they won't be able to connect your addresses to your real IP-address.
+Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t connect to anyone unless Tor is running (even if you restart it). You still rely on third parties for validation and broadcasting, but they won't see your real IP-address.
 
 *Troubleshooting:* If you aren't getting a blue circle or any connections try changing the port to `9150`. Tor can sometimes use this port on Windows.
 
