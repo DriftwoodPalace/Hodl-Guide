@@ -35,6 +35,10 @@ Install and connect Electrum Personal Server to Electrum and Bitcoin Core on Mac
 
 Add watch addresses in Bitcoin Core and verify transactions yourself.
 
+## [**Setup Electrum to run over Tor**](hodl-guide_66_electrum-tor.md)
+
+*Difficulty: easy*  
+
 ---
 
 Next: [Troubleshooting](hodl-guide_70_troubleshooting.md) >>
