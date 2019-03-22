@@ -41,6 +41,12 @@ Add watch addresses in Bitcoin Core and verify transactions yourself.
 
 Setup Electrum to run over Tor and hide your real IP-address
 
+## [**Electrum best practises for private Cold Storage**](hodl-guide_67_electrum-bp.md)
+
+*Difficulty: medium* 
+
+A collection of best practises for using Electrum in a more private way.
+
 ---
 
 Next: [Troubleshooting](hodl-guide_70_troubleshooting.md) >>
