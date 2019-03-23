@@ -19,6 +19,7 @@ This is the short version:
 * Top up your spending wallet with whole UTXOs (coins). Do not produce any change in your cold storage wallet.
 * If you don't have Electrum connected to your own full node, mix all coins going out of your cold storage wallet.
 * Setup Electrum to run over Tor. Or even better connect it to your full node. 
+* Do not go and look up your addresses on any block explorers.
 
 This is the longer version: 
 
@@ -41,6 +42,8 @@ If you mix your coins before depositing, it'll be much much harder to trace it b
 That's why the next recommendation is to configure Electrum to run over Tor. You can find a guide for that [here](hodl-guide_66_electrum-tor.md). That's only if you can't run a full node and connect Electrum to that. With a full node you will download every transaction and every block. No one can know what transactions you are looking for. This will always be a problem with "light wallets". They don't download everything by definition. That means that you are asking someone about some specific information. This can be used to connect your addresses togheter. You can find a guide for setting up Bitcoin Core, [here](hodl-guide_61_bitcoin-core.md), for connecting your full node to Electrum with Elctrum Personal server, you can find a guide for Windows [here](hodl-guide_63_eps-win.md) and for Mac [here](hodl-guide_64_eps-mac.md).
 
 If you use your full node (especially if it use Tor), there really isn't any need to mix your coins when withdrawing. As long as you avoid producing change and always send whole UTXOs out of your wallet. Unless someone has your master public key, it should be very hard to cluster the addresses in your wallet togheter. However, if fees are low and you have the time, there's no harm in mixing again.
+
+Last but not least. Do not go and look up any of your addresses on a block explorer. You will destroy a lot of the hard work you put in. Who else the you would go to a block explorer and look up one of your addresses? Maybe multiple times or right after a transaction with a few updates until the transaction is confirmed. If you do this with your real IP-address, it's a clear indication that the address can belong to you. If you really need to look it up for some reason, use the Tor browser. The block explorer will then know that someone looked up an address. But it can't know who. You could for example use blockstream.info over Tor http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/ for maximum privacy.
 
 This will take you a long way in keeping your cold storage private.
 
