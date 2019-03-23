@@ -30,7 +30,7 @@ When you spend bitcoin, you often link different UTXOs togheter to construct the
 
 This analysis can be broken if you use coinjoin. One method is to use Wasabi Wallet (or Joinmarket) to mix all your coins before depositing to cold storage. Keep a few mixed outputs in Wasabi Wallet and use that if you'd like to spend bitcoin. Remember that Wasabi Wallet is a hot wallet. Treat it like cash in your pocket and don't keep larger amounts in it. Then you can top up your Wasabi Wallet as needed. Either by buying more at an exchange (and mix) or depositing from your cold storage.
 
-I would recommend to always try to send whole outputs from your cold wallet. This way, you won't produce any change that you have to keep track of. To do this in Electrum, go to the `Coins` tab. Right click on the address you'd like to spend from. Select `Spend`. Then fill in the receiving address and select "Max" on the `Send` tab.
+I would recommend to always try to send whole outputs from your cold wallet. This way, you won't produce any change that you have to keep track of. To do this in Electrum, go to the `Coins` tab. Right click on the address you'd like to spend from. Select `Spend`. Then fill in the receiving address and select "Max" on the `Send` tab. You can send more then one output in the same transaction, but know that they'll be linked togheter.
 
 If you don't run your own full node and connect Electrum to it with for example Electrum Personal Server, you'd have to mix your outputs again if you'd like to keep your privacy. Electrum uses specialised servers that will know of all your used addresses. Anyone can run a server and you'll be connected to one randomly by default.
 
@@ -38,17 +38,11 @@ Even if you use Tor you are still giving all your addresses to some random serve
 
 If you mix your coins before depositing, it'll be much much harder to trace it back to your wallet. It'll be like a firewall that protects your cold storage. This will be more effective if you use Tor or a VPN (Tor is better as you will constantly change your IP-address). 
 
-That's why the next recommendation is to configure Electrum to run over Tor. You can find a guide for that [here](hodl-guide_66_electrum-tor.md). 
+That's why the next recommendation is to configure Electrum to run over Tor. You can find a guide for that [here](hodl-guide_66_electrum-tor.md). That's only if you can't run a full node and connect Electrum to that. With a full node you will download every transaction and every block. No one can know what transactions you are looking for. This will always be a problem with "light wallets". They don't download everything by definition. That means that you are asking someone about some specific information. This can be used to connect your addresses togheter. You can find a guide for setting up Bitcoin Core, [here](hodl-guide_61_bitcoin-core.md), for connecting your full node to Electrum with Elctrum Personal server, you can find a guide for Windows [here](hodl-guide_63_eps-win.md) and for Mac [here](hodl-guide_64_eps-mac.md).
 
+If you use your full node (especially if it use Tor), there really isn't any need to mix your coins when withdrawing. As long as you avoid producing change and always send whole UTXOs out of your wallet. Unless someone has your master public key, it should be very hard to cluster the addresses in your wallet togheter. However, if fees are low and you have the time, there's no harm in mixing again.
 
-WORK IN PROGRESS
-
-
-![Electrum tor 6](images/40_electrum_tor_6.png)
-
-Close the network dialog. The circle in the bottom right corner should now be blue and not green. You have now configured Electrum to run over Tor. Electrum won’t connect to anyone unless Tor is running (even if you restart it). You still rely on third parties for validation and broadcasting, but they won't see your real IP-address.
-
-*Troubleshooting:* If you aren't getting a blue circle or any connections try changing the port to `9150`. Tor can sometimes use this port on Windows.
+This will take you a long way in keeping your cold storage private.
 
 ------
 
