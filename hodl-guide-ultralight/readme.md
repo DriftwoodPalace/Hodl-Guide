@@ -114,25 +114,25 @@ Let Standard wallet be selected and click Next,
 
 Change to "Use a hardware device". Insert your hardware wallet. If you use a Ledger Nanon S, unlock it with the "secret PIN" that contains your passphrase. Then click next. If using a Trezor, simply connect it and click next:
 
-![Electrum 1](images/10_electrum_1.png)
+![Electrum 1](images/10_electrum_1.PNG)
 
 Your hardware wallet should be detected (otherwise rescan by clicking Next), click Next: 
 
-![Electrum 2](images/10_electrum_2.png)
+![Electrum 2](images/10_electrum_2.PNG)
 
 If you use a Trezor, enter the PIN and the passphrase when asked for it.
 
 You can let "Native Segwit" be selected. This is a newer type of address that'll give you lower fees. If you use an old hardware wallet, this will ensure that you create a new wallet not linked to your previous account. You can always create more wallets by increasing the last number. For example, if you'd like to create a new wallet at a later date, change to `m/84'/0'/1'`. But for now keep it at `m/84'/0'/0'`(unless you have an old wallet with this path and the same passphrase). Click Next.
 
-![Electrum 3](images/10_electrum_3.png)
+![Electrum 3](images/10_electrum_3.PNG)
 
 Your wallet is now being created. Let "Encrypt Wallet" be selected and click Next:
 
-![Electrum 4](images/10_electrum_4.png)
+![Electrum 4](images/10_electrum_4.PNG)
 
 Your wallet is now created you should see the following:
 
-![Electrum 5](images/10_electrum_5.png)
+![Electrum 5](images/10_electrum_5.PNG)
 
 work in progress
 ---
