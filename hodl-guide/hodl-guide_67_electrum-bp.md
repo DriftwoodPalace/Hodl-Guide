@@ -3,7 +3,7 @@
 
 ---
 
-## Electrum best practises for private Cold Storage
+## Electrum best practises
 
 *Difficulty: medium*
 
