@@ -6,7 +6,7 @@ by Helge Hundingsbane
 
 ### [Hodl Guide](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/README.md)
 
-The full hodl guide. Once done with this, you'll have a secure and private cold storage. The guide might be overwhelming if you are new to hardware wallets and/or Linux. Consider starting with one of the light-guides in that case. You can always upgrader later.
+The full "Hodl Guide". Once done with this, you'll have a secure and private cold storage. The guide might be overwhelming if you are new to hardware wallets and/or Linux. If that's the case, consider starting with one of the light-guides. You can always upgrader later.
 
 ---
 
