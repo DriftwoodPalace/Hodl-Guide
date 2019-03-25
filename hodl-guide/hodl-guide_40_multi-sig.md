@@ -67,7 +67,7 @@ You should then be asked what type of address you'd like to use. You can let nat
 
 The next window shows your Master Public Key, we will access this later in Electrum and can skip it now. Click Next:
 
-![Electrum 19](images/40_electrum_19.png)
+![Electrum 19](images/40_electrum_19_2.png)
 
 We are now going to add cosigner 2. Remove Hardware Wallet A and insert Hardware Wallet B and repeat the process you used for cosigner 1. If it’s a wallet with a physical pin like Ledger, enter the pin (and make sure that it uses `password B`). Select `Cosign with hardware device` and click Next. 
 
