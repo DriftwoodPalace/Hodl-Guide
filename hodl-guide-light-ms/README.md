@@ -8,7 +8,7 @@
 
 #### *This is a draft, all feedback is appreciated!*
 
-This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you want to improve your cold storage even more by creating a multi signature wallet. This is an excellent next step if you've followed [Hodl Guide Light](https://github.com/HelgeHunding/guides/edit/master/hodl-guide-light/README.md) or if you have some experience with hardware wallets.
+This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you want to improve your cold storage even more by creating a multi signature wallet. This is an excellent next step if you've followed [Hodl Guide Light](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md) or if you have some experience with hardware wallets.
 
 This is a guide for cold storage and not for a wallet used for “day to day spending”.
 
