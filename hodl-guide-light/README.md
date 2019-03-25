@@ -1,8 +1,8 @@
-[ **Guide** ] -- [ [Bonus](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
+[ **Guide** ] -- [ [Bonus](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ]
 
 ---
 
-# The Hodl Guide Ultralight
+# The Hodl Guide Light
 
 ---
 
@@ -156,6 +156,8 @@ Your wallet is now created you should see the following:
 
 ![Electrum 5](images/10_electrum_5.png)
 
+Before depositing any larger amounts, do at least one test deposit and withdrawal to make sure everything is working.
+
 ## Store secret information
 
 You now have to decide how to store everything. 
@@ -183,10 +185,6 @@ I hope that gives you some guidelines!
 
 ## Improve your storage
 
-
+As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best pracitses](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md)  for a few important points to think about.
 
 ---
-Get started: [Preparations >>](hodl-guide_10_preparations.md)
-
-
-
