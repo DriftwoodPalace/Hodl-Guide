@@ -12,12 +12,12 @@ The full "Hodl Guide". Once done with this, you'll have a secure and private col
 
 ### [Hodl Guide Light](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md)
 
-This is an excellent place to start if you want to create your first cold storage wallet. All you need is one hardware wallet and an internet connected computer. It will give you a secure base and a possibility to upgrade that at a later date. In most cases, you'll be up and running within one hour. 
+This is an excellent place to start if you want to create your first cold storage wallet. All you need is one hardware wallet and an internet connected computer. It'll give you a secure base and a possibility to upgrade that at a later date. In most cases, you'll be up and running within one hour. 
 
 ---
 
 ### [Hodl Guide Light, Multi-Sig](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light-ms/README.md)
 
-This is if you like to take make your cold storage even more secure. Use two hardware wallets to create a multi-sig wallet where you'll need both hardware wallets to spend any funds. This is a very similar setup as "Hodl Guide Light", but you'll end up with one more private seed.
+This is if you want to upgrade the light guide and make it even more secure. Use two different hardware wallets to create a multi-sig wallet. This'll use the strength different manufacturers wallets have. Both hardware wallets (or their seeds) needs to be compromised for you to lose your funds.
 
 ---
