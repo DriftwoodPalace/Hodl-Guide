@@ -8,6 +8,7 @@ by Helge Hundingsbane
 https://github.com/HelgeHunding/guides/blob/master/hodl-guide/README.md
 
 The full hodl guide. Once done with this, you'll have a secure and private cold storage. The guide might be overwhelming if you are new to hardware wallets and/or Linux. Consider starting with one of the light-guides in that case. You can always upgrader later.
+
 ---
 
 **Hodl Guide Light Multi-Sig (coming soon)**
@@ -21,4 +22,5 @@ This is if you like to take make your cold storage even more secure. Use two har
 https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md
 
 This is an excellent place to start if you want to create your first cold storage wallet. All you need is one hardware wallet and an internet connected computer. It will give you a secure base and a possibility to upgrade that at a later date. In most cases, you'll be up and running within one hour. 
+
 ---
