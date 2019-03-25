@@ -144,9 +144,12 @@ Your hardware wallet should be detected (otherwise rescan by clicking Next), cli
 
 If you use a Trezor, enter the PIN and the passphrase when asked for it.
 
-You can let "Native Segwit" be selected. This is a newer type of address that'll give you lower fees. If you use an old hardware wallet, this will ensure that you create a new wallet not linked to your previous account. You can always create more wallets by increasing the last number. For example, if you'd like to create a new wallet at a later date, change to `m/84'/0'/1'`. But for now keep it at `m/84'/0'/0'`(unless you have an old wallet with this path and the same passphrase). Click Next.
+On the next screen, you can let "Native Segwit" be selected. This is a newer type of address that'll give you lower fees. If you use an old hardware wallet, this will ensure that you create a new wallet not linked to your previous account. You can always create more wallets by increasing the last number. For example, if you'd like to create a new wallet at a later date, change to `m/84'/0'/1'`. But for now keep it at `m/84'/0'/0'`(unless you have an old wallet with this path and the same passphrase). Click Next.
 
 ![Electrum 3](images/10_electrum_3.png)
+
+Note: Some services are slow to update and can't send directly to native segwit addresses. Most should update soon and you can always use an intermediate wallet (like a normal Electrum wallet) if you can't send directly.
+
 
 Your wallet is now being created. Let "Encrypt Wallet" be selected. This will ensure that the wallet can't be opened unless you have your hardware wallet connected. This will reduce the risk that your wallet balance will be exposed. You can still recover your funds with the secret seed + the passphrase if you lose your hardware wallet. Go ahead and click Next:
 
@@ -156,7 +159,7 @@ Your wallet is now created you should see the following:
 
 ![Electrum 5](images/10_electrum_5.png)
 
-Before depositing any larger amounts, do at least one test deposit and withdrawal to make sure everything is working.
+Before depositing any larger amounts, do at least one test deposit and withdrawal to make sure everything is working. Deposit funds by going to the "receive" tab and copy the address. You can confirm the address on your hardware wallet (click on the eye in the address field) if you want extra security. Withdraw funds by going to the "send" tab. Enter the information, make sure your hardware wallet is connected and click "Send". Confirm everything on your hardware wallet (this process can sometimes be slow).
 
 ## Store secret information
 
