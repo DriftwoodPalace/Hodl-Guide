@@ -21,6 +21,10 @@ This is the short version:
 * Setup Electrum to run over Tor. Or even better connect it to your full node. 
 * Do not go and look up your addresses on any block explorers.
 
+The full recommandation would be the following:
+
+Electrum multi-sig wallet > Electrum Client > Electrum Personal Server > Bitcoin Core > Tor
+
 This is the longer version: 
 
 A great start is to have two separate wallets. One spending wallet and one cold storage wallet. 
