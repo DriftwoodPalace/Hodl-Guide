@@ -7,94 +7,26 @@
 
 ## Mandatory Hardware Requirements for Full Setup
 
-*	2 USB flash-drives. One with 8GB+ memory. Consider buying new ones, used only for this purpose.
-*	2 different Hardware-wallets (Trezor, Ledger, Coldcard etc). Make sure the hardware-wallets are from two different manufacturers (for example one Trezor and one Ledger). You can use existing devices if you already own some (but they shouldn't be used for other purposes after you're done). If you're buying new ones, make sure to only buy from the official store. It's always sensitive to have Bitcoin-related stuff shipped to your home. Consider having it delivered to a UPS access point or a similar service.
-*	1 internet connected computer. Could be your normal computer. Should have at least 1 USB-slot and a camera (for reading QR-codes). If you only use one computer, the computer needs to have a 64-bit processor.
-*	1 Smartphone (or digital camera with screen)
+* 2 USB flash-drives. One with 8GB+ memory. Consider buying new ones, used only for this purpose.
+* 2 different Hardware-wallets (Trezor, Ledger, Coldcard etc). Make sure the hardware-wallets are from two different manufacturers (for example one Trezor and one Ledger). You can use existing devices if you already own some (but they shouldn't be used for other purposes after you're done). If you're buying new ones, make sure to only buy from the official store. It's always sensitive to have Bitcoin-related stuff shipped to your home. Consider having it delivered to a UPS access point or a similar service.
+* 1 internet connected computer. Could be your normal computer. Should have at least 1 USB-slot and a camera (for reading QR-codes). If you only use one computer, the computer needs to have a 64-bit processor.
+* 1 Smartphone (or digital camera with screen)
 
-## Optional Equipment and Hardware 
+## Optional Equipment and Hardware
 
-* 1 extra computer. This will make the process of working with Tails easier. If you have an old computer lying around, consider using it and making it an eternally quarantined computer (or buy a cheap used computer). That’s a computer that´s going to be eternally quarantined (only used for this purpose and never used for anything else or connected to the internet again). If you are using an eternally quarantined computer it’s a good idea to format/reinstall the computer to get it as fresh as possible. You can even wipe the operating system of the computer since we are using Tails. Before wiping the OS, try it out with Tails. You might have to update some drivers for it to work. 
-  * The computer needs 1 USB-slot, a camera and needs to have a 64-bit processor. If you’re not sure check the computers properties or if you’re buying a used computer, you can search for the computer’s processor on http://www.cpu-world.com. “Data width” should be 64 bit. 
-*	Home safe. For safe, waterproof and fireproof storage for one of the Hardware Wallets.
-*	TerraSlate paper (https://www.amazon.com/dp/B076JKVNWY/), waterproof, heat resistant and tear-resistant paper.
-*	Envelopes to store sensitive information in. 
-*	Cryptosteel or similar product that stores a seed on a metal plate (then you don´t need TerraSlate).
-*	Tamper-resistant seals or tape.
-
-## First steps
-
-An important part of the guide (and a great skill to have) is to know how to validate digital signatures. We are going to do a validation of this page as a practice (and to control that I've signed the guide).
-
-To start, download my signature `hundingsbane.asc` (select "Raw" and use `Ctrl+S` to save it to your computer) and the detached signature `hodl-guide_10_preparations.md.sig` in the [validation-folder](validation). Then go to the top of this page and select "Raw". Use `Ctrl+S` and save the file as hodl-guide_10_preparations.md in the same folder as the other signatures. We are going to make sure that the one controlling the public key hundingsbane.asc (me) signed the document hodl-guide_10_preparations.md.   
-
-To verify what we downloaded, we need GnuPG (https://gnupg.org/). The implementation varies for different OS:
-
-*Windows:* Download and install the latest version of Gpg4win https://www.gpg4win.org. If you don’t want to donate, click bank transfer on the download page to acces the download. You only need to install GnuPG and Kleopatra. Start Kleopatra once finished. 
-
-*macOS:* Download and install the latest version of GPG Suite https://gpgtools.org/ 
-
-*Linux:* GnuPG comes pre-installed with Linux distributions.
-
-An easy way to verify a digital signature is to use a terminal (the command line). 
-In all examples, what´s written to the terminal is everything after the `$` sign (and examples that's specific for Windows uses the symbol `>`). 
-
-For example: `$ cd` 
-Means that you´d write `cd` to the command line (cd is a command that changes the active directory). 
-Usually you can paste text to a terminal with ctrl+v or with a right click on the mouse. Another useful shortcut is to use the arrows up and down to toggle between previously executed commands. If you´re stuck, you can usually kill a process with Ctrl+C or Ctrl+Z. 
-
-To start, we need to change the active directory with `$ cd`. 
-
-*Windows:* Open `Powershell` (search for it or use Win+R, type powershell and hit enter) 
-
-*macOs:* Click the Searchlight (magnifying glass) icon in the menu bar and type `terminal`. Select the Terminal application from the search results. 
-
-*Linux:* Varies, on Ubuntu, press Ctrl+Alt+T 
-
-Change the current directory to the one where the 3 downloaded files are located, for example: 
-
-*Windows* `> cd C:\Users\User1\Downloads` 
-
-*macOS and Linux* `$ cd $HOME/Downloads` 
-
-To be able to verify the signature, import hundingsbane.asc into your local GPG installation: 
-
-`$ gpg --import hundingsbane.asc` 
-
-Now use the “detached signature” to check that the .pdf file was signed with the signing key we imported: 
-
-`$ gpg --verify hodl-guide_10_preparations.md.sig hodl-guide_10_preparations.md` 
-
-*Hint:* If the name of the file and the signature is the same, you don't need to write the name of the file (you could use only `$ gpg --verify hodl-guide_10_preparations.md.sig` in our example). 
-
-The expected output should be something like:
-
-```
-gpg: Signature made 03/14/19 20:36:06 W. Europe Standard Time
-gpg:                using RSA key FF541B4EE4E6D84593011D403D27D7D359A0E4A9
-gpg: Good signature from "Helge Hundingsbane" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9
-```
-
-There's three key points to look at when verifying a signature. When the signature was made (`03/14/19` in the example above). It should be around the time that the file was uploaded. That it’s a `Good signature` and what the primary key fingerprint is (in this case `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`). 
-To check that the fingerprint indeed seems to belong to me, you could check my Twitter and my Keybase. Signers usually keep their fingerprint in their social profiles. For more critical downloads (like Electrum or Bitcoin Core) it’s a good idea to do a search online on the fingerprint. That should give results on forums etc that’s hard to fake. 
-
-[Twitter](https://twitter.com/HelgeHunding), [Keybase](https://keybase.io/helgehunding)
-
-If someone was trying to change even one character in hodl-guide_10_preparations.md, it would result in a bad signature when you verified it with hundingsbane.asc. If you get a bad signature when validating something, you should stop and investigate further before doing anything else with the file. 
-
-You can go to https://github.com/HelgeHunding/guides/commits/master/hodl-guide and make sure that the guide wasn't updated after the date that signature was made. If it was, something is wrong.
-
-Now that we have this knowledge (and that everthing hopefully looks good) we can start creating our wallet! Before moving on, if you don’t have Bitcoin Core installed and synced, you might want to start that process now.
+* 1 extra computer. This will make the process of working with Tails easier. If you have an old computer lying around, consider using it and making it an eternally quarantined computer (or buy a cheap used computer). That’s a computer that´s going to be eternally quarantined (only used for this purpose and never used for anything else or connected to the internet again). If you are using an eternally quarantined computer it’s a good idea to format/reinstall the computer to get it as fresh as possible. You can even wipe the operating system of the computer since we are using Tails. Before wiping the OS, try it out with Tails. You might have to update some drivers for it to work.
+  * The computer needs 1 USB-slot, a camera and needs to have a 64-bit processor. If you’re not sure check the computers properties or if you’re buying a used computer, you can search for the computer’s processor on [CPU World](http://www.cpu-world.com). “Data width” should be 64 bit.
+* Home safe. For safe, waterproof and fireproof storage for one of the Hardware Wallets.
+* [TerraSlate paper](https://www.amazon.com/dp/B076JKVNWY/), waterproof, heat resistant and tear-resistant paper.
+* Envelopes to store sensitive information in.
+* Tamper-resistant seals or tape.
 
 ## [P] Bitcoin Core
 
-We don´t want to go through all this trouble to secure our seeds and then rely on trusted third parties for validations. That´s why our first option should be to use Bitcoin Core to validate all transactions. Bitcoin core is the main software implementation of the Bitcoin protocol. By running your own node, you´re also helping the network and making it more decentralized. 
-Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md)
+If you are looking for a really private and secure solution, there's really only one option. Running your own full node by using Bitcoin Core. Bitcoin core is the main software implementation of the Bitcoin protocol. By using your own node to validate transactions, you´re also helping the network and making it more decentralized.
+Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md) for how to install and setup a node.
 
 *Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store a few GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
 
----
+-------
 Move on to: [Generate the first two seeds >>](hodl-guide_20_first-seeds.md)

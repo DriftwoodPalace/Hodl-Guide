@@ -19,7 +19,7 @@ As always with Bitcoin, I or no one else can be responsible for your bitcoin. Yo
 
 ## Requirements
 
-* Two hardware wallets from different manufacturers (Ledger, Trezor,Coldcard etc).
+* Two hardware wallets from different manufacturers (Ledger, Trezor, Coldcard etc).
 * One internet connected computer.
 * Paper of good quality to write your secret seed on (usually included with the hardware wallet).
 
@@ -54,7 +54,7 @@ Change to "Use a hardware device". Insert your first hardware wallet. This will 
 
 ![Electrum 2](images/10_electrum_1_2.png)
 
-Your hardware wallet should be detected (otherwise rescan by clicking Next), click Next: 
+Your hardware wallet should be detected (otherwise rescan by clicking Next), click Next:
 
 ![Electrum 40_21](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_21.png)
 
@@ -112,15 +112,16 @@ You should have the following:
 * A note with passphrase A on it.
 * A second note with passphrase B on it.
 
-How you store this depends on your situation and threat level. As this is a 2 of 2 multi signature wallet you need both seeds and both passphrases to spend any funds. 
+How you store this depends on your situation and threat level. As this is a 2 of 2 multi signature wallet you need both seeds and both passphrases to spend any funds.
 
 So, how you store your funds is a balancing act between accessibility and security. I guess you want to be able to access your funds in case your house burns down. Do you also want your relatives to be able to access the funds in case you are in a coma and needs to pay your hospital bills?
 
 A base case for storage could be this:
+
 * Make sure that you can access your password manager from another place then your home. In that case, you should always have access to your passphrases. That could be by making a copy of your secure note to an USB-flash drive (make sure the note is encrypted) and storing it elsewhere or by using LastPass servers.
 * Store both hardware wallets at your home. This way you'll always be able to access your funds from your home.
 * Store your first secret seed (Seed A) with someone you trust (or in a bank vault/deposit box that trusted persons gets access to in case of an emergency). This person won't be able to steal your bitcoin or even know what how much you own unless they gets access to the second seed and both of your passphrases. 
-* Store your second secret seed (Seed B) with someone else you trust (or in a bank vault/deposit box that trusted persons gets access to in case of an emergency). 
+* Store your second secret seed (Seed B) with someone else you trust (or in a bank vault/deposit box that trusted persons gets access to in case of an emergency).
 * The passphrases makes this setup fairly flexible. How you store it depends on how much you trust other people.
   * Option 1: Store it together with the seeds. In this case, person 1 and 2 can collaborate to access your funds in case of an emergency. But, they can as well collaborate to steal your funds. This will probably be more secure if you change one of the persons to a bank vault or deposit box.
   * Option 2: Store it at home. You can still access your funds if your house burns down by using the backup seed and the passphrase stored in your secure note. But it's harder for your relatives to access your funds in case of an emergency. They would have to find the notes with your passphrases in your home and figure out that they belong to the secret seeds.
@@ -129,5 +130,4 @@ I hope that gives you some guidelines!
 
 ## Improve your storage
 
-As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best pracitses](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md) for a few important points to think about.
-
+As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best practises](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md) for a few important points to think about.

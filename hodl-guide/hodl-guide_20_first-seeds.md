@@ -15,42 +15,47 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 
 You should have the following at hand:
 
-* Hardware Wallet A
+* Hardware Wallet A, it doesn't matter which one is Hardware Wallet A. But, select one and remember which one you select.
 * Hardware Wallet B from a different manufacturer then Hardware Wallet A.
-* 2 notes to write your seeds on (or crypto steel or similar product).  
+* 2 notes to write your seeds on (you can use the paper often provided with the wallets).  
 * 3 notes to create your information packages. Can be of the same size as the notes you write your seeds on.
 
-Make sure to update the firmware on the hardware wallets if you don't have the latest version.
+Make sure to update the firmware on the hardware wallets if you don't have the latest version. If you have a Ledger and a Trezor, you do this by using Ledger Live or Trezor wallet.
 
-The first two seeds are generated with your two different hardware wallets. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed.
+The first two seeds are generated with your two different hardware wallets. This adds extra security. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed.
 
-Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). Use PINs you can remember yourself.
+Follow the setup procedure recommended from each manufacturer. At the end you should end up with one seed from each wallet. Mark the seed from `Hardware Wallet A` with an `A` and the seed from `Hardware Wallet B` with an `B`.
 
-We are going to protect the seed in our hardware wallets with different passwords/passphrases.
-The method for how to use a password with your seed is different for each manufacturer, check their guides (for example [Ledger](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security)). On Ledger it needs to be setup on the device (you can use a temporary passphrase since we wont use it much) and with Trezor you can do it in Electrum later. You don't need to set it up on the devices now, generate the passwords now and put it into the devices when we construct the multi-sig wallet.
+Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later, so use PINs you can remember yourself. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..).
 
-Most vulnerabilities that’s been detected in hardware wallets would’ve been stopped with a strong password. We humans are pretty terrible at generating random passwords. So, it’s probably safer to generate a password with a password manager on your computer then trying to come up with a password yourself. You could use Lastpass, KeypassX or a similar service. A password manager is a great place to store moderately sensitive information in (like public keys and even more sensitive information like the password that protects the seed, but never put your seed on a "hot" computer). If you are given the option, generate a password without symbols that can be confused (big o and zero etc). If you don't want to use an online service like Lastpass, you could use an encrypted secure note stored on a USB instead. The important part is that this information should be availible if your house burns down. We are referring to this as the `digital note` from now on.
+We are going to protect the seed in our hardware wallets by encrypting it with a passphrase/password. This adds extra security and gives us more flexibility when we are going to store everything later on.
 
-I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a length of at least 15 characters. That would give you a password with ~80-bit entropy (on average, it would require 2^80 guesses to crack the password). 
-Use two different passphrases for your two different hardware wallets. 
+We humans are pretty terrible at generating random passphrases. So, it’s safer to generate a passphrase with a password manager then trying to come up with one yourself.
+
+You can generate and store the passphrases with a password manager like [LastPass](https://www.lastpass.com/). Or if you don't want to use a third party server, a great open source alternative is [Keepass](https://keepass.info/) where you store everything yourself.. If you are given the option, generate a passphrase without symbols that can be confused (big o and zero etc). If you don't want to use a password manager, you could use an encrypted secure note stored on a USB instead. The important part is that this information should be available if your house burns down. We are referring to this as the `digital note` from now on.
+
+I would recommend a passphrase containing symbols from (0-9, a-z, A-Z) and with a length of at least 15 characters. That would give you a passphrase with ~80-bit entropy (on average, it would require 2^80 guesses to crack the passphrase).
+Use two different passphrases for your two different hardware wallets.
 If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose).
 
-We are calling the first Hardware wallet, `Hardware wallet A` (used with `password A`) and the second one `Hardware wallet B` (used with `password B`). It doesn't matter which wallet is which, but make sure to keep track of what you select so you don't mix them later and make sure you know which seed belongs to which wallet (you can mark the seeds with "A" and "B"). In your `digital note`, store the passwords like this:
+ So, go ahead and generate two different passphrases. `Passphrase A`for `Seed A` and `Passphrase B` for `Seed B`. In your `digital note`, store the passphrases like this:
 
 ```
-PWA: your_password_A
-PWB: your_password_B
+PFA: your_passphrase_A
+PFB: your_passphrase_B
 ```
 
-*Optional:* Depending on your memory (add hints so you can remember the PINs).
+*Optional:* Depending on your memory, add hints so you can remember the PINs to the digital note.
+
+We will use the passphrases in Electrum later and can leave them for now.
 
 ## Create information packages
 
-Apart from the seeds, we are going to create 3 physical information packages on a different piece of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Storage](hodl-guide_50_storage.md). 
+Before moving on, we are going to create 3 physical information packages on 3 different pieces of paper. If you want more detail on exactly why we are doing this and how they are being used, look at [Storage](hodl-guide_50_storage.md).
 
 On each information package, write a short instruction for how to access the funds. Something like this:
 
-`The Hodl Guide Github, multi-sig 2 of 3`
+`Hodl Guide Github, multi-sig 2 of 3`
 
 That should give enough information for someone else to do a search online for how to retrieve funds in case of an emergency.
 
@@ -60,9 +65,9 @@ While writing down critical information, make sure to be extra careful with symb
 
 On `info package A`, write the pin to hardware wallet A `PIN_A: pin_hw_a`.
 
-On `info package B`, write your first password for the seed `PWA: your_password_A` and the pin to hardware wallet B `PIN_B: pin_hw_b`. 
+On `info package B`, write your the passphrase for seed A `PFA: your_passphrase_A` and the pin to hardware wallet B `PIN_B: pin_hw_b`.
 
-On `info package C`, write the second password for the seed `PWB: your_password_B`
+On `info package C`, write the passphrase for seed B `PFB: your_passphrase_B`
 
 Store all information in a secure way during the rest of the process (don't leave your notes lying around visibly).
 
