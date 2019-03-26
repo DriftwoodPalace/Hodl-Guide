@@ -14,14 +14,15 @@ Try to keep smartphones turned off and/or in another room during the process. Th
 ## Generate seeds with Hardware Wallets A and B
 
 You should have the following at hand:
+
 * Hardware Wallet A
 * Hardware Wallet B from a different manufacturer then Hardware Wallet A.
 * 2 notes to write your seeds on (or crypto steel or similar product).  
 * 3 notes to create your information packages. Can be of the same size as the notes you write your seeds on.
 
-Make sure to update the firmware on the hardware wallets if you don't have the latest version. 
+Make sure to update the firmware on the hardware wallets if you don't have the latest version.
 
-The first two seeds are generated with your two different hardware wallets. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed. 
+The first two seeds are generated with your two different hardware wallets. If a fatal flaw was found in one of the wallets, your funds are still safe. You can simply move your funds to a new multi-sig contract and replace the compromised seed.
 
 Follow the setup procedure recommended from each manufacturer. Protect the devices with a pin (use two different pins for the two devices). We are going to write down the pins on information packages later. The pin is only to protect you if someone gets physical access to the device and isn't super important (but don´t use 0000 as pin because of that..). Use PINs you can remember yourself.
 
@@ -32,13 +33,15 @@ Most vulnerabilities that’s been detected in hardware wallets would’ve been 
 
 I would recommend a password containing symbols from (0-9, a-z, A-Z) and with a length of at least 15 characters. That would give you a password with ~80-bit entropy (on average, it would require 2^80 guesses to crack the password). 
 Use two different passphrases for your two different hardware wallets. 
-If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose). 
+If you already have two old hardware wallets with seeds that you’re sure has been setup in a secure manner, you could use those. But make sure they’re protected with a strong passphrase (preferably use a new passphrase for this purpose).
 
 We are calling the first Hardware wallet, `Hardware wallet A` (used with `password A`) and the second one `Hardware wallet B` (used with `password B`). It doesn't matter which wallet is which, but make sure to keep track of what you select so you don't mix them later and make sure you know which seed belongs to which wallet (you can mark the seeds with "A" and "B"). In your `digital note`, store the passwords like this:
+
 ```
 PWA: your_password_A
 PWB: your_password_B
 ```
+
 *Optional:* Depending on your memory (add hints so you can remember the PINs).
 
 ## Create information packages
@@ -51,7 +54,7 @@ On each information package, write a short instruction for how to access the fun
 
 That should give enough information for someone else to do a search online for how to retrieve funds in case of an emergency.
 
-Mark the three info packages `A`, `B` and `C` . 
+Mark the three info packages `A`, `B` and `C` .
 
 While writing down critical information, make sure to be extra careful with symbols that can be confused (like big o and 0, I and small L, etc). The best solution is to not use them at all.
 
