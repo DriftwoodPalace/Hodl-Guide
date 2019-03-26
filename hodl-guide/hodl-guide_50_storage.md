@@ -5,6 +5,7 @@
 # Store your information
 
 You should now have all necessary information. You can add the seeds and the information packages into packages so you have the following information:
+
 * **Package 1:**
   * `Seed A`
   * `Information package A` containing `PIN_A: pin_hw_a` and `MPK3: master_pub_key_3`
@@ -20,6 +21,7 @@ You should now have all necessary information. You can add the seeds and the inf
   * `Hardware Wallet B` (containing Seed B)
 * **6:**
   * `Secure note` containing: 
+
   ```
   PWA: your_password_A
   PWB: your_password_B
@@ -27,17 +29,18 @@ You should now have all necessary information. You can add the seeds and the inf
   MPK2: master_pub_key_2
   MPK3: master_pub_key_3
   ```
+
 Since two of your seeds are both on paper and in hardware wallets, this is almost like a 2 of 5 signature scheme. As long as you have your secure note, you can lose 3 pieces and still be able to restore your funds (unless the only 2 pieces left is one hardware wallet and its corresponding seed). So how should you handle this information? One option is to make the funds unavailable to access from one place only. Then you'd need to store the packages at five locations. We are going with a more flexible setup in our base case where you always can access your funds from home.
 
 Base case for storage:
 
-**1.**	`Package 1` (Seed and information package A) at someone you trust. This package is a little bit more important then the other two as it's easier to restore funds with this package. 
+**1.** `Package 1` (Seed and information package A) at someone you trust. This package is a little bit more important then the other two as it's easier to restore funds with this package. 
 
-**2.**	`Package 2` (Seed and information package B) at someone else you trust or in a different location then your home. 
+**2.** `Package 2` (Seed and information package B) at someone else you trust or in a different location then your home. 
 
-**3.**	`Package 3` (Seed and information package C) in a vault or a safe deposit box at a bank or at a specialized company. 
+**3.** `Package 3` (Seed and information package C) in a vault or a safe deposit box at a bank or at a specialized company. 
 
-**4.**	Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). This gives you the possibility to spend from your cold storage at any time. You can use it for double checking addresses when depositing to your cold storage as well. 
+**4.** Hardware Wallet A and Hardware Wallet B in your home (preferably in a safe). This gives you the possibility to spend from your cold storage at any time. You can use it for double checking addresses when depositing to your cold storage as well.
 
 **5.** Digital note, encrypted and stored on a server you can access away from your home or on a USB stored in another location then your home.
 
@@ -99,7 +102,7 @@ The second-best option is to use your Bitcoin full node to add watch addresses. 
 
 Another very important aspect of privacy is what traces you leave on chain. A very common example is that you buy bitcoin on an exchange that use KYC (know your customer). They then have all your personal information. If you then transfer your funds directly from the exchange to your cold storage, they would still know what bitcoin you most likely own. There are multiple other ways your funds can be linked to you and you never know who has this information. An easy way to break this link is to mix your coins with a technique called coinjoin. This has often been done by central parties, I would advice against those services. You put your trust in them, both with your privacy and with your keys as they could steal your bitcoin. A better alternative is to use a service that never control our keys. Two alternatives are [Joinmarket](https://github.com/JoinMarket-Org/joinmarket) and Wasabi Wallet. You can find a guide and best practises for [Wasabi Wallet](hodl-guide_62_wasabi-wallet.md) in the bonus section.
 
-*Note:* Some exchanges treat coins involved in coin join transactions as suspicious. If you do a coin join transaction and then tries to transfer the coins to an exchange, they might reject your deposit. You have to decide yourself about privacy vs ease of selling. 
+*Note:* Some exchanges treat coins involved in coin join transactions as suspicious. If you do a coin join transaction and then tries to transfer the coins to an exchange, they might reject your deposit. You have to decide yourself about privacy vs ease of selling.
 
 ---
 
