@@ -30,6 +30,27 @@ You need to have this at hand to generate the last seed:
 We are generating the last seed (seed C) with Electrum on a computer booted with Tails, https://tails.boum.org/. Tails is a live operating system that´s built upon Debian (a Unix-like operating system). 
 It´s booted from a USB-stick and only uses the computers RAM-memory. That means that all sensitive information is erased once the USB is removed (and your computer will start with your usual operating system like nothing happened). 
 
+## Download GnuPG for validating digital signatures
+
+An important part of the guide (and a great skill to have) is to know how to validate digital signatures. This is skipped by many (I'm sometimes guilty myself). But don't skip it now, it'll take a few minutes to download the software (one time effort) and then a few seconds to verify your downloads. The validation will make sure that the downloaded file was signed by the developers of the project. This'll for example, catch a scenario where the official website was compromised and a malicious file was uploaded or where you went to the wrong website and downloaded a malicious file there. 
+
+The software we are using is called GnuPG (https://gnupg.org/). The implementation varies for different OS:
+
+*Windows:* Download and install the latest version of Gpg4win https://www.gpg4win.org. If you don’t want to donate, click bank transfer on the download page to acces the download. You only need to install GnuPG and Kleopatra. 
+
+*macOS:* Download and install the latest version of GPG Suite https://gpgtools.org/ 
+
+*Linux:* GnuPG comes pre-installed with Linux distributions.
+
+An easy way to verify a digital signature is to use a terminal (the command line). 
+In all examples, what´s written to the terminal is everything after the `$` sign (and examples that's specific for Windows uses the symbol `>`). 
+
+For example: `$ cd` 
+Means that you´d write `cd` to the command line (cd is a command that changes the active directory). 
+Usually you can paste text to a terminal with ctrl+v or with a right click on the mouse. Another useful shortcut is to use the arrows up and down to toggle between previously executed commands. If you´re stuck, you can usually kill a process with Ctrl+C or Ctrl+Z.
+
+The symbol `~` is used as a shortcut to the home/user folder. It works on Mac, Linux and with Powershell on Windows. That way you can for example write `~\Downloads` instead of the whole path `C:\Users\User1\Downloads`.
+
 ## Download and verify Electrum
 
 Electrum is a wallet that has been around for many years. It offers great usability (support for multi-sig, hardware wallets etc) and you can connect it to your Bitcoin Core full node. Tails is shipped with Electrum pre-installed. Unfortunately the version in recent Tail releases isn't compatible with offline signing in newer releases. So, we need use a newer version. If this changes in future releases, the part with upgrading Electrum can be skipped.  
@@ -42,7 +63,7 @@ We need the signing key of Electrum developer Thomas Voegtlin to verify the sign
 
 That should take you to a page with the public key, use `Ctrl+S` and save the file `ThomasV.asc` on your computer (preferably in the same location as the downloaded installer).
 
-Once downloaded we need to verify the signatures to make sure the developers signed this release (check the [Preparations](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) if you want more information about validating signatures).
+Once downloaded we need to verify the signatures to make sure the developers signed this release.
 
 Open a terminal (for example Powershell on Windows).
 
@@ -80,7 +101,7 @@ A search online on `6694 D8DE 7BE8 EE56 31BE D950 2BD5 824B 7F94 70E6` seems to 
 
 If you are using Windows or macOs, go ahead and verify that file as well. For example on Windows:
 
-`$ gpg --verify electrum-3.1.3-setup.exe.asc` 
+`$ gpg --verify electrum-3.3.4-setup.exe.asc` 
 
 The output should be almost the same, for example:
 ```
@@ -105,7 +126,7 @@ Wait until the USB image is downloaded.
 
 ## Verify signatures
 
-We need to verify what we downloaded (and that´s why we downloaded the last two files). As we are verifying the download ourselves, skip step 1.2 “Verify your download using your browser”. The browser extension is probably fine, but it´s a great practice to do it yourself as the process can be used for other files as well. And browser extensions always come with a risk of leaking personal information, so always be cautious with browser extensions (no idea if this particular extension does that, probably not). 
+We need to verify what we downloaded (and that´s why we downloaded the last two files). As we are verifying the download ourselves, skip step 1.2 “Verify your download using your browser”. The browser extension is probably fine, but it´s a great practice to do it yourself as the process can be used for other files as well. 
 
 It’s the same procedure as before. 
 
@@ -113,7 +134,7 @@ Open a terminal window (like Powershell on Windows).
 
 Change the current directory to the one where the 3 downloaded files are located, for example: 
 
-`$ cd ~Downloads`
+`$ cd ~/Downloads`
 
 To be able to verify the signature, import the Tails-signing key into your local GPG installation: 
 
