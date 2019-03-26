@@ -159,7 +159,7 @@ Your wallet is now created you should see the following:
 
 ![Electrum 5](images/10_electrum_5.png)
 
-Before depositing any larger amounts to the cold storage, do at least one test deposit with a very small amount (but it has to cover at least two transaction fees). Deposit funds by going to the "receive" tab and copy the address. You can confirm the address on your hardware wallet (click on the eye in the address field) if you want extra security. 
+Before depositing any larger amounts to the cold storage, do at least one test deposit with a very small amount (it only needs to cover two transaction fees). Deposit funds by going to the "receive" tab and copy the address. You can confirm the address on your hardware wallet (click on the eye in the address field) if you want extra security. 
 
 When the funds are in the wallet (they can be unconfirmed), close the wallet and disconnect the hardware wallet. Then reconnect the hardware wallet and open the wallet. If you used the passphrase in your secure note to open the wallet the before, use the passphrase you wrote down on paper this time. Make sure that the funds you deposited are in the wallet.
 
