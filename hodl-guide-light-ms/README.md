@@ -90,8 +90,14 @@ Your wallet is now created and you should see the following screen:
 
 ![Electrum 4](images/10_electrum_1_4.png)
 
-Before depositing any larger amounts, do at least one test deposit and withdrawal to make sure everything is working. Deposit funds by going to the "receive" tab and copy the address. You can confirm the address on one (or both) of your hardware wallets (click on the eye in the address field) if you want extra security. Withdraw funds by going to the "send" tab. Enter the information, make sure your first hardware wallet is connected (you can connect both at the same time if you like). Click "Send" and confirm everything on your first hardware wallet (this process can sometimes be slow). Connect your second hardware wallet (you can remove the first if you like, the transaction is signed with that key) and repeat the process.
+Before depositing any larger amounts to the cold storage, do at least one test deposit with a very small amount (it only needs to cover two transaction fees). Deposit funds by going to the "receive" tab and copy the address. You can confirm the address on one (or both) of your hardware wallets (click on the eye in the address field) if you want extra security. 
 
+When the funds are in the wallet (they can be unconfirmed), close the wallet and disconnect the hardware wallets. Then reconnect the hardware wallets and open the wallet. If you used the passphrases in your secure note to open the wallet the before, use the passphrase you wrote down on paper this time (the passphrases that encrypts the seed, not the password for the Electrum wallet). Make sure that the funds you deposited are in the wallet.
+
+Then do a test withdrawal by withdrawing the whole amount you deposited to another wallet you control.
+
+Withdraw funds by going to the "send" tab. Enter the information, make sure your first hardware wallet is connected (you can connect both at the same time if you like). Click "Send" and confirm everything on your first hardware wallet (this process can sometimes be slow). Connect your second hardware wallet (you can remove the first if you like, the transaction is signed with that key) and repeat the process.
+ 
 ## Store secret information
 
 You now have to decide how to store everything. 
