@@ -39,7 +39,7 @@ I would recommend [Wasabi Wallet](https://www.wasabiwallet.io/) ([Tor link](http
 
 #### Mix all deposits
 
-When you spend bitcoin, you usually link different UTXOs together to construct the payment and then send some of it back to yourself as change. If you aren't careful, this can be used to cluster many addresses in your wallet together. It's not fool proof, but someone watching the block chain could assume that a cluster of addresses belongs to you. If you then use one address in the cluster to example buy something and ship it to your home or deposit bitcoin to an exchange that use KYC. Many more addresses can be linked to you.
+When you spend bitcoin, you usually link different UTXOs together to construct the payment and then send some of it back to yourself as change. The addresses comes with a history as well. If you aren't careful, this can be used to cluster many addresses in your wallet together. It's not fool proof, but someone watching the block chain could assume that a cluster of addresses belongs to you. If you then use one address in the cluster to, for example, buy something and ship it to your home or deposit bitcoin to an exchange that use KYC. Many more addresses can be linked to you.
 
 This heuristic can be broken if you use coinjoin. One method is to use Wasabi Wallet (or Joinmarket) to mix all your coins before depositing to cold storage. Then it doesn't really matter what you've done with the coins before. It can be a good idea to keep a few mixed outputs in Wasabi Wallet and use that if you'd like to spend bitcoin. Remember that Wasabi Wallet is a hot wallet. Treat it like cash in your pocket and don't keep larger amounts in it. Then you can top up your Wasabi Wallet as needed. Either by buying more at an exchange (and mix) or depositing from your cold storage. You can find a few [best practises for Wasabi Wallet](hodl-guide_62_wasabi-wallet.md) in the bonus section.
 
@@ -59,7 +59,7 @@ In our example it's the first address in a new wallet. So it would be OK to depo
 
 #### Withdraw whole UTXOs
 
-Always try to withdraw whole outputs from your cold wallet. This way, you won't produce any change that you have to keep track of. Change can, like reuse of addresses, be used to cluster different addresses together. This increases the amount of addresses that can be linked to you in case of a privacy breach somewhere. This is easier if you 
+Always try to withdraw whole outputs (coins) from your cold wallet. This way, you won't produce any change that you have to keep track of. Change can, like reuse of addresses and common input of addresses when spending, be used to cluster different addresses together and track you. This increases the amount of addresses that can be linked to you in case of a privacy breach somewhere.
 
 To get control of this in Electrum, go to the `Coins` tab. If you don't see the tab, go to `View>Show Coins`. You should see all your different addresses.
 
