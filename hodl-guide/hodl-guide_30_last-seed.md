@@ -126,7 +126,7 @@ We are leaving Electrum for now and can rest assure that we have a legit version
 
 ## Download Tails
 
-Go ahead with installing Tails. Go to [the install page](https://tails.boum.org/install/index.en.html) and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”.
+Next step is to install Tails. Go to [the install page](https://tails.boum.org/install/index.en.html) and select your operating system. If you don´t have an old copy of Tails, select “Install from {Your operating system}”.
 Select “Let´s go” and download the USB image at step 1.1 to a directory on your computer. At the download page, make sure to download `tails-signing.key` and the detached signature `tails-amd64-3.XX.XX.img.sig` (at the “OpenPGP signature for the Tails 3.XX.X USB image” link. Place the files in the same directory as the .img file. Wait until the USB image is downloaded.
 
 ## Verify signatures
@@ -219,7 +219,7 @@ Then do the following:
 * Type `$ chmod a+x electrum-3.3.4-x86_64.AppImage` (change the name if you use another version).
 * Start Electrum by typing `$ ./electrum-3.3.4-x86_64.AppImage`
 
-Electrum should now start.
+Electrum should now start. We are going to generate a secret seed. So, put your phone and other internet connected devices away from your computer and preferably in flight mode.
 
 ## Generating the seed with Electrum
 
@@ -229,9 +229,13 @@ The Electrum – Install Wizard should appear. The name of the wallet isn’t im
 
 ![Electrum 1](images/30_electrum_1.png)
 
-On the next step, let “Standard wallet” be selected (we are only interested in generating a seed). Click Next:
+Select "Multi-signature wallet" and click Next:
 
-![Electrum 2](images/30_electrum_2.png)
+![Electrum 14](images/40_electrum_14.png)
+
+Let "From 2 cosigners" and "Require 2 signatures" be selected. This is only for generating a seed and we wont create the full wallet now. So, click Next:
+
+![Electrum 40](images/40_electrum_40.png)
 
 On the next step, let “Create a new seed” be selected. Click Next:
 
@@ -241,7 +245,7 @@ On the next step, let Segwit be selected. Click Next:
 
 ![Electrum 4](images/30_electrum_4.png)
 
-You should now see 12 words, this is your seed! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other seeds with 24 words). Write the 12 words you see on your screen on your note (mark the note "C"). Then click Next:
+You should now see 12 words, this is your seed! Electrum use 12 words for it´s seed, most hardware wallets use 24. Today the difference doesn’t really matter, the security is plenty (and we have two other seeds with 24 words). Write the 12 words you see on your screen on a new note/piece of paper (mark the note `C`). Then click Next:
 
 ![Electrum 5](images/30_electrum_5.png)
 
@@ -249,24 +253,21 @@ Confirm your seed by typing all the words you wrote down in the blank field. Whe
 
 ![Electrum 6](images/30_electrum_6.png)
 
-We are done with the seed for now, put it away during the rest of the process so it's not visibly lying around.
+You should then be showed your master public key. This is what we are using to construct the wallet on our main computer. We only need to transfer this somehow. But we don't want to put another USB-flash drive into the computer at this stage. That would increase the risk of something sensitive leaking from our "cold" computer. That's why we are using QR-codes.
 
-You should now be asked for a password. This is for protecting the wallet file and we don’t need that (since everything is deleted once finished), so leave it blank and click Next:
+So, we are using a phone or digital camera. Before bringing them near your computer, make sure that the seed isn't visibly lying around. Put the devices in flight mode so no images are uploaded to any cloud services. Click the "QR-code" in the bottom right corner of the field:
 
-![Electrum 7](images/30_electrum_7.png)
+![Electrum 41](images/40_electrum_41.png)
 
-Electrum is now generating addresses, it can take a while before the main window shows up. When Electrum starts you might see a window asking you if you want to "Enable update check". Simply select "No" (it doesn't matter since we are offline).
+That should show the master public key represented as a QR-code. Take a photo of the QR-code:
 
-Before we move on, we need to export our `master public key`.
-The master public key is used to construct our multi-sig wallet later. To show the master public key in Electrum, go to `Wallet>Information`.
+![Electrum 41](images/40_electrum_42.png)
 
-We never want to put a USB flash drive, or something similar, that's been connected to our "cold system" in to our "hot computer" (reduce any risk of leaks). Your public master key doesn´t really affect your bitcoin’s security (no one can steal your funds with a public key). But all your bitcoin-addresses can be generated from the master public key (in a multi-sig you would need all 3 public keys). So, for privacy, it should be treated with care. But it isn´t as sensitive as a seed that you can generate private keys from. The public key can be represented as a QR code. In the bottom right corner, click “Show as QR-code”:
+The master public key is moderately sensitive information. It can't be used for stealing any funds. But you can construct your wallet with all master public keys. You can't spend anything, but you can view the full wallet balance and all addresses which is bad for privacy reasons. So, it should still be treated with relative care.
 
-![Electrum 9](images/30_electrum_9.png)
+When you've taken the photo, close the dialog and cancel the "Install wizard". We have generated the seed and are done with Tails for now.
 
-It´s now safe to bring other electronic devices near the computer that generated the private key. So, you can turn your cell phone on, but put it in flight mode so nothing is uploaded to any cloud service (or use a digital camera). We are going to use several cameras, so double check that no seeds are lying around. With your cell phone, taka a photo of the QR-code that represents the master public key.
-
-If you use one computer, remove both USBs from the computer and restart the computer on your regular OS. You can keep Tails running and Electrum open if you use two computers.
+If you use one computer, remove both USBs from the computer and restart the computer on your regular OS. We are coming back to Tails later. So, you can keep Tails running if you are using two computers.
 
 We are now going to create our wallet.
 
