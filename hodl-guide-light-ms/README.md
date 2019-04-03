@@ -1,4 +1,4 @@
-[ **Guide** ] -- [ [Bonus](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ]
+[ **Guide** ] -- [ [Bonus](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ]
 
 ---
 
@@ -8,11 +8,11 @@
 
 #### *This is a draft, all feedback is appreciated!*
 
-This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you want to improve your cold storage even more by creating a multi signature wallet. This is an excellent next step if you've followed [Hodl Guide Light](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md) or if you have some experience with hardware wallets.
+This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you want to improve your cold storage even more by creating a multi signature wallet. This is an excellent next step if you've followed [Hodl Guide Light](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light/README.md) or if you have some experience with hardware wallets.
 
 This is a guide for cold storage and not for a wallet used for “day to day spending”.
 
-After you’ve completed this guide, you’ll have a secure storage solution that doesn't rely on one hardware wallet manufacturers wallet. You can later upgrade this setup to an even more complex multi-sig with the full [Hodl Guide](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/README.md).
+After you’ve completed this guide, you’ll have a secure storage solution that doesn't rely on one hardware wallet manufacturers wallet. You can later upgrade this setup to an even more complex multi-sig with the full [Hodl Guide](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/README.md).
 
 As always with Bitcoin, I or no one else can be responsible for your bitcoin. You have to trust and hold yourself responsible for everything.
 
@@ -32,7 +32,7 @@ Privacy isn’t black or white, it’s a scale. Your privacy can be breached in 
 
 ## Setup
 
-The procedure for setting up the hardware wallet is the same as in the Hodl Guide Light. So follow the procedure from [Create the secret seed with your hardware wallet](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md#create-the-secret-seed-with-your-hardware-wallet) until you are redirected back to this guide before the wallet creation in Electrum. The only difference is that you'll end up with two passphrases and two seeds. Write those down on two different notes. Call the first passphrase, `Passphrase A` and the second `Passphrase B` (we will attach them to wallets later). Mark the first secret seed `A` and the second secret seed `B` and remember which hardware wallet they belong to.
+The procedure for setting up the hardware wallet is the same as in the Hodl Guide Light. So follow the procedure from [Create the secret seed with your hardware wallet](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light/README.md#create-the-secret-seed-with-your-hardware-wallet) until you are redirected back to this guide before the wallet creation in Electrum. The only difference is that you'll end up with two passphrases and two seeds. Write those down on two different notes. Call the first passphrase, `Passphrase A` and the second `Passphrase B` (we will attach them to wallets later). Mark the first secret seed `A` and the second secret seed `B` and remember which hardware wallet they belong to.
 
 ## Create the wallet
 
@@ -40,11 +40,11 @@ You can now create a new wallet. If you have a wallet open, go to File>New/Resto
 
 Pick a name for the wallet and click Next:
 
-![Electrum 30_1](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/30_electrum_1.png)
+![Electrum 30_1](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/30_electrum_1.png)
 
 Select "Multi-signature wallet" and click Next:
 
-![Electrum 40_14](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_14.png)
+![Electrum 40_14](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_14.png)
 
 Let the sliders remain at 2 cosigner with 2 signatures needed, click Next:
 
@@ -56,19 +56,19 @@ Change to "Use a hardware device". Insert your first hardware wallet. This will 
 
 Your hardware wallet should be detected (otherwise rescan by clicking Next), click Next:
 
-![Electrum 40_21](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_21.png)
+![Electrum 40_21](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_21.png)
 
 If you use a Trezor, enter the PIN and the passphrase when asked for it.
 
 On the next screen, you can let "Native Segwit Multisig (p2wsh)" be selected. This is a newer type of address that'll give you lower fees. Click Next:
 
-![Electrum 40_39](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_39.png)
+![Electrum 40_39](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_39.png)
 
 Note: Some services are slow to update and can't send directly to native segwit addresses. Most should update soon and you can always use an intermediate wallet (like a normal Electrum wallet) if you can't send directly.
 
 The next window shows your Master Public Key. We don't need this now as you are both cosigner 1 and 2 (you can always access this later in Electrum). Click Next:
 
-![Electrum 40_19_2](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_19_2.png)
+![Electrum 40_19_2](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_19_2.png)
 
 We are now adding cosigner 2. Insert the second hardware wallet (you can keep both wallets inserted to the computer, just make sure to select the right one at the next step). If you use a Ledger Nano S, unlock it with the "secret PIN" that contains your passphrase. Then click next. If using a Trezor, simply connect it and click next:
 
@@ -76,15 +76,15 @@ We are now adding cosigner 2. Insert the second hardware wallet (you can keep bo
 
 Your hardware wallet should be detected (otherwise rescan by clicking Next), select the right wallet and click Next: 
 
-![Electrum 40_35](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_35.png)
+![Electrum 40_35](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_35.png)
 
 Let "Native Segwit Multisig" be selected and click Next:
 
-![Electrum 40_39](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_39.png)
+![Electrum 40_39](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_39.png)
 
 Your wallet is now created and you should be asked for a password to encrypt your wallet. This is for your master public keys that’s stored on your computer and it’s a good idea to protect those with a password. Pick a strong password, preferably generated by a password-manager. You will need this password to open the wallet in Electrum (but not for restoring your funds, you can always restore your funds with your seeds + the seed passwords). You can store this password in LastPass, Keepass or similar managers or use a password you'll remember. Enter the password, confirm it and click Next:
 
-![Electrum 40_23](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/images/40_electrum_23.png)
+![Electrum 40_23](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/images/40_electrum_23.png)
 
 Your wallet is now created and you should see the following screen:
 
@@ -130,4 +130,4 @@ I hope that gives you some guidelines!
 
 ## Improve your storage
 
-As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best practises](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md) for a few important points to think about.
+As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best practises](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md) for a few important points to think about.

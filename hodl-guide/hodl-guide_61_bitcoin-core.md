@@ -21,7 +21,7 @@ Start by downloading the latest version of Bitcoin Core at https://bitcoincore.o
 
 Before installing, you should always verify the digital signature of the downloaded file. That eliminates many attack vectors.
 
-The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check out the section [First steps]( https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) where we validate signatures. The process is a little bit different for Bitcoin Core, but the start is the same.
+The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check out the section [First steps]( https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps) where we validate signatures. The process is a little bit different for Bitcoin Core, but the start is the same.
 
 First, we need to change the active directory. This is done with the command “cd”.
 

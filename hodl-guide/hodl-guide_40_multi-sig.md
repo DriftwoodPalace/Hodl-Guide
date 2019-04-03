@@ -204,7 +204,7 @@ Then, go to `Wallet>Information`. Click the QR-code for the key from cosigner 1.
 
 This'll only be used to create a "dummy wallet" in Tails and could be any master public key.
 
-So, we are now going back to Tails. Go to your second computer or restart your main computer on Tails. We are going to handle a secret seed, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum [like before](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#run-electrum-on-tails). If you still have Tails running, you can use the "up arrow" key in the terminal to see previous commands.
+So, we are now going back to Tails. Go to your second computer or restart your main computer on Tails. We are going to handle a secret seed, make sure to follow the same procedure that you used when generating the seeds (that no one can see what you do). In Tails, launch Electrum [like before](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#run-electrum-on-tails). If you still have Tails running, you can use the "up arrow" key in the terminal to see previous commands.
 
 Click next at the first window:
 

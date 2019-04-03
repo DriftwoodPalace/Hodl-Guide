@@ -13,7 +13,7 @@ Electrum Personal Server will connect your Bitcoin full node to Electrum. This w
 
 Before starting, make sure you’ve got a Bitcoin Core full node running and up to sync. If don’t, see [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md).
 
-You also need Electrum https://electrum.org/#download (you should always check the digital signatures before installing, more info on how [Here](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#download-and-verify-electrum))
+You also need Electrum https://electrum.org/#download (you should always check the digital signatures before installing, more info on how [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_40_multi-sig.md#download-and-verify-electrum))
 
 ## Download the installation package
 
@@ -257,7 +257,7 @@ If you use Electrum over Tor you have to disable this (no need to connect to you
 
 Close the dialog once finished.
 
-It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
+It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
 
 
 *Pro tip:* Create a script that starts Electrum and disables all connections to other servers. In that case you don’t risk connecting to a public server by mistake. Go to your desktop and make a copy of the script `eps`. Rename it `electrum-starter`. Right click on the file and open it with a text editor.

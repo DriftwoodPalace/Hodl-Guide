@@ -17,7 +17,7 @@ I wrote this guide in my own quest to become a first-class Bitcoin citizen. A fi
 
 The guide is for everyone who wants to store their bitcoin in a secure way (you don’t need any specific technical knowledge).
 
-However, it might be overwhelming if you are new to storing your bitcoin on hardware wallets or using Linux and the terminal to enter simple commands. In that case, I would recommend that you start with [Hodl Guide Light](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light/README.md) or [Hodl Guide Light, Multi Sig](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light-ms/README.md). You can always upgrade your storage at a later date.
+However, it might be overwhelming if you are new to storing your bitcoin on hardware wallets or using Linux and the terminal to enter simple commands. In that case, I would recommend that you start with [Hodl Guide Light](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light/README.md) or [Hodl Guide Light, Multi Sig](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light-ms/README.md). You can always upgrade your storage at a later date.
 
 You should have a basic understanding of what a seed that you can generate private keys from is and why it´s important to store it in a secure way. You can read more about secret seeds [Here](https://en.bitcoin.it/wiki/Seed_phrase), we are using a passphrase to encrypt our seeds.
 
@@ -48,13 +48,13 @@ https://glacierprotocol.org/
 
 ## Contributions
 
-This guide has one goal. To create a solid cold storage. Any critique or improvement proposal to the guide is highly appreciated. Feel free to open a pull request or contact me on Github or Twitter ([@HelgeHunding](https://twitter.com/HelgeHunding)).
+This guide has one goal. To create a solid cold storage. Any critique or improvement proposal to the guide is highly appreciated. Feel free to open a pull request or contact me on Github or Twitter ([@DriftwoodPalace](https://twitter.com/DriftwoodPalace)).
 
 ## Changelog and validation
 
 If you are coming back to the guide at a later date. Start by checking the [Changelog](changelog.md) for any major changes to the guide.
 
-If you want to validate the guide. all changes are signed with my signing key. You can go to [commits](https://github.com/HelgeHunding/guides/commits/master/hodl-guide) and check the commits. Every commit after version 1.0 (after mars 31 2019) should be signed with my key with fingerprint `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`.  You'll see the last 16 characters on Github. You can verify that it's my signature by checking it on [Twitter](https://twitter.com/HelgeHunding) or [Keybase](https://keybase.io/helgehunding).
+If you want to validate the guide. all changes are signed with my signing key. You can go to [commits](https://github.com/DriftwoodPalace/guides/commits/master/hodl-guide) and check the commits. Every commit after version 1.0 (after mars 31 2019) should be signed with my key with fingerprint `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`.  You'll see the last 16 characters on Github. You can verify that it's my signature by checking it on [Twitter](https://twitter.com/DriftwoodPalace) or on my profile here at Github.
 
 ---
 Get started: [Preparations >>](hodl-guide_10_preparations.md)

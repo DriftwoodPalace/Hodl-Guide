@@ -2,7 +2,7 @@
 
 ---
 
-In this section, you can find various troubleshooting guides for commin issues. 
+In this section, you can find various troubleshooting guides for common issues.
 
 ## [**Scan QR-code with Electrum**](hodl-guide_71_scan-QR.md)
 
