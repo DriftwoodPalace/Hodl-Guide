@@ -1,4 +1,4 @@
-[ **Guide** ] -- [ [Bonus](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ]
+[ **Guide** ] -- [ [Bonus](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_60_bonus.md) ]
 
 ---
 
@@ -10,7 +10,7 @@
 
 This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you have your bitcoin on an exchange, in a web wallet or in a “hot wallet” on your computer. Or maybe you already have one or more hardware wallets but use the providers own wallet.
 This is a guide for cold storage and not for a wallet used for “day to day spending”.
-After you’ve completed this guide, you’ll have a foundation that you can keep building on. You can later upgrade this setup to an even more secure multi-sig with [Hodl Guide Light, Multi Sig](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light-ms/README.md) or go all the way with the more complex [Hodl Guide](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/README.md).
+After you’ve completed this guide, you’ll have a foundation that you can keep building on. You can later upgrade this setup to an even more secure multi-sig with [Hodl Guide Light, Multi Sig](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light-ms/README.md) or go all the way with the more complex [Hodl Guide](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/README.md).
 
 As always with Bitcoin, I or no one else can be responsible for your bitcoin. You have to trust and hold yourself responsible for everything.
 
@@ -119,9 +119,9 @@ The important parts to look for is when the signature was made `02/13/19 23:08:3
 
 If you have this result go ahead and install or run Electrum.
 
-If you are interested in a more private solution, I would recommend that you setup Electrum to run over Tor at this point (before you create your cold storage wallet). You can find a guide for that, [Here](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_66_electrum-tor.md).
+If you are interested in a more private solution, I would recommend that you setup Electrum to run over Tor at this point (before you create your cold storage wallet). You can find a guide for that, [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_66_electrum-tor.md).
 
-*If you are following the "Hodl guide light, multi sig", change to that guide now. You can find the guide [Here](https://github.com/HelgeHunding/guides/blob/master/hodl-guide-light-ms/README.md).
+*If you are following the "Hodl guide light, multi sig", change to that guide now. You can find the guide [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light-ms/README.md).
 
 ## Create the wallet
 
@@ -168,7 +168,7 @@ Withdraw funds by going to the "send" tab. Enter the information, make sure your
 
 ## Store secret information
 
-You now have to decide how to store everything. 
+You now have to decide how to store everything.
 
 You should have the following:
 
@@ -194,6 +194,6 @@ I hope that gives you some guidelines!
 
 ## Improve your storage
 
-As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best practises](https://github.com/HelgeHunding/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md)  for a few important points to think about.
+As we said before, you now have the base to improve the privacy of your wallet. Check out these [Electrum best practises](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_67_electrum-bp.md)  for a few important points to think about.
 
 ---
