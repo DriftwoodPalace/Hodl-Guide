@@ -5,19 +5,20 @@
 
 # Wasabi Wallet
 
-Wasabi Wallet is a bitcoin wallet designed for giving you control of your privacy. The wallet is built with a great control of different "UTXOs". A UTXO is simply an unspent transaction output and is often referred to as "coin" (and what makes up individual bitcoins)).  that you can use to "mix" bitcoin. The method is often referred to as "coinjoin". It's a technique where you create transactions together with other people to make tracking on the blockchain harder.  
+Wasabi Wallet is a bitcoin wallet designed with privacy in mind. The wallet is built with a great control over different "UTXOs". A UTXO is simply an unspent transaction output and is often referred to as "coin" (and is what makes up individual bitcoins). The UTXOs are associated with a bitcoin address and they can be tracked on the blockchain. This can be used to track users and try to determine who owns what. The most common heuristics for tracking users can be broken if you "mix" your UTXOs with other peoples UTXOs (and use the same amounts). The method is often referred to as "coinjoin".
 
-Many mixers are central services. That means that they can steal your funds and destroy your privacy at will. This is not the case with Wasabi Wallet. The only central part is a "coordinator" that constructs the transactions and that you connect to with Tor to ensure anonymity. You control your own private keys during the whole process. 
+Most implementations of coinjoin (often called mixers) is by third parties that control the whole process. That means that they can steal your funds and destroy your privacy if they like (you have to trust them). This is not the case with Wasabi Wallet. The only central part is a "coordinator" that constructs the transactions and that you connect to with Tor to ensure anonymity. You control your own private keys during the whole process.
 
-To mix bitcoins is extra crucial if you bought your bitcoin on an exchange with KYC. The nature of the open blockchain makes it easy to track bitcoin. If you buy bitcoin on a exchange and doesn’t mix the coins, it’s like have your name and address attached to all your addresses. You can never know who has that information. The heuristic that’s used to track coins can be broken by combining your transaction with other people.
+Mixing bitcoins is extra important if you bought your bitcoins on an exchange that use KYC (know your customer). You'll have your name and maybe even address attached to a set of UTXOs and you can never know who has that information. This might later get mixed with funds in another wallet you control and parts, or all, of those funds might be linked to you. All of this can to a large degree be fixed if you use Wasabi Wallet.
 
-To download and install the wallet, go to https://www.wasabiwallet.io/ and download the latest version for your OS. If you use Tor, use this address http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/
+To download and install the wallet, go to [WasabiWallet](https://www.wasabiwallet.io/) and download the latest version for your OS. If you use Tor, use the [.onion address](http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/)
 Make sure that you download the detached signature as well so we can verify the download.
 To verify the signature, you need GnuPG and the signing key from nopara73.
-If you don’t have GnuPG, you can find a guide and some basic instructions [Here]( https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_10_preparations.md#first-steps).
+If you don’t have GnuPG, you can find basic instructions [here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#download-gnupg-for-validating-digital-signatures).
 
-You can find nopara73’s key on https://github.com/zkSNACKs/WalletWasabi/blob/master/PGP.txt. Click Raw and hit Ctrl+S and save the key in the same folder as your downloaded files.
-Open a new terminal window
+You can find nopara73’s key on Wasabi Wallets [Github page](https://github.com/zkSNACKs/WalletWasabi/blob/master/PGP.txt). Click Raw and hit Ctrl(or Cmd)+S and save the key in the same folder as your downloaded files.
+
+Once done, open a new terminal window:
 
 *Windows*: Open Powershell (search for it or use Win+R, type powershell and hit enter)
 
@@ -27,9 +28,7 @@ Open a new terminal window
 
 Change the current directory to the one where the 3 downloaded files are located, for example:
 
-*Windows*  `> cd C:\Users\Downloads`
-
-*macOS and Linux* `$ cd $HOME/Downloads`
+ `$ cd ~/Downloads`
 
 Import PGP.txt to your local GPG installation:
 
@@ -39,8 +38,8 @@ Now use the “detached signature” (.asc) to check that the installation file 
 
 `$ gpg --verify Wasabi-1.1.1.msi.asc Wasabi-1.1.1.msi`
 
-Make sure to change the names so they match the once you downloaded.
 The expected should be something like:
+
 ```
 gpg: Signature made 02/12/19 10:44:50 W. Europe Standard Time
 gpg:                using RSA key 21D7CA45565DBCCEBE45115DB4B72266C47E075E
@@ -50,6 +49,7 @@ gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 21D7 CA45 565D BCCE BE45 115D B4B7 2266 C47E 075E
 ```
+
 We can see that the signature was made close to the release (by checking the date) and that it´s a `Good signature`. The fingerprint matches the one written on https://github.com/zkSNACKs/WalletWasabi/blob/master/WalletWasabi.Documentation/Guides/InstallInstructions.md#gpg-verification
 
 We can go ahead and install Wasabi Wallet.
@@ -62,23 +62,21 @@ Open your wallet and change tab to CoinJoin:
 
 When you deposit funds to Wasabi Wallet, you’ll see the unspent outputs that you can queue for mixing here. 
 Select the outputs you want to mix, enter your password and Click `Enqueue Selected Coins`.
-Anonymity set means how many other outputs of the same amount you mix our coins with (if 50 people participate in the coinjoin, the anonymity set is 50). The lowest amount available to mix right now is 0,1 bitcoin. If you mix larger amounts, the change will be mixed as well and improve your anonymity set. 
+Anonymity set means how many other outputs of the same amount you mix our coins with (if 50 people participate in the coinjoin, the anonymity set is 50). The lowest amount available to mix right now is 0,1 bitcoin. If you mix larger amounts, the change will be mixed as well and improve your anonymity set.
 
-Depending on how much you mix and what anonymity set you settle for, you´ll end up with a lot of smaller outputs. If you deposit 1 bitcoin and mix to the smallest denominator, you’ll end up with 10 0,1 bitcoin outputs. We need a best practice for how to handle this.
+Depending on how much you mix and what anonymity set you settle for, you´ll end up with a lot of smaller outputs. If you deposit 1 bitcoin and mix to the smallest denominator, you’ll end up with 10 0,1 bitcoin outputs. How should you handle mixing and all outputs?
 
 ## Best practise to handle mixed outputs
 
-This is based on the discussion at https://www.reddit.com/r/WasabiWallet/comments/avxbjy/combining_mixed_coins_privacy_megathread/
+How should you handle mixing and transfers for cold storage. You can safely transfer bitcoin from WasabiWallet to your cold storage. WasabiWallet doesn’t use your full node to rely transactions (but tries to use it to download blocks if you have one running). But it automatically use Tor so it can't tell who created an transaction. If you don't use a full node, Wasabi Wallet uses an version of Neutrino to download blocks and that combined with Tor makes it very private for being a light wallet.
 
-This is targeted for how you should handle transfers to cold storage. You can safely transfer bitcoin from WasabiWallet to your cold storage. WasabiWallet doesn’t use your full node but automatically use Tor and a version of Neutrino that makes it very private.
+So, how should you handle withdrawals? If you mix larger amounts don’t withdraw all your mixed bitcoins in the same transaction. The key is to be unpredictable. Chain analysis companies are looking for patterns. So, avoid depositing and withdrawing the same amount. If you deposit 1 bitcoin and mix it, don't combine all the mixed outputs to transfer 1 bitcoin out in the same transaction. You would still have improved your anonymity from the mixing but you can improve it even more if you deposit 1 bitcoin, mix it and withdraw in batches of say 0,3, 0,5 and 0,2 bitcoin during different times. Some guidelines:
 
-If you mix larger amounts don’t withdraw all your mixed bitcoins in the same transaction. The key is to be unpredictable. Chain analysis companies are looking for patterns. So, avoid depositing and withdrawing the same amount. If you deposit 1 bitcoin and mix it, don't combine all the mixed outputs to transfer 1 bitcoin out in the same transaction. You would still have improved your anonymity from the mixing but you can improve it even more if you deposit 1 bitcoin, mix it and withdraw in batches of say 0,3, 0,5 and 0,2 bitcoin.
+* Be unpredictable. If you have 5 bitcoins, deposit it in uneven chunks (and don’t put 5 bitcoins in a hot wallet). For example, start by depositing 1 bitcoin, then 0,7 then 1,2 and so on. Do the transactions at different times during the day.
+* Aim for an anonymity set of at least 50. This’ll be visible at each separate UTXO in Wasabi Wallet.
+* If you’ve mixed 5 bitcoins, you'll probably end up with 50 outputs of 0,1 bitcoin. If you were going to transfer all out individually, you’d have to do 50 different transactions and would end up with many smaller UTXOs (that could give you larger fees down the line). Is it safe to combine some of the outputs when withdrawing? Again, the key is unpredictability. You can probably combine 5-10 outputs of 0,1 bitcoin without reducing your privacy too much. But, make sure to change your behaviour (sometimes transfer 0,3 bitcoin, next time 0,5 and so on). Do the transfers at different times during the day and never deposit to old addresses (addresses you've used before).
+* *Advanced:* If you mix some of your outputs more then once it will sort of grow your anonymity set exponentially and make tracking much harder. This won’t cost much and makes you more unpredictable. The easiest solution is to change the `config.json` file. With Wasabi Wallet open, go to `File>Open>Config File`. Change the line `MixUntilAnonymitySet` from `50` to a number of `100` or more and save the file. To be even more unpredictable, change this number from time to time. Restart Wasabi Wallet for the new changes to effect.
 
-* Be unpredictable. If you have 5 bitcoins, deposit it in uneven chunks (and don’t put 5 bitcoins in a hot wallet). For example, start by depositing 1 bitcoin, then 0,7 then 1,2 and so on. Do the transactions at different times during the day. This can seem like a lot of work. But, if you do the mixing well, this is the only time you have to do it. If you do it poorly, you might have to go back later and do it again. 
-* Aim for an anonymity set of at least 50. This’ll be visible at each separate output in Wasabi Wallet.
-* If you’ve mixed 5 bitcoins then you might end up with 50 outputs of 0,1 bitcoin. If you were going to transfer all out individually, you’d have to do 50 different transactions and would end up with a lot of different addresses. Is it safe to combine some of the outputs when withdrawing? Again, the key is unpredictability. You can probably combine up to 5-10 outputs of 0,1 bitcoin without reducing your privacy. Make sure you change your behaviour (sometimes transfer 0,3 bitcoin, next time 0,5 and so on). Do the transfers at different times during the day and never ever reuse old addresses. 
-* *Advanced:* If you mix some of your outputs more the once it will sort of grow your anonymity set exponentially and make tracking much harder. This won’t cost much and makes you more unpredictable. The easiest solution is to change the `config.json` file. With Wasabi Wallet open, go to `File>Open>Config File`. Change the line `MixUntilAnonymitySet` from `50` to a number of `100` or more and save the file. To be even more unpredictable, change this number from time to time. Restart Wasabi Wallet for the new changes to effect.
+---
 
-------
-
-<< Back: [Bonus guides](hodl-guide_60_bonus.md) 
+<< Back: [Bonus guides](hodl-guide_60_bonus.md)
