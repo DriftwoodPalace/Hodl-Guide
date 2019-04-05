@@ -2,11 +2,9 @@
 
 ---
 
-# The Hodl Guide Light, Multi Sig
+# The Hodl Guide Light, Multi Sig v1.0
 
 ---
-
-#### *This is a draft, all feedback is appreciated!*
 
 This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you want to improve your cold storage even more by creating a multi signature wallet. This is an excellent next step if you've followed [Hodl Guide Light](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide-light/README.md) or if you have some experience with hardware wallets.
 
@@ -15,7 +13,6 @@ This is a guide for cold storage and not for a wallet used for “day to day spe
 After you’ve completed this guide, you’ll have a secure storage solution that doesn't rely on one hardware wallet manufacturers wallet. You can later upgrade this setup to an even more complex multi-sig with the full [Hodl Guide](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/README.md).
 
 As always with Bitcoin, I or no one else can be responsible for your bitcoin. You have to trust and hold yourself responsible for everything.
-
 
 ## Requirements
 

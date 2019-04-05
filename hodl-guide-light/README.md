@@ -2,11 +2,9 @@
 
 ---
 
-# The Hodl Guide Light
+# The Hodl Guide Light v1.0
 
 ---
-
-#### *This is a draft, all feedback is appreciated!*
 
 This is a guide for anyone who wants to start taking control of their bitcoin holdings. Maybe you have your bitcoin on an exchange, in a web wallet or in a “hot wallet” on your computer. Or maybe you already have one or more hardware wallets but use the providers own wallet.
 This is a guide for cold storage and not for a wallet used for “day to day spending”.

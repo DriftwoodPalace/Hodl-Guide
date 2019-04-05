@@ -3,11 +3,9 @@
 
 ---
 
-# The Hodl Guide
+# The Hodl Guide v1.0
 
 ---
-
-#### *This is a draft, all feedback is appreciated!*
 
 Bitcoin gives you the possibility to store value in ways earlier generations only could dream about. A common man can store value in a more secure and trust minimized way then any king throughout history. If done right, no one even needs to know what you own.
 
@@ -49,6 +47,8 @@ https://glacierprotocol.org/
 ## Contributions
 
 This guide has one goal. To create a solid cold storage. Any critique or improvement proposal to the guide is highly appreciated. Feel free to open a pull request or contact me on Github or Twitter ([@DriftwoodPalace](https://twitter.com/DriftwoodPalace)).
+
+Thanks to [@jakobalexander](https://github.com/jakobalexander) and [@justinmoon](https://github.com/justinmoon) for early feedback and reviews of the guide. As always, feedback does not constitute endorsement of the content.
 
 ## Changelog and validation
 
