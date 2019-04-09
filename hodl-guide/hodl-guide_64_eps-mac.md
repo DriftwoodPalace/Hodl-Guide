@@ -18,7 +18,7 @@ You also need [Electrum](https://electrum.org/#download). Always check the digit
 ## Download the installation package
 
 Go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To) to know what this is and why it’s important.
-Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc)
+Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc).
 
 On the page, click “raw”:
 
@@ -26,23 +26,25 @@ On the page, click “raw”:
 
 Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
-To verify the signature, we need Gpg Suite. If it’s not already installed, go to Download and install the latest version of GPG Suite https://gpgtools.org/ and download the latest release. 
-
-We need to open a new terminal window. Click the Searchlight (magnifying glass) icon in the menu bar and type terminal. Select the Terminal application from the search results.
-
-We need to change the working directory to the directory where the downloaded file is located. If you've placed the file in "downloads" type the following (everything after `$`) to the terminal:
-
-`$ cd ~/downloads`
-
-Import Belchers signing key to your local directory:
-
-`> gpg --import belcher.asc`
-
-It’s now imported. Navigate to the release page at https://github.com/chris-belcher/electrum-personal-server/releases and download the latest `Source code (.zip)` and the corresponding `.asc` file. For example:
+Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest `Source code (.zip)` and the corresponding `.asc` file (needed to verify the downloaded file). For example:
 
 ![Eps Win2](images/63_eps-w_2.png)
 
-Once downloaded, make sure that the working directory is the one where the files are located. Enter the following command (if you downloaded another version, change the file names):
+Place the files in the same folder that you saved the signing key in.
+
+To verify the signature, we need Gpg Suite. If it’s not already installed, go to https://gpgtools.org/ and download and install the latest version.
+
+We need to open a new terminal window. Click the Searchlight (magnifying glass) icon in the menu bar and type terminal. Select the Terminal application from the search results.
+
+Change the working directory to the directory where the downloaded files are located. If you've placed the files in "downloads" type the following (everything after `$`) to the terminal:
+
+`$ cd ~/downloads`
+
+Then, import Belchers signing key to your local directory:
+
+`> gpg --import belcher.asc`
+
+We can now verify the download by typing (if you downloaded another version, change the file names):
 
 `> gpg --verify eps-v0.1.6.zip.asc electrum-personal-server-eps-v0.1.6`
 
@@ -71,19 +73,15 @@ Open `config.cfg` with a text editor.
 
 #### For multi-sig wallets
 
-To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. In the config.cfg-file, we are going to change the row:
+To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. 
+
+In the config.cfg-file, create a new line and give the wallet a name. If you are using a 2 of 3 multi-sig, type `2` (required-signatures) after the name. Then paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 
 ```
-# multisig_wallet = 2 xpub…… xpub……
+my_multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
 ```
 
-Start by removing `#` (otherwise it’s treated as a comment and skipped by the application). If you are using a 2 of 3 multi-sig, keep `2` (required-signatures). Remove the two example keys and paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
-
-```
-multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
-```
-
-You can change the name “multisig_wallet” if you like.
+You can change the name “my_multisig_wallet” if you like.
 
 *Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk because of this).
 
@@ -276,10 +274,11 @@ If you use Electrum over Tor you have to disable this (no need to connect to you
 
 ![Eps Win7](images/63_eps-w_7.png)
 
-Close the dialog once finished.
+Close the dialog once finished. Electrum is now be connected to your full node!
 
 It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
 
+### Disable connections to other servers
 
 *Pro tip:* Create a script that starts Electrum and disables all connections to other servers. In that case you don’t risk connecting to a public server by mistake. Go to your desktop and make a copy of the script `eps`. Rename it `electrum-starter`. Right click on the file and open it with a text editor.
 
@@ -291,9 +290,15 @@ Save and close the file.
 
 You can now use this script to start Electrum and never have to worry about connecting to any remote server by mistake. You can close the script once Electrum has started.
 
-Your wallet should now be connected to your bitcoin full node (the circle in the bottom right corner should be green)! 
+Your wallet should be connected to your bitcoin full node (the circle in the bottom right corner should be green)!
 
 ![Eps Win6](images/63_eps-w_6.png)
+
+You can verify that only your server is being used by going to `Tools>Network`. You should only see localhost at overview:
+
+![Eps Win11](images/63_eps-w_11.png)
+
+If you change tab to "Server". Localhost should be selected and everything should be greyed out (not possible to change anything).
 
 ---
 
