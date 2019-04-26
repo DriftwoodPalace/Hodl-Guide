@@ -15,9 +15,9 @@ Before starting, make sure you’ve got a Bitcoin Core full node running and syn
 
 You also need [Electrum](https://electrum.org/#download). Always check the digital signatures before installing, more info on how [here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#download-and-verify-electrum).
 
-If you have any issues during the setup, check out the troubleshooting section at the end of this guide.
+If you have any issues during the setup, check out the troubleshooting section at [the end](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_63_eps-win.md#troubleshooting) of this guide.
 
-## Download the installation package
+## Download files
 
 Before installing anything we need to verify the download. To do this we need the developer, Chris Belchers, signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc).
 
@@ -75,7 +75,7 @@ Navigate to the unzipped folder `\electrum-personal-server-windows-release-v0.1.
 
 Right click on `config.ini` and select edit to edit it with a text editor (notepad etc).
 
-#### For multi-sig wallets
+### For multi-sig wallets
 
 To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Information` and copy the Master Public Key for cosigner 1.
 
@@ -89,7 +89,7 @@ You can change the name “my_multisig_wallet” if you like. Make sure that you
 
 *Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk because of this).
 
-#### Single wallet
+### Single wallet
 
 If you want to add a single wallet, for example with one key from a hardware wallet. Follow the same procedure. Open the wallet in Electrum and go to Wallet>Information and copy the Master Public Key. Pick a name and paste the key in `config.ini` file.
 For example:
@@ -110,7 +110,7 @@ You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin 
 
 Another alternative is to use a `rpcuser` and a strong (many random characters) `rpcpassword` with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add this to `config.ini` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
 
-### Settings in Bitcoin Core
+## Settings in Bitcoin Core
 
 To get Electrum Personal Server to connect to Bitcoin Core, you might need to change a few settings in Bitcoin Core. This is done in the configuration file for Bitcoin Core.
 
@@ -211,7 +211,7 @@ You can verify that only your server is being used by going to `Tools>Network`. 
 
 If you change tab to "Server". Localhost should be selected and everything should be greyed out (not possible to change anything).
 
-### Troubleshooting
+## Troubleshooting
 
 If the terminal `cmd.exe` starts and quickly exits the server isn’t starting properly. Check the log file for errors. The log file is located in `C:\Users\{user}\AppData\Local\Temp\electrumpersonalserver.log`.
 
