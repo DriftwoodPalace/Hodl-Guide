@@ -90,7 +90,8 @@ What if someone needs to access your funds in case you are hospitalized or worse
 
 The worst case would be if your house burned down and you and your hardware wallets with it. All three packages stored in other places would then be needed to access your funds. The multi-sig contract could be reconstructed by combining all seeds (+ the seed passphrases) or two seeds and the last master public key (in the right order).
 
-*This information is incorrect, you'll need all packages to restore in this situation, updated guide coming soon* If you are in a coma or die (without your house burning down) and a trusted person needs to access your funds, access to Envelope A is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine Envelope A with either Envelope B and the hardware wallets or Envelope C and the hardware wallets. They can of course combine it with Envelope B and C and get access as well.
+*The following information is incorrect, you'll need all packages to restore in this situation, updated guide coming soon.*
+*If you are in a coma or die (without your house burning down) and a trusted person needs to access your funds, access to Envelope A is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine Envelope A with either Envelope B and the hardware wallets or Envelope C and the hardware wallets. They can of course combine it with Envelope B and C and get access as well.*
 
 What about loss of seeds?
 
