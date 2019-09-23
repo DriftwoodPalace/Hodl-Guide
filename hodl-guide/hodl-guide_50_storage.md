@@ -90,13 +90,13 @@ What if someone needs to access your funds in case you are hospitalized or worse
 
 The worst case would be if your house burned down and you and your hardware wallets with it. All three packages stored in other places would then be needed to access your funds. The multi-sig contract could be reconstructed by combining all seeds (+ the seed passphrases) or two seeds and the last master public key (in the right order).
 
-If you are in a coma or die (without your house burning down) and a trusted person needs to access your funds, access to Envelope A is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine Envelope A with either Envelope B and the hardware wallets or Envelope C and the hardware wallets. They can of course combine it with Envelope B and C and get access as well.
+*This information is incorrect, you'll need all packages to restore in this situation, updated guide coming soon* If you are in a coma or die (without your house burning down) and a trusted person needs to access your funds, access to Envelope A is needed. If we assume that the person can get access to your hardware wallets (drill the safe or whatever is needed). The person can combine Envelope A with either Envelope B and the hardware wallets or Envelope C and the hardware wallets. They can of course combine it with Envelope B and C and get access as well.
 
 What about loss of seeds?
 
 If your house burns down with your hardware wallets in it, but you survive, you can construct the multi-sig wallet with your digital note and two of the seeds.
 
-If your computer crashes and you lose access to your electrum wallet file and you somehow lose your digital note, you can reconstruct the wallet with your hardware wallets and info packages A and C or B and C.
+If your computer crashes and you lose access to your electrum wallet file and you somehow lose your digital note, you can reconstruct the wallet with your hardware wallets (if you remember the PINs) and info packages B and C.
 
 ---
 
