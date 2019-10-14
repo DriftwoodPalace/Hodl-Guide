@@ -18,7 +18,7 @@ You also need [Electrum](https://electrum.org/#download). Always check the digit
 ## Download the installation package
 
 Go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To) to know what this is and why it’s important.
-Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc).
+Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/docs/pubkeys/belcher.asc).
 
 On the page, click “raw”:
 
@@ -26,7 +26,7 @@ On the page, click “raw”:
 
 Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
-Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest `Source code (.zip)` and the corresponding `.asc` file (needed to verify the downloaded file). For example:
+Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest `Source code (.zip)` and the corresponding `.asc` file (needed to verify the downloaded file). For example (the example is showing the Windows version, if using Mac take the other ones):
 
 ![Eps Win2](images/63_eps-w_2.png)
 

@@ -19,7 +19,7 @@ If you have any issues during the setup, check out the troubleshooting section a
 
 ## Download files
 
-Before installing anything we need to verify the download. To do this we need the developer, Chris Belchers, signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/pgp/pubkeys/belcher.asc).
+Before installing anything we need to verify the download. To do this we need the developer, Chris Belchers, signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/docs/pubkeys/belcher.asc).
 
 On the page, click “raw”:
 
