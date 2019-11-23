@@ -6,6 +6,13 @@ nav_order:
 ---
 # WORK IN PROGRESS, GUIDE NOT COMPLETE YET, SE V1.0 IN THE MEANTIME
 # The Hodl Guide v2.0
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ## Multi-sig Cold storage
 ---
 Welcome to the Hodl Guide version 2.0.
