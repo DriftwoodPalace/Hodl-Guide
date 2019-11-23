@@ -43,9 +43,9 @@ You should have the following at hand:
 
 Before starting, make sure to update the firmware on the hardware wallets if you don't have the latest version. Follow the instructions for each different manufacturer:
 
-* https://coldcardwallet.com/docs/upgrade
-* https://wiki.trezor.io/User_manual-Updating_the_Trezor_device_firmware__T1
-* https://support.ledger.com/hc/en-us/articles/360002731113-Update-device-firmware 
+* [https://coldcardwallet.com/docs/upgrade](https://coldcardwallet.com/docs/upgrade)
+* [https://wiki.trezor.io/User_manual-Updating_the_Trezor_device_firmware__T1](https://wiki.trezor.io/User_manual-Updating_the_Trezor_device_firmware__T1)
+* [https://support.ledger.com/hc/en-us/articles/360002731113-Update-device-firmware](https://support.ledger.com/hc/en-us/articles/360002731113-Update-device-firmware)
 
 The logic behind using 3 different hardware wallets is that if a fatal flaw was found in one product, your funds would still be safe. If that happens, simply move your funds to a new multi-sig contract and replace the compromised product.
 

@@ -106,7 +106,7 @@ Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 
 ### Rest of the config.cfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found [here](https://en.bitcoin.it/wiki/Data_directory). For example:
 
 ```
 datadir = D:\Bitcoin
@@ -149,7 +149,7 @@ Type in :
 
 `$ sudo python3 --version`
 
-If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to https://www.python.org/downloads/ and download and install the latest version.
+If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to [https://www.python.org/downloads/](https://www.python.org/downloads/) and download and install the latest version.
 
 We are going to use `pip` to install the personal server. It should be installed with Python, but make sure you have the latest version by running this in the Terminal:
 
@@ -173,7 +173,7 @@ To install Electrum personal server.
 
 If you are getting errors, make sure you have the latest version of Python and Pip installed.
 
-If you get a `DistutilsError` when installing the server you might not have all dependecies installd. Check the last line in the error message, it should look something like `Could not find suitable distribution for Requirement.parse('pytest-runner')`. If that's the case, you need to install `pytest-runner`.
+If you get a `DistutilsError` when installing the server you might not have all dependencies installed. Check the last line in the error message, it should look something like `Could not find suitable distribution for Requirement.parse('pytest-runner')`. If that's the case, you need to install `pytest-runner`.
 
 Do this by going to the terminal and type the command:
 
@@ -275,7 +275,7 @@ Listening for Electrum Wallet ...
 ## Setting up Electrum
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_65_watch-address.md) for creating a wallet (skip the settings part where we activate Tor)
+Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html#setup-electrum) for creating a wallet (skip the settings part where we activate Tor)
 
 When you have a wallet open, go to `Tools>Network`.
 
@@ -290,7 +290,7 @@ If you use Electrum over Tor you have to disable this (no need to connect to you
 
 Close the dialog once finished. Electrum is now be connected to your full node!
 
-It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
+It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_61_bitcoin-core.html#running-bitcoin-core-over-tor)
 
 ### Disable connections to other servers
 

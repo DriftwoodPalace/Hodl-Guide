@@ -24,8 +24,8 @@ Mixing bitcoin is extra important if you bought them at an exchange that use KYC
 
 Unfortunately I don't have time to keep up with everything happening in this project. There's many more qualified people for that task.
 
-I'll leave you with links to the download https://www.wasabiwallet.io/ and if you use Tor browser, use http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/
-The link to the official documentation https://docs.wasabiwallet.io/using-wasabi/ and a great forum post https://www.reddit.com/r/WasabiWallet/comments/c7w7ua/user_guide_faq_and_10_commandments/
+I'll leave you with links to the download [https://www.wasabiwallet.io/](https://www.wasabiwallet.io/) and if you use Tor browser, use [http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/](http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/)
+The link to the [official documentation](https://docs.wasabiwallet.io/)using-wasabi/ and a great [forum post](https://www.reddit.com/r/WasabiWallet/comments/c7w7ua/user_guide_faq_and_10_commandments/).
 
 
 ### Best practises to handle mixed outputs

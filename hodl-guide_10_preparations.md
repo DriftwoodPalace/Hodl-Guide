@@ -36,13 +36,13 @@ Syncing your Bitcoin Core node is the most time consuming part of this guide. So
 
 Another option is to buy a "node in a box". That's a very easy way of setting up a full node and often you'll get an Electrum Server at the same time. I haven't tried any of alternative, but two popular options seems to be:
 
-https://shop.nodl.it/en/
+[https://shop.nodl.it/en/](https://shop.nodl.it/en/)
 
-https://mynodebtc.com/
+[https://mynodebtc.com/](https://mynodebtc.com/)
 
 If you need help setting up your node, you could try a service like:
 
-https://www.ministryofnodes.com.au/
+[https://www.ministryofnodes.com.au/](https://www.ministryofnodes.com.au/)
 
 -------
-Move on to: [Creating passphrases >>](hodl-guide_20_passphrasess.md)
+Move on to: [Creating passphrases >>](hodl-guide_20_passphrases.md)

@@ -19,7 +19,7 @@ has_toc: false
 
 Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum (Hardware Wallet support, easy multi-sig setup and more) while still validating and broadcasting everything with your full node. *Warning:* Do not use Electrum Personal Server in combination with Electrum Lightning (don't open channels etc, you can use the rest of Electrum as usual).
 
-If you like to know more about the project, go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To).
+If you like to know more about the project, go to [https://github.com/chris-belcher/electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server) and read the intro (before How To).
 
 Before starting, make sure you’ve got a Bitcoin Core full node running and synced. If don’t, see [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md).
 
@@ -41,7 +41,7 @@ Then, navigate to the [release page](https://github.com/chris-belcher/electrum-p
 
 ![Eps Win2](images/63_eps-w_2.png)
 
-To verify everything, we need Gpg4win. If it’s not already installed, go to https://www.gpg4win.org and install the latest release for Windows. If you don’t want to donate, click bank transfer on the download page to access the download. You only need to install GnuPG and Kleopatra. Start Kleopatra once finished.
+To verify everything, we need Gpg4win. If it’s not already installed, go to [https://www.gpg4win.org](https://www.gpg4win.org) and install the latest release for Windows. If you don’t want to donate, click bank transfer on the download page to access the download. You only need to install GnuPG and Kleopatra. Start Kleopatra once finished.
 
 Then, navigate to the folder where the downloaded files are located. Use `Shift+Right Click` to bring up a menu. In the menu, select "Open PowerShell window here". For example, if your files are located in "Downloads":
 
@@ -110,7 +110,7 @@ Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 
 ### Rest of the config.ini file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found here https://en.bitcoin.it/wiki/Data_directory). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found [here](https://en.bitcoin.it/wiki/Data_directory). For example:
 
 ```
 datadir = D:\Bitcoin
@@ -180,7 +180,7 @@ Listening for Electrum Wallet ...
 
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_65_watch-address.md) for creating a wallet (skip the settings part where we activate Tor)
+Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html#setup-electrum) for creating a wallet (skip the settings part where we activate Tor)
 
 When you have a wallet open, go to `Tools>Network`.
 
@@ -198,7 +198,7 @@ Close the dialog once finished. Electrum should now be connected to your full no
 
 You can confirm this by looking for the green circle in the bottom right corner of Electrum and the message `Electrum connected from ('127.0.0.1', 60449)` on the server side.
 
-It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_61_bitcoin-core.md#running-bitcoin-core-over-tor)
+It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_61_bitcoin-core.html#running-bitcoin-core-over-tor)
 
 ### Disable connections to other servers
 

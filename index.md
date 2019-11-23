@@ -4,7 +4,7 @@ title: Intro
 nav_order: 
 ---
 ---
-*THIS IS A WORK IN PROGRESS, SE V1.0 (https://github.com/DriftwoodPalace/guides/) IN THE MEANTIME*
+**THIS IS A WORK IN PROGRESS, SE [HODL-GUIDE V1.0](https://github.com/DriftwoodPalace/guides/) IN THE MEANTIME**
 # The Hodl Guide v2.0
 {: .no_toc }
 
@@ -43,7 +43,7 @@ The full setup uses three different hardware wallets. The full setup should take
 The guide tries to keep focus on the privacy of your storage solution as well. Those parts doesn’t directly affect the security of your seeds. But they reduce the risk of being the victim of a targeted attack (virtual or physical). The privacy parts are marked with a **[P]** and you could skip those if you feel that it's overkill for your personal threat level.
 
 Remember, the best security for your bitcoin holdings is probably that no one knows that you own anything in the first place.
-If you want more reading on why privacy matters, check out https://en.bitcoin.it/wiki/Privacy and https://medium.com/human-rights-foundation-hrf/privacy-and-cryptocurrency-part-i-how-private-is-bitcoin-e3a4071f8fff
+If you want more reading on why privacy matters, check out [https://en.bitcoin.it/wiki/Privacy](https://en.bitcoin.it/wiki/Privacy) and [https://medium.com/human-rights-foundation-hrf/privacy-and-cryptocurrency-part-i-how-private-is-bitcoin-e3a4071f8fff](https://medium.com/human-rights-foundation-hrf/privacy-and-cryptocurrency-part-i-how-private-is-bitcoin-e3a4071f8fff)
 
 
 ## Cold Storage
@@ -62,17 +62,17 @@ If you have trouble following the guide, see any errors or have suggestions for 
 
 For more reading and different solutions for cold storage. Take a look at:
 
-https://github.com/rustyrussell/bitcoin-storage-guide
+[https://github.com/rustyrussell/bitcoin-storage-guide](https://github.com/rustyrussell/bitcoin-storage-guide)
 
-And for even more depth:
+And for even more depth (great info on side-channel attacks here):
 
-https://glacierprotocol.org/
+[https://glacierprotocol.org/](https://glacierprotocol.org/)
 
-Or if you need help, you could look at solutions from companies like:
+Or if you need help, you could look at solutions from companies like (I haven't tried any personally):
 
-https://keys.casa/
+[https://keys.casa/](https://keys.casa/)
 
-https://www.unchained-capital.com/
+[https://www.unchained-capital.com/](https://www.unchained-capital.com/)
 
 ## Contributions
 

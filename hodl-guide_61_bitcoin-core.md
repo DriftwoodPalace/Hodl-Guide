@@ -29,11 +29,11 @@ An even better solution is to run the node over Tor. This’ll make your node ve
 
 ### Download and verify Bitcoin Core
 
-Start by downloading the latest version of Bitcoin Core for your OS on https://bitcoincore.org/en/download/
+Start by downloading the latest version of Bitcoin Core for your OS on [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
 
 Before installing, you should always verify the digital signature of the downloaded file to make sure that the developers signed the release. This'll make sure that what you've downloaded is the version the developer uploaded and not a malicious version.
 
-The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check the instructions [here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#download-gnupg-for-validating-digital-signatures).
+The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check the instructions [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-gnupg-for-validating-digital-signatures).
 
 There's instructions for how to validate Bitcoin Core on https://bitcoincore.org/en/download/. So, simply follow those.
 
@@ -116,7 +116,7 @@ Once up and running, you can start and close Bitcoin Core whenever you like with
 As we said earlier, running your Bitcoin Core node over Tor might be a good idea. This'll hide the fact that you are running a Bitcoin full node and you'll broadcast transactions in an anonymous way.
 
 If you have Tor installed, this is literary only one checkbox. 
-If you don’t have Tor installed, go to https://www.torproject.org/projects/torbrowser.html and follow the instructions for your operating system. You can launch the browser (I can recommend it, it's like using Firefox these days) or start Tor.exe (that should be located at `..\Tor Browser\Browser\TorBrowser\Tor`) to start Tor.
+If you don’t have Tor installed, go to [https://www.torproject.org/projects/torbrowser.html](https://www.torproject.org/projects/torbrowser.html) and follow the instructions for your operating system. You can launch the browser (I can recommend it, it's like using Firefox these days) or start Tor.exe (that should be located at `..\Tor Browser\Browser\TorBrowser\Tor`) to start Tor.
 
 To activate Tor in Bitcoin Core, go to Settings>Options.
 Change the tab to Network and select “Connect through SOCKS5 proxy (default proxy):”

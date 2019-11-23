@@ -21,7 +21,7 @@ Humans are usually terrible at generating (and remembering) passwords so we are 
 
 Bitwarden is an open source password manager that stores everything in "the cloud" (someone else's computer). It's not optimal to store any information about Bitcoin in "the cloud". But, it's a trade off we are taking here to reduce the risk of loosing any funds.
 
-So, go ahead and download Bitwarden for your operating system https://bitwarden.com/#download
+So, go ahead and download Bitwarden for your operating system [https://bitwarden.com/#download](https://bitwarden.com/#download)
 
 Install and run the application:
 
@@ -59,4 +59,4 @@ Do the same two more times so you'll end up with something like this:
 Make sure to save the note before moving on. We have now generated the password, the passphrase and the PINs we'll use during the process and can move on to actually creating our private seeds.
 
 ---
-Next up: [Generating your seeds >>](hodl-guide_30_last-seed.md)
+Next up: [Generating your seeds >>](hodl-guide_30_seeds.md)
