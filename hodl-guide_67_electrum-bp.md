@@ -9,6 +9,13 @@ has_toc: false
 ## Electrum best practises
 
 *Difficulty: medium*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Compared to the traditional financial system, simply using Bitcoin and controlling your own keys is a big step forward from a privacy standpoint. But this can be improved even more by thinking about a few key points.
 

@@ -1,10 +1,17 @@
 ---
 layout: default
-title: Seeds
+title: Passphrase
 nav_order: 3
 ---
 
 # Generate password, passphrase and PINs
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Create password and passphrase
 Before doing anything with any hardware wallet, we are going to generate two strings of text and three PIN-codes. We are calling the first one `Wallet Password` (called `PW` from now on) and the second one `Passphrase Hardware Wallet` (called `PF-HW` from now on). Both are essentially a password. But the last one will be used together with the seeds as a "25th word". When used to encrypt a seed like that it's usually called a passphrase, so we are sticking with that. We are going to use the same passphrase with all our seeds. Using a separate passphrase for each seed would of course improve the security even more. But at the same time. it creates more to store and increases the risk of making the setup to complicated. As always, it's a trade off.

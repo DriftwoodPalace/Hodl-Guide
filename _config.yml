@@ -3,6 +3,6 @@ remote_theme: pmarsceill/just-the-docs
 search_enabled: true
 aux_links:
     "Issues / Knowledge Base":
-      - "https://github.com/DriftwoodPalaceGuides/issues"
+      - "https://github.com/DriftwoodPalace/Hodl-Guide/issues"
     "Contribute! Source on GitHub":
-      - "https://github.com/DriftwoodPalace/Guides/"
+      - "https://github.com/DriftwoodPalace/Hodl-Guide/"

@@ -5,6 +5,13 @@ nav_order: 4
 ---
 
 # Generating your seeds
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 First, a reminder of where you should be in the process by now.
 You should now have one digital note in Bitwarden containing:

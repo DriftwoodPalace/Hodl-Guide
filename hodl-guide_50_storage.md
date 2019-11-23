@@ -5,6 +5,13 @@ nav_order: 6
 ---
 
 # Store your information
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 You've now created all necessary information. You can put the seeds into envelopes and seal them with tamper resistant tape if you like. Mark them `A`, `B` and `C`. This should give you the following setup:
 

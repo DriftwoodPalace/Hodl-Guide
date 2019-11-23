@@ -9,6 +9,13 @@ has_toc: false
 ## Add watch address in Bitcoin Core
 
 *Difficulty: easy*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Watch addresses can be used to verify payments with your own full node without giving it any private keys. You simply load the addresses it should keep track on. This can be useful if you use a Hardware Wallet or a multi-sig wallet created in Electrum and don't want to connect to a public server. An even better solution is to use [Electrum Personal Server](https://github.com/chris-belcher/electrum-personal-server) (that way you can broadcast transactions as well). You can find guides for EPS here: [Windows](hodl-guide_63_eps-win.md), [Mac](hodl-guide_63_eps-mac.md) and [Linux]( https://www.youtube.com/watch?v=1JMP4NZCC5g) (not my guide).
 

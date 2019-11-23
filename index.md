@@ -4,8 +4,9 @@ title: Intro
 nav_order: 
 ---
 ---
-# WORK IN PROGRESS, GUIDE NOT COMPLETE YET, SE V1.0 IN THE MEANTIME
+*THIS IS A WORK IN PROGRESS, SE V1.0 (https://github.com/DriftwoodPalace/guides/hodl-guide) IN THE MEANTIME*
 # The Hodl Guide v2.0
+## Multi-sig Cold storage
 {: .no_toc }
 
 ## Table of contents
@@ -13,7 +14,7 @@ nav_order:
 
 1. TOC
 {:toc}
-## Multi-sig Cold storage
+
 ---
 Welcome to the Hodl Guide version 2.0.
 
@@ -21,7 +22,7 @@ Version 2.0 is an updated version of the Hold-Guide v1.0. The setup is still a *
 
 I’ve also cleared up the guide a bit. It’s more direct with less options. You can of course modify the guide to fit your situation. But I believe it’s easier to follow if it’s one solution from start to finish.  
 
-The old version of the guide that used 2 hardware wallets and one key created on an offline computer with “Tails” can be found [here](https://github.com/DriftwoodPalace/guides_old) (not updated anymore). The old guide offered an option for single sig and 2 of 2 multi-sig as well, this will not be described in this guide.
+The old version of the guide that used 2 hardware wallets and one key created on an offline computer with “Tails” can be found [here](https://github.com/DriftwoodPalace/guides) (not updated anymore). The old guide offered an option for single sig and 2 of 2 multi-sig as well, this will not be described in this guide.
 
 ## Background
 
@@ -55,7 +56,7 @@ I, or no one else, can be responsible for your funds. I'm just one person. There
 
 ## Issues, errors or improvements
 
-If you have trouble following the guide, see any errors or have suggestions for improvements; open an issue [here](https://github.com/DriftwoodPalace/guides/issues). If it's critical or private information, try contacting me at Twitter ([@DriftwoodPalace](https://twitter.com/DriftwoodPalace), warning I'm not very active). Your first alternative should be to open an issue on Github. That way other people can help and your question might help other people.
+If you have trouble following the guide, see any errors or have suggestions for improvements; open an issue [here](https://github.com/DriftwoodPalace/Hodl-Guide/issues). If it's critical or private information, try contacting me at Twitter ([@DriftwoodPalace](https://twitter.com/DriftwoodPalace), warning I'm not very active). Your first alternative should be to open an issue on Github. That way other people can help and your question might help other people.
 
 ## More Reading
 
@@ -79,7 +80,7 @@ Thanks to [@jakobalexander](https://github.com/jakobalexander) and [@justinmoon]
 
 ## Validation
 
-If you want to validate the guide. all changes are signed with my signing key. You can go to [commits](https://github.com/DriftwoodPalace/guides/commits/master/hodl-guide) and check the commits. Every commit after version 1.0 (after mars 31 2019) should be signed with my key with fingerprint `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`.  You'll see the last 16 characters on Github. You can verify that it's my signature by checking it on [Twitter](https://twitter.com/DriftwoodPalace) or on my profile here at Github.
+If you want to validate the guide. all changes are signed with my signing key. You can go to [commits](https://github.com/DriftwoodPalace/Hodl-Guide/commits/master/) and check the commits. Every commit after version 1.0 (after mars 31 2019) should be signed with my key with fingerprint `FF54 1B4E E4E6 D845 9301 1D40 3D27 D7D3 59A0 E4A9`.  You'll see the last 16 characters on Github. You can verify that it's my signature by checking it on [Twitter](https://twitter.com/DriftwoodPalace) or on my profile here at Github.
 
 ---
 Get started: [Preparations >>](hodl-guide_10_preparations.md)

@@ -9,6 +9,13 @@ has_toc: false
 # Install and optimize Bitcoin Core
 
 *Difficulty: easy*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Bitcoin Core is the main software implementation of the Bitcoin protocol. Once up and running it will give you a full node that validates all your transactions and enforces the consensus rules.
 

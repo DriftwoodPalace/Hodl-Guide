@@ -8,6 +8,14 @@ has_toc: false
 
 # Wasabi Wallet
 
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 Wasabi Wallet is a bitcoin wallet designed with privacy in mind. The wallet gives the user control of different "UTXOs". A UTXO is simply an unspent transaction output and is often referred to as "coin" (and is what makes up individual bitcoins). UTXOs are associated with bitcoin addresses and can be traced on the blockchain. This can be used to track users and try to determine who owns what. The most common heuristics for tracking users can be broken if you "mix" your UTXOs with other peoples UTXOs (and use the same amounts). The method is often referred to as "coinjoin" as is a service Wasabi Wallet offers as well.
 
 Most implementations of coinjoin (sometimes called mixers) is by third parties that control the whole process. That means that they can steal your funds and destroy your privacy if they like (you have to trust them). This is not the case with Wasabi Wallet. The only central part is a "coordinator" that constructs the transactions and that you connect to with Tor to ensure anonymity. You control your own private keys during the whole process.

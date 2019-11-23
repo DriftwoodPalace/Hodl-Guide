@@ -2,7 +2,17 @@
 layout: default
 title: Bonus Section
 nav_order: 7
+has_children: true
+has_toc: false
 ---
+# Bonus Section
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 In this section, you can find various optional topics that make your cold storage more private and/or easier to use. 
 

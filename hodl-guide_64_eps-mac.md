@@ -9,6 +9,13 @@ has_toc: false
 ## Run Electrum Personal Server on Mac
 
 *Difficulty: medium*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 *Note: I am not normally a Mac user, any suggestions for improvements to the guide is appreciated.*
 

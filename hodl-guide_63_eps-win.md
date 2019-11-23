@@ -9,6 +9,13 @@ has_toc: false
 # Electrum Personal Server on Windows 10
 
 *Difficulty: easy*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum (Hardware Wallet support, easy multi-sig setup and more) while still validating and broadcasting everything with your full node. *Warning:* Do not use Electrum Personal Server in combination with Electrum Lightning (don't open channels etc, you can use the rest of Electrum as usual).
 

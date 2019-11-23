@@ -9,6 +9,13 @@ has_toc: false
 ## Setup Electrum to run over Tor
 
 *Difficulty: easy*
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Electrum works by connecting to special purpose servers. 
 Anyone can run a server and if you don’t specify a server, you’ll be connected to one randomly. Every address in your wallet is sent to the server so it can check for the current balance. Your addresses are *hashed* before they are sent to the server, but that only helps until an address is used for the first time. 

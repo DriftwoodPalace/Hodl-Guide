@@ -1,10 +1,17 @@
 ---
 layout: default
-title: Creating wallet
+title: Creating multi-sig wallet
 nav_order: 5
 ---
 
 # Create a multi-sig wallet with Electrum
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 You should now have the following information:
 
