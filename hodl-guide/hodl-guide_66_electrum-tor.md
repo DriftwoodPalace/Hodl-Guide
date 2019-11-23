@@ -1,6 +1,9 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
-) ] -- [ **Bonus** ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
-
+---
+layout: default
+title: Electrum over Tor
+parent: Bonus Section
+nav_order: 15
+has_toc: false
 ---
 
 ## Setup Electrum to run over Tor
@@ -10,13 +13,13 @@
 Electrum works by connecting to special purpose servers. 
 Anyone can run a server and if you don’t specify a server, you’ll be connected to one randomly. Every address in your wallet is sent to the server so it can check for the current balance. Your addresses are *hashed* before they are sent to the server, but that only helps until an address is used for the first time. 
 
-Every transaction you do is, by default, broadcasted through the server.
+Every transaction you do is, by default, broadcasted through that server.
 
 This is bad for privacy (and has been used for phishing attacks with a bug that's now patched).
 
 If you don’t use Tor or a VPN, one or more random servers will know all of your transactions, your wallet balance and your real IP-address. 
 
-There're several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. 
+There's several companies that specialises in chain analysis to deanonymize addresses and we can assume that they’re running several Electrum Servers. 
 
 If you bought your bitcoin on an exchange that use KYC (know your customer), you can assume that these companies have your name, address and IP-address. If you then connect to one of their servers and ask for the balance on a number of bitcoin addresses, it's trivial for them to connect those addresses to you. It doesn't matter what you have done between you had the bitcoin on the exchange, or even if it's the same bitcoin. They can still assume it is your wallet. 
 
@@ -60,23 +63,23 @@ If this is the first-time using Electrum, you'll have to create a wallet (skip t
 
 Pick a name for the wallet, click Next:
 
-![Electrum tor 1](images/40_electrum_13.png)
+![Electrum tor 1](images/electrum-tor.png)
 
 Let Standard Wallet be selected, click Next:
 
-![Electrum tor 2](images/30_electrum_2.png)
+![Electrum tor 2](images/electrum-tor2.png)
 
 Change to "Use a master key" and click Next:
 
-![Electrum tor 3](images/40_electrum_tor_3.png)
+![Electrum tor 3](images/electrum-tor3.png)
 
 Since we only want a dummy wallet to access the settings, paste this key in the field and click Next: `xpub661MyMwAqRbcF7NVwdGV5gKTj5cqEwDcJv21g1RqF51YmWj5ycNE4S8Vv3dFZRufGJvbfoFM2hapK6Sd7fdXtyF9QrpKBStMX5LAYJVNWoC`
 
-![Electrum tor 4](images/40_electrum_tor_4.png)
+![Electrum tor 4](images/electrum-tor4.png)
 
 We don't need a password for this wallet, leave the field blank and click Next:
 
-![Electrum tor 5](images/30_electrum_7.png)
+![Electrum tor 5](images/electrum-tor5.png)
 
 Electrum should now start.
 

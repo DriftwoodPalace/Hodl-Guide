@@ -1,6 +1,9 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
-) ] -- [ **Bonus** ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
-
+---
+layout: default
+title: Electrum Best Practises
+parent: Bonus Section
+nav_order: 16
+has_toc: false
 ---
 
 ## Electrum best practises
@@ -18,12 +21,12 @@ If you have taken the time to create a cold storage wallet, I would advise you t
 ### Short version
 
 * Use Wasabi Wallet as a spending wallet and never use your cold storage wallet to directly send funds to someone else. Or use the lightning network (mix funds with Wasabi before depositing to your lightning wallet).
-* Mix all bitcoins with Wasabi Wallet or Joinmarket before depositing to your cold storage.
-* Never reuse any old addresses.
+* Mix all bitcoins with Wasabi Wallet, Samourai  Wallet or Joinmarket before depositing to your cold storage.
+* Never reuse old addresses.
 * "Top up" your spending wallet with whole UTXOs (coins). Do not produce any change in your cold storage wallet.
 * If you don't have Electrum connected to your own full node, mix all coins going out of your cold storage wallet.
-* [Setup Electrum to run over Tor](hodl-guide_66_electrum-tor.md). Or even better connect it to your full node with Electrum Personal Server (guide for [Windows](hodl-guide_63_eps-win.md) and [Mac](hodl-guide_64_eps-mac.md) and have it running over Tor.
-* Do not look up your addresses on any block explorers.
+* [Setup Electrum to run over Tor](hodl-guide_66_electrum-tor.md). Or even better connect it to your full node with Electrum Personal Server (guide for [Windows](hodl-guide_63_eps-win.md) and [Mac](hodl-guide_64_eps-mac.md)) and have the full node running over Tor.
+* Do not look up your addresses on any block explorers. If you have to, use a VPN or Tor so it's not connected to your IP.
 
 A solid setup would be:
 

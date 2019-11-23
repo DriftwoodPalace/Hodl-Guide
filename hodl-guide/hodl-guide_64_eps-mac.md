@@ -1,6 +1,9 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
-) ] -- [ **Bonus** ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
-
+---
+layout: default
+title: EPS Mac
+parent: Bonus Section
+nav_order: 13
+has_toc: false
 ---
 
 ## Run Electrum Personal Server on Mac
@@ -26,9 +29,9 @@ On the page, click “raw”:
 
 Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
-Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest `Source code (.zip)` and the corresponding `.asc` file (needed to verify the downloaded file). For example (the example is showing the Windows version, if using Mac take the other ones):
+Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest version (in this example `electrum-personal-server-v0.1.7.zip`) and the corresponding `.asc` file (needed to verify the downloaded file). For example:
 
-![Eps Win2](images/63_eps-w_2.png)
+![Eps Mac](images/64_eps-m.png)
 
 Place the files in the same folder that you saved the signing key in.
 
@@ -46,7 +49,7 @@ Then, import Belchers signing key to your local directory:
 
 We can now verify the download by typing (if you downloaded another version, change the file names):
 
-`> gpg --verify eps-v0.1.6.zip.asc electrum-personal-server-eps-v0.1.6`
+`> gpg --verify electrum-personal-server-v0.1.7.zip.asc electrum-personal-server-v0.1.7.zip`
 
 The output should be something similar to this:
 
@@ -65,7 +68,7 @@ If you want to move the folder out of downloads, do that now.
 
 ## Change the config-file
 
-Open the folder electrum-personal-server-eps-v0.1.6 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
+Open the folder electrum-personal-server-eps-v0.1.7 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
 
 *Note:* Make sure that you can change the file extension from `.cfg_sample` to `.cfg`
 
@@ -78,12 +81,12 @@ To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Informa
 In the config.cfg-file, create a new line and give the wallet a name. If you are using a 2 of 3 multi-sig, type `2` (required-signatures) after the name. Then paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 
 ```
-my_multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
+my_multisig_wallet = 2 Zpub661MyMwA... Zpub6AMQ6ZPNa6... Zpub6A2po6ffdf...
 ```
 
 You can change the name “my_multisig_wallet” if you like.
 
-*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk because of this).
+*Note:* This is storing your master public keys in cleartext on your computer. Anyone that gets hold of this information could derive all of your bitcoin addresses (your funds aren't at risk because of this but they'll be able to see your full balance).
 
 #### Single wallet
 
@@ -104,27 +107,33 @@ datadir = D:\Bitcoin
 
 You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.cfg
 
-Another alternative is to use a `rpcuser` and a strong (many random characters) `rpcpassword` with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add this to `config.cfg` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
+Another alternative is to use `rpcauth` (username + hashed password) with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add that line to `config.ini` . 
+```
+rpcauth = <user>:some-hash-string
+```
 
 #### Change the bitcoin.conf file
 
 We need to add the line `server=1` to our Bitcoin configuration file for Bitcoin Core to accepts connections from Electrum Personal Server. If you are unsure if you have a configuration file or not, open Bitcoin Core and go to `Settings>Options` and select `Open Configuration File` on the main tab. That should either create a new file in the right directory or open your existing file.
 
-Make sure to add:
+Add:
 
 ```
-server=1
+server= 1
+```
+to a new line (this'll turn on the RPC-server).
+
+If you are using rpcauth, add this to a new line as well. If you are using EPS on another machine then your Bitcoin Core node (but in the same LAN), you might have to add `rpcallowip=<IP of PC with Electrum Personal Server>` and `rpcbind=<IP of Bitcoin Core node>` (thanks Jochen) too.
+The file should in that case look like this:
+
+```
+server = 1
+rpcallowip=<IP of PC with Electrum Personal Server>
+rpcbind=<IP of Bitcoin Core node>
+rpcauth = <user>:some-hash-string
 ```
 
-to a new line.
-
-If you use a rpcuser and rpcpassword add that to new lines as well. The file should in that case look like this:
-
-```
-server =1
-rpcuser=your_user
-rpcpassword=your_password
-```
+The wallet in Bitcoin Core needs to be enabled. So, make sure that `disablewallet` is not present in the configuration file. Save and close the file. For the settings to have effect, you need to restart Bitcoin Core.
 
 ## Install with Python
 
@@ -141,11 +150,11 @@ We are going to use `pip` to install the personal server. It should be installed
 
 When it’s done, change the directory to the folder electrum-personal-server. If it's located in "Downloads" (make sure to change the name in the command if using a newer version):
 
-`$ cd ~/downloads/electrum-personal-server-eps-v0.1.6`
+`$ cd ~/downloads/electrum-personal-server-eps-v0.1.7`
 
 Or if it's located in your home directory (all further examples will be with the folder located in the home directory):
 
-`$ cd ~/electrum-personal-server-eps-v0.1.6`
+`$ cd ~/electrum-personal-server-eps-v0.1.7`
 
 Then use the command:
 
@@ -178,7 +187,7 @@ We need the path to the file `electrum-personal-server` and to the file `config.
 Create a new textfile and paste the paths to the file after each other. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
 
 ```
-~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.1.6/config.cfg
+~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.1.7/config.cfg
 ```
 
 Before saving, go to settings and make sure `Plain Text` is selected and that the “If no extension is provided, use ‘.txt’ ” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
@@ -197,7 +206,7 @@ If you get an error message like this:
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
 
-You might need to set a `rpc_user` and a `rpc_password` (don't use `#` in your password) or change `datadir` to the correct path and make sure Bitcoin Core is running.
+You might need to use `rpcauth` or change `datadir` to the correct path and make sure Bitcoin Core is running.
 
 If you get an error with something like:
 
@@ -205,7 +214,7 @@ If you get an error with something like:
 Error with bitcoin json-rpc
 ```
 
-That means that the server can’t connect to your Bitcoin Core full node. This is likely an issue with one of your conf-files (either `config.cfg` or `bitcoin.conf`). Below is a copy of a standard `config.cfg`-file. It uses `rpcuser` and `rpcpassword` in `bitcoin.conf` (All comments `#` in this file is removed for readability, can be a good idea to keep those)
+That means that the server can’t connect to your Bitcoin Core full node. This is likely an issue with one of your conf-files (either `config.cfg` or `bitcoin.conf`). Below is a copy of a standard `config.cfg`-file (all comments `#` in this file are removed for readability, can be a good idea to keep those)
 
 ```
 [master-public-keys]
@@ -216,8 +225,6 @@ multisig_wallet = 2 xpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU
 host = 127.0.0.1
 port = 8332
 datadir = ~/Library/Application Support/Bitcoin/
-rpc_user = user
-rpc_password = password
 
 wallet_filename =
 poll_interval_listening = 30
@@ -237,8 +244,6 @@ And what needs to be in `bitcoin.conf` (you can have other settings as well, thi
 
 ```
 server=1
-rpcuser=user
-rpcpassword=password
 ```
 
 You need to restart Bitcoin Core for changes in `bitcoin.conf` to have effect.
@@ -263,7 +268,9 @@ Listening for Electrum Wallet ...
 ## Setting up Electrum
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. `Select Tools>Network`
+Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_65_watch-address.md) for creating a wallet (skip the settings part where we activate Tor)
+
+When you have a wallet open, go to `Tools>Network`.
 
 Uncheck Select server automatically and change `Server` to `localhost`:
 
@@ -299,6 +306,10 @@ You can verify that only your server is being used by going to `Tools>Network`. 
 ![Eps Win11](images/63_eps-w_11.png)
 
 If you change tab to "Server". Localhost should be selected and everything should be greyed out (not possible to change anything).
+
+If you now do a transaction, it should show up as "pending" in Electrum. You should see your balance in the column "Watch-only" and the transaction in "Recent transactions" in Bitcoin Core as well:
+
+![Eps Win10](images/63_eps-w_12.png)
 
 ---
 

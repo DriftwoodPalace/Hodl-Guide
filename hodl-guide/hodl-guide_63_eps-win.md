@@ -1,13 +1,16 @@
-[ [Intro](README.md) ] -- [ [Preparations]( hodl-guide_10_preparations.md) ] -- [ [First Seeds](hodl-guide_20_first-seeds.md) ] -- [ [Last Seed](hodl-guide_30_last-seed.md) ] -- [ [Multi-Sig](hodl-guide_40_multi-sig.md) ] -- [ [Storage](hodl-guide_50_storage.md
-) ] -- [ **Bonus** ] -- [ [Troubleshooting](hodl-guide_70_troubleshooting.md) ]
-
+---
+layout: default
+title: EPS Windows
+parent: Bonus Section
+nav_order: 12
+has_toc: false
 ---
 
 # Electrum Personal Server on Windows 10
 
 *Difficulty: easy*
 
-Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum (Hardware Wallet support, easy multi-sig setup and more) while still validating and broadcasting everything with your full node.
+Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum (Hardware Wallet support, easy multi-sig setup and more) while still validating and broadcasting everything with your full node. *Warning:* Do not use Electrum Personal Server in combination with Electrum Lightning (don't open channels etc, you can use the rest of Electrum as usual).
 
 If you like to know more about the project, go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To).
 
@@ -39,7 +42,7 @@ Then, navigate to the folder where the downloaded files are located. Use `Shift+
 
 That should automatically start PowerShell in the correct directory (else start PowerShell manually and use `cd ~\downloads` to change to the right directory)
 
-Start by importing Belchers signing key to your local directory by typing this in PowerShell:
+Start by importing Belchers signing key to your local depository by typing this in PowerShell:
 
 `gpg --import belcher.asc`
 
@@ -82,12 +85,12 @@ To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Informa
 In `config.ini`, create a new line and give the wallet a name. If you are using a 2 of 3 multi-sig, type `2` (required-signatures) after the name. Then paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste it after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 
 ```
-my_multisig_wallet = 2 xpub661MyMwA... xpub6AMQ6ZPNa6... xpub6A2po6ffdf...
+my_multisig_wallet = 2 Zpub661MyMwA... Zpub6AMQ6ZPNa6... Zpub6A2po6ffdf...
 ```
 
 You can change the name “my_multisig_wallet” if you like. Make sure that you don't have the symbol `#` in front of the line (it'll then be treated as a comment).
 
-*Note:* This is storing your master public keys in cleartext on your computer. A malicious actor could get hold of this and from that derive all of your bitcoin addresses (your funds are not at risk because of this).
+*Note:* This is storing your master public keys in cleartext on your computer. Anyone that gets hold of this information could derive all of your bitcoin addresses (your funds aren't at risk because of this but they'll be able to see your full balance).
 
 ### Single wallet
 
@@ -108,7 +111,10 @@ datadir = D:\Bitcoin
 
 You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.ini. If you don't know what this is, you're probably using the default setting and can save and close the file.
 
-Another alternative is to use a `rpcuser` and a strong (many random characters) `rpcpassword` with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add this to `config.ini` as well. Uncomment (remove `#`) the two lines `rpc_user` and `rpc_password` and add your information. If you don't have a user and a password for Bitcoin Core yet, you can create that here and transfer it to Bitcoin Core later.
+Another alternative is to use `rpcauth` (username + hashed password) with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add that line to `config.ini` . 
+```
+rpcauth = <user>:some-hash-string
+```
 
 ## Settings in Bitcoin Core
 
@@ -119,16 +125,18 @@ If you're unsure if you have a configuration file or not, open Bitcoin Core and 
 Add:
 
 ```
-server=1
+server= 1
 ```
 to a new line (this'll turn on the RPC-server).
 
-If you use a rpcuser and rpcpassword add this to new lines as well. The file should in that case look like this:
+If you are using rpcauth, add this to a new line as well. If you are using EPS on another machine then your Bitcoin Core node (but in the same LAN), you might have to add `rpcallowip=<IP of PC with Electrum Personal Server>` and `rpcbind=<IP of Bitcoin Core node>` (thanks Jochen) too.
+The file should in that case look like this:
 
 ```
-server =1
-rpcuser=your_user
-rpcpassword=your_password
+server = 1
+rpcallowip=<IP of PC with Electrum Personal Server>
+rpcbind=<IP of Bitcoin Core node>
+rpcauth = <user>:some-hash-string
 ```
 
 The wallet in Bitcoin Core needs to be enabled. So, make sure that `disablewallet` is not present in the configuration file. Save and close the file. For the settings to have effect, you need to restart Bitcoin Core.
@@ -139,7 +147,7 @@ Both of your configuration files should now be in order and we can start the ser
 
 ![Eps Win10](images/63_eps-w_10.png)
 
-The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit. If your wallet contains old transactions, you'll need to rescan the local copy of the blockchain for any transactions in your wallet. 
+The first time the server starts, it'll import all configured addresses as watch-only into the Bitcoin node, and then exit. If your wallet contains old transactions, you'll need to rescan the local copy of the blockchain for any transactions in your wallet.
 
 Do this by dragging `config.ini` onto the batch script `electrum-personal-server-rescan.bat`. That should open a command prompt where you'll be asked for a date to rescan from. Enter a date (in the format DD/MM/YYYY) from where you would like to start importing addresses (the further back, the longer time it will take) and hit return. You'll get a suggestion of a block height to start from. Type `y` and hit return. Wait for the rescanning to finish (the server will exit once finished).
 
@@ -165,7 +173,9 @@ Listening for Electrum Wallet ...
 
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. Go to `Tools>Network`.
+Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_65_watch-address.md) for creating a wallet (skip the settings part where we activate Tor)
+
+When you have a wallet open, go to `Tools>Network`.
 
 Uncheck "Select server automatically" and change `Server` to `localhost`:
 
@@ -185,7 +195,7 @@ It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Co
 
 ### Disable connections to other servers
 
-*Pro tip:* Create a shortcut that disables all connections to other servers (otherwise, Electrum will still download block headers from other servers). With this shortcut you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `"C:\Program Files (x86)\Electrum"`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
+*Pro tip:* Create an Electrum shortcut that disables all connections to other servers (Electrum will otherwise still download block headers from other servers). With this shortcut you don’t risk connecting to a public server by mistake. If you don’t have a shortcut to Electrum on your desktop or in a folder. Navigate to the folder where Electrum is located, standard is `"C:\Program Files (x86)\Electrum"`. Right click on the `.exe` file, for example `electrum-3.1.3.exe`. Select Create Shortcut. You’ll get the following message:
 
 ![Eps Win5](images/63_eps-w_5.png)
 
@@ -199,7 +209,7 @@ So, the whole line reads something like:
 
 `"C:\Program Files (x86)\Electrum\electrum-3.1.3.exe" --oneserver --server localhost:50002:s`
 
-If you’ve changed the port from `50002` in `config.ini`, make sure to change to the same port here. Use the shortcut to start Electrum (and make sure to only use this shortcut to start it).
+If you’ve changed the port from `50002` in `config.ini`, make sure to change to the same port here. Use the shortcut to start Electrum (and make sure to only use this shortcut to start it). If you update Electrum at a later date you'll have to remember to create a new shortcut!
 
 Your wallet should be connected to your bitcoin full node (the circle in the bottom right corner should be green)!
 
@@ -210,6 +220,11 @@ You can verify that only your server is being used by going to `Tools>Network`. 
 ![Eps Win11](images/63_eps-w_11.png)
 
 If you change tab to "Server". Localhost should be selected and everything should be greyed out (not possible to change anything).
+
+If you now do a transaction, it should show up as "pending" in Electrum. You should see your balance in the column "Watch-only" and the transaction in "Recent transactions" in Bitcoin Core as well:
+
+![Eps Win10](images/63_eps-w_12.png)
+
 
 ## Troubleshooting
 
@@ -225,23 +240,21 @@ WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datad
 
 Check the `datadir` in your config.ini file and make sure that you have `server=1`in the configuration file for Bitcoin Core.
 
-If the server starts but you get a `JSON-error`, your rpc_user and/or rpc_password is probably wrong. Check your configuration files and check so you don't have multiple config files (in the default location and in the new location if you moved the installation). You can check which file Bitcoin Core is using by going to Settings>Options and then Open Configuration File in Bitcoin Core.
+If the server starts but you get a `JSON-error`, your rpcauth is probably wrong. Check your configuration files and check so you don't have multiple config files (in the default location and in the new location if you moved the installation). You can check which file Bitcoin Core is using by going to Settings>Options and then Open Configuration File in Bitcoin Core.
 
-You can also try to change the authentication method if you can't resolve it. If you use rpcuser and rpcpassword try the cookie method or the other way around.
+You can also try to change the authentication method if you can't resolve it. If you use rpcauth try the cookie method or the other way around.
 
-Below is a copy of a `config.ini`-file with a 2 of 3 multi-sig wallet where the datadir is changed to D:\Bitcoin. It uses `rpcuser` and `rpcpassword` in `bitcoin.conf` (All comments `#` in this file is removed for readability, can be a good idea to keep those)
+Below is a copy of a `config.ini`-file with a 2 of 3 multi-sig wallet where the datadir is changed to D:\Bitcoin (all comments `#` in this file are removed for readability, can be a good idea to keep those)
 
 ```
 [master-public-keys]
-my_multisig_wallet = 2 xpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB xpub127pc4e5YKw4zsBBznm7zEfaZdwAA125UZvfs8cy2D3b58BpBL6Utgz3NdLWgninZAxdCv8J1HzSz97yXBsEeVSLX7w8SYEcbRqAwMyM9LB xpub7g5pc4e5YKwBL9MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB
+my_multisig_wallet = 2 Zpub661MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB Zpub127pc4e5YKw4zsBBznm7zEfaZdwAA125UZvfs8cy2D3b58BpBL6Utgz3NdLWgninZAxdCv8J1HzSz97yXBsEeVSLX7w8SYEcbRqAwMyM9LB Zpub7g5pc4e5YKwBL9MyMwAqRbcEYS8w7XLSVeEsBXy79zSzH1J8vCdxAZningWLdN3zgtU6LBpB85b3D2yc8sfvZU521AAwdZafEz7mnzBBsz4wKY5e4cp9LB
 [watch-only-addresses]
 
 [bitcoin-rpc]
 host = 127.0.0.1
 port = 8332
 datadir = D:\Bitcoin
-rpc_user = user
-rpc_password = password
 
 wallet_filename =
 poll_interval_listening = 30
@@ -261,8 +274,6 @@ And what needs to be in `bitcoin.conf` (you can have other settings as well, thi
 
 ```
 server=1
-rpcuser=user
-rpcpassword=password
 ```
 
 You need to restart Bitcoin Core for changes in `bitcoin.conf` to have effect.
