@@ -13,6 +13,8 @@ nav_order: 4
 1. TOC
 {:toc}
 
+## Intro
+
 First, a reminder of where you should be in the process by now.
 You should now have one digital note in Bitwarden containing:
 

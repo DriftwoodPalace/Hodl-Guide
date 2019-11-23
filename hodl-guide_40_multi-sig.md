@@ -13,6 +13,8 @@ nav_order: 5
 1. TOC
 {:toc}
 
+## Intro
+
 You should now have the following information:
 
 * A note with `Seed A - Coldcard`, `PIN Coldcard` and `PW`

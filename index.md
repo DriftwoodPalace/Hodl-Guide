@@ -4,9 +4,8 @@ title: Intro
 nav_order: 
 ---
 ---
-*THIS IS A WORK IN PROGRESS, SE V1.0 (https://github.com/DriftwoodPalace/guides/hodl-guide) IN THE MEANTIME*
+*THIS IS A WORK IN PROGRESS, SE V1.0 (https://github.com/DriftwoodPalace/guides/) IN THE MEANTIME*
 # The Hodl Guide v2.0
-## Multi-sig Cold storage
 {: .no_toc }
 
 ## Table of contents
@@ -15,7 +14,8 @@ nav_order:
 1. TOC
 {:toc}
 
----
+## Multi-sig Cold storage
+
 Welcome to the Hodl Guide version 2.0.
 
 Version 2.0 is an updated version of the Hold-Guide v1.0. The setup is still a **2 of 3 multi-signature wallet**. The main change is that we are using 3 hardware wallets (instead of 2 hardware wallet and one cold computer). The logic behind this decision is that we were already trusting 2 hardware wallets anyway. So not worth the small possible gains a cold computer might bring when it’s easier to do the setup with 3 hardware wallets (as long we use 3 different manufacturers).

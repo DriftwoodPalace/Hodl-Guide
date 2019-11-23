@@ -13,6 +13,8 @@ nav_order: 6
 1. TOC
 {:toc}
 
+## Intro
+
 You've now created all necessary information. You can put the seeds into envelopes and seal them with tamper resistant tape if you like. Mark them `A`, `B` and `C`. This should give you the following setup:
 
 * **Envelope A:**
