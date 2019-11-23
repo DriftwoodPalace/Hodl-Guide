@@ -62,7 +62,7 @@ The symbol `~` is used as a shortcut to the home/user folder. It works on Mac, L
 
 Electrum is an open source wallet that has been around for many years. It offers great usability (support for multi-sig, hardware wallets etc) and you can connect it to your Bitcoin Core full node (with help of other software). 
 
-Go to https://electrum.org/#download and download the installer for your operating system (if you are using Windows, read the note on the bottom of the download page). Make sure to download the signature as well (the link is next to the installer). If you are taken to a new page when clicking on the signature use ctrl (or cmd) + s to save the text as a file.
+Go to [https://electrum.org/#download](https://electrum.org/#download) and download the installer for your operating system (if you are using Windows, read the note on the bottom of the download page). Make sure to download the signature as well (the link is next to the installer). If you are taken to a new page when clicking on the signature use ctrl (or cmd) + s to save the text as a file.
 
 We need the signing key of Electrum developer Thomas Voegtlin to verify the signatures. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
 
