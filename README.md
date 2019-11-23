@@ -1,8 +1,8 @@
 # hodl-guide.github.io
-The Hodl-Guide has moved to GitHub Pages:
+The Hodl-Guide v2.0 has moved to GitHub Pages:
 
-https://hodl-guide.github.io
+https://driftwoodpalace.github.io/Hodl-Guide/
 
 This repository contains all sources and is used for Issue tracking.
 
-# The guide is a work in progress, not done yet. See Hodl Guide 1.0 in the meantime
+You can find version 1.0 of the guide at https://github.com/DriftwoodPalace/guides/
