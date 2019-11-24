@@ -43,11 +43,11 @@ An important part of the guide (and a great skill to have) is to know how to val
 
 We are using an implementation of the OpenPGP standard to verify signatures. The implementation varies for different OS:
 
-*Windows:* Download and install the latest version of [Gpg4win](https://www.gpg4win.org). If you don’t want to donate, click bank transfer on the download page to access the download. You only need to install GnuPG and Kleopatra.
+*Windows:* Download and install the latest version of [Gpg4win](https://www.gpg4win.org){:target="_blank"}. If you don’t want to donate, click bank transfer on the download page to access the download. You only need to install GnuPG and Kleopatra.
 
-*macOS:* Download and install the latest version of [GPG Suite](https://gpgtools.org/)
+*macOS:* Download and install the latest version of [GPG Suite](https://gpgtools.org/){:target="_blank"}.
 
-*Linux:* [GnuPG](https://gnupg.org/) comes pre-installed with Linux distributions.
+*Linux:* [GnuPG](https://gnupg.org/){:target="_blank"} comes pre-installed with Linux distributions.
 
 An easy way to verify a digital signature is to use a terminal (the command line).
 In all examples, what´s written to the terminal is everything after the `$` sign (and examples that's specific for Windows uses the symbol `>`).
@@ -62,7 +62,7 @@ The symbol `~` is used as a shortcut to the home/user folder. It works on Mac, L
 
 Electrum is an open source wallet that has been around for many years. It offers great usability (support for multi-sig, hardware wallets etc) and you can connect it to your Bitcoin Core full node (with help of other software). 
 
-Go to [https://electrum.org/#download](https://electrum.org/#download) and download the installer for your operating system (if you are using Windows, read the note on the bottom of the download page). Make sure to download the signature as well (the link is next to the installer). If you are taken to a new page when clicking on the signature use ctrl (or cmd) + s to save the text as a file.
+Go to [https://electrum.org/#download](https://electrum.org/#download){:target="_blank"} and download the installer for your operating system (if you are using Windows, read the note on the bottom of the download page). Make sure to download the signature as well (the link is next to the installer). If you are taken to a new page when clicking on the signature use ctrl (or cmd) + s to save the text as a file.
 
 We need the signing key of Electrum developer Thomas Voegtlin to verify the signatures. Scroll down to the bottom of the page and click on the “Public Key” link (you can skip this on Linux and use gpg --import ThomasV.asc):
 
@@ -106,7 +106,7 @@ Primary key fingerprint: 6694 D8DE 7BE8 EE56 31BE  D950 2BD5 824B 7F94 70E6
 
 We need to check for three things here:
 
-* The signing was made the same day as the release was uploaded (should be around the same time), you can see the dates [Here](https://download.electrum.org/).
+* The signing was made the same day as the release was uploaded (should be around the same time), you can see the dates [Here](https://download.electrum.org/){:target="_blank"}.
 
 * It´s a `Good signature`.
 
@@ -121,11 +121,11 @@ We've now verified the signatures and can go ahead and run or install Electrum. 
 
 I know that leaving the guide isn't optimal at this point. But, if you are trying to keep your cold storage as private as possible you need to setup Electrum the right way before creating your main wallet. Otherwise information about your wallet will be sent to third party servers and you can never undo that. This is the main drawdown of using Electrum (if using the default setting, you'll leak privacy harming information), I wouldn't recommend using Electrum without at least Tor (but I really recommend using your own server).
 
-So, the minimum step should be setting up Electrum to run over Tor. This will hide your real IP-address from any server. You can follow [the guide in the bonus section](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html). If you are going to use your own server, you don't need to setup Electrum with Tor.
+So, the minimum step should be setting up Electrum to run over Tor. This will hide your real IP-address from any server. You can follow [the guide in the bonus section](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html){:target="_blank"}. If you are going to use your own server, you don't need to setup Electrum with Tor.
 
 Even if you use Electrum over Tor, your addresses will still be clustered together (not visible on the blockchain, but for someone running a server you connect to). The only real solution to this is using Electrum with your own Bitcoin full node.
 
-This can be a little bit tricky for a non-technical user, but it's constantly being easier and easier. If you have a full node up and running, there's guides for connecting it to Electrum  with "Electrum Personal Server" on [Windows](hodl-guide_63_eps-win.md) and [Mac](hodl-guide_64_eps-mac.md) in the bonus section. Linux user can watch a tutorial [Here](https://www.youtube.com/watch?v=1JMP4NZCC5g) (not my tutorial) or follow the official documentation. You can read more about the project on [https://github.com/chris-belcher/electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server). As your multi sig wallet isn't created yet, you'll have to use another wallet for the server at first. You can use the "dummy" wallet in the Tor-guide if you don't have an existing wallet.
+This can be a little bit tricky for a non-technical user, but it's constantly being easier and easier. If you have a full node up and running, there's guides for connecting it to Electrum  with "Electrum Personal Server" on [Windows](hodl-guide_63_eps-win.md){:target="_blank"} and [Mac](hodl-guide_64_eps-mac.md){:target="_blank"} in the bonus section. Linux user can watch a tutorial [Here](https://www.youtube.com/watch?v=1JMP4NZCC5g){:target="_blank"} (not my tutorial) or follow the official documentation. You can read more about the project on [https://github.com/chris-belcher/electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server){:target="_blank"}. As your multi sig wallet isn't created yet, you'll have to use another wallet for the server at first. You can use the "dummy" wallet in the Tor-guide if you don't have an existing wallet.
 
 Once you've connected it to your own node, you can use all the great functions in Electrum. But without relying on someone else for verifying and broadcasting transactions. No one else will know what addresses you are interested in. You can use it for more “day-to-day” spending as well. You can connect a single hardware wallet to Electrum or use a hot-wallet (seed stored on the computer) and verify all transactions yourself.
 
@@ -221,7 +221,7 @@ The second option is "Attach to PIN". This way you'll have two PIN-codes. One no
 
 Make sure that the "Bitcoin app" is open on the Ledger device.
 
-If you want more information check out [Ledgers guide](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security).
+If you want more information check out [Ledgers guide](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security){:target="_blank"}.
 
 Once the passphrase is created, select `Cosign with hardware device` and click Next:
 
@@ -253,7 +253,7 @@ If you disconnected your Ledger or Trezor. You'll probably get an error message 
 
 We are going to deposit a small amount of bitcoin to one of our addresses to make sure everything works. You could use Testnet for this. But in the end of 2019, transactions are practically free if you're not in a rush. So, a few $ worth of bitcoin is plenty to try it out and I'm personally feeling that I learn more using real money for some reason. The amount should cover 3 transaction fees.
 
-**[P]** Always think twice before depositing funds to your cold storage. I highly recommend you properly mix any coins deposited to cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address. So, mixing isn't that important if you're using your own full node. But if you don't use your own full node and want to improve privacy, I would recommend mixing the funds. You can follow the guide for [using Wasabi Wallet](hodl-guide_62_wasabi-wallet.md) in the bonus section to learn more about mixing.
+**[P]** Always think twice before depositing funds to your cold storage. I highly recommend you properly mix any coins deposited to cold storage (especially if they are from an exchange with KYC). This is only a test deposit to a one-time address. So, mixing isn't that important if you're using your own full node. But if you don't use your own full node and want to improve privacy, I would recommend mixing the funds. You can follow the guide for [using Wasabi Wallet](hodl-guide_62_wasabi-wallet.md){:target="_blank"} in the bonus section to learn more about mixing.
 
 If you are using Electrum Personal Server. Add the three Master Public Keys to the configuration file now (close Electrum before starting the server and let it start up before opening your wallet). You don't need to rescan as it's a new wallet.
 
@@ -313,7 +313,7 @@ In Electrum go to  `File > Open`, navigate to the file you saved and open it to 
 
 Before moving on, we'll create a backup of the note in Bitwarden. This'll be a "secure note" stored on your USB-flashdrive. It'll make restoring your funds easier.
 
-For creating the encrypted secure note we'll use KeePassX. KeePassX is a small open source password manager that's been around for a long time. So, go to [https://www.keepassx.org/downloads](https://www.keepassx.org/downloads) and download the latest version for your operating system. You can verify the digital signatures for the download if you like. But this isn't critical software for us, so it's optional and can be skipped if you don't have the time.
+For creating the encrypted secure note we'll use KeePassX. KeePassX is a small open source password manager that's been around for a long time. So, go to [https://www.keepassx.org/downloads](https://www.keepassx.org/downloads){:target="_blank"} and download the latest version for your operating system. You can verify the digital signatures for the download if you like. But this isn't critical software for us, so it's optional and can be skipped if you don't have the time.
 
 When the download have finished, go ahead and extract the downloaded folder and start KeePassX. If `New Database` doesn't show up automatically, go to `Database > New database`. Then go to your note in Bitwarden and copy the `PW` that was the first password you generated (do not use the passphrase for the HW-wallets). Paste this as the password:
 

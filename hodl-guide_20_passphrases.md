@@ -21,7 +21,7 @@ Humans are usually terrible at generating (and remembering) passwords so we are 
 
 Bitwarden is an open source password manager that stores everything in "the cloud" (someone else's computer). It's not optimal to store any information about Bitcoin in "the cloud". But, it's a trade off we are taking here to reduce the risk of loosing any funds.
 
-So, go ahead and download Bitwarden for your operating system [https://bitwarden.com/#download](https://bitwarden.com/#download)
+So, go ahead and download Bitwarden for your operating system [https://bitwarden.com/#download](https://bitwarden.com/#download){:target="_blank"}
 
 Install and run the application:
 
@@ -46,6 +46,8 @@ Go back to `Password Generator` and click `Options`, change the Password Length 
 Copy the generated password and go back to your note. Type `PF-HW: ` and paste the generated password:
 
 ![Bitwarden](images/bitwarden6.png)
+
+*Note:* This is entering your passphrase into a "hot computer" (computer connected to the internet). The passphrase will be part of your mnemonic seed we'll create later. Usually it's recommended to never put anything from your seed into a "hot computer". But we are doing a trade off here as it will make it easier to recover funds. The seeds we'll create later will never touch a "hot computer". So, even if the passphrase is compromised, an attacker would need two 24 word mnemonic seeds to access anything in our multi-sig setup.
 
 ## Select PINs
 The last thing we'll do is to select 3 different PIN-codes that we can use when setting up the Hardware Wallets. The PINs aren't as important as the passphrase to be completely random and very strong. The hardware wallets are constructed so you'll only get a few chances to enter the correct PIN before they lock themselves. So, the PIN can be fairly week and you can still be safe. We don't want to put all PINs in cleartext in our password manager. If someone, somehow, got access to that they would "only" need our hardware wallets to access our funds (as we store the passphrase in the manager as well).

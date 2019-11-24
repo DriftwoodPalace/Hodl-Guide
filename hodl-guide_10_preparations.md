@@ -22,7 +22,7 @@ nav_order: 2
 ## Optional Other Equipment
 
 * Home safe. For safe, waterproof and fireproof storage of the things you store at home.
-* [TerraSlate paper](https://www.amazon.com/dp/B076JKVNWY/), waterproof, heat resistant and tear-resistant paper for storage of private seeds.
+* [TerraSlate paper](https://www.amazon.com/dp/B076JKVNWY/){:target="_blank"}, waterproof, heat resistant and tear-resistant paper for storage of private seeds.
 * Envelopes to store sensitive information in.
 * Tamper-resistant seals or tape.
 
@@ -32,17 +32,17 @@ We re using Bitcoin Core to validate any bitcoin we receive in our wallet (this 
 
 *Note*, the Bitcoin blockchain size is approaching 300 GB. It could take several days to download the whole blockchain. If storage is an issue, you could use “pruned mode”. That way, you´d discard old transactions and only need to store a few GB of data. You won’t be able to help new nodes connect, but you´d still validate everything yourself. If you´re on a limited data plan, downloading 300 GB of data might still be an issue. In that case you´d have to rely on third parties for validating and broadcasting transactions and can skip this step.
 
-Syncing your Bitcoin Core node is the most time consuming part of this guide. So, I would recommend you'll get that process started at first. Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md) for how to install and setup a node.
+Syncing your Bitcoin Core node is the most time consuming part of this guide. So, I would recommend you'll get that process started at first. Check out the bonus guide, [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md){:target="_blank"} for how to install and setup a node.
 
 Another option is to buy a "node in a box". That's a very easy way of setting up a full node and often you'll get an Electrum Server at the same time. I haven't tried any of alternative, but two popular options seems to be:
 
-[https://shop.nodl.it/en/](https://shop.nodl.it/en/)
+[https://shop.nodl.it/en/](https://shop.nodl.it/en/){:target="_blank"}
 
-[https://mynodebtc.com/](https://mynodebtc.com/)
+[https://mynodebtc.com/](https://mynodebtc.com/){:target="_blank"}
 
 If you need help setting up your node, you could try a service like:
 
-[https://www.ministryofnodes.com.au/](https://www.ministryofnodes.com.au/)
+[https://www.ministryofnodes.com.au/](https://www.ministryofnodes.com.au/){:target="_blank"}
 
 -------
 Move on to: [Creating passphrases >>](hodl-guide_20_passphrases.md)

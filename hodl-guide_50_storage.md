@@ -54,7 +54,7 @@ A signature can be created with your hardware wallet and the passphrase or the 2
 Two signatures isn't in itself enough. You'll need to know the master public key of the third key as well. As you've seen, the master public keys are stored in your Electrum wallet. So, the easiest way to spend is:
 * Using your Electrum wallet and two signatures.
 
-If Electrum somehow disappeared from the internet, your funds would still be safe. There's tools to restore your wallet with another software (for example https://unchained-capital.github.io/caravan/#/). This could be the case if you lost access to your Electrum wallet and want to create a new one as well. So, the second way to spend anything is with:
+If Electrum somehow disappeared from the internet, your funds would still be safe. There's tools to restore your wallet with another software (for example [https://unchained-capital.github.io/caravan/#/](https://unchained-capital.github.io/caravan/#/){:target="_blank"}). This could be the case if you lost access to your Electrum wallet and want to create a new one as well. So, the second way to spend anything is with:
 * Two signatures, the master public key from the third key (or access to the seed+passphrase) and the derivation path.
 
 When it comes to privacy, like seeing the wallet balance, it's pretty simple. If you have one seed+the passphrase or one master public key you will be able to see all transactions. There's still a lot of work left if they only have one key. *Exactly why* it's this way is an advanced topic that isn't really necessary to understand. But they would have to scan 
@@ -63,7 +63,7 @@ When it comes to privacy, like seeing the wallet balance, it's pretty simple. If
 
 This plan will give you the option to easily spend from your cold storage. You can of course modify this 
 
-**1.** `Envelope A` (Seed A - Coldcard). Store it with someone you trust. This envelope has the password to your secure note and wallet file on the USB-stick. If the person holding this envelope got their hands on the USB, they would be able to open the wallet and see your full balance (but wouldn't be able to spend anything). If they got their hands on your Coldcard they would be able to unlock it. As the passphrase is stored on the device they would then be able to scan the blockchain for any *old* transactions that was made with that key. They could then guess that some change amount might belong to you as well. The risk for this'll be reduced if you follow the best practises at [Electrum best practises](hodl-guide_67_electrum-bp.md). They wouldn't be able to see unspent transactions in the wallet.
+**1.** `Envelope A` (Seed A - Coldcard). Store it with someone you trust. This envelope has the password to your secure note and wallet file on the USB-stick. If the person holding this envelope got their hands on the USB, they would be able to open the wallet and see your full balance (but wouldn't be able to spend anything). If they got their hands on your Coldcard they would be able to unlock it. As the passphrase is stored on the device they would then be able to scan the blockchain for any *old* transactions that was made with that key. They could then guess that some change amount might belong to you as well. 
 
 **2.** `Envelope B` (Seed B - Trezor). Store it with someone else you trust or in a different location then your home (bank, second location you control etc). This envelope has the passphrase used with all 3 seeds. Using the passphrase and the seed the one holding this would be able to see *old* transactions (the same situation described above with the Coldcard). They would be able to unlock the Trezor with the correct passphrase as well, but that would only put them in the same situation as holding the seed+passphrase.
 
@@ -79,7 +79,7 @@ I would say that this is a solid setup. No single fiduciary can access your fund
 
 If someone steals your hardware wallets, they would still need two of your PINs and access to one of the digital notes (or all three PINs).
 
-The persons holding seed A and seed B could collaborate and come pretty far. But they would still miss the master public key for the third key. They would need access to the USB-flash drive or seed C to be able to spend anything. 
+The persons holding seed A and seed B could collaborate and come pretty far. But they would still miss the master public key for the third key. They would need access to the USB-flash drive or seed C to be able to spend anything.
 
 If other people store information for you. Try to deliver the information yourself, never put anything in an e-mail. In the worst case, mail the packages one at a time with snail mail and confirm that they are delivered properly. Tell the persons that are holding the packages what it is and who they need to contact in case of an emergency where they need to access the funds.
 
@@ -89,7 +89,7 @@ Avoid writing “Bitcoin” or something on the outside of the envelopes, they s
 
 Everything is now set to start to HODLing with a peace of mind!
 
-For guidelines on how to handle deposits, withdrawals and more with Electrum. Check out [Electrum best practises](hodl-guide_67_electrum-bp.md) in the Bonus section.
+For guidelines on how to handle deposits, withdrawals and more with Electrum. Check out [Electrum best practises](hodl-guide_67_electrum-bp.md){:target="_blank"} in the Bonus section.
 
 ## Worst case scenarios
 
@@ -101,7 +101,7 @@ Your funds are most vulnerable to the famous "$5 wrench attack":
 
 ![Wrench](images/50_wrench.png)
 
-*$5 wrench attack by [xkcd](https://xkcd.com/538/)*
+*$5 wrench attack by [xkcd](https://xkcd.com/538/){:target="_blank"}*
 
 There's no silver bullet to avoid this type of attack. The best defence is probably to keep a low profile. Never talk about how much bitcoin you own or if that's the case, how early you bought bitcoin (that's not very classy anyways).  You could try playing around with a setup of decoy PINs or decoy wallets that's offered by some hardware wallets. But that's beyond this guide.
 

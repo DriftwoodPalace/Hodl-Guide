@@ -29,13 +29,13 @@ An even better solution is to run the node over Tor. This’ll make your node ve
 
 ### Download and verify Bitcoin Core
 
-Start by downloading the latest version of Bitcoin Core for your OS on [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
+Start by downloading the latest version of Bitcoin Core for your OS on [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/){:target="_blank"}
 
 Before installing, you should always verify the digital signature of the downloaded file to make sure that the developers signed the release. This'll make sure that what you've downloaded is the version the developer uploaded and not a malicious version.
 
-The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check the instructions [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-gnupg-for-validating-digital-signatures).
+The easiest way to do this is with the GnuPGP and the command line. For more information on how to download and use GnuPGP, check the instructions [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-gnupg-for-validating-digital-signatures){:target="_blank"}.
 
-There's instructions for how to validate Bitcoin Core on https://bitcoincore.org/en/download/. So, simply follow those.
+There's instructions for how to validate Bitcoin Core on [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/){:target="_blank"}. So, simply follow those.
 
 The output for running `gpg --verify SHA256SUMS.asc` should be something like:
 
@@ -125,7 +125,7 @@ Make sure Proxy IP is `127.0.0.1` and port `9050` (the Tor default port number):
 ![Bitcoin Core](images/61_bitcoin_network.png)
 
 Restart Bitcoin Core to activate changes.
-More information at https://en.bitcoin.it/wiki/Tor
+More information at [https://en.bitcoin.it/wiki/Tor](https://en.bitcoin.it/wiki/Tor){:target="_blank"}
 
 *Troubleshooting:* If you aren't getting any connections (you can see the number of connections by holding your mouse on the network symbol in the bottom right corner or by going to `Help>Debug Window` and change the tab to `Peers`), try changing the port to `9150`. Tor uses this port for Tor Browser on Windows.
 

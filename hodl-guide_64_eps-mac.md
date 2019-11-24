@@ -21,14 +21,14 @@ has_toc: false
 
 Electrum Personal Server will connect your Bitcoin full node to Electrum. This will make it possible to use all functionality in Electrum (Hardware Wallet support, easy multi-sig setup and more) while still validating and broadcasting everything with your full node.
 
-Before starting, make sure you’ve got a Bitcoin Core full node running and up to sync. If don’t, see [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md).
+Before starting, make sure you’ve got a Bitcoin Core full node running and up to sync. If don’t, see [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md){:target="_blank"}.
 
-You also need [Electrum](https://electrum.org/#download). Always check the digital signatures before installing, more info on how [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-and-verify-electrum).
+You also need [Electrum](https://electrum.org/#download){:target="_blank"}. Always check the digital signatures before installing, more info on how [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-and-verify-electrum){:target="_blank"}.
 
 ## Download the installation package
 
-Go to https://github.com/chris-belcher/electrum-personal-server and read the intro (before How To) to know what this is and why it’s important.
-Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/docs/pubkeys/belcher.asc).
+Go to [https://github.com/chris-belcher/electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server){:target="_blank"} and read the intro (before How To) to know what this is and why it’s important.
+Before installing anything we need to verify the downloads. To do this we need Chris Belchers signing-keys. It can be found [here](https://github.com/chris-belcher/electrum-personal-server/blob/master/docs/pubkeys/belcher.asc){:target="_blank"}.
 
 On the page, click “raw”:
 
@@ -36,13 +36,13 @@ On the page, click “raw”:
 
 Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
-Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases) and download the latest version (in this example `electrum-personal-server-v0.1.7.zip`) and the corresponding `.asc` file (needed to verify the downloaded file). For example:
+Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases){:target="_blank"} and download the latest version (in this example `electrum-personal-server-v0.1.7.zip`) and the corresponding `.asc` file (needed to verify the downloaded file). For example:
 
 ![Eps Mac](images/64_eps-m.png)
 
 Place the files in the same folder that you saved the signing key in.
 
-To verify the signature, we need Gpg Suite. If it’s not already installed, go to https://gpgtools.org/ and download and install the latest version.
+To verify the signature, we need Gpg Suite. If it’s not already installed, go to [https://gpgtools.org/](https://gpgtools.org/){:target="_blank"} and download and install the latest version.
 
 We need to open a new terminal window. Click the Searchlight (magnifying glass) icon in the menu bar and type terminal. Select the Terminal application from the search results.
 
@@ -106,7 +106,7 @@ Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 
 ### Rest of the config.cfg file
 
-If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found [here](https://en.bitcoin.it/wiki/Data_directory). For example:
+If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found [here](https://en.bitcoin.it/wiki/Data_directory){:target="_blank"}. For example:
 
 ```
 datadir = D:\Bitcoin
@@ -149,7 +149,7 @@ Type in :
 
 `$ sudo python3 --version`
 
-If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to [https://www.python.org/downloads/](https://www.python.org/downloads/) and download and install the latest version.
+If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to [https://www.python.org/downloads/](https://www.python.org/downloads/){:target="_blank"} and download and install the latest version.
 
 We are going to use `pip` to install the personal server. It should be installed with Python, but make sure you have the latest version by running this in the Terminal:
 
@@ -275,7 +275,7 @@ Listening for Electrum Wallet ...
 ## Setting up Electrum
 Now we only need to tell Electrum to listen to our server!
 
-Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html#setup-electrum) for creating a wallet (skip the settings part where we activate Tor)
+Start Electrum and open a wallet. If you don't have a wallet, you can create a "dummy-wallet" only to access the settings. Follow the steps [Here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html#setup-electrum){:target="_blank"} for creating a wallet (skip the settings part where we activate Tor)
 
 When you have a wallet open, go to `Tools>Network`.
 
@@ -290,7 +290,7 @@ If you use Electrum over Tor you have to disable this (no need to connect to you
 
 Close the dialog once finished. Electrum is now be connected to your full node!
 
-It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_61_bitcoin-core.html#running-bitcoin-core-over-tor)
+It's still a good idea to use Tor, but you'll have to do it with your Bitcoin Core node now. Check out the guide for [running Bitcoin Core over Tor](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_61_bitcoin-core.html#running-bitcoin-core-over-tor){:target="_blank"}
 
 ### Disable connections to other servers
 
