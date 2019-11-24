@@ -121,7 +121,7 @@ We've now verified the signatures and can go ahead and run or install Electrum. 
 
 I know that leaving the guide isn't optimal at this point. But, if you are trying to keep your cold storage as private as possible you need to setup Electrum the right way before creating your main wallet. Otherwise information about your wallet will be sent to third party servers and you can never undo that. This is the main drawdown of using Electrum (if using the default setting, you'll leak privacy harming information), I wouldn't recommend using Electrum without at least Tor (but I really recommend using your own server).
 
-So, the minimum step should be setting up Electrum to run over Tor. This will hide your real IP-address from any server. You can follow [the guide in the bonus section](/hodl-guide/hodl-guide_66_electrum-tor.md). If you are going to use your own server, you don't need to setup Electrum with Tor.
+So, the minimum step should be setting up Electrum to run over Tor. This will hide your real IP-address from any server. You can follow [the guide in the bonus section](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_66_electrum-tor.html). If you are going to use your own server, you don't need to setup Electrum with Tor.
 
 Even if you use Electrum over Tor, your addresses will still be clustered together (not visible on the blockchain, but for someone running a server you connect to). The only real solution to this is using Electrum with your own Bitcoin full node.
 
