@@ -23,7 +23,7 @@ If you like to know more about the project, go to [https://github.com/chris-belc
 
 Before starting, make sure you’ve got a Bitcoin Core full node running and synced. If don’t, see [Install and optimize Bitcoin Core](hodl-guide_61_bitcoin-core.md).
 
-You also need [Electrum](https://electrum.org/#download). Always check the digital signatures before installing, more info on how [here](https://github.com/DriftwoodPalace/guides/blob/master/hodl-guide/hodl-guide_30_last-seed.md#download-and-verify-electrum).
+You also need [Electrum](https://electrum.org/#download). Always check the digital signatures before installing, more info on how [here](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_40_multi-sig.html#download-and-verify-electrum).
 
 If you have any issues during the setup, check out the troubleshooting section at [the end](https://driftwoodpalace.github.io/Hodl-Guide/hodl-guide_63_eps-win.html#troubleshooting) of this guide.
 
