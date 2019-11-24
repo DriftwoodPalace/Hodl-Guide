@@ -40,7 +40,7 @@ Tor uses "onion routing" to hide your real IP-address.
 You can also use a VPN, both solutions will hide your real IP-address from random servers. 
 With a VPN, you'll trust the provider (all traffic goes through them) which is probably safe in most situations (but you never know what information they store). If you like you can use a VPN+Tor. This guide will use Tor as it's free and generally seen as a better alternative.
 
-Using Electrum with Tor should be a fairly straightforward process and we might as well do it from the start. If you don't have Tor, go to [https://www.torproject.org/projects/torbrowser.html](https://www.torproject.org/projects/torbrowser.html) and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
+Using Electrum with Tor should be a fairly straightforward process and we might as well do it from the start. If you don't have Tor, go to [https://www.torproject.org/projects/torbrowser.html](https://www.torproject.org/projects/torbrowser.html){:target="_blank"} and download the latest version of Tor Browser for your OS. You should now know how to verify digital signatures. So, download the signature (.asc) for the file you download as well. You can import the Tor signing key with the command:
 
 `gpg --keyserver pool.sks-keyservers.net --recv-keys 0x4E2C6E8793298290`
 
