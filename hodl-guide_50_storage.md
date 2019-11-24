@@ -137,6 +137,10 @@ That should be most of the situations. If you see any flaws in the reasoning or 
 
 Otherwise, thanks for following the guide. I hope it was helpful!
 
+### Contribute
+
+If you enjoyed the guide and like to contribute financially to the guide, feel free to send some sats to `bc1qyruxhmxgffyvxzvmtd388fayja0tgf20y83yfs` or with [Bottle Pay](https://pay.bottle.li/send/social/bottle/qeYFDgq4voZ85tEjZTVjTraxriEhfRhxj88GyFs4sUBK?a=https%3A%2F%2Fcdn.bottle.li%2Fuserimg%2F47eb9b6e8939f39289bdd8fc108ec60273f8dc1cbd7bf5f1bd2fbc34d40d40de.jpg&d=Driftwood%20Palace){:target="_blank"}. This'll help keeping the guide updated with new hardware wallets etc in the future. Thanks!
+
 ---
 
 For more improvements to the guide check out: [Bonus >>](hodl-guide_60_bonus.md)

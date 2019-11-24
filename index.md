@@ -24,6 +24,8 @@ I’ve also cleared up the guide a bit. It’s more direct with less options. Yo
 
 The old version of the guide that used 2 hardware wallets and one key created on an offline computer with “Tails” can be found [here](https://github.com/DriftwoodPalace/guides){:target="_blank"} (not updated anymore). The old guide offered an option for single sig and 2 of 2 multi-sig as well, this will not be described in this guide.
 
+If you are here to recover funds from a wallet created by someone else, see [Recovery](hodl-guide_68_recover.md){:target="_blank"}.
+
 ## Background
 
 Bitcoin offers the possibility to store value in ways earlier generations only could dream about. If done right, a common man can store value in a more secure and trust minimized way then any king throughout history.
@@ -77,6 +79,8 @@ Or if you need help, you could look at solutions from companies like (I haven't 
 ## Contributions
 
 Thanks to [@jakobalexander](https://github.com/jakobalexander){:target="_blank"} and [@justinmoon](https://github.com/justinmoon){:target="_blank"} for early feedback and reviews of the guide. As always, feedback does not constitute endorsement of the content.
+
+If you like to contribute financially to the guide, feel free to send some sats to `bc1qyruxhmxgffyvxzvmtd388fayja0tgf20y83yfs` or with [Bottle Pay](https://pay.bottle.li/send/social/bottle/qeYFDgq4voZ85tEjZTVjTraxriEhfRhxj88GyFs4sUBK?a=https%3A%2F%2Fcdn.bottle.li%2Fuserimg%2F47eb9b6e8939f39289bdd8fc108ec60273f8dc1cbd7bf5f1bd2fbc34d40d40de.jpg&d=Driftwood%20Palace){:target="_blank"}. This'll help keeping the guide updated with new hardware wallets etc in the future.
 
 ## Validation
 
