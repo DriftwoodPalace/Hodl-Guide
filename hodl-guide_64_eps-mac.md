@@ -75,17 +75,17 @@ If you want to move the folder out of downloads, do that now.
 
 ## Change the config-file
 
-Open the folder electrum-personal-server-eps-v0.2.0 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
+Open the folder electrum-personal-server-eps-v0.2.0 and make a copy of the file `config.ini_sample` and rename the copy to `config.ini`.
 
-*Note:* Make sure that you can change the file extension from `.cfg_sample` to `.cfg`
+*Note:* Make sure that you can change the file extension from `.ini_sample` to `.ini`
 
-Open `config.cfg` with a text editor. If you are updating to a new version, simply copy the necessary information from an old config.ini-file to the new one (there's been some changes to the file, so only copy what's necessary).
+Open `config.ini` with a text editor. If you are updating to a new version, simply copy the necessary information from an old config.ini-file to the new one (there's been some changes to the file, so only copy what's necessary).
 
 #### For multi-sig wallets
 
 To import a multi-sig wallet, open the wallet in Electrum. Go to `Wallet>Information` and copy the Master Public Key of cosigner 1. 
 
-In the config.cfg-file, create a new line and give the wallet a name. If you are using a 2 of 3 multi-sig, type `2` (required-signatures) after the name. Then paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
+In the config.ini-file, create a new line and give the wallet a name. If you are using a 2 of 3 multi-sig, type `2` (required-signatures) after the name. Then paste cosigner 1s key. Go back to Electrum, copy the key for cosigner 2 and paste after cosigner 1s key (on the same row) and go back to Electrum and copy and paste the key for cosigner 3. Your row should look like this (but with your 3 keys):
 
 ```
 my_multisig_wallet = 2 Zpub661MyMwA... Zpub6AMQ6ZPNa6... Zpub6A2po6ffdf...
@@ -97,14 +97,14 @@ You can change the name “my_multisig_wallet” if you like.
 
 #### Single wallet
 
-If you want to add single wallet, for example with one key from a hardware wallet. Follow the same procedure. Open the wallet in Electrum and go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.cfg file.
+If you want to add single wallet, for example with one key from a hardware wallet. Follow the same procedure. Open the wallet in Electrum and go to Wallet>Information and copy the Master Public Key. Pick a name and paste it to the config.ini file.
 For example:
 
 ```
 Hw_wallet1 = xpubkg4QUp5XpUdNf2uGXvQmnD4zcofZ1MN6Fo8PjqQ…
 ```
 
-### Rest of the config.cfg file
+### Rest of the config.ini file
 
 If you’ve moved your Bitcoin data directory (where your blocks and chainstate are stored) you need to add that directory to the line `datadir` (you might need to add this even if you use the default location, default locations can be found [here](https://en.bitcoin.it/wiki/Data_directory){:target="_blank"}. For example:
 
@@ -112,7 +112,7 @@ If you’ve moved your Bitcoin data directory (where your blocks and chainstate 
 datadir = D:\Bitcoin
 ```
 
-You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.cfg
+You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.ini
 
 Another alternative is to use `rpcauth` (username + hashed password) with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add that line to `config.ini` . 
 ```
@@ -144,10 +144,9 @@ The wallet in Bitcoin Core needs to be enabled. So, make sure that `disablewalle
 
 ## Install with Python
 
-
 ### Updating to a new version
 
-If you are updating from a previous version, you'll need to uninstall the previous version. Do this by typing `sudo pip3 uninstall electrum-personal-server` to the terminal. The proceed according to the instructions below.
+If you are updating from a previous version, you'll need to uninstall the previous version. Do this by typing `sudo pip3 uninstall electrum-personal-server` to the terminal. Then proceed according to the instructions below.
 
 ### Performing the installation
 
@@ -196,12 +195,12 @@ If everything was installed without errors, you should have two scripts; `electr
 
 We are going to create a simple script to automate the start of the server.
 
-We need the path to the file `electrum-personal-server` and to the file `config.cfg` that we modified in the unzipped folder earlier. We are going to place the script on the desktop, you can place it there for now and move it later if you like.
+We need the path to the file `electrum-personal-server` and to the file `config.ini` that we modified in the unzipped folder earlier. We are going to place the script on the desktop, you can place it there for now and move it later if you like.
 
 Create a new textfile and paste the paths to the file after each other. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
 
 ```
-~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.2.0/config.cfg
+~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.2.0/config.ini
 ```
 
 Before saving, go to settings and make sure `Plain Text` is selected and that the “If no extension is provided, use ‘.txt’ ” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
@@ -210,7 +209,7 @@ In your terminal type:
 
 `chmod 700 ~/desktop/eps`
 
-That should make the file executable. Go back to your desktop and double click on the file. Electrum Server should now start and import addresses from the master public keys you defined in config.cfg as watch only addresses in your Bitcoin Core node. Wait for the importing to finish.
+That should make the file executable. Go back to your desktop and double click on the file. Electrum Server should now start and import addresses from the master public keys you defined in config.ini as watch only addresses in your Bitcoin Core node. Wait for the importing to finish.
 
 ### Troubleshooting 2
 
@@ -228,7 +227,7 @@ If you get an error with something like:
 Error with bitcoin json-rpc
 ```
 
-That means that the server can’t connect to your Bitcoin Core full node. This is likely an issue with one of your conf-files (either `config.cfg` or `bitcoin.conf`). Below is a copy of a standard `config.cfg`-file (all comments `#` in this file are removed for readability, can be a good idea to keep those)
+That means that the server can’t connect to your Bitcoin Core full node. This is likely an issue with one of your conf-files (either `config.ini` or `bitcoin.conf`). Below is a copy of a standard `config.ini`-file (all comments `#` in this file are removed for readability, can be a good idea to keep those)
 
 ```
 [master-public-keys]
@@ -270,7 +269,7 @@ You can also try to change the authentication method. If you use rpcuser and rpc
 
 Once the importing is done Electrum Personal Server will exit. If you use an old wallet that you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
 
-`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.2.0/config.cfg`
+`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.2.0/config.ini`
 
 When asked, enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
 
