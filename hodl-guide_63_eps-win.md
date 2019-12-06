@@ -55,13 +55,13 @@ Start by importing Belchers signing key to your local depository by typing this 
 
 Then verify the zip-file:
 
-` gpg --verify electrum-personal-server-windows-release-v0.1.7.zip.asc`
+` gpg --verify electrum-personal-server-windows-release-v0.2.0.zip.asc`
 
 The output should be something similar to this:
 
 ```
-gpg: assuming signed data in 'electrum-personal-server-windows-release-v0.1.7.zip'
-gpg: Signature made 04/26/19 18:26:08 W. Europe Daylight Time
+gpg: assuming signed data in 'electrum-personal-server-windows-release-v0.2.0.zip'
+gpg: Signature made 12/05/19 11:57:57 W. Europe Standard Time
 gpg:                using RSA key EF734EA677F31129
 gpg: Good signature from "Chris Belcher <false@email.com>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
@@ -77,13 +77,13 @@ Otherwise go ahead an unzip the .zip file to any location on your computer.
 
 We need to modify a few settings before starting the server.
 
-Navigate to the unzipped folder `\electrum-personal-server-windows-release-v0.1.7` and make a copy of the file `config.ini_sample` and rename the copy to `config.ini` (you’ll get a warning about changing the file name extension, select Yes).
+Navigate to the unzipped folder `\electrum-personal-server-windows-release-v0.2.0` and make a copy of the file `config.ini_sample` and rename the copy to `config.ini` (you’ll get a warning about changing the file name extension, select Yes).
 
 *Note:* Make sure that you can see file extensions, it can be changed at “View” in the top-bar:
 
 ![Eps Win3](images/63_eps-w_3.png)
 
-Right click on `config.ini` and select edit to edit it with a text editor (notepad etc).
+Right click on `config.ini` and select edit to edit it with a text editor (notepad etc). If you are updating to a new version, simply copy the necessary information from an old config.ini-file to the new one (there's been some changes to the file, so only copy what's necessary).
 
 ### For multi-sig wallets
 
@@ -150,9 +150,13 @@ The wallet in Bitcoin Core needs to be enabled. So, make sure that `disablewalle
 
 ## Import addresses to the server
 
-Both of your configuration files should now be in order and we can start the server. Go back to the folder `electrum-personal-server-windows-release-v0.1.7`. To start the server drag the file `config.ini` onto the file `electrum-personal-server.exe`:
+Both of your configuration files should now be in order and we can start the server. Go back to the folder `electrum-personal-server-windows-release-v0.2.0`. To start the server drag the file `config.ini` onto the file `electrum-personal-server.exe`:
 
 ![Eps Win10](images/63_eps-w_10.png)
+
+You might get a warning, click `more info` and `Run anyway`:
+
+![Eps Win13](images/63_eps-w_13.png)
 
 The first time the server starts, it'll import all configured addresses as watch-only into the Bitcoin node, and then exit. If your wallet contains old transactions, you'll need to rescan the local copy of the blockchain for any transactions in your wallet.
 
@@ -165,7 +169,7 @@ Now you can start the server "for real".
 *Optional*: Create a shortcut so you don't have to drag the config.ini file onto the .exe file all the time. Do this by right clicking on `electrum-personal-server.exe` and select `Create shortcut`. Right click on the shortcut and select properties. In the `Target` field, paste the full path to config.ini after the path to `electrum-personal-server.exe`. So that the full line reads something like:
 
 ```
-C:\Users\{user}\Downloads\electrum-personal-server-windows-release-v0.1.7\electrum-personal-server.exe "C:\Users\{user}\Downloads\electrum-personal-server-windows-release-v0.1.7\config.ini"
+C:\Users\{user}\Downloads\electrum-personal-server-windows-release-v0.2.0\electrum-personal-server.exe "C:\Users\{user}\Downloads\electrum-personal-server-windows-release-v0.2.0\config.ini"
 ```
 
 You can place this shortcut anywhere you like and use it to start the server.

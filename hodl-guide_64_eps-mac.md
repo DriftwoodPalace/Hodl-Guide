@@ -36,13 +36,13 @@ On the page, click “raw”:
 
 Use `Cmd+S` and save the key in a folder on your computer (do not change the file extension).
 
-Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases){:target="_blank"} and download the latest version (in this example `electrum-personal-server-v0.1.7.zip`) and the corresponding `.asc` file (needed to verify the downloaded file). For example:
+Then, navigate to the [release page](https://github.com/chris-belcher/electrum-personal-server/releases){:target="_blank"} and download the latest `Source code` (`electrum-personal-server-eps-v0.2.0.zip`) and the corresponding `.asc` file (needed to verify the downloaded file, in this example `eps-v0.2.0.zip.asc`). For example:
 
 ![Eps Mac](images/64_eps-m.png)
 
 Place the files in the same folder that you saved the signing key in.
 
-To verify the signature, we need Gpg Suite. If it’s not already installed, go to [https://gpgtools.org/](https://gpgtools.org/){:target="_blank"} and download and install the latest version.
+To verify the signature, we need Gpg Suite. If it’s not already installed, go to [https://gpgtools.org/](https://gpgtools.org/){:target="_blank"} and download and install the latest version. If you have issues with GPGTools, you could try another alternative from this list [https://www.gnupg.org/download/index.en.html#binary](https://gpgtools.org/){:target="_blank"}
 
 We need to open a new terminal window. Click the Searchlight (magnifying glass) icon in the menu bar and type terminal. Select the Terminal application from the search results.
 
@@ -56,17 +56,17 @@ Then, import Belchers signing key to your local directory:
 
 We can now verify the download by typing (if you downloaded another version, change the file names):
 
-`> gpg --verify electrum-personal-server-v0.1.7.zip.asc electrum-personal-server-v0.1.7.zip`
+`> gpg --verify eps-v0.2.0.zip.asc electrum-personal-server-eps-v0.2.0.zip`
 
 The output should be something similar to this:
 
 ```
-gpg: Signature made 11/15/18 23:30:04 W. Europe Standard Time
+gpg: Signature made 12/05/19 10:50:36 W. Europe Standard Time
 gpg:                using RSA key EF734EA677F31129
 gpg: Good signature from "Chris Belcher <false@email.com>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
+Primary key fingerprint: 0A8B 038F 5E10 CC27 89BF  CFFF EF73 4EA6 77F3 1129
 ```
 
 We can see that the signature was made at a date close to the release, it's a `Good signature` and the Primary key fingerprint is the same as on Github. We can double check by doing a search online on the fingerprint. That confirms from various sources that the key seems to belong to Chris Belcher. If you got a different fingerprint or a bad signature, stop and investigate further.
@@ -75,11 +75,11 @@ If you want to move the folder out of downloads, do that now.
 
 ## Change the config-file
 
-Open the folder electrum-personal-server-eps-v0.1.7 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
+Open the folder electrum-personal-server-eps-v0.2.0 and make a copy of the file `config.cfg_sample` and rename the copy to `config.cfg`.
 
 *Note:* Make sure that you can change the file extension from `.cfg_sample` to `.cfg`
 
-Open `config.cfg` with a text editor.
+Open `config.cfg` with a text editor. If you are updating to a new version, simply copy the necessary information from an old config.ini-file to the new one (there's been some changes to the file, so only copy what's necessary).
 
 #### For multi-sig wallets
 
@@ -144,6 +144,13 @@ The wallet in Bitcoin Core needs to be enabled. So, make sure that `disablewalle
 
 ## Install with Python
 
+
+### Updating to a new version
+
+If you are updating from a previous version, you'll need to uninstall the previous version. Do this by typing `sudo pip3 uninstall electrum-personal-server` to the terminal. The proceed according to the instructions below.
+
+### Performing the installation
+
 We need Python3 to install the server. Check if it’s installed for your user by going back to the terminal.
 Type in :
 
@@ -157,11 +164,11 @@ We are going to use `pip` to install the personal server. It should be installed
 
 When it’s done, change the directory to the folder electrum-personal-server. If it's located in "Downloads" (make sure to change the name in the command if using a newer version):
 
-`$ cd ~/downloads/electrum-personal-server-eps-v0.1.7`
+`$ cd ~/downloads/electrum-personal-server-eps-v0.2.0`
 
 Or if it's located in your home directory (all further examples will be with the folder located in the home directory):
 
-`$ cd ~/electrum-personal-server-eps-v0.1.7`
+`$ cd ~/electrum-personal-server-eps-v0.2.0`
 
 Then use the command:
 
@@ -194,7 +201,7 @@ We need the path to the file `electrum-personal-server` and to the file `config.
 Create a new textfile and paste the paths to the file after each other. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
 
 ```
-~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.1.7/config.cfg
+~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.2.0/config.cfg
 ```
 
 Before saving, go to settings and make sure `Plain Text` is selected and that the “If no extension is provided, use ‘.txt’ ” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
@@ -263,7 +270,7 @@ You can also try to change the authentication method. If you use rpcuser and rpc
 
 Once the importing is done Electrum Personal Server will exit. If you use an old wallet that you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
 
-`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.1.6/config.cfg`
+`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.2.0/config.cfg`
 
 When asked, enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
 
