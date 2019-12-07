@@ -216,6 +216,17 @@ That should make the file executable. Go back to your desktop and double click o
 If you get an error message like this:
 
 ```
+Traceback (most recent call last):
+  File "/Users/me/Library/Python/3.7/bin/electrum-personal-server", line 5, in <module>
+    from electrumpersonalserver.server.common import main
+ModuleNotFoundError: No module named 'electrumpersonalserver'
+```
+
+It's probably your user that doesn't have permission to a specific folder. The folder should be `~/Library/Python/3.7/lib/python/site-packages/` (change `3.7` if using another version). Make sure your user can read and write to that folder ([How to change permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac){:target="_blank"}). If that doesn't work make sure your user can read and write to the folder `~/Library/Python/3.7/bin/electrum-personal-server` as well.
+
+If you get an error message like this:
+
+```
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
 
