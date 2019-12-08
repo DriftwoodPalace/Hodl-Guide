@@ -155,7 +155,7 @@ Type in :
 
 `$ sudo python3 --version`
 
-If Python 3 is installed, it should give an output with the version like `Python 3.7.2`. Otherwise go to [https://www.python.org/downloads/](https://www.python.org/downloads/){:target="_blank"} and download and install the latest version.
+If Python 3 is installed, it should give an output with the version like `Python 3.8.0`. Otherwise go to [https://www.python.org/downloads/](https://www.python.org/downloads/){:target="_blank"} and download and install the latest version.
 
 We are going to use `pip` to install the personal server. It should be installed with Python, but make sure you have the latest version by running this in the Terminal:
 
@@ -191,16 +191,16 @@ Then repeat the command:
 
 ## Starting the server
 
-If everything was installed without errors, you should have two scripts; `electrum-personal-server` and `electrum-personal-server-rescan` in a Python folder on your computer. The default location for the scripts should be `~/Library/Python/3.7/bin`. Open a new finder window and navigate to the folder by pasting the path in `Go>Go To Folder` to make sure the scripts are created. If you used Python 3.6 change 3.7 to 3.6. If you want to navigate to the folder manually you might have to show hidden folders to find it.
+If everything was installed without errors, you should have two scripts; `electrum-personal-server` and `electrum-personal-server-rescan` in a Python folder on your computer. The default location for the scripts should be `~/Library/Python/3.8/bin`. Open a new finder window and navigate to the folder by pasting the path in `Go>Go To Folder` to make sure the scripts are created. If you used Python 3.7 change 3.8 to 3.7. If you want to navigate to the folder manually you might have to show hidden folders to find it.
 
 We are going to create a simple script to automate the start of the server.
 
 We need the path to the file `electrum-personal-server` and to the file `config.ini` that we modified in the unzipped folder earlier. We are going to place the script on the desktop, you can place it there for now and move it later if you like.
 
-Create a new textfile and paste the paths to the file after each other. If you use python 3.7 and placed the unzipped file in your home directory, the line should be like this:
+Create a new textfile and paste the paths to the file after each other. If you use python 3.8 and placed the unzipped file in your home directory, the line should be like this:
 
 ```
-~/Library/Python/3.7/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.2.0/config.ini
+~/Library/Python/3.8/bin/electrum-personal-server ~/electrum-personal-server-eps-v0.2.0/config.ini
 ```
 
 Before saving, go to settings and make sure `Plain Text` is selected and that the “If no extension is provided, use ‘.txt’ ” checkbox is unchecked on the save tab. Then save the file as `eps` with Unicode on your desktop.
@@ -217,12 +217,12 @@ If you get an error message like this:
 
 ```
 Traceback (most recent call last):
-  File "/Users/me/Library/Python/3.7/bin/electrum-personal-server", line 5, in <module>
+  File "/Users/me/Library/Python/3.8/bin/electrum-personal-server", line 5, in <module>
     from electrumpersonalserver.server.common import main
 ModuleNotFoundError: No module named 'electrumpersonalserver'
 ```
 
-It's probably your user that doesn't have permission to a specific folder. The folder should be `~/Library/Python/3.7/lib/python/site-packages/` (change `3.7` if using another version). Make sure your user can read and write to that folder ([How to change permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac){:target="_blank"}). If that doesn't work make sure your user can read and write to the folder `~/Library/Python/3.7/bin/electrum-personal-server` as well.
+It's probably your user that doesn't have permission to a specific folder. The folder should be `~/Library/Python/3.8/lib/python/site-packages/` (change `3.8` if using another version). Make sure your user can read and write to that folder ([How to change permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac){:target="_blank"}). If that doesn't work make sure your user can read and write to the folder `~/Library/Python/3.8/bin/electrum-personal-server` as well. If it still doesn't work, try updating to Python 3.8 if using an older version.
 
 If you get an error message like this:
 
@@ -280,7 +280,7 @@ You can also try to change the authentication method. If you use rpcuser and rpc
 
 Once the importing is done Electrum Personal Server will exit. If you use an old wallet that you want to import old transactions from, you need to rescan the Bitcoin blockchain. You can do this by running the following command in the terminal (make sure to change the paths if your files are located in other locations):
 
-`~/Library/Python/3.7/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.2.0/config.ini`
+`~/Library/Python/3.8/bin/electrum-personal-server-rescan ~/electrum-personal-server-eps-v0.2.0/config.ini`
 
 When asked, enter a date (in the format DD/MM/YYYY) from where you want to start importing addresses (the further back, the longer time it will take) and hit return. You will get a suggestion of a block height to start from. Enter `y` and hit return. Wait for the rescanning to finish (the server will exit once finished). If you don't do this and open an old wallet, the balance will show 0 (but will show the real balance if you rescan).
 
