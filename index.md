@@ -80,7 +80,7 @@ Or if you need help, you could look at solutions from companies like (I haven't 
 
 Thanks to [@jakobalexander](https://github.com/jakobalexander){:target="_blank"} and [@justinmoon](https://github.com/justinmoon){:target="_blank"} for early feedback and reviews of the guide. As always, feedback does not constitute endorsement of the content.
 
-If you like to contribute financially to the guide, feel free to send some sats to `bc1qyruxhmxgffyvxzvmtd388fayja0tgf20y83yfs` or with [Bottle Pay](https://pay.bottle.li/send/social/bottle/qeYFDgq4voZ85tEjZTVjTraxriEhfRhxj88GyFs4sUBK?a=https%3A%2F%2Fcdn.bottle.li%2Fuserimg%2F47eb9b6e8939f39289bdd8fc108ec60273f8dc1cbd7bf5f1bd2fbc34d40d40de.jpg&d=Driftwood%20Palace){:target="_blank"}. This'll help keeping the guide updated with new hardware wallets etc in the future.
+If you like to contribute financially to the guide, feel free to send some sats to `bc1qd5rspp2rdncd2vnj4p9pmvscsa970fs2y6kzmv` or with [Bottle Pay](https://pay.bottle.li/send/social/bottle/qeYFDgq4voZ85tEjZTVjTraxriEhfRhxj88GyFs4sUBK?a=https%3A%2F%2Fcdn.bottle.li%2Fuserimg%2F47eb9b6e8939f39289bdd8fc108ec60273f8dc1cbd7bf5f1bd2fbc34d40d40de.jpg&d=Driftwood%20Palace){:target="_blank"}. This'll help keeping the guide updated with new hardware wallets etc in the future.
 
 ## Validation
 
