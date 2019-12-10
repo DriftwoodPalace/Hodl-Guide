@@ -335,6 +335,8 @@ If you now do a transaction, it should show up as "pending" in Electrum. You sho
 
 ![Eps Win10](images/63_eps-w_12.png)
 
+This guide is translated to Italian. You can find the translation at [https://medium.com/@pindol/installare-un-electrum-personal-server-su-macos-18d432eab37c](https://medium.com/@pindol/installare-un-electrum-personal-server-su-macos-18d432eab37c){:target="_blank"} (not my translation).
+
 ---
 
 << Back: [Bonus guides](hodl-guide_60_bonus.md) 
