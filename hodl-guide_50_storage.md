@@ -4,6 +4,9 @@ title: Storage
 nav_order: 6
 ---
 
+**Update 2020-10-01: This guide has been discontinued and is no longer maintained. This is because, in my opinion, a better guide has been released (by Michael Flaxman). You can find that guide at [https://btcguide.github.io/](https://btcguide.github.io/) 
+For the old guide see [HODL-GUIDE V1.0](https://github.com/DriftwoodPalace/guides/)**
+
 # Store your information
 {: .no_toc }
 
