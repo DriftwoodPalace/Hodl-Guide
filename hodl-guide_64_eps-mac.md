@@ -112,7 +112,7 @@ If you’ve moved your Bitcoin data directory (where your blocks and chainstate 
 datadir = D:\Bitcoin
 ```
 
-You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.ini
+You can use the default RPC-verification for Bitcoin Core. In that case Bitcoin Core creates a cookie file for you and you don't have to add anything else to config.ini. 
 
 Another alternative is to use `rpcauth` (username + hashed password) with Bitcoin Core. This can be necessary for applications like the lightning network to work. If you are using this you'll need to add that line to `config.ini` . 
 ```
@@ -169,7 +169,7 @@ Or if it's located in your home directory (all further examples will be with the
 
 `$ cd ~/electrum-personal-server-eps-v0.2.0`
 
-Then use the command:
+Then use the following command (notice that the command ends with a `.`, make sure to copy the full command):
 
 `$ sudo pip3 install --user .`
 
@@ -229,8 +229,9 @@ If you get an error message like this:
 ```
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
+Make sure you have no RPC-verification set in the config-file for Bitcoin Core. If that is set, no cookie file will be created by Bitcoin Core (and this method can't be used).
 
-You might need to use `rpcauth` or change `datadir` to the correct path and make sure Bitcoin Core is running.
+If that doesn't work, you might need to use `rpcauth` or change `datadir` to the correct path (and make sure Bitcoin Core is running).
 
 If you get an error with something like:
 
