@@ -249,7 +249,10 @@ If you see an error message like:
 WARNING:2019-02-27 09:32:22,102: Unable to find .cookie file, try setting `datadir` config
 ```
 
-Check the `datadir` in your config.ini file and make sure that you have `server=1`in the configuration file for Bitcoin Core.
+
+Make sure you have no RPC-verification set in the config-file for Bitcoin Core. If that is set, no cookie file will be created by Bitcoin Core (and this method can't be used).
+
+If that doesn't work, check the `datadir` in your config.ini file and make sure that you have `server=1`in the configuration file for Bitcoin Core.
 
 If the server starts but you get a `JSON-error`, your rpcauth is probably wrong. Check your configuration files and check so you don't have multiple config files (in the default location and in the new location if you moved the installation). You can check which file Bitcoin Core is using by going to Settings>Options and then Open Configuration File in Bitcoin Core.
 
