@@ -4,7 +4,8 @@ title: Intro
 nav_order: 
 ---
 ---
-**THIS IS A WORK IN PROGRESS, SE [HODL-GUIDE V1.0](https://github.com/DriftwoodPalace/guides/) IN THE MEANTIME**
+**Update 2020-10-01: This guide has been discontinued and is no longer maintained. This is because, in my opinion, a better guide has been released (by Michael Flaxman). You can find that guide at https://btcguide.github.io/ 
+For the old guide see [HODL-GUIDE V1.0](https://github.com/DriftwoodPalace/guides/)**
 # The Hodl Guide v2.0
 {: .no_toc }
 
